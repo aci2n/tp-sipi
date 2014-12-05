@@ -1,27 +1,79 @@
 package implementacion;
 
+import java.util.Date;
+
 
 
 public class Paciente {
-	private Integer dni;
+	private String dni;
 	private String nombre;
 	private String apellido;
-	private Integer telefono;
+	private int telefono;
 	private String email;
 	private Date fechaNacimiento;
 	private String genero;
 	private boolean estado;
 	private String obraSocial;
 	private String planObraSocial;
+	
+	public String getDni() {
+		return dni;
+	}
+	public void setDni(String dni) {
+		this.dni = dni;
+	}
 	public String getNombre() {
-	
+		return nombre;
 	}
-	
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
 	public String getApellido() {
-	
+		return apellido;
 	}
-	
-	public Integer getDni() {
-	
+	public void setApellido(String apellido) {
+		this.apellido = apellido;
+	}
+	public int getTelefono() {
+		return telefono;
+	}
+	public void setTelefono(int telefono) {
+		this.telefono = telefono;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public Date getFechaNacimiento() {
+		return fechaNacimiento;
+	}
+	public void setFechaNacimiento(Date fechaNacimiento) {
+		this.fechaNacimiento = fechaNacimiento;
+	}
+	public String getGenero() {
+		return genero;
+	}
+	public void setGenero(String genero) {
+		this.genero = genero;
+	}
+	public boolean isEstado() {
+		return estado;
+	}
+	public void setEstado(boolean estado) {
+		this.estado = estado;
+	}
+	public String getObraSocial() {
+		return obraSocial;
+	}
+	public void setObraSocial(String obraSocial) {
+		this.obraSocial = obraSocial;
+	}
+	public String getPlanObraSocial() {
+		return planObraSocial;
+	}
+	public void setPlanObraSocial(String planObraSocial) {
+		this.planObraSocial = planObraSocial;
 	}
 }

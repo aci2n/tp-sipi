@@ -1,14 +1,18 @@
 package implementacion;
 
+import java.util.Collection;
+import java.util.Date;
+
 
 
 public class HistoriaClinica {
-	private Integer dni;
+	private String dni;
 	private FichaPeriodontal ficha;
 	private Collection<Odontograma> odontogramas;
 	private Collection<Observacion> observaciones;
 	private String descripcion;
-	public void HistoriaClinica(String dni) {
+	
+	public HistoriaClinica(String dni) {
 	
 	}
 	
@@ -33,50 +37,86 @@ public class HistoriaClinica {
 	}
 	
 	public boolean sosLaHistoriaClinica(String dni) {
-	
+		return this.dni.equals(dni);
 	}
 	
-	public void modificarSeccionFicha(String seccion, String sDiente, boolean sangrado, boolean placa, Integer margen) {
+	public void modificarSeccionFicha(String seccion, String sDiente, boolean sangrado, boolean placa, int margen) {
 	
 	}
 	
 	public Odontograma obtenerUltimoOdontograma() {
+		return null;
+	}
+	
+	public void modificarOdontogramaEstadoDiente(int idDiente, String estado) {
 	
 	}
 	
-	public void modificarOdontogramaEstadoDiente(Integer idDiente, String estado) {
+	public void modificarOdontogramaProtesis(int idDiente) {
 	
 	}
 	
-	public void modificarOdontogramaProtesis(Integer idDiente) {
+	public void modificarOdontogramaEstadoCara(int idDiente, int idCara, String estadoCara) {
 	
 	}
 	
-	public void modificarOdontogramaEstadoCara(Integer idDiente, Integer idCara, String estadoCara) {
-	
-	}
-	
-	public void modificarOdontogramaPuenteDientes(Collection<Integer> idDientes) {
+	public void modificarOdontogramaPuenteDientes(int[] idDientes) {
 	
 	}
 	
 	public Collection<String> obtenerSintomasHistoria() {
-	
+		return null;
 	}
 	
 	public Collection<String> obtenerSintomasObservaciones() {
-	
+		return null;
 	}
 	
 	public Collection<String> obtenerSintomasOdontogramas() {
-	
+		return null;
 	}
 	
 	public Collection<String> unirSintomas(Collection<String> sintomasObservacion, Collection<String> sintomasOdontograma) {
-	
+		return null;
 	}
 	
-	public void setDescripcion() {
-	
+	public String getDni() {
+		return dni;
+	}
+
+	public void setDni(String dni) {
+		this.dni = dni;
+	}
+
+	public FichaPeriodontal getFicha() {
+		return ficha;
+	}
+
+	public void setFicha(FichaPeriodontal ficha) {
+		this.ficha = ficha;
+	}
+
+	public Collection<Odontograma> getOdontogramas() {
+		return odontogramas;
+	}
+
+	public void setOdontogramas(Collection<Odontograma> odontogramas) {
+		this.odontogramas = odontogramas;
+	}
+
+	public Collection<Observacion> getObservaciones() {
+		return observaciones;
+	}
+
+	public void setObservaciones(Collection<Observacion> observaciones) {
+		this.observaciones = observaciones;
+	}
+
+	public String getDescripcion() {
+		return descripcion;
+	}
+
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
 	}
 }

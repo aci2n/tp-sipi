@@ -1,5 +1,6 @@
 package controlador;
 
+import implementacion.FichaPeriodontal;
 import implementacion.HistoriaClinica;
 import implementacion.Odontologo;
 import implementacion.Paciente;
@@ -28,7 +29,7 @@ public class Controlador {
 		this.predicciones = new ArrayList<Prediccion>();
 	}
 	
-	public static Controlador getInstance(){
+	public static Controlador getInstancia(){
 		if (instancia==null)
 			instancia = new Controlador();
 		return instancia;
@@ -127,6 +128,10 @@ public class Controlador {
 	}
 
 	public Paciente obtenerPaciente(String string) {
+		return null;
+	}
+
+	public FichaPeriodontal obtenerFicha(String string) {
 		return null;
 	}	
 }

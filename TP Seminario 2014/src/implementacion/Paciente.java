@@ -1,14 +1,13 @@
 package implementacion;
 
-import java.util.Date;
-
+import java.sql.Date;
 
 
 public class Paciente {
 	private String dni;
 	private String nombre;
 	private String apellido;
-	private int telefono;
+	private String telefono;
 	private String email;
 	private Date fechaNacimiento;
 	private String genero;
@@ -34,10 +33,10 @@ public class Paciente {
 	public void setApellido(String apellido) {
 		this.apellido = apellido;
 	}
-	public int getTelefono() {
+	public String getTelefono() {
 		return telefono;
 	}
-	public void setTelefono(int telefono) {
+	public void setTelefono(String telefono) {
 		this.telefono = telefono;
 	}
 	public String getEmail() {

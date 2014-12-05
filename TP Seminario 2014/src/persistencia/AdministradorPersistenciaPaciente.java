@@ -87,10 +87,8 @@ public class AdministradorPersistenciaPaciente extends AdministradorPersistencia
 		try{
 			Connection con = Conexion.connect();
 			PreparedStatement ps = con.prepareStatement("DELETE FROM "+super.getDatabase()+".dbo.Pacientes WHERE dni like ?");
-			ps.setString(1, paciente.getDni());
-			
+			ps.setString(1, paciente.getDni());		
 			ps.execute();
-
 			con.close();
 		}
 		catch(SQLException e){

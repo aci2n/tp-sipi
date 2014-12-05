@@ -120,5 +120,13 @@ public class Controlador {
 
 	public void setPredicciones(Collection<Prediccion> predicciones) {
 		this.predicciones = predicciones;
+	}
+
+	public Odontologo obtenerOdontologo(String string) {
+		return null;
+	}
+
+	public Paciente obtenerPaciente(String string) {
+		return null;
 	}	
 }

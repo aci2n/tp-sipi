@@ -1,7 +1,6 @@
 package implementacion;
 
-import java.sql.Time;
-import java.util.Date;
+import java.sql.Date;
 
 
 
@@ -10,7 +9,6 @@ public class Turno {
 	private Odontologo odontologo;
 	private String descripcion;
 	private Date fecha;
-	private Time hora;
 	
 	public Paciente getPaciente() {
 		return paciente;
@@ -36,10 +34,4 @@ public class Turno {
 	public void setFecha(Date fecha) {
 		this.fecha = fecha;
 	}
-	public Time getHora() {
-		return hora;
-	}
-	public void setHora(Time hora) {
-		this.hora = hora;
-	}	
 }

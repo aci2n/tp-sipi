@@ -12,17 +12,17 @@ import java.util.Collection;
 
 import controlador.Controlador;
 
-public class AdministradorPersitenciaTurno extends AdministradorPersistencia {
+public class AdministradorPersistenciaTurnos extends AdministradorPersistencia {
 	
-	private static AdministradorPersitenciaTurno instancia = null;
+	private static AdministradorPersistenciaTurnos instancia = null;
 	
-	private AdministradorPersitenciaTurno(){
+	private AdministradorPersistenciaTurnos(){
 		
 	}
 	
-	public static AdministradorPersitenciaTurno getInstancia(){
+	public static AdministradorPersistenciaTurnos getInstancia(){
 		if (instancia==null)
-			instancia = new AdministradorPersitenciaTurno();
+			instancia = new AdministradorPersistenciaTurnos();
 		return instancia;
 	}
 
@@ -30,7 +30,7 @@ public class AdministradorPersitenciaTurno extends AdministradorPersistencia {
 		Turno turno = (Turno)o;
 		try{
 			Connection con = Conexion.connect();
-			PreparedStatement ps = con.prepareStatement("INSERT INTO "+super.getDatabase()+".dbo.Turnos VALUES (?,?,?,?)");
+			PreparedStatement ps = con.prepareStatement("INSERT INTO "+super.getDatabase()+".dbo.Turnos(matricula, dni, fecha, descripcion) VALUES (?,?,?,?)");
 			ps.setString(1, turno.getOdontologo().getMatricula());
 			ps.setString(2,turno.getPaciente().getDni());
 			ps.setDate(3, turno.getFecha());
@@ -93,8 +93,8 @@ public class AdministradorPersitenciaTurno extends AdministradorPersistencia {
 			while (rs.next()){
 				Turno turno = new Turno();
 				
-				turno.setOdontologo(Controlador.getInstance().obtenerOdontologo(rs.getString("matricula")));
-				turno.setPaciente(Controlador.getInstance().obtenerPaciente(rs.getString("paciente")));
+				turno.setOdontologo(Controlador.getInstancia().obtenerOdontologo(rs.getString("matricula")));
+				turno.setPaciente(Controlador.getInstancia().obtenerPaciente(rs.getString("paciente")));
 				turno.setFecha(rs.getDate("fecha"));
 				turno.setDescripcion(rs.getString("descripcion"));
 				
@@ -124,8 +124,8 @@ public class AdministradorPersitenciaTurno extends AdministradorPersistencia {
 			if (rs.next()){
 				turno = new Turno();
 				
-				turno.setOdontologo(Controlador.getInstance().obtenerOdontologo(rs.getString("matricula")));
-				turno.setPaciente(Controlador.getInstance().obtenerPaciente(rs.getString("paciente")));
+				turno.setOdontologo(Controlador.getInstancia().obtenerOdontologo(rs.getString("matricula")));
+				turno.setPaciente(Controlador.getInstancia().obtenerPaciente(rs.getString("paciente")));
 				turno.setFecha(rs.getDate("fecha"));
 				turno.setDescripcion(rs.getString("descripcion"));
 			}

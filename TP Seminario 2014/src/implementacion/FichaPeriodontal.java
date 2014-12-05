@@ -5,6 +5,7 @@ import java.util.Collection;
 
 
 public class FichaPeriodontal {
+	private String idFicha;
 	private Collection<Seccion> secciones;
 	private Odontologo odontologo;
 	
@@ -39,5 +40,12 @@ public class FichaPeriodontal {
 	public void setOdontologo(Odontologo odontologo) {
 		this.odontologo = odontologo;
 	}
-	
+
+	public String getIdFicha() {
+		return idFicha;
+	}
+
+	public void setIdFicha(String idFicha) {
+		this.idFicha = idFicha;
+	}	
 }

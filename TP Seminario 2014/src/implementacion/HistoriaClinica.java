@@ -6,7 +6,8 @@ import java.util.Date;
 
 
 public class HistoriaClinica {
-	private String dni;
+	private String idHistoria;
+	private Paciente paciente;
 	private FichaPeriodontal ficha;
 	private Collection<Odontograma> odontogramas;
 	private Collection<Observacion> observaciones;
@@ -16,6 +17,9 @@ public class HistoriaClinica {
 	
 	}
 	
+	public HistoriaClinica() {
+	}
+
 	public void altaFichaPeriodontal() {
 	
 	}
@@ -34,10 +38,6 @@ public class HistoriaClinica {
 	
 	public void bajaObservacion(Odontologo odontologo, Date fecha) {
 	
-	}
-	
-	public boolean sosLaHistoriaClinica(String dni) {
-		return this.dni.equals(dni);
 	}
 	
 	public void modificarSeccionFicha(String seccion, String sDiente, boolean sangrado, boolean placa, int margen) {
@@ -80,14 +80,6 @@ public class HistoriaClinica {
 		return null;
 	}
 	
-	public String getDni() {
-		return dni;
-	}
-
-	public void setDni(String dni) {
-		this.dni = dni;
-	}
-
 	public FichaPeriodontal getFicha() {
 		return ficha;
 	}
@@ -119,4 +111,22 @@ public class HistoriaClinica {
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
 	}
+
+	public String getIdHistoria() {
+		return idHistoria;
+	}
+
+	public void setIdHistoria(String idHistoria) {
+		this.idHistoria = idHistoria;
+	}
+
+	public Paciente getPaciente() {
+		return paciente;
+	}
+
+	public void setPaciente(Paciente paciente) {
+		this.paciente = paciente;
+	}
+	
+	
 }

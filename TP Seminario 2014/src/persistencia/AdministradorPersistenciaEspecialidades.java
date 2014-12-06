@@ -29,6 +29,7 @@ public class AdministradorPersistenciaEspecialidades extends
 			ps.setString(1, odon.getMatricula());
 			ps.setString(2,esp.getDescripcion());
 			ps.execute();
+			con.close();
 		}catch (SQLException e){
 			e.printStackTrace();
 		}
@@ -39,10 +40,11 @@ public class AdministradorPersistenciaEspecialidades extends
 		// TODO Auto-generated method stub
 		try{
 			Connection con = Conexion.connect();
-			PreparedStatement ps = con.prepareStatement("DELETE FROM "+super.getDatabase()+".dbo.Especialidades WHERE matricula like ? AND descripcion like ?");
+			PreparedStatement ps = con.prepareStatement("UPDATE "+super.getDatabase()+".dbo.Especialidades SET activo=0 WHERE matricula like ? AND descripcion like ?");
 			ps.setString(1, odon.getMatricula());
 			ps.setString(2, esp.getDescripcion());
 			ps.execute();
+			con.close();
 		}catch(SQLException e){
 			e.printStackTrace();
 		}
@@ -66,6 +68,19 @@ public class AdministradorPersistenciaEspecialidades extends
 				e.printStackTrace();
 			}
 			return especialidades;
+	}
+
+	public void eliminarEspecialidades(Odontologo o) {
+		// TODO Auto-generated method stub
+		try{
+			Connection con = Conexion.connect();
+			PreparedStatement ps = con.prepareStatement("UPDATE "+super.getDatabase()+".dbo.Especialidades SET activo=0 WHERE matricula like ?");
+			ps.setString(1, o.getMatricula());
+			ps.execute();
+			con.close();
+		}catch (SQLException e){
+			e.printStackTrace();
+		}
 	}
 
 }

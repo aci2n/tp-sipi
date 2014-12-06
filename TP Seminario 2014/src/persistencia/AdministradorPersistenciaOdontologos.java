@@ -52,12 +52,12 @@ public class AdministradorPersistenciaOdontologos extends
 			ps.setString(1, o.getNombre());
 			ps.setString(2, o.getApellido());
 			ps.setString(3, o.getMatricula());	
-			PreparedStatement ps2 = con.prepareStatement("DELETE FROM "+super.getDatabase()+".dbo.Especialidades_Odontologos WHERE matricula like ?");
-			ps2.setString(1, o.getMatricula());
+			AdministradorPersistenciaEspecialidades.getInstancia().eliminarEspecialidades(o);
 			for (Especialidad esp : o.getEspecialidades())
 				{
 				AdministradorPersistenciaEspecialidades.getInstancia().insert(esp, o);
 				}
+			con.close();
 			}
 			catch (SQLException e){
 				e.printStackTrace();
@@ -68,12 +68,10 @@ public class AdministradorPersistenciaOdontologos extends
 		// TODO Auto-generated method stub
 		try{
 			Connection con = Conexion.connect();
-			PreparedStatement ps = con.prepareStatement("DELETE FROM "+super.getDatabase()+".dbo.Odontologos WHERE matricula like ?");
+			PreparedStatement ps = con.prepareStatement("UPDATE "+super.getDatabase()+".dbo.Odontologos SET activo = 0 WHERE matricula like ?");
 			ps.setString(1, o.getMatricula());
 			ps.execute();
-			PreparedStatement ps2 = con.prepareStatement("DELETE FROM "+super.getDatabase()+".dbo.Especialidades_Odontologos WHERE matricula like ?");
-			ps2.setString(1, o.getMatricula());
-			ps2.execute();
+			AdministradorPersistenciaEspecialidades.getInstancia().eliminarEspecialidades(o);
 			con.close();
 		}
 		catch(SQLException e){
@@ -89,6 +87,7 @@ public class AdministradorPersistenciaOdontologos extends
 			ps.setString(1, matricula);
 			ResultSet rs = ps.executeQuery();
 			odon = new Odontologo(rs.getString("matricula"), rs.getString("nombre"), rs.getString("apellido"), AdministradorPersistenciaEspecialidades.getInstancia().buscarEspecialidades(matricula));
+			con.close();
 		}
 		catch (SQLException e){
 			e.printStackTrace();

@@ -5,6 +5,10 @@ package implementacion;
 public class Especialidad {
 	private String descripcion;
 
+	public Especialidad(){
+		
+	}
+	
 	public Especialidad(String descripcion) {
 		this.descripcion = descripcion;
 	}

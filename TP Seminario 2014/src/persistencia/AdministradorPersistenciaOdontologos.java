@@ -29,8 +29,8 @@ public class AdministradorPersistenciaOdontologos extends
 	public void insert(Odontologo o) {
 		// TODO Auto-generated method stub
 		Odontologo odon = o;
+		Connection con = Conexion.connect();
 		try{
-			Connection con = Conexion.connect();
 			PreparedStatement ps = con.prepareStatement("INSERT INTO "+super.getDatabase()+".dbo.Odontologos VALUES (?,?,?)");
 			ps.setString(1, odon.getMatricula());
 			ps.setString(2, odon.getNombre());
@@ -46,8 +46,8 @@ public class AdministradorPersistenciaOdontologos extends
 
 	public void update(Odontologo o) {
 		// TODO Auto-generated method stub
+		Connection con = Conexion.connect();
 		try{	
-			Connection con = Conexion.connect();
 			PreparedStatement ps = con.prepareStatement("UPDATE "+super.getDatabase()+".dbo.Odontologos SET nombre = ?, apellido = ? WHERE matricula like ?");
 			ps.setString(1, o.getNombre());
 			ps.setString(2, o.getApellido());
@@ -66,8 +66,8 @@ public class AdministradorPersistenciaOdontologos extends
 
 	public void delete(Odontologo o) {
 		// TODO Auto-generated method stub
+		Connection con = Conexion.connect();
 		try{
-			Connection con = Conexion.connect();
 			PreparedStatement ps = con.prepareStatement("UPDATE "+super.getDatabase()+".dbo.Odontologos SET activo = 0 WHERE matricula like ?");
 			ps.setString(1, o.getMatricula());
 			ps.execute();
@@ -80,13 +80,16 @@ public class AdministradorPersistenciaOdontologos extends
 	}
 	
 	public Odontologo buscarOdontologo(String matricula){
-		Odontologo odon = null;
+		Odontologo odon = new Odontologo();
+		Connection con = Conexion.connect();
 		try{
-			Connection con = Conexion.connect();
-			PreparedStatement ps = con.prepareStatement("SELECT * FROM "+super.getDatabase()+".dbo.Odontologos WHERE matricula like ?");
+			PreparedStatement ps = con.prepareStatement("SELECT * FROM "+super.getDatabase()+".dbo.Odontologos WHERE matricula like ? AND activo=1");
 			ps.setString(1, matricula);
 			ResultSet rs = ps.executeQuery();
-			odon = new Odontologo(rs.getString("matricula"), rs.getString("nombre"), rs.getString("apellido"), AdministradorPersistenciaEspecialidades.getInstancia().buscarEspecialidades(matricula));
+			odon.setMatricula(rs.getString("matricula"));
+			odon.setApellido(rs.getString("apellido"));
+			odon.setNombre(rs.getString("nombre"));
+			odon.setEspecialidades(AdministradorPersistenciaEspecialidades.getInstancia().buscarEspecialidades(matricula));
 			con.close();
 		}
 		catch (SQLException e){
@@ -99,7 +102,7 @@ public class AdministradorPersistenciaOdontologos extends
 		Collection<Odontologo> odontologos = new ArrayList<Odontologo>(); 
 		try{
 			Connection con = Conexion.connect();
-			PreparedStatement ps = con.prepareStatement("SELECT * FROM "+super.getDatabase()+".dbo.Odontologos");
+			PreparedStatement ps = con.prepareStatement("SELECT * FROM "+super.getDatabase()+".dbo.Odontologos WHERE activo=1");
 			Odontologo odon;
 			ResultSet rs = ps.executeQuery();
 			

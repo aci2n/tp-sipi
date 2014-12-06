@@ -28,8 +28,8 @@ public class AdministradorPersistenciaCaras extends AdministradorPersistencia {
 		try{
 			Connection con = Conexion.connect();
 			PreparedStatement ps = con.prepareStatement("INSERT INTO "+super.getDatabase()+".dbo.Cara (posicion_cara, posicion_diente, id_odontograma, estado_cara) VALUES (?,?,?,?)");
-			ps.setInt(1,cara.getPosicion());
-			ps.setInt(2,diente.getPosicion());
+			ps.setString(1,cara.getPosicion());
+			ps.setString(2,diente.getPosicion());
 			ps.setString(3,odontograma.getIdOdontograma());
 			ps.setString(4,cara.getEstado());
 			
@@ -47,8 +47,8 @@ public class AdministradorPersistenciaCaras extends AdministradorPersistencia {
 			Connection con = Conexion.connect();
 			PreparedStatement ps = con.prepareStatement("UPDATE "+super.getDatabase()+".dbo.Caras SET activo = 0 WHERE id_odontograma = ? AND posicion_diente = ? AND posicion_cara = ?");
 			ps.setString(1, odontograma.getIdOdontograma());
-			ps.setInt(2, diente.getPosicion());
-			ps.setInt(3, cara.getPosicion());
+			ps.setString(2, diente.getPosicion());
+			ps.setString(3, cara.getPosicion());
 			
 			ps.execute();
 			
@@ -72,7 +72,7 @@ public class AdministradorPersistenciaCaras extends AdministradorPersistencia {
 				cara = new Cara();
 				
 				cara.setEstado(rs.getString("estado_cara"));
-				cara.setPosicion(rs.getInt("posicion_cara"));
+				cara.setPosicion(rs.getString("posicion_cara"));
 				
 				caras.add(cara);
 			}

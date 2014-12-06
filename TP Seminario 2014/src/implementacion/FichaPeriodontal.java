@@ -42,17 +42,19 @@ public class FichaPeriodontal {
 	public void setOdontologo(Odontologo odontologo) {
 		this.odontologo = odontologo;
 	}
-
-	public Paciente getIdFicha() {
-		return paciente;
-	}
-
-	public void setIdFicha(Paciente Paciente) {
-		this.paciente = paciente;
-	}	
-	
+ 
 	public void agregarSeccion(Seccion seccion) {
 		this.secciones.add(seccion);
 		AdministradorPersistenciaSeccion.getInstance().insert(seccion, this);
 	}
+
+	public Paciente getPaciente() {
+		return paciente;
+	}
+
+	public void setPaciente(Paciente paciente) {
+		this.paciente = paciente;
+	}
+	
+	
 }

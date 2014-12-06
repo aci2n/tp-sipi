@@ -46,7 +46,7 @@ public class AdministradorPersistenciaSeccion extends AdministradorPersistencia 
 	public void update(Seccion seccion, FichaPeriodontal ficha) {
 		try{
 			Connection con = Conexion.connect();
-			PreparedStatement ps = con.prepareStatement("UPDATE "+super.getDatabase()+".dbo.Secciones SET sangrado = ?, margen = ?, profundidad = ?, placa = ? WHERE dni = ? AND posicion_diente = ? AND posicion_seccion = ?");
+			PreparedStatement ps = con.prepareStatement("UPDATE "+super.getDatabase()+".dbo.Secciones SET sangrado = ?, margen = ?, profundidad = ?, placa = ? WHERE dni = ? AND posicion_diente = ? AND posicion_seccion = ? AND activo=1");
 			ps.setBoolean(1, seccion.isSangrado());
 			ps.setInt(2, seccion.getMargen());
 			ps.setInt(3, seccion.getProfundidad());
@@ -86,7 +86,7 @@ public class AdministradorPersistenciaSeccion extends AdministradorPersistencia 
 		Seccion seccion;
 		try{
 			Connection con = Conexion.connect();
-			PreparedStatement ps = con.prepareStatement("SELECT * FROM "+super.getDatabase()+".dbo.Secciones WHERE dni like ?");
+			PreparedStatement ps = con.prepareStatement("SELECT * FROM "+super.getDatabase()+".dbo.Secciones WHERE dni like ? AND activo=1");
 			ps.setString(1,ficha.getPaciente().getDni());
 			
 			ResultSet rs = ps.executeQuery();

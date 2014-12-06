@@ -37,21 +37,6 @@ public class AdministradorPersistenciaFichaPeriodontal extends AdministradorPers
 		}
 	}
 
-	public void update(FichaPeriodontal ficha) {
-		/*try{
-			Connection con = Conexion.connect();
-			PreparedStatement ps = con.prepareStatement("UPDATE "+super.getDatabase()+".dbo.FichasPeriodontales SET matricula = ? WHERE id_ficha like ?");
-			ps.setString(1, ficha.getOdontologo().getMatricula());
-			ps.setString(2, ficha.getIdFicha());
-			
-			ps.execute();
-			con.close();
-		}
-		catch(SQLException e){
-			e.printStackTrace();
-		}*/
-	}
-
 	public void delete(FichaPeriodontal ficha) {
 		try{
 			Connection con = Conexion.connect();
@@ -76,7 +61,7 @@ public class AdministradorPersistenciaFichaPeriodontal extends AdministradorPers
 		FichaPeriodontal ficha =  null;
 		try{
 			Connection con = Conexion.connect();
-			PreparedStatement ps = con.prepareStatement("SELECT * FROM "+super.getDatabase()+".dbo.FichasPeriodontales WHERE dni like ?");
+			PreparedStatement ps = con.prepareStatement("SELECT * FROM "+super.getDatabase()+".dbo.FichasPeriodontales WHERE dni like ? AND activo=1");
 			ps.setString(1, dni);
 			
 			ResultSet rs = ps.executeQuery();

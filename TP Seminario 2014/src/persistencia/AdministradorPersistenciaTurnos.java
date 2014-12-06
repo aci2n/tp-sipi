@@ -65,7 +65,7 @@ public class AdministradorPersistenciaTurnos extends AdministradorPersistencia {
 	public void delete(Turno turno) {
 		try{
 			Connection con = Conexion.connect();
-			PreparedStatement ps = con.prepareStatement("DELETE FROM "+super.getDatabase()+".dbo.Turnos WHERE matricula like ? AND paciente like ? AND fecha = ?");
+			PreparedStatement ps = con.prepareStatement("UPDATE "+super.getDatabase()+".dbo.Turnos SET activo=0 WHERE matricula like ? AND paciente like ? AND fecha = ?");
 			ps.setString(1, turno.getOdontologo().getMatricula());
 			ps.setString(2, turno.getPaciente().getDni());
 			ps.setDate(3,turno.getFecha());
@@ -83,7 +83,7 @@ public class AdministradorPersistenciaTurnos extends AdministradorPersistencia {
 		Collection<Turno> turnos = new ArrayList<Turno>(); 
 		try{
 			Connection con = Conexion.connect();
-			PreparedStatement ps = con.prepareStatement("SELECT * FROM "+super.getDatabase()+"dbo.Turnos WHERE activo = 1");
+			PreparedStatement ps = con.prepareStatement("SELECT * FROM "+super.getDatabase()+"dbo.Turnos WHERE activo=1");
 			
 			ResultSet rs = ps.executeQuery();
 			
@@ -111,7 +111,7 @@ public class AdministradorPersistenciaTurnos extends AdministradorPersistencia {
 		Turno turno = null;
 		try{
 			Connection con = Conexion.connect();
-			PreparedStatement ps = con.prepareStatement("SELECT * FROM "+super.getDatabase()+"dbo.Turnos WHERE matricula like ? AND dni like ? AND fecha = ?");
+			PreparedStatement ps = con.prepareStatement("SELECT * FROM "+super.getDatabase()+"dbo.Turnos WHERE matricula like ? AND dni like ? AND fecha = ? AND activo=1");
 			ps.setString(1, matricula);
 			ps.setString(2, dni);
 			ps.setDate(3, fecha);

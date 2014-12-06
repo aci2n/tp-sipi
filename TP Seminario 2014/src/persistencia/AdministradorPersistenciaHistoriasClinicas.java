@@ -60,7 +60,7 @@ public class AdministradorPersistenciaHistoriasClinicas extends AdministradorPer
 	public void delete(HistoriaClinica historia) {
 		try{
 			Connection con = Conexion.connect();
-			PreparedStatement ps = con.prepareStatement("DELETE FROM "+super.getDatabase()+".dbo.HistoriasClinicas WHERE dni like ?");
+			PreparedStatement ps = con.prepareStatement("UPDATE "+super.getDatabase()+".dbo.HistoriasClinicas SET activo=0 WHERE dni like ?");
 			ps.setString(1, historia.getPaciente().getDni());
 			
 			ps.execute();
@@ -105,7 +105,7 @@ public class AdministradorPersistenciaHistoriasClinicas extends AdministradorPer
 		HistoriaClinica historia = null;
 		try{
 			Connection con = Conexion.connect();
-			PreparedStatement ps = con.prepareStatement("SELECT * FROM "+super.getDatabase()+"dbo.HistoriasClinicas WHERE dni like ?");
+			PreparedStatement ps = con.prepareStatement("SELECT * FROM "+super.getDatabase()+"dbo.HistoriasClinicas WHERE dni like ? AND activo=1");
 			ps.setString(1, dni);
 			
 			ResultSet rs = ps.executeQuery();

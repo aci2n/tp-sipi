@@ -52,7 +52,7 @@ public class AdministradorPersistenciaOdontograma extends AdministradorPersisten
 	public void update(Odontograma odontograma) {
 		try{
 			Connection con = Conexion.connect();
-			PreparedStatement ps = con.prepareStatement("UPDATE "+super.getDatabase()+".dbo.Odontogramas SET fecha = ?, matricula = ? WHERE id_odontograma like ?");
+			PreparedStatement ps = con.prepareStatement("UPDATE "+super.getDatabase()+".dbo.Odontogramas SET fecha = ?, matricula = ? WHERE id_odontograma like ? AND activo=1");
 			ps.setDate(1, odontograma.getFecha());
 			ps.setString(2, odontograma.getOdontologo().getMatricula());
 			ps.setString(3, odontograma.getIdOdontograma());
@@ -94,7 +94,7 @@ public class AdministradorPersistenciaOdontograma extends AdministradorPersisten
 		Odontograma odontograma = null;
 		try{
 			Connection con = Conexion.connect();
-			PreparedStatement ps = con.prepareStatement("SELECT * FROM "+super.getDatabase()+".dbo.Odontogramas");
+			PreparedStatement ps = con.prepareStatement("SELECT * FROM "+super.getDatabase()+".dbo.Odontogramas WHERE activo=1");
 			
 			ResultSet rs = ps.executeQuery();
 			
@@ -121,7 +121,7 @@ public class AdministradorPersistenciaOdontograma extends AdministradorPersisten
 		Odontograma odontograma;
 		try{
 			Connection con = Conexion.connect();
-			PreparedStatement ps = con.prepareStatement("SELECT * FROM "+super.getDatabase()+".dbo.Odontogramas WHERE dni = ?");
+			PreparedStatement ps = con.prepareStatement("SELECT * FROM "+super.getDatabase()+".dbo.Odontogramas WHERE dni = ? AND activo=1");
 			ps.setString(1, historia.getPaciente().getDni());
 			
 			ResultSet rs = ps.executeQuery();

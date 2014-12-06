@@ -47,7 +47,7 @@ public class AdministradorPersistenciaObservaciones extends
 	public void update (Observacion observacion, HistoriaClinica historia){
 		try{
 			Connection con = Conexion.connect();
-			PreparedStatement ps = con.prepareStatement("UPDATE "+super.getDatabase()+".dbo.Observaciones SET descripcion = ?, odontologo = ? WHERE dni = ? AND fecha = ?");
+			PreparedStatement ps = con.prepareStatement("UPDATE "+super.getDatabase()+".dbo.Observaciones SET descripcion = ?, odontologo = ? WHERE dni = ? AND fecha = ? AND activo=1");
 			ps.setString(1, observacion.getDescripcion());
 			ps.setString(2, observacion.getOdontologo().getMatricula());
 			ps.setString(3, historia.getPaciente().getDni());
@@ -83,7 +83,7 @@ public class AdministradorPersistenciaObservaciones extends
 		Observacion observacion;
 		try{
 			Connection con = Conexion.connect();
-			PreparedStatement ps = con.prepareStatement("SELECT * FROM "+super.getDatabase()+".dbo.Observaciones WHERE dni like ?");
+			PreparedStatement ps = con.prepareStatement("SELECT * FROM "+super.getDatabase()+".dbo.Observaciones WHERE dni like ? AND activo=1");
 			ps.setString(1, historia.getPaciente().getDni());
 			
 			ResultSet rs = ps.executeQuery();

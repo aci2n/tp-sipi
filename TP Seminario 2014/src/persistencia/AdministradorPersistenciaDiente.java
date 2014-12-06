@@ -70,7 +70,7 @@ public class AdministradorPersistenciaDiente extends AdministradorPersistencia {
 		Diente diente = null;
 		try{
 			Connection con = Conexion.connect();
-			PreparedStatement ps = con.prepareStatement("SELECT * FROM "+super.getDatabase()+".dbo.Dientes WHERE id_odontograma = ?");
+			PreparedStatement ps = con.prepareStatement("SELECT * FROM "+super.getDatabase()+".dbo.Dientes WHERE id_odontograma = ? AND activo = 1");
 			ps.setString(1, odontograma.getIdOdontograma());
 			
 			ResultSet rs = ps.executeQuery();

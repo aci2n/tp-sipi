@@ -1,6 +1,5 @@
 package persistencia;
 
-import implementacion.Odontologo;
 import implementacion.Paciente;
 
 import java.sql.Connection;

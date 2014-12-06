@@ -2,7 +2,6 @@ package persistencia;
 
 import implementacion.Especialidad;
 import implementacion.Odontologo;
-import implementacion.Paciente;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

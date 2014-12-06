@@ -6,6 +6,7 @@ import implementacion.HistoriaClinica;
 import implementacion.Odontologo;
 import implementacion.Paciente;
 import implementacion.Prediccion;
+import implementacion.Proyeccion;
 import implementacion.Turno;
 
 import java.util.ArrayList;
@@ -25,6 +26,7 @@ public class Controlador {
 	private Collection<HistoriaClinica> historiasClinicas;
 	private Collection<Prediccion> predicciones;
 	private Collection<Especialidad> especialidades;
+	private final String[] sintomas = {"cancer","sida","escorbuto","gastroenteritis","muerte subita","linceismo"};
 	private static Controlador instancia;
 	
 	private Controlador(){
@@ -51,6 +53,30 @@ public class Controlador {
 				historia.setPaciente(paciente);
 			}
 		}
+	}
+	
+	public Collection<Proyeccion> analisisPredictivoHistoriaClinica(String dni) {
+		HistoriaClinica historia = obtenerHistoriaClinica(dni);
+		Collection<Proyeccion> proyecciones = new ArrayList<Proyeccion>();
+		if (historia != null){
+			Collection<String> sintomasDetectados = historia.detectarSintomas(sintomas);
+			Collection<Prediccion> predicciones = new ArrayList<Prediccion>();
+			Prediccion prediccion;
+			Collection<HistoriaClinica> historiasSinContarLaAnalizada = this.historiasClinicas;
+			historiasSinContarLaAnalizada.remove(historia);
+			for (String sintoma : sintomasDetectados){
+				prediccion = new Prediccion(sintoma);
+				for (HistoriaClinica h : historiasSinContarLaAnalizada)
+					if (h.tenesElSintoma(sintoma)){
+						for (String sintomaAnalisis : h.detectarSintomas(sintomas))
+							prediccion.agregarItemPrediccion(sintomaAnalisis);
+						prediccion.aumentarCantidad();
+					}
+				predicciones.add(prediccion);
+				proyecciones.addAll(prediccion.generarProyeccion());
+			}				
+		}
+		return proyecciones;
 	}
 	
 	public void modificarSeccionHistoriaFicha(int dni, String seccion, String sDiente, boolean sangrado, boolean placa, int margen) {
@@ -215,5 +241,36 @@ public class Controlador {
 			}
 		}
 		return especialidad;
+	}
+	
+	//metodos para el test
+	
+	public void altaPacienteTest(String dni){
+		Paciente paciente = new Paciente();
+		paciente.setDni(dni);
+		this.pacientes.add(paciente);
+	}
+	
+
+	public HistoriaClinica obtenerHistoriaClinicaTest(String dni) {
+		HistoriaClinica historia = null;
+		for (HistoriaClinica hist : historiasClinicas) {
+			if (hist.sosLaHistoria(dni)) {
+				historia = hist;
+			}
+		}
+		return historia;
+	}
+	
+	public void altaHistoriaClinicaTest(String dni) {
+		Paciente paciente = obtenerPaciente(dni);
+		if (paciente != null) {
+			HistoriaClinica historia = obtenerHistoriaClinicaTest(dni);
+			if (historia == null) {
+				historia = new HistoriaClinica();
+				historia.setPaciente(paciente);
+				this.historiasClinicas.add(historia);
+			}
+		}
 	}
 }

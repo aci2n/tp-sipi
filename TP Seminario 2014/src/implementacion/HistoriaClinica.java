@@ -2,7 +2,7 @@ package implementacion;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Date;
+import java.sql.Date;
 
 
 
@@ -32,7 +32,7 @@ public class HistoriaClinica {
 	}
 	
 	public void altaObservacion(Odontologo odontologo, Date fecha, String descripcion) {
-	
+		this.observaciones.add(new Observacion(odontologo, fecha, descripcion));
 	}
 	
 	public void bajaOdontograma(Date fecha) {
@@ -126,5 +126,20 @@ public class HistoriaClinica {
 	public boolean sosLaHistoria(String dni) {
 		return paciente.sosElPaciente(dni);
 	}
+
+	public Collection<String> detectarSintomas(String[] sintomas){
+		Collection<String> sintomasDetectados = new ArrayList<String>();
+		for (Observacion o : observaciones)
+			for (String sintoma : sintomas)
+				if (o.tenesElSintoma(sintoma) && !sintomasDetectados.contains(sintoma))
+					sintomasDetectados.add(sintoma);
+		return sintomasDetectados;
+	}
 	
+	public boolean tenesElSintoma(String sintoma){
+		for (Observacion o : observaciones)
+			if (o.tenesElSintoma(sintoma))
+				return true;
+		return false;
+	}
 }

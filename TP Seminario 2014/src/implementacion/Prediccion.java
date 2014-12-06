@@ -1,32 +1,70 @@
 package implementacion;
 
+import java.util.ArrayList;
 import java.util.Collection;
 
 
 
 public class Prediccion {
-	private Collection<String> sintomasOtros;
-	private Collection<Float> porcentajes;
 	
-	public Prediccion(Collection<String> SintomasOtros, Collection<Float> Porcentajes) {
+	private String sintomaBase;
+	private float total;
+	private Collection<ItemPrediccion> itemsPrediccion;
 	
+	public Prediccion (String sintomaBase) {
+		this.sintomaBase=sintomaBase;
+		this.total=0;
+		this.itemsPrediccion = new ArrayList<ItemPrediccion>();
 	}
 
-	public Collection<String> getSintomasOtros() {
-		return sintomasOtros;
+	public void agregarItemPrediccion(String sintomaAnalisis) {
+		boolean yaExiste = false;
+		if (!this.sintomaBase.equals(sintomaAnalisis)){
+			for (ItemPrediccion i : itemsPrediccion)
+				if (i.getSintomaAnalisis().equals(sintomaAnalisis)){
+					i.setCantidad(i.getCantidad()+1);
+					yaExiste = true;
+					break;
+				}
+			if (!yaExiste){
+				ItemPrediccion item = new ItemPrediccion(sintomaAnalisis);
+				itemsPrediccion.add(item);
+			}
+		}
+	}	
+	
+	public String getSintomaBase() {
+		return sintomaBase;
 	}
 
-	public void setSintomasOtros(Collection<String> sintomasOtros) {
-		this.sintomasOtros = sintomasOtros;
+	public void setSintomaBase(String sintomaBase) {
+		this.sintomaBase = sintomaBase;
 	}
 
-	public Collection<Float> getPorcentajes() {
-		return porcentajes;
+	public float getTotal() {
+		return total;
 	}
 
-	public void setPorcentajes(Collection<Float> porcentajes) {
-		this.porcentajes = porcentajes;
+	public void setTotal(float total) {
+		this.total = total;
+	}
+
+	public Collection<ItemPrediccion> getItemsPrediccion() {
+		return itemsPrediccion;
+	}
+
+	public void setItemsPrediccion(Collection<ItemPrediccion> itemsPrediccion) {
+		this.itemsPrediccion = itemsPrediccion;
+	}
+
+	public Collection<Proyeccion> generarProyeccion(){
+		Collection<Proyeccion> proyecciones = new ArrayList<Proyeccion>();
+		for (ItemPrediccion i : itemsPrediccion)
+			proyecciones.add(new Proyeccion(sintomaBase,i.getSintomaAnalisis(),(i.getCantidad()/total)*100));
+		return proyecciones;
 	}
 	
-	
+	public void aumentarCantidad(){
+		this.total++;
+	}
 }

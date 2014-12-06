@@ -10,12 +10,15 @@ public class Observacion {
 	private Odontologo odontologo;
 	
 	public Observacion(Odontologo odontologo, Date fecha, String descripcion) {
-	
+		this.fecha=fecha;
+		this.descripcion=descripcion;
+		this.odontologo=odontologo;
 	}
 
 	public Observacion() {
 		
 	}
+
 
 	public Date getFecha() {
 		return fecha;
@@ -39,5 +42,9 @@ public class Observacion {
 
 	public void setOdontologo(Odontologo odontologo) {
 		this.odontologo = odontologo;
+	}
+
+	public boolean tenesElSintoma(String sintoma) {
+		return descripcion.toLowerCase().contains(sintoma.toLowerCase());
 	}	
 }

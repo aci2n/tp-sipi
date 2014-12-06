@@ -32,7 +32,7 @@ public class HistoriaClinica {
 	}
 	
 	public void altaObservacion(Odontologo odontologo, Date fecha, String descripcion) {
-		this.observaciones.add(new Observacion(odontologo, fecha, descripcion));
+		this.observaciones.add(new Observacion(odontologo, fecha, descripcion, this));
 	}
 	
 	public void bajaOdontograma(Date fecha) {
@@ -129,6 +129,9 @@ public class HistoriaClinica {
 
 	public Collection<String> detectarSintomas(String[] sintomas){
 		Collection<String> sintomasDetectados = new ArrayList<String>();
+		Collection<Observacion> observaciones = new ArrayList<Observacion>();
+		observaciones.addAll(this.observaciones);
+		observaciones.addAll(generarObservacionesOdontogramas());
 		for (Observacion o : observaciones)
 			for (String sintoma : sintomas)
 				if (o.tenesElSintoma(sintoma) && !sintomasDetectados.contains(sintoma))
@@ -141,5 +144,13 @@ public class HistoriaClinica {
 			if (o.tenesElSintoma(sintoma))
 				return true;
 		return false;
+	}
+	
+	public Collection<Observacion> generarObservacionesOdontogramas() {
+		Collection<Observacion> observaciones = new ArrayList<Observacion>();
+		for (Odontograma odontograma : odontogramas) {
+			observaciones.addAll(odontograma.generarObservaciones());
+		}
+		return observaciones;
 	}
 }

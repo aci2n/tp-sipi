@@ -1,7 +1,8 @@
 package implementacion;
 
-import java.util.Collection;
 import java.sql.Date;
+import java.util.ArrayList;
+import java.util.Collection;
 
 
 
@@ -76,5 +77,13 @@ public class Odontograma {
 
 	public void setIdOdontograma(String idOdontograma) {
 		this.idOdontograma = idOdontograma;
+	}
+	
+	public Collection<Observacion> generarObservaciones() {
+		Collection<Observacion> observaciones = new ArrayList<Observacion>();
+		for (Diente diente : dientes) {
+			observaciones.add(diente.generarObservacion(this));
+		}
+		return observaciones;
 	}
 }

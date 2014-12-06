@@ -1,5 +1,6 @@
 package implementacion;
 
+import java.sql.Date;
 import java.util.Collection;
 
 
@@ -69,5 +70,13 @@ public class Diente {
 
 	public void setCaras(Collection<Cara> caras) {
 		this.caras = caras;
+	}
+	
+	public Observacion generarObservacion(Odontograma odontograma) {
+		Observacion observacion = new Observacion();
+		observacion.setFecha(odontograma.getFecha());
+		observacion.setDescripcion(estado);
+		observacion.setOdontologo(odontograma.getOdontologo());
+		return observacion;
 	}
 }

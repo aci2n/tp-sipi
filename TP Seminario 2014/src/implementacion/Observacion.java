@@ -2,6 +2,8 @@ package implementacion;
 
 import java.sql.Date;
 
+import persistencia.AdministradorPersistenciaObservaciones;
+
 
 
 public class Observacion {
@@ -9,10 +11,11 @@ public class Observacion {
 	private String descripcion;
 	private Odontologo odontologo;
 	
-	public Observacion(Odontologo odontologo, Date fecha, String descripcion) {
+	public Observacion(Odontologo odontologo, Date fecha, String descripcion, HistoriaClinica historia) {
 		this.fecha=fecha;
 		this.descripcion=descripcion;
 		this.odontologo=odontologo;
+		AdministradorPersistenciaObservaciones.getInstancia().insert(this, historia);
 	}
 
 	public Observacion() {

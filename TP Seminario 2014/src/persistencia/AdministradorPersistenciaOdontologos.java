@@ -91,30 +91,35 @@ public class AdministradorPersistenciaOdontologos extends
 		}
 	}
 	
+	public Odontologo buscarOdontologo(String matricula){
+		Odontologo odon = null;
+		try{
+			Connection con = Conexion.connect();
+			PreparedStatement ps = con.prepareStatement("SELECT * FROM "+super.getDatabase()+".dbo.Odontologos WHERE matricula like ?");
+			ps.setString(1, matricula);
+			ResultSet rs = ps.executeQuery();
+			odon = new Odontologo(rs.getString("matricula"), rs.getString("nombre"), rs.getString("apellido"), AdministradorPersistenciaEspecialidades.buscarEspecialidades(matricula));
+		}
+		catch (SQLException e){
+			e.printStackTrace();
+		}
+		return odon;
+	}
+	
 	public Collection<Odontologo> buscarOdontologos(){
 		Collection<Odontologo> odontologos = new ArrayList<Odontologo>(); 
 		try{
 			Connection con = Conexion.connect();
-			PreparedStatement ps = con.prepareStatement("SELECT * FROM "+super.getDatabase()+"dbo.Odontologos");
+			PreparedStatement ps = con.prepareStatement("SELECT * FROM "+super.getDatabase()+".dbo.Odontologos");
 			PreparedStatement ps2;
+			Odontologo odon;
+			Collection<Especialidad> especialidades;
+			Especialidad esp;
 			ResultSet rs = ps.executeQuery();
 			
 			while (rs.next()){
-				Odontologo odon = new Odontologo();
-				odon.setMatricula(rs.getString("matricula"));
-				odon.setNombre(rs.getString("nombre"));
-				odon.setApellido(rs.getString("apellido"));
-				ps2 = con.prepareStatement("SELECT * FROM "+super.getDatabase()+"dbo.Especialidades_Odontologos WHERE matricula like ?");
-				ps2.setString(1, odon.getMatricula());
-				ResultSet rs2 = ps.executeQuery();
-				
-				Collection<Especialidad> especialidades = new ArrayList<Especialidad>();
-				while (rs2.next()){
-					Especialidad esp = new Especialidad();
-					esp.setDescripcion(rs.getString("descripcion"));
-					especialidades.add(esp);	
-				}
-				odon.setEspecialidades(especialidades);
+				odon = new Odontologo(rs.getString("matricula"), rs.getString("nombre"), rs.getString("apellido"));
+				odon.setEspecialidades(AdministradorPersistenciaEspecialidades.buscarEspecialidades(odon.getMatricula()));
 				odontologos.add(odon);
 			}
 			

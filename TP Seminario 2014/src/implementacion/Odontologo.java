@@ -10,6 +10,12 @@ public class Odontologo {
 	private String apellido;
 	private Collection<Especialidad> especialidades;
 	
+	public Odontologo(String matricula, String nombre, String apellido){
+		this.matricula = matricula;
+		this.nombre = nombre;
+		this.apellido = apellido;
+	}
+		
 	public boolean sosElOdontologo(String matricula) {
 		return this.matricula.equals(matricula);
 	}

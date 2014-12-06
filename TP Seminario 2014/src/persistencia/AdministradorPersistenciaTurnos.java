@@ -26,8 +26,7 @@ public class AdministradorPersistenciaTurnos extends AdministradorPersistencia {
 		return instancia;
 	}
 
-	public void insert(Object o) {
-		Turno turno = (Turno)o;
+	public void insert(Turno turno) {
 		try{
 			Connection con = Conexion.connect();
 			PreparedStatement ps = con.prepareStatement("INSERT INTO "+super.getDatabase()+".dbo.Turnos(matricula, dni, fecha, descripcion, activo) VALUES (?,?,?,?,1)");
@@ -45,8 +44,7 @@ public class AdministradorPersistenciaTurnos extends AdministradorPersistencia {
 		}
 	}
 
-	public void update(Object o) {
-		Turno turno = (Turno)o;
+	public void update(Turno turno) {
 		try{
 			Connection con = Conexion.connect();
 			PreparedStatement ps = con.prepareStatement("UPDATE "+super.getDatabase()+".dbo.Turnos SET descripcion = ? WHERE matricula like ? AND paciente like ? AND fecha = ?");
@@ -64,8 +62,7 @@ public class AdministradorPersistenciaTurnos extends AdministradorPersistencia {
 		}
 	}
 
-	public void delete(Object o) {
-		Turno turno = (Turno)o;
+	public void delete(Turno turno) {
 		try{
 			Connection con = Conexion.connect();
 			PreparedStatement ps = con.prepareStatement("DELETE FROM "+super.getDatabase()+".dbo.Turnos WHERE matricula like ? AND paciente like ? AND fecha = ?");

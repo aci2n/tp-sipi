@@ -30,8 +30,8 @@ public class AdministradorPersistenciaOdontograma extends AdministradorPersisten
 	public void insert(Odontograma odontograma, HistoriaClinica historia) {		
 		try{
 			Connection con = Conexion.connect();
-			PreparedStatement ps = con.prepareStatement("INSERT INTO "+super.getDatabase()+".dbo.Odontogramas(id_historia_clinica, id_odontograma, fecha, matricula, activo) VALUES (?,?,?,?,1)");
-			ps.setString(1, historia.getIdHistoria());
+			PreparedStatement ps = con.prepareStatement("INSERT INTO "+super.getDatabase()+".dbo.Odontogramas(dni, id_odontograma, fecha, matricula) VALUES (?,?,?,?)");
+			ps.setString(1, historia.getPaciente().getDni());
 			ps.setString(2, odontograma.getIdOdontograma());
 			ps.setDate(3, odontograma.getFecha());
 			ps.setString(4, odontograma.getOdontologo().getMatricula());
@@ -121,8 +121,8 @@ public class AdministradorPersistenciaOdontograma extends AdministradorPersisten
 		Odontograma odontograma;
 		try{
 			Connection con = Conexion.connect();
-			PreparedStatement ps = con.prepareStatement("SELECT * FROM "+super.getDatabase()+".dbo.Odontogramas WHERE id_historia_cliica = ?");
-			ps.setString(1, historia.getIdHistoria());
+			PreparedStatement ps = con.prepareStatement("SELECT * FROM "+super.getDatabase()+".dbo.Odontogramas WHERE dni = ?");
+			ps.setString(1, historia.getPaciente().getDni());
 			
 			ResultSet rs = ps.executeQuery();
 			

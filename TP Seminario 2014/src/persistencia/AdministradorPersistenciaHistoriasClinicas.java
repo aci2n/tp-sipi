@@ -25,15 +25,13 @@ public class AdministradorPersistenciaHistoriasClinicas extends AdministradorPer
 		return instancia;
 	}
 
-	public void insert(Object o) {
-		HistoriaClinica historia = (HistoriaClinica)o;
+	public void insert(HistoriaClinica historia) {
 		try{
 			Connection con = Conexion.connect();
-			PreparedStatement ps = con.prepareStatement("INSERT INTO "+super.getDatabase()+".dbo.HistoriasClinicas(id_historia_clinica, dni, descripcion, id_ficha, activo) VALUES (?,?,?,?,1)");
-			ps.setString(1, historia.getIdHistoria());
-			ps.setString(2,historia.getPaciente().getDni());
-			ps.setString(3, historia.getDescripcion());
-			ps.setString(4, historia.getFicha().getIdFicha());
+			PreparedStatement ps = con.prepareStatement("INSERT INTO "+super.getDatabase()+".dbo.HistoriasClinicas(dni, descripcion, id_ficha) VALUES (?,?,?,?)");
+			ps.setString(1,historia.getPaciente().getDni());
+			ps.setString(2, historia.getDescripcion());
+			ps.setString(3, historia.getFicha().getIdFicha());
 			
 			ps.execute();
 			
@@ -44,13 +42,12 @@ public class AdministradorPersistenciaHistoriasClinicas extends AdministradorPer
 		}
 	}
 
-	public void update(Object o) {
-		HistoriaClinica historia = (HistoriaClinica)o;
+	public void update(HistoriaClinica historia) {
 		try{
 			Connection con = Conexion.connect();
-			PreparedStatement ps = con.prepareStatement("UPDATE "+super.getDatabase()+".dbo.HistoriasClinicas SET descripcion = ? WHERE id_historia_clinica like ?");
+			PreparedStatement ps = con.prepareStatement("UPDATE "+super.getDatabase()+".dbo.HistoriasClinicas SET descripcion = ? WHERE dni like ?");
 			ps.setString(1, historia.getDescripcion());
-			ps.setString(2, historia.getIdHistoria());
+			ps.setString(2, historia.getPaciente().getDni());
 			
 			ps.execute();
 			
@@ -61,12 +58,11 @@ public class AdministradorPersistenciaHistoriasClinicas extends AdministradorPer
 		}
 	}
 
-	public void delete(Object o) {
-		HistoriaClinica historia = (HistoriaClinica)o;
+	public void delete(HistoriaClinica historia) {
 		try{
 			Connection con = Conexion.connect();
-			PreparedStatement ps = con.prepareStatement("DELETE FROM "+super.getDatabase()+".dbo.HistoriasClinicas WHERE id_historia_clinica like ?");
-			ps.setString(1, historia.getIdHistoria());
+			PreparedStatement ps = con.prepareStatement("DELETE FROM "+super.getDatabase()+".dbo.HistoriasClinicas WHERE dni like ?");
+			ps.setString(1, historia.getPaciente().getDni());
 			
 			ps.execute();
 			
@@ -88,7 +84,6 @@ public class AdministradorPersistenciaHistoriasClinicas extends AdministradorPer
 			while (rs.next()){
 				HistoriaClinica historia = new HistoriaClinica();
 				
-				historia.setIdHistoria(rs.getString("id_historia_clinica"));
 				historia.setPaciente(Controlador.getInstancia().obtenerPaciente(rs.getString("dni")));
 				historia.setDescripcion(rs.getString("descripcion"));
 				historia.setFicha(Controlador.getInstancia().obtenerFicha(rs.getString("id_ficha")));
@@ -105,19 +100,18 @@ public class AdministradorPersistenciaHistoriasClinicas extends AdministradorPer
 		return historias;
 	}
 	
-	public HistoriaClinica buscarHistoria(String idHistoria){
+	public HistoriaClinica buscarHistoria(String dni){
 		HistoriaClinica historia = null;
 		try{
 			Connection con = Conexion.connect();
-			PreparedStatement ps = con.prepareStatement("SELECT * FROM "+super.getDatabase()+"dbo.HistoriasClinicas WHERE id_historia_clinica like ?");
-			ps.setString(1, idHistoria);
+			PreparedStatement ps = con.prepareStatement("SELECT * FROM "+super.getDatabase()+"dbo.HistoriasClinicas WHERE dni like ?");
+			ps.setString(1, dni);
 			
 			ResultSet rs = ps.executeQuery();
 			
 			if (rs.next()){
 				historia = new HistoriaClinica();
 				
-				historia.setIdHistoria(rs.getString("id_historia_clinica"));
 				historia.setPaciente(Controlador.getInstancia().obtenerPaciente(rs.getString("dni")));
 				historia.setDescripcion(rs.getString("descripcion"));
 				historia.setFicha(Controlador.getInstancia().obtenerFicha(rs.getString("id_ficha")));

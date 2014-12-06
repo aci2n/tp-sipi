@@ -1,5 +1,6 @@
 package test;
 
+import implementacion.ItemProyeccion;
 import implementacion.Proyeccion;
 
 import java.util.Collection;
@@ -30,12 +31,20 @@ public class Test {
 		con.altaHistoriaClinicaTest("5");
 		con.obtenerHistoriaClinicaTest("5").altaObservacion(null, null, "cancer");
 		
-		Collection<Proyeccion> proyecciones = con.analisisPredictivoHistoriaClinica("1");
-		for (Proyeccion p : proyecciones){
-			System.out.println(p.getSintomaBase());
-			System.out.println(p.getSintomaAnalisis());
-			System.out.println(p.getPorcentaje());
+		for (int i = 6; i < 20; i++){
+			con.altaPacienteTest(Integer.toString(i));
+			con.altaHistoriaClinicaTest(Integer.toString(i));
+			con.obtenerHistoriaClinicaTest(Integer.toString(i)).altaObservacion(null, null, "cancerasdasd sida linceismo");
 		}
+		
+		Collection<Proyeccion> proyecciones = con.analisisPredictivoHistoriaClinica("15");
+		for (Proyeccion p : proyecciones){
+			System.out.println("Los pacientes que tuvieron el síntoma \""+p.getSintomaBase()+"\" también tuvieron:");
+			for (ItemProyeccion i : p.getItemsProyeccion()){
+				System.out.println("	"+i.getSintomaAnalisis()+" ("+i.getPorcentaje()+"%)");
+			}
+		}
+		System.out.println("\nAnalisis realizado en base a "+con.getHistoriasClinicas().size()+" historias clinicas.");
 	}
 
 }

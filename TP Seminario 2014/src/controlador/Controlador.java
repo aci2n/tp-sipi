@@ -60,7 +60,6 @@ public class Controlador {
 		Collection<Proyeccion> proyecciones = new ArrayList<Proyeccion>();
 		if (historia != null){
 			Collection<String> sintomasDetectados = historia.detectarSintomas(sintomas);
-			Collection<Prediccion> predicciones = new ArrayList<Prediccion>();
 			Prediccion prediccion;
 			Collection<HistoriaClinica> historiasSinContarLaAnalizada = this.historiasClinicas;
 			historiasSinContarLaAnalizada.remove(historia);
@@ -72,8 +71,7 @@ public class Controlador {
 							prediccion.agregarItemPrediccion(sintomaAnalisis);
 						prediccion.aumentarCantidad();
 					}
-				predicciones.add(prediccion);
-				proyecciones.addAll(prediccion.generarProyeccion());
+				proyecciones.add(prediccion.generarProyeccion());
 			}				
 		}
 		return proyecciones;

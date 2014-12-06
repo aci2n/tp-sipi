@@ -57,11 +57,11 @@ public class Prediccion {
 		this.itemsPrediccion = itemsPrediccion;
 	}
 
-	public Collection<Proyeccion> generarProyeccion(){
-		Collection<Proyeccion> proyecciones = new ArrayList<Proyeccion>();
+	public Proyeccion generarProyeccion(){
+		Proyeccion proyeccion = new Proyeccion(sintomaBase);
 		for (ItemPrediccion i : itemsPrediccion)
-			proyecciones.add(new Proyeccion(sintomaBase,i.getSintomaAnalisis(),(i.getCantidad()/total)*100));
-		return proyecciones;
+			proyeccion.agregarItemProyeccion(i.getSintomaAnalisis(),(i.getCantidad()/total)*100);
+		return proyeccion;
 	}
 	
 	public void aumentarCantidad(){

@@ -1,17 +1,16 @@
 package implementacion;
 
+import java.util.ArrayList;
+import java.util.Collection;
+
 public class Proyeccion {
 	private String sintomaBase;
-	private String sintomaAnalisis;
-	private float porcentaje;
+	private Collection<ItemProyeccion> itemsProyeccion;	
 	
-	
-	public Proyeccion(String sintomaBase, String sintomaAnalisis,
-			float porcentaje) {
+	public Proyeccion(String sintomaBase) {
 		super();
 		this.sintomaBase = sintomaBase;
-		this.sintomaAnalisis = sintomaAnalisis;
-		this.porcentaje = porcentaje;
+		this.itemsProyeccion = new ArrayList<ItemProyeccion>();
 	}
 	
 	public String getSintomaBase() {
@@ -20,18 +19,16 @@ public class Proyeccion {
 	public void setSintomaBase(String sintomaBase) {
 		this.sintomaBase = sintomaBase;
 	}
-	public String getSintomaAnalisis() {
-		return sintomaAnalisis;
+
+	public Collection<ItemProyeccion> getItemsProyeccion() {
+		return itemsProyeccion;
 	}
-	public void setSintomaAnalisis(String sintomaAnalisis) {
-		this.sintomaAnalisis = sintomaAnalisis;
+
+	public void setItemsProyeccion(Collection<ItemProyeccion> itemsProyeccion) {
+		this.itemsProyeccion = itemsProyeccion;
 	}
-	public float getPorcentaje() {
-		return porcentaje;
-	}
-	public void setPorcentaje(float porcentaje) {
-		this.porcentaje = porcentaje;
-	}
-	
-	
+
+	public void agregarItemProyeccion(String sintomaAnalisis, float f) {
+		this.itemsProyeccion.add(new ItemProyeccion(sintomaAnalisis,f));
+	}	
 }

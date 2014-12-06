@@ -1,6 +1,6 @@
 package implementacion;
 
-import java.util.Date;
+import java.sql.Date;
 
 
 
@@ -11,6 +11,10 @@ public class Observacion {
 	
 	public Observacion(Odontologo odontologo, Date fecha, String descripcion) {
 	
+	}
+
+	public Observacion() {
+		
 	}
 
 	public Date getFecha() {

@@ -86,6 +86,8 @@ public class AdministradorPersistenciaHistoriasClinicas extends AdministradorPer
 				historia.setPaciente(Controlador.getInstancia().obtenerPaciente(rs.getString("dni")));
 				historia.setDescripcion(rs.getString("descripcion"));
 				historia.setFicha(Controlador.getInstancia().obtenerFicha(rs.getString("id_ficha")));
+				historia.setOdontogramas(AdministradorPersistenciaOdontograma.getInstancia().buscarOdontogramas(historia));
+				historia.setObservaciones(AdministradorPersistenciaObservaciones.getInstancia().buscarObservaciones(historia));
 				
 				historias.add(historia);
 			}

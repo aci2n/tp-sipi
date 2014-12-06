@@ -21,7 +21,7 @@ public class AdministradorPersistenciaOdontograma extends AdministradorPersisten
 		
 	}
 	
-	public AdministradorPersistenciaOdontograma getInstancia(){
+	public static AdministradorPersistenciaOdontograma getInstancia(){
 		if (instancia==null)
 			instancia = new AdministradorPersistenciaOdontograma();
 		return instancia;

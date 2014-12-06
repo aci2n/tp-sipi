@@ -64,10 +64,8 @@ public class AdministradorPersistenciaCaras extends AdministradorPersistencia {
 		Cara cara;
 		try{
 			Connection con = Conexion.connect();
-			PreparedStatement ps = con.prepareStatement("SELECT * FROM "+super.getDatabase()+".dbo.Caras WHERE activo = 0 AND id_odontograma = ? AND posicion_diente = ?");
-			
+			PreparedStatement ps = con.prepareStatement("SELECT * FROM "+super.getDatabase()+".dbo.Caras WHERE activo = 1 AND id_odontograma = ? AND posicion_diente = ?");
 			ResultSet rs = ps.executeQuery();
-			
 			while (rs.next()){
 				cara = new Cara();
 				

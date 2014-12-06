@@ -83,7 +83,7 @@ public class AdministradorPersistenciaTurnos extends AdministradorPersistencia {
 		Collection<Turno> turnos = new ArrayList<Turno>(); 
 		try{
 			Connection con = Conexion.connect();
-			PreparedStatement ps = con.prepareStatement("SELECT * FROM "+super.getDatabase()+"dbo.Turnos WHERE activo=1");
+			PreparedStatement ps = con.prepareStatement("SELECT * FROM "+super.getDatabase()+".dbo.Turnos WHERE activo=1");
 			
 			ResultSet rs = ps.executeQuery();
 			

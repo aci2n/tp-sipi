@@ -76,7 +76,7 @@ public class AdministradorPersistenciaHistoriasClinicas extends AdministradorPer
 		Collection<HistoriaClinica> historias = new ArrayList<HistoriaClinica>(); 
 		try{
 			Connection con = Conexion.connect();
-			PreparedStatement ps = con.prepareStatement("SELECT * FROM "+super.getDatabase()+"dbo.HistoriasClinicas WHERE activo = 1");
+			PreparedStatement ps = con.prepareStatement("SELECT * FROM "+super.getDatabase()+".dbo.HistoriasClinicas WHERE activo = 1");
 			
 			ResultSet rs = ps.executeQuery();
 			

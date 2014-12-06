@@ -10,10 +10,11 @@ public class Odontologo {
 	private String apellido;
 	private Collection<Especialidad> especialidades;
 	
-	public Odontologo(String matricula, String nombre, String apellido){
+	public Odontologo(String matricula, String nombre, String apellido, Collection<Especialidad> especialidades){
 		this.matricula = matricula;
 		this.nombre = nombre;
 		this.apellido = apellido;
+		this.especialidades = especialidades;
 	}
 		
 	public boolean sosElOdontologo(String matricula) {

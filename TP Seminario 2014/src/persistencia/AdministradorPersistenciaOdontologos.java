@@ -2,16 +2,12 @@ package persistencia;
 
 import implementacion.Especialidad;
 import implementacion.Odontologo;
-import implementacion.Turno;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collection;
-
-import controlador.Controlador;
 
 public class AdministradorPersistenciaOdontologos extends
 		AdministradorPersistencia {
@@ -98,7 +94,7 @@ public class AdministradorPersistenciaOdontologos extends
 			PreparedStatement ps = con.prepareStatement("SELECT * FROM "+super.getDatabase()+".dbo.Odontologos WHERE matricula like ?");
 			ps.setString(1, matricula);
 			ResultSet rs = ps.executeQuery();
-			odon = new Odontologo(rs.getString("matricula"), rs.getString("nombre"), rs.getString("apellido"), AdministradorPersistenciaEspecialidades.buscarEspecialidades(matricula));
+			odon = new Odontologo(rs.getString("matricula"), rs.getString("nombre"), rs.getString("apellido"), AdministradorPersistenciaEspecialidades.getInstancia().buscarEspecialidades(matricula));
 		}
 		catch (SQLException e){
 			e.printStackTrace();
@@ -111,15 +107,11 @@ public class AdministradorPersistenciaOdontologos extends
 		try{
 			Connection con = Conexion.connect();
 			PreparedStatement ps = con.prepareStatement("SELECT * FROM "+super.getDatabase()+".dbo.Odontologos");
-			PreparedStatement ps2;
 			Odontologo odon;
-			Collection<Especialidad> especialidades;
-			Especialidad esp;
 			ResultSet rs = ps.executeQuery();
 			
 			while (rs.next()){
-				odon = new Odontologo(rs.getString("matricula"), rs.getString("nombre"), rs.getString("apellido"));
-				odon.setEspecialidades(AdministradorPersistenciaEspecialidades.buscarEspecialidades(odon.getMatricula()));
+				odon = new Odontologo(rs.getString("matricula"), rs.getString("nombre"), rs.getString("apellido"), AdministradorPersistenciaEspecialidades.getInstancia().buscarEspecialidades(rs.getString("matricula")));
 				odontologos.add(odon);
 			}
 			

@@ -127,7 +127,7 @@ public class HistoriaClinica {
 		return paciente.sosElPaciente(dni);
 	}
 
-	public Collection<String> detectarSintomas(String[] sintomas){
+	public Collection<String> detectarSintomas(Collection<String> sintomas){
 		Collection<String> sintomasDetectados = new ArrayList<String>();
 		Collection<Observacion> observaciones = new ArrayList<Observacion>();
 		observaciones.addAll(this.observaciones);
@@ -140,6 +140,9 @@ public class HistoriaClinica {
 	}
 	
 	public boolean tenesElSintoma(String sintoma){
+		Collection<Observacion> observaciones = new ArrayList<Observacion>();
+		observaciones.addAll(this.observaciones);
+		observaciones.addAll(generarObservacionesOdontogramas());
 		for (Observacion o : observaciones)
 			if (o.tenesElSintoma(sintoma))
 				return true;

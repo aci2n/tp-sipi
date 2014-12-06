@@ -1,6 +1,5 @@
 package controlador;
 
-import implementacion.Especialidad;
 import implementacion.FichaPeriodontal;
 import implementacion.HistoriaClinica;
 import implementacion.Odontologo;
@@ -11,12 +10,13 @@ import implementacion.Turno;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Date;
+import java.sql.Date;
 
-import persistencia.AdministradorPersistenciaEspecialidades;
 import persistencia.AdministradorPersistenciaHistoriasClinicas;
 import persistencia.AdministradorPersistenciaOdontologos;
 import persistencia.AdministradorPersistenciaPaciente;
+import persistencia.AdministradorPersistenciaSintomas;
+import persistencia.AdministradorPersistenciaTurnos;
 
 public class Controlador {
 	
@@ -24,18 +24,15 @@ public class Controlador {
 	private Collection<Turno> turnos;
 	private Collection<Odontologo> odontologos;
 	private Collection<HistoriaClinica> historiasClinicas;
-	private Collection<Prediccion> predicciones;
-	private Collection<Especialidad> especialidades;
-	private final String[] sintomas = {"cancer","sida","escorbuto","gastroenteritis","muerte subita","linceismo"};
+	private Collection<String> sintomas;
 	private static Controlador instancia;
 	
 	private Controlador(){
-		this.pacientes = new ArrayList<Paciente>();
-		this.turnos = new ArrayList<Turno>();
-		this.odontologos = new ArrayList<Odontologo>();
-		this.historiasClinicas = new ArrayList<HistoriaClinica>();
-		this.predicciones = new ArrayList<Prediccion>();
-		this.especialidades = new ArrayList<Especialidad>();
+		this.pacientes = AdministradorPersistenciaPaciente.getInstancia().buscarPacientes();
+		this.turnos = AdministradorPersistenciaTurnos.getInstancia().buscarTurnos();
+		this.odontologos = AdministradorPersistenciaOdontologos.getInstancia().buscarOdontologos();
+		this.historiasClinicas = AdministradorPersistenciaHistoriasClinicas.getInstancia().buscarHistorias();
+		this.sintomas = AdministradorPersistenciaSintomas.getInstancia().buscarSintomas();
 	}
 	
 	public static Controlador getInstancia(){
@@ -153,22 +150,6 @@ public class Controlador {
 		this.historiasClinicas = historiasClinicas;
 	}
 
-	public Collection<Prediccion> getPredicciones() {
-		return predicciones;
-	}
-
-	public void setPredicciones(Collection<Prediccion> predicciones) {
-		this.predicciones = predicciones;
-	}
-	
-	public Collection<Especialidad> getEspecialidades() {
-		return especialidades;
-	}
-
-	public void setEspecialidades(Collection<Especialidad> especialidades) {
-		this.especialidades = especialidades;
-	}
-
 	public Odontologo obtenerOdontologo(String matricula) {
 		Odontologo odontologo = null;
 		for (Odontologo odon : odontologos) {
@@ -223,22 +204,6 @@ public class Controlador {
 			return historia.getFicha();
 		}
 		return null;
-	}
-	
-	public Especialidad obtenerEspecialidad(String descripcion) {
-		Especialidad especialidad = null;
-		for (Especialidad esp : especialidades) {
-			if (esp.sosLaEspecialidad(descripcion)) {
-				especialidad = esp;
-			}
-		}
-		if (especialidad == null) {
-			especialidad = AdministradorPersistenciaEspecialidades.getInstancia().buscarEspecialidad(descripcion);
-			if (especialidad != null) {
-				especialidades.add(especialidad);
-			}
-		}
-		return especialidad;
 	}
 	
 	//metodos para el test

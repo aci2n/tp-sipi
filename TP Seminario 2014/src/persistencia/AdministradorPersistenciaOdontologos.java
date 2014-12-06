@@ -86,10 +86,12 @@ public class AdministradorPersistenciaOdontologos extends
 			PreparedStatement ps = con.prepareStatement("SELECT * FROM "+super.getDatabase()+".dbo.Odontologos WHERE matricula like ? AND activo=1");
 			ps.setString(1, matricula);
 			ResultSet rs = ps.executeQuery();
-			odon.setMatricula(rs.getString("matricula"));
-			odon.setApellido(rs.getString("apellido"));
-			odon.setNombre(rs.getString("nombre"));
-			odon.setEspecialidades(AdministradorPersistenciaEspecialidades.getInstancia().buscarEspecialidades(matricula));
+			if (rs.next()){
+				odon.setMatricula(rs.getString("matricula"));
+				odon.setApellido(rs.getString("apellido"));
+				odon.setNombre(rs.getString("nombre"));
+				odon.setEspecialidades(AdministradorPersistenciaEspecialidades.getInstancia().buscarEspecialidades(matricula));
+			}
 			con.close();
 		}
 		catch (SQLException e){

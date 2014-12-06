@@ -6,6 +6,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Collection;
 
 public class AdministradorPersistenciaPaciente extends AdministradorPersistencia {
 	
@@ -101,13 +103,59 @@ public class AdministradorPersistenciaPaciente extends AdministradorPersistencia
 			PreparedStatement ps = con.prepareStatement("SELECT * FROM "+super.getDatabase()+".dbo.Pacientes WHERE dni like ?");
 			ps.setString(1, dni);
 			ResultSet rs = ps.executeQuery();
-			paciente = new Paciente();
+			
+			if (rs.next()){
+				paciente = new Paciente();
+				
+				paciente.setApellido(rs.getString("apellido"));
+				paciente.setDni(rs.getString("dni"));
+				paciente.setEmail(rs.getString("email"));
+				paciente.setFechaNacimiento(rs.getDate("fecha_nac"));
+				paciente.setGenero(rs.getString("genero"));
+				paciente.setNombre(rs.getString("nombre"));
+				paciente.setObraSocial(rs.getString("obra_social"));
+				paciente.setPlanObraSocial(rs.getString("plan_obra_social"));
+				paciente.setTelefono(rs.getString("telefono"));
+			}
+			
 			con.close();
 		}
 		catch (SQLException e){
 			e.printStackTrace();
 		}
 		return paciente;
+	}
+
+	public Collection<Paciente> buscarPacientes() {
+		Collection<Paciente> pacientes = new ArrayList<Paciente>();
+		Paciente paciente = null;
+		try{
+			Connection con = Conexion.connect();
+			PreparedStatement ps = con.prepareStatement("SELECT * FROM "+super.getDatabase()+".dbo.Pacientes WHERE activo = 1");
+			ResultSet rs = ps.executeQuery();
+			
+			while (rs.next()){
+				paciente = new Paciente();
+				
+				paciente.setApellido(rs.getString("apellido"));
+				paciente.setDni(rs.getString("dni"));
+				paciente.setEmail(rs.getString("email"));
+				paciente.setFechaNacimiento(rs.getDate("fecha_nac"));
+				paciente.setGenero(rs.getString("genero"));
+				paciente.setNombre(rs.getString("nombre"));
+				paciente.setObraSocial(rs.getString("obra_social"));
+				paciente.setPlanObraSocial(rs.getString("plan_obra_social"));
+				paciente.setTelefono(rs.getString("telefono"));
+				
+				pacientes.add(paciente);
+			}
+			
+			con.close();
+		}
+		catch (SQLException e){
+			e.printStackTrace();
+		}
+		return pacientes;
 	}
 
 }

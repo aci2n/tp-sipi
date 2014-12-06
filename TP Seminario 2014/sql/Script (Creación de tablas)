@@ -6,7 +6,6 @@ CREATE TABLE Pacientes(
 	email varchar(25),
 	fecha_nac datetime,
 	genero varchar(10),
-	estado varchar(10),
 	obra_social varchar(20),
 	plan_obra_social varchar(20),
 	activo bit default 1,
@@ -112,4 +111,9 @@ CREATE TABLE Observaciones(
 	constraint pk_observaciones primary key (dni, fecha),
 	constraint fk_observaciones_historia_clinica foreign key (dni) references Pacientes,
 	constraint fk_observaciones_odontologos foreign key (matricula) references Odontologos
+);
+
+CREATE TABLE Sintomas(
+	nombre varchar(30) not null,
+	constraint pk_sintomas primary key (nombre)
 );

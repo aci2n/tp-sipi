@@ -31,7 +31,7 @@ public class Test {
 		con.altaHistoriaClinicaTest("5");
 		con.obtenerHistoriaClinicaTest("5").altaObservacion(null, null, "cancer");
 		
-		for (int i = 6; i < 20; i++){
+		for (int i = 6; i < 89; i++){
 			con.altaPacienteTest(Integer.toString(i));
 			con.altaHistoriaClinicaTest(Integer.toString(i));
 			con.obtenerHistoriaClinicaTest(Integer.toString(i)).altaObservacion(null, null, "cancerasdasd sida linceismo");

@@ -1,11 +1,12 @@
 package implementacion;
 
 import java.util.Collection;
-import java.util.Date;
+import java.sql.Date;
 
 
 
 public class Odontograma {
+	private String idOdontograma;
 	private Collection<Diente> dientes;
 	private Date fecha;
 	private Odontologo odontologo;
@@ -64,5 +65,13 @@ public class Odontograma {
 
 	public void setOdontologo(Odontologo odontologo) {
 		this.odontologo = odontologo;
+	}
+
+	public String getIdOdontograma() {
+		return idOdontograma;
+	}
+
+	public void setIdOdontograma(String idOdontograma) {
+		this.idOdontograma = idOdontograma;
 	}
 }

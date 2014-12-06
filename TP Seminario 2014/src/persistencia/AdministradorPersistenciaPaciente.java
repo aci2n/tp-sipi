@@ -20,7 +20,6 @@ public class AdministradorPersistenciaPaciente extends AdministradorPersistencia
 		return instance;
 	}
 
-	@Override
 	public void insert(Object o) {
 		Paciente paciente = (Paciente) o;
 		
@@ -46,7 +45,6 @@ public class AdministradorPersistenciaPaciente extends AdministradorPersistencia
 		}
 	}
 
-	@Override
 	public void update(Object o) {
 		Paciente paciente = (Paciente) o;
 		
@@ -80,8 +78,7 @@ public class AdministradorPersistenciaPaciente extends AdministradorPersistencia
 			e.printStackTrace();
 		}
 	}
-
-	@Override
+	
 	public void delete(Object o) {
 		Paciente paciente = (Paciente) o;
 		try{

@@ -30,7 +30,7 @@ public class AdministradorPersistenciaTurnos extends AdministradorPersistencia {
 		Turno turno = (Turno)o;
 		try{
 			Connection con = Conexion.connect();
-			PreparedStatement ps = con.prepareStatement("INSERT INTO "+super.getDatabase()+".dbo.Turnos(matricula, dni, fecha, descripcion) VALUES (?,?,?,?)");
+			PreparedStatement ps = con.prepareStatement("INSERT INTO "+super.getDatabase()+".dbo.Turnos(matricula, dni, fecha, descripcion, activo) VALUES (?,?,?,?,1)");
 			ps.setString(1, turno.getOdontologo().getMatricula());
 			ps.setString(2,turno.getPaciente().getDni());
 			ps.setDate(3, turno.getFecha());
@@ -86,7 +86,7 @@ public class AdministradorPersistenciaTurnos extends AdministradorPersistencia {
 		Collection<Turno> turnos = new ArrayList<Turno>(); 
 		try{
 			Connection con = Conexion.connect();
-			PreparedStatement ps = con.prepareStatement("SELECT * FROM "+super.getDatabase()+"dbo.Turnos");
+			PreparedStatement ps = con.prepareStatement("SELECT * FROM "+super.getDatabase()+"dbo.Turnos WHERE activo = 1");
 			
 			ResultSet rs = ps.executeQuery();
 			

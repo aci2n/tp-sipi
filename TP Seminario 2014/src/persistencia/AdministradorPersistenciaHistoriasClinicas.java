@@ -29,7 +29,7 @@ public class AdministradorPersistenciaHistoriasClinicas extends AdministradorPer
 		HistoriaClinica historia = (HistoriaClinica)o;
 		try{
 			Connection con = Conexion.connect();
-			PreparedStatement ps = con.prepareStatement("INSERT INTO "+super.getDatabase()+".dbo.HistoriasClinicas(id_historia_clinica, dni, descripcion, id_ficha) VALUES (?,?,?,?)");
+			PreparedStatement ps = con.prepareStatement("INSERT INTO "+super.getDatabase()+".dbo.HistoriasClinicas(id_historia_clinica, dni, descripcion, id_ficha, activo) VALUES (?,?,?,?,1)");
 			ps.setString(1, historia.getIdHistoria());
 			ps.setString(2,historia.getPaciente().getDni());
 			ps.setString(3, historia.getDescripcion());
@@ -81,7 +81,7 @@ public class AdministradorPersistenciaHistoriasClinicas extends AdministradorPer
 		Collection<HistoriaClinica> historias = new ArrayList<HistoriaClinica>(); 
 		try{
 			Connection con = Conexion.connect();
-			PreparedStatement ps = con.prepareStatement("SELECT * FROM "+super.getDatabase()+"dbo.HistoriasClinicas");
+			PreparedStatement ps = con.prepareStatement("SELECT * FROM "+super.getDatabase()+"dbo.HistoriasClinicas WHERE activo = 1");
 			
 			ResultSet rs = ps.executeQuery();
 			

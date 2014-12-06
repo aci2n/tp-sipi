@@ -15,6 +15,9 @@ public class Odontograma {
 	
 	}
 	
+	public Odontograma() {
+	}
+
 	public void altaProtesisDiente(int posicionDiente) {
 	
 	}

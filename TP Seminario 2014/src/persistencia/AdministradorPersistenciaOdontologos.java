@@ -104,7 +104,11 @@ public class AdministradorPersistenciaOdontologos extends
 			ResultSet rs = ps.executeQuery();
 			
 			while (rs.next()){
-				odon = new Odontologo(rs.getString("matricula"), rs.getString("nombre"), rs.getString("apellido"), AdministradorPersistenciaEspecialidades.getInstancia().buscarEspecialidades(rs.getString("matricula")));
+				odon = new Odontologo();
+				odon.setMatricula(rs.getString("matricula"));
+				odon.setNombre(rs.getString("nombre"));
+				odon.setApellido(rs.getString("apellido"));
+				odon.setEspecialidades(AdministradorPersistenciaEspecialidades.getInstancia().buscarEspecialidades(rs.getString("matricula")));
 				odontologos.add(odon);
 			}
 			

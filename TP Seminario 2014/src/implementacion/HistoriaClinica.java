@@ -1,5 +1,6 @@
 package implementacion;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
 
@@ -17,6 +18,9 @@ public class HistoriaClinica {
 	}
 	
 	public HistoriaClinica() {
+		this.odontogramas = new ArrayList<Odontograma>();
+		this.observaciones = new ArrayList<Observacion>();
+				
 	}
 
 	public void altaFichaPeriodontal() {
@@ -119,5 +123,8 @@ public class HistoriaClinica {
 		this.paciente = paciente;
 	}
 	
+	public boolean sosLaHistoria(String dni) {
+		return paciente.sosElPaciente(dni);
+	}
 	
 }

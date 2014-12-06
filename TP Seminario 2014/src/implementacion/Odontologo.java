@@ -1,6 +1,10 @@
 package implementacion;
 
+import java.util.ArrayList;
 import java.util.Collection;
+
+import persistencia.AdministradorPersistenciaEspecialidades;
+import persistencia.AdministradorPersistenciaOdontologos;
 
 
 
@@ -15,6 +19,11 @@ public class Odontologo {
 		this.nombre = nombre;
 		this.apellido = apellido;
 		this.especialidades = especialidades;
+		AdministradorPersistenciaOdontologos.getInstancia().insert(this);
+	}
+	
+	public Odontologo() {
+		
 	}
 		
 	public boolean sosElOdontologo(String matricula) {
@@ -51,6 +60,16 @@ public class Odontologo {
 
 	public void setMatricula(String matricula) {
 		this.matricula = matricula;
+	}
+	
+	public void agregarEspecialidad(Especialidad especialidad) {
+		if (especialidades == null) {
+			especialidades = new ArrayList<Especialidad>();
+		}
+		if (!especialidades.contains(especialidad)) {
+			especialidades.add(especialidad);
+			AdministradorPersistenciaEspecialidades.getInstancia().insert(especialidad, this);
+		}
 	}
 
 }

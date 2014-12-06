@@ -75,4 +75,7 @@ public class Paciente {
 	public void setPlanObraSocial(String planObraSocial) {
 		this.planObraSocial = planObraSocial;
 	}
+	public boolean sosElPaciente(String dni) {
+		return this.dni.equals(dni);
+	}
 }

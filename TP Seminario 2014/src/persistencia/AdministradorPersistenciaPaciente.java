@@ -1,9 +1,11 @@
 package persistencia;
 
+import implementacion.Odontologo;
 import implementacion.Paciente;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class AdministradorPersistenciaPaciente extends AdministradorPersistencia {
@@ -91,6 +93,22 @@ public class AdministradorPersistenciaPaciente extends AdministradorPersistencia
 		catch(SQLException e){
 			e.printStackTrace();
 		}
+	}
+
+	public Paciente buscarPaciente(String dni) {
+		Paciente paciente = null;
+		try{
+			Connection con = Conexion.connect();
+			PreparedStatement ps = con.prepareStatement("SELECT * FROM "+super.getDatabase()+".dbo.Pacientes WHERE dni like ?");
+			ps.setString(1, dni);
+			ResultSet rs = ps.executeQuery();
+			paciente = new Paciente();
+			con.close();
+		}
+		catch (SQLException e){
+			e.printStackTrace();
+		}
+		return paciente;
 	}
 
 }

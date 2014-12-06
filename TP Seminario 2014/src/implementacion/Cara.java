@@ -3,10 +3,10 @@ package implementacion;
 
 
 public class Cara {
-	private int posicion;
+	private String posicion;
 	private String estado;
 	
-	public boolean sosLaCara(int posicionCara) {
+	public boolean sosLaCara(String posicionCara) {
 		return this.posicion==posicionCara;
 	}
 	
@@ -14,11 +14,11 @@ public class Cara {
 		return this.estado;
 	}
 	
-	public int getPosicion() {
+	public String getPosicion() {
 		return this.posicion;
 	}
 
-	public void setPosicion(int posicion) {
+	public void setPosicion(String posicion) {
 		this.posicion = posicion;
 	}
 

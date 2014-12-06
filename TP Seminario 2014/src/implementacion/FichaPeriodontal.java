@@ -2,10 +2,12 @@ package implementacion;
 
 import java.util.Collection;
 
+import persistencia.AdministradorPersistenciaSeccion;
+
 
 
 public class FichaPeriodontal {
-	private String idFicha;
+	private Paciente paciente;
 	private Collection<Seccion> secciones;
 	private Odontologo odontologo;
 	
@@ -41,11 +43,16 @@ public class FichaPeriodontal {
 		this.odontologo = odontologo;
 	}
 
-	public String getIdFicha() {
-		return idFicha;
+	public Paciente getIdFicha() {
+		return paciente;
 	}
 
-	public void setIdFicha(String idFicha) {
-		this.idFicha = idFicha;
+	public void setIdFicha(Paciente Paciente) {
+		this.paciente = paciente;
 	}	
+	
+	public void agregarSeccion(Seccion seccion) {
+		this.secciones.add(seccion);
+		AdministradorPersistenciaSeccion.getInstance().insert(seccion, this);
+	}
 }

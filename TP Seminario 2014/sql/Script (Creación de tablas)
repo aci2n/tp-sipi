@@ -1,0 +1,115 @@
+CREATE TABLE Pacientes(
+	dni varchar(15) not null,
+	nombre varchar(20),
+	apellido varchar(20),
+	telefono varchar(20),
+	email varchar(25),
+	fecha_nac datetime,
+	genero varchar(10),
+	estado varchar(10),
+	obra_social varchar(20),
+	plan_obra_social varchar(20),
+	activo bit default 1,
+	constraint pk_pacientes primary key (dni)
+);
+
+CREATE TABLE Odontologos(
+	matricula varchar(15) not null,
+	nombre varchar(20),
+	apellido varchar(20),
+	activo bit default 1,
+	constraint pk_odontologos primary key (matricula)
+);
+
+CREATE TABLE FichasPeriodontales(
+	dni varchar(15) not null,
+	matricula varchar(15),
+	activo bit default 1,
+	constraint fk_fichas_periodontales_odontologos foreign key(matricula) references Odontologos,
+	constraint fk_fichas_periodontales_odontologos foreign key(dni) references Pacientes,
+	constraint pk_ficha_periodontal primary key (dni)
+);
+
+CREATE TABLE Seccion(
+	id_ficha varchar(15) not null,
+	posicion_diente varchar(10),
+	posicion_seccion varchar(10),
+	margen int,
+	profundidad int,
+	sangrado bit,
+	placa bit,
+	activo bit default 1,
+	constraint pk_seccion primary key (id_ficha, posicion_diente, posicion_seccion),
+	constraint fk_seccion_ficha_periodontal foreign key (id_ficha) references FichasPeriodontales
+);
+
+CREATE TABLE HistoriasClinicas(
+	dni varchar(15),
+	descripcion varchar(100),
+	activo bit default 1,
+	constraint pk_historias_clinicas primary key (dni),
+	constraint fk_historias_clinicas_pacientes foreign key (dni) references Pacientes,
+	constraint fk_historias_clinicas_fichas foreign key (id_ficha) references FichasPeriodontales,
+);
+
+CREATE TABLE Odontogramas( 
+	dni varchar(15) not null,
+	id_odontograma varchar(15) not null,
+	fecha datetime,
+	matricula varchar(15),
+	activo bit default 1,
+	constraint pk_odontograma primary key (id_odontograma),
+	constraint fk_historia_clinica foreign key(dni) references Pacientes,
+	constraint fk_odontogramas_odontologos foreign key(matricula) references Odontologos
+);
+
+CREATE TABLE Dientes(
+	posicion_diente varchar(10) not null,	
+	id_odontograma varchar(15) not null,
+	estado_diente varchar(20),
+	id_puente varchar(15),
+	id_protesis varchar(15),
+	activo bit default 1,
+	constraint pk_dientes primary key (id_odontograma, posicion_diente),
+	constraint fk_diente_odontograma foreign key (id_odontograma) references Odontogramas
+);
+
+CREATE TABLE Caras(
+	posicion_cara varchar(10) not null,
+	posicion_diente varchar(10) not null,
+	id_odontograma varchar(15) not null,
+	estado_cara varchar(20),
+	activo bit default 1,
+	constraint pk_caras primary key (posicion_cara, posicion_diente,id_odontograma),
+	constraint fk_caras_dientes foreign key (id_odontograma, posicion_diente) references Dientes
+);
+
+CREATE TABLE Turnos(
+	matricula varchar(15) not null,
+	dni varchar(15) not null,
+	fecha datetime not null,
+	descripcion varchar (40),
+	activo bit default 1,
+	constraint pk_turnos primary key (dni, matricula, fecha),
+	constraint fk_turnos_odontologos foreign key (matricula) references Odontologos,
+	constraint fk_turnos_pacientes foreign key (dni) references Pacientes
+);
+
+CREATE TABLE Especialidades_Odontologos(
+	matricula varchar(15) not null,
+	nombre_especialidad varchar(20) not null,
+	activo bit default 1,
+	constraint pk_especialidades_odontologos primary key (matricula, nombre_especialidad),
+	constraint fk_especialidades_odontologos_odontologos foreign key (matricula) references Odontologos
+);
+
+CREATE TABLE Observaciones(
+	dni varchar(15) not null,
+	matricula varchar(15) not null,
+	fecha datetime,
+	descripcion varchar(60),
+	activo bit default 1,
+	constraint pk_observaciones primary key (dni, fecha),
+	constraint fk_observaciones_historia_clinica foreign key (dni) references Pacientes,
+	constraint fk_observaciones_odontologos foreign key (matricula) references Odontologos
+);

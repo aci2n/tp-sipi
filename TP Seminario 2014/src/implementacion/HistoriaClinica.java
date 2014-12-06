@@ -6,7 +6,6 @@ import java.util.Date;
 
 
 public class HistoriaClinica {
-	private String idHistoria;
 	private Paciente paciente;
 	private FichaPeriodontal ficha;
 	private Collection<Odontograma> odontogramas;
@@ -110,14 +109,6 @@ public class HistoriaClinica {
 
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
-	}
-
-	public String getIdHistoria() {
-		return idHistoria;
-	}
-
-	public void setIdHistoria(String idHistoria) {
-		this.idHistoria = idHistoria;
 	}
 
 	public Paciente getPaciente() {

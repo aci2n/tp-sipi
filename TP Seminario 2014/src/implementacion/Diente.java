@@ -5,21 +5,21 @@ import java.util.Collection;
 
 
 public class Diente {
-	private int posicion;
-	private int idProtesis;
-	private int idPuente;
+	private String posicion;
+	private String idProtesis;
+	private String idPuente;
 	private String estado;
 	private Collection<Cara> caras;
 	
-	public boolean sosElDiente(int posicion) {
+	public boolean sosElDiente(String posicion) {
 		return this.posicion==posicion;
 	}
 	
-	public void modificarEstadoCara(int posicionCara, String estadoCara) {
+	public void modificarEstadoCara(String posicionCara, String estadoCara) {
 		
 	}
 	
-	public Cara buscarCara(int posicionCara) {
+	public Cara buscarCara(String posicionCara) {
 		return null;
 	}
 	
@@ -31,27 +31,27 @@ public class Diente {
 		return null;
 	}
 
-	public int getPosicion() {
+	public String getPosicion() {
 		return posicion;
 	}
 
-	public void setPosicion(int posicion) {
+	public void setPosicion(String posicion) {
 		this.posicion = posicion;
 	}
 
-	public int getIdProtesis() {
+	public String getIdProtesis() {
 		return idProtesis;
 	}
 
-	public void setIdProtesis(int idProtesis) {
+	public void setIdProtesis(String idProtesis) {
 		this.idProtesis = idProtesis;
 	}
 
-	public int getIdPuente() {
+	public String getIdPuente() {
 		return idPuente;
 	}
 
-	public void setIdPuente(int idPuente) {
+	public void setIdPuente(String idPuente) {
 		this.idPuente = idPuente;
 	}
 

@@ -1,6 +1,7 @@
 package persistencia;
 
 import implementacion.Especialidad;
+import implementacion.Odontologo;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -20,22 +21,31 @@ public class AdministradorPersistenciaEspecialidades extends
 		return instance;
 	}
 	
-	@Override
-	public void insert(Object o) {
+	public void insert(Especialidad esp, Odontologo odon) {
 		// TODO Auto-generated method stub
-
+		try{
+			Connection con = Conexion.connect();
+			PreparedStatement ps = con.prepareStatement("INSERT INTO "+super.getDatabase()+".dbo.Especialidades values(?,?)");
+			ps.setString(1, odon.getMatricula());
+			ps.setString(2,esp.getDescripcion());
+			ps.execute();
+		}catch (SQLException e){
+			e.printStackTrace();
+		}
 	}
 
-	@Override
-	public void update(Object o) {
+
+	public void delete(Especialidad esp, Odontologo odon) {
 		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void delete(Object o) {
-		// TODO Auto-generated method stub
-
+		try{
+			Connection con = Conexion.connect();
+			PreparedStatement ps = con.prepareStatement("DELETE FROM "+super.getDatabase()+".dbo.Especialidades WHERE matricula like ? AND descripcion like ?");
+			ps.setString(1, odon.getMatricula());
+			ps.setString(2, esp.getDescripcion());
+			ps.execute();
+		}catch(SQLException e){
+			e.printStackTrace();
+		}
 	}
 
 	public Collection<Especialidad> buscarEspecialidades(String matricula) {

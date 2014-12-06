@@ -21,5 +21,7 @@ public class Especialidad {
 		this.descripcion = descripcion;
 	}
 	
-	
+	public boolean sosLaEspecialidad(String descripcion) {
+		return this.descripcion.equalsIgnoreCase(descripcion);
+	}
 }

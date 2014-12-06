@@ -2,6 +2,7 @@ package persistencia;
 
 import implementacion.Especialidad;
 import implementacion.Odontologo;
+import implementacion.Paciente;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -56,8 +57,14 @@ public class AdministradorPersistenciaEspecialidades extends
 		Especialidad esp;
 		try{
 			Connection con = Conexion.connect();
-			PreparedStatement ps = con.prepareStatement("SELECT * FROM "+super.getDatabase()+".dbo.Especialidades WHERE matricula like ? AND activo=1");
-			ps.setString(1, matricula);
+			StringBuilder statement = new StringBuilder("SELECT * FROM "+super.getDatabase()+".dbo.Especialidades WHERE activo = 1");
+			if (matricula != null) {
+				statement.append(" AND matricula like ?");
+			}
+			PreparedStatement ps = con.prepareStatement(statement.toString());
+			if (matricula != null) {
+				ps.setString(1, matricula);
+			}
 			ResultSet rs = ps.executeQuery();
 			while (rs.next()){
 				esp = new Especialidad();
@@ -68,6 +75,25 @@ public class AdministradorPersistenciaEspecialidades extends
 				e.printStackTrace();
 			}
 			return especialidades;
+	}
+	
+	public Especialidad buscarEspecialidad(String descripcion) {
+		Especialidad especialidad = null;
+		try{
+			Connection con = Conexion.connect();
+			PreparedStatement ps = con.prepareStatement("SELECT * FROM "+super.getDatabase()+".dbo.Especialidades WHERE nombre_especialidad like ? AND activo = 1");
+			ps.setString(1, descripcion);
+			ResultSet rs = ps.executeQuery();
+			while (rs.next()) {
+				especialidad = new Especialidad();
+				especialidad.setDescripcion(rs.getString(2));
+			}
+			con.close();
+		}
+		catch (SQLException e){
+			e.printStackTrace();
+		}
+		return especialidad;
 	}
 
 	public void eliminarEspecialidades(Odontologo o) {

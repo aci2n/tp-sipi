@@ -1,5 +1,6 @@
 package controlador;
 
+import implementacion.Especialidad;
 import implementacion.FichaPeriodontal;
 import implementacion.HistoriaClinica;
 import implementacion.Odontologo;
@@ -11,6 +12,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
 
+import persistencia.AdministradorPersistenciaEspecialidades;
 import persistencia.AdministradorPersistenciaHistoriasClinicas;
 import persistencia.AdministradorPersistenciaOdontologos;
 import persistencia.AdministradorPersistenciaPaciente;
@@ -22,7 +24,7 @@ public class Controlador {
 	private Collection<Odontologo> odontologos;
 	private Collection<HistoriaClinica> historiasClinicas;
 	private Collection<Prediccion> predicciones;
-	
+	private Collection<Especialidad> especialidades;
 	private static Controlador instancia;
 	
 	private Controlador(){
@@ -31,6 +33,7 @@ public class Controlador {
 		this.odontologos = new ArrayList<Odontologo>();
 		this.historiasClinicas = new ArrayList<HistoriaClinica>();
 		this.predicciones = new ArrayList<Prediccion>();
+		this.especialidades = new ArrayList<Especialidad>();
 	}
 	
 	public static Controlador getInstancia(){
@@ -133,6 +136,14 @@ public class Controlador {
 	public void setPredicciones(Collection<Prediccion> predicciones) {
 		this.predicciones = predicciones;
 	}
+	
+	public Collection<Especialidad> getEspecialidades() {
+		return especialidades;
+	}
+
+	public void setEspecialidades(Collection<Especialidad> especialidades) {
+		this.especialidades = especialidades;
+	}
 
 	public Odontologo obtenerOdontologo(String matricula) {
 		Odontologo odontologo = null;
@@ -188,5 +199,21 @@ public class Controlador {
 			return historia.getFicha();
 		}
 		return null;
+	}
+	
+	public Especialidad obtenerEspecialidad(String descripcion) {
+		Especialidad especialidad = null;
+		for (Especialidad esp : especialidades) {
+			if (esp.sosLaEspecialidad(descripcion)) {
+				especialidad = esp;
+			}
+		}
+		if (especialidad == null) {
+			especialidad = AdministradorPersistenciaEspecialidades.getInstancia().buscarEspecialidad(descripcion);
+			if (especialidad != null) {
+				especialidades.add(especialidad);
+			}
+		}
+		return especialidad;
 	}
 }

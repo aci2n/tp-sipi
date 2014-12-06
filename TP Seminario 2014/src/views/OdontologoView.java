@@ -29,28 +29,14 @@ public class OdontologoView {
 		return nombre;
 	}
 
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-
 	public String getApellido() {
 		return apellido;
-	}
-
-	public void setApellido(String apellido) {
-		this.apellido = apellido;
 	}
 
 	public Collection<EspecialidadView> getEspecialidades() {
 		return especialidades;
 	}
 
-	public void setEspecialidades(Collection<EspecialidadView> especialidades) {
-		this.especialidades = especialidades;
-	}
 
-	public void setMatricula(String matricula) {
-		this.matricula = matricula;
-	}
 
 }

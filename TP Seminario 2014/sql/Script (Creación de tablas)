@@ -29,7 +29,7 @@ CREATE TABLE FichasPeriodontales(
 	constraint pk_ficha_periodontal primary key (dni)
 );
 
-CREATE TABLE Seccion(
+CREATE TABLE Secciones(
 	dni varchar(15) not null,
 	posicion_diente varchar(10),
 	posicion_seccion varchar(10),

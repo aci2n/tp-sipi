@@ -15,16 +15,16 @@ public class VistaNavegador {
      * Los fxml layouts manejados por el navegador.
      */
 	
-    public static final String MAIN    = "recursos/fxml/main.fxml";
-    public static final String VISTA_1 = "recursos/fxml/vistaInicio.fxml";
-    public static final String VISTA_2 = "recursos/fxml/vista2.fxml";
-    public static final String VISTA_3 = "recursos/fxml/vistaAltaPaciente.fxml";
-    public static final String VISTA_4 = "recursos/fxml/vistaAltaHistoriaClinica.fxml";
-    public static final String VISTA_5 = "recursos/fxml/vistaListarPacientes.fxml";
-    public static final String VISTA_6 = "recursos/fxml/vistaAdministracionPacientes.fxml";
-    public static final String VISTA_7 = "recursos/fxml/vistaAltaOdontograma.fxml";
-    public static final String VISTA_8 = "recursos/fxml/vistaListarOdontologos.fxml";
-    public static final String VISTA_9 = "recursos/fxml/vistaAnalisisPredictivo.fxml";
+    public static final String MAIN    = "/fxml/main.fxml";
+    public static final String VISTA_1 = "/fxml/vistaInicio.fxml";
+    public static final String VISTA_2 = "/fxml/vista2.fxml";
+    public static final String VISTA_3 = "/fxml/vistaAltaPaciente.fxml";
+    public static final String VISTA_4 = "/fxml/vistaAltaHistoriaClinica.fxml";
+    public static final String VISTA_5 = "/fxml/vistaListarPacientes.fxml";
+    public static final String VISTA_6 = "/fxml/vistaAdministracionPacientes.fxml";
+    public static final String VISTA_7 = "/fxml/vistaAltaOdontograma.fxml";
+    public static final String VISTA_8 = "/fxml/vistaListarOdontologos.fxml";
+    public static final String VISTA_9 = "/fxml/vistaAnalisisPredictivo.fxml";
 
     
     private static VistaPrincipalControlador mainController;

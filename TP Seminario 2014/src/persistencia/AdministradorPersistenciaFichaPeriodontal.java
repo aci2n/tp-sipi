@@ -1,6 +1,7 @@
 package persistencia;
 
 import implementacion.FichaPeriodontal;
+import implementacion.HistoriaClinica;
 import implementacion.Seccion;
 
 import java.sql.Connection;
@@ -22,17 +23,17 @@ public class AdministradorPersistenciaFichaPeriodontal extends AdministradorPers
 		return instance;
 	}
 	
-	public void insert(FichaPeriodontal ficha) {
+	public void insert(FichaPeriodontal ficha, HistoriaClinica historia) {
 		try{
 			Connection con = Conexion.connect();
 			PreparedStatement ps = con.prepareStatement("INSERT INTO "+super.getDatabase()+".dbo.FichasPeriodontales(matricula, dni) VALUES (?,?)");
 			ps.setString(1, ficha.getOdontologo().getMatricula());
-			ps.setString(2, ficha.getPaciente().getDni());
+			ps.setString(2, historia.getPaciente().getDni());
 			
 			ps.execute();
 			
 			for (Seccion s : ficha.getSecciones())
-				AdministradorPersistenciaSeccion.getInstance().insert(s, ficha);
+				AdministradorPersistenciaSeccion.getInstance().insert(s, ficha, historia);
 			
 			
 			con.close();
@@ -42,18 +43,18 @@ public class AdministradorPersistenciaFichaPeriodontal extends AdministradorPers
 		}
 	}
 
-	public void delete(FichaPeriodontal ficha) {
+	public void delete(FichaPeriodontal ficha, HistoriaClinica historia) {
 		try{
 			Connection con = Conexion.connect();
 			PreparedStatement ps = con.prepareStatement("UPDATE "+super.getDatabase()+".dbo.FichasPeriodontales SET activo = 0 WHERE dni = ? AND matricula = ?");
-			ps.setString(1, ficha.getPaciente().getDni());
+			ps.setString(1, historia.getPaciente().getDni());
 			ps.setString(2, ficha.getOdontologo().getMatricula());
 			
 			for (Seccion seccion : ficha.getSecciones())
-				AdministradorPersistenciaSeccion.getInstance().delete(seccion, ficha);
+				AdministradorPersistenciaSeccion.getInstance().delete(seccion, ficha, historia);
 			
 			for (Seccion seccion : ficha.getSecciones())
-				AdministradorPersistenciaSeccion.getInstance().insert(seccion, ficha);
+				AdministradorPersistenciaSeccion.getInstance().insert(seccion, ficha, historia);
 			
 			con.close();
 		}
@@ -75,7 +76,7 @@ public class AdministradorPersistenciaFichaPeriodontal extends AdministradorPers
 				ficha = new FichaPeriodontal();
 				
 				ficha.setOdontologo(Controlador.getInstancia().obtenerOdontologo(rs.getString("matricula")));
-				ficha.setSecciones(AdministradorPersistenciaSeccion.getInstance().buscarSecciones(ficha));
+				ficha.setSecciones(AdministradorPersistenciaSeccion.getInstance().buscarSecciones(dni));
 			}
 		}
 		catch (SQLException e){

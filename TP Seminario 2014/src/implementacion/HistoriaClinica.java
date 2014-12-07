@@ -4,6 +4,7 @@ import java.sql.Date;
 import java.util.ArrayList;
 import java.util.Collection;
 
+import persistencia.AdministradorPersistenciaFichaPeriodontal;
 import persistencia.AdministradorPersistenciaHistoriasClinicas;
 import persistencia.AdministradorPersistenciaObservaciones;
 import persistencia.AdministradorPersistenciaOdontograma;
@@ -33,6 +34,7 @@ public class HistoriaClinica {
 	public void asignarFichaPeriodontal(Odontologo odontologo) {
 		FichaPeriodontal ficha = new FichaPeriodontal(odontologo, paciente);
 		this.ficha=ficha;	
+		AdministradorPersistenciaFichaPeriodontal.getInstancia().insert(ficha, this);
 	}
 	
 	public void agregarOdontograma(String idOdontograma, Date fecha, Odontologo odontologo) {

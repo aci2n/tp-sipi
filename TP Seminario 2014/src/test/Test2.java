@@ -20,7 +20,7 @@ public class Test2 {
 			
 			Paciente paciente = new Paciente();
 			paciente.setApellido("Calace");
-			paciente.setDni("37521883");
+			paciente.setDni("37521884");
 			paciente.setEmail("alvarocalace@hotmail.com");	
 			paciente.setFechaNacimiento(formarDateSQL("04/01/1994"));		
 			paciente.setGenero("masculino");

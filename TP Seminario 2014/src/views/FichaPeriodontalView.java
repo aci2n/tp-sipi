@@ -5,7 +5,6 @@ import java.util.Collection;
 
 
 public class FichaPeriodontalView {
-	private PacienteView paciente;
 	private Collection<SeccionView> secciones;
 	private OdontologoView odontologo;
 	
@@ -40,14 +39,4 @@ public class FichaPeriodontalView {
 	public void agregarSeccion(SeccionView seccion) {
 		this.secciones.add(seccion);
 	}
-
-	public PacienteView getPaciente() {
-		return paciente;
-	}
-
-	public void setPaciente(PacienteView paciente) {
-		this.paciente = paciente;
-	}
-	
-	
 }

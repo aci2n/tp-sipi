@@ -1,6 +1,7 @@
 package persistencia;
 
 import implementacion.FichaPeriodontal;
+import implementacion.HistoriaClinica;
 import implementacion.Seccion;
 
 import java.sql.Connection;
@@ -22,11 +23,11 @@ public class AdministradorPersistenciaSeccion extends AdministradorPersistencia 
 	private AdministradorPersistenciaSeccion() {
 	}
 	
-	public void insert(Seccion seccion, FichaPeriodontal ficha) {
+	public void insert(Seccion seccion, FichaPeriodontal ficha, HistoriaClinica historia) {
 		try{
 			Connection con = Conexion.connect();
 			PreparedStatement ps = con.prepareStatement("INSERT INTO "+super.getDatabase()+".dbo.Secciones(dni, posicion_diente, posicion_seccion, sangrado, profundidad, placa, margen) VALUES (?,?,?,?,?,?,?)");
-			ps.setString(1, ficha.getPaciente().getDni());
+			ps.setString(1, historia.getPaciente().getDni());
 			ps.setString(2, seccion.getPosicionDiente());
 			ps.setString(3, seccion.getPosicionSeccion());
 			ps.setBoolean(4, seccion.isSangrado());
@@ -43,7 +44,7 @@ public class AdministradorPersistenciaSeccion extends AdministradorPersistencia 
 		}
 	}
 	
-	public void update(Seccion seccion, FichaPeriodontal ficha) {
+	public void update(Seccion seccion, FichaPeriodontal ficha, HistoriaClinica historia) {
 		try{
 			Connection con = Conexion.connect();
 			PreparedStatement ps = con.prepareStatement("UPDATE "+super.getDatabase()+".dbo.Secciones SET sangrado = ?, margen = ?, profundidad = ?, placa = ? WHERE dni = ? AND posicion_diente = ? AND posicion_seccion = ? AND activo=1");
@@ -51,7 +52,7 @@ public class AdministradorPersistenciaSeccion extends AdministradorPersistencia 
 			ps.setInt(2, seccion.getMargen());
 			ps.setInt(3, seccion.getProfundidad());
 			ps.setBoolean(4, seccion.isPlaca());
-			ps.setString(5, ficha.getPaciente().getDni());
+			ps.setString(5, historia.getPaciente().getDni());
 			ps.setString(6, seccion.getPosicionDiente());
 			ps.setString(7, seccion.getPosicionSeccion());
 			
@@ -64,11 +65,11 @@ public class AdministradorPersistenciaSeccion extends AdministradorPersistencia 
 		}
 	}
 	
-	public void delete(Seccion seccion, FichaPeriodontal ficha) {
+	public void delete(Seccion seccion, FichaPeriodontal ficha, HistoriaClinica historia) {
 		try{
 			Connection con = Conexion.connect();
 			PreparedStatement ps = con.prepareStatement("UPDATE "+super.getDatabase()+".dbo.Secciones SET activo = 0 WHERE dni = ? AND posicion_diente = ? AND posicion_seccion = ?");
-			ps.setString(1, ficha.getPaciente().getDni());
+			ps.setString(1, historia.getPaciente().getDni());
 			ps.setString(2, seccion.getPosicionDiente());
 			ps.setString(3, seccion.getPosicionSeccion());
 			
@@ -81,13 +82,13 @@ public class AdministradorPersistenciaSeccion extends AdministradorPersistencia 
 		}
 	}
 	
-	public Collection<Seccion> buscarSecciones (FichaPeriodontal ficha){
+	public Collection<Seccion> buscarSecciones (String dni){
 		Collection<Seccion> secciones = new ArrayList<Seccion>();
 		Seccion seccion;
 		try{
 			Connection con = Conexion.connect();
 			PreparedStatement ps = con.prepareStatement("SELECT * FROM "+super.getDatabase()+".dbo.Secciones WHERE dni like ? AND activo=1");
-			ps.setString(1,ficha.getPaciente().getDni());
+			ps.setString(1,dni);
 			
 			ResultSet rs = ps.executeQuery();
 			

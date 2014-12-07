@@ -3,19 +3,15 @@ package implementacion;
 import java.util.ArrayList;
 import java.util.Collection;
 
-import persistencia.AdministradorPersistenciaFichaPeriodontal;
-import persistencia.AdministradorPersistenciaSeccion;
 import views.FichaPeriodontalView;
 import views.SeccionView;
 
 public class FichaPeriodontal {
-	private Paciente paciente;
 	private Collection<Seccion> secciones;
 	private Odontologo odontologo;
 	
 	public FichaPeriodontal(Odontologo odontologo, Paciente paciente) {
 		this.odontologo=odontologo;
-		this.paciente=paciente;
 		this.secciones=new ArrayList<Seccion>();
 		
 		int i;
@@ -60,15 +56,14 @@ public class FichaPeriodontal {
 			this.secciones.add(new Seccion(Integer.toString(i),"1"));
 			this.secciones.add(new Seccion(Integer.toString(i),"2"));
 			this.secciones.add(new Seccion(Integer.toString(i),"3"));			
-		}
-		
-		AdministradorPersistenciaFichaPeriodontal.getInstancia().insert(this);
+		}		
 	}
 	
 	public FichaPeriodontal() {
 		
 	}
 
+	/* revisar
 	public void modificarSeccion(String posicionSeccion, String posicionDiente, boolean sangrado, boolean placa, int margen) {
 		Seccion seccion = buscarSeccion(posicionSeccion, posicionDiente);
 		if (seccion != null) {
@@ -78,6 +73,7 @@ public class FichaPeriodontal {
 			AdministradorPersistenciaSeccion.getInstance().update(seccion, this);
 		}
 	}
+	*/
 	
 	public Seccion buscarSeccion(String posicionSeccion, String posicionDiente) {
 		for (Seccion seccion : secciones) {
@@ -86,14 +82,6 @@ public class FichaPeriodontal {
 			}
 		}
 		return null;
-	}
-	
-	public Paciente getPaciente() {
-		return paciente;
-	}
-
-	public void setPaciente(Paciente paciente) {
-		this.paciente = paciente;
 	}
 
 	public Collection<String> getSintomas() {
@@ -116,11 +104,6 @@ public class FichaPeriodontal {
 		this.odontologo = odontologo;
 	}
  
-	public void agregarSeccion(Seccion seccion) {
-		this.secciones.add(seccion);
-		AdministradorPersistenciaSeccion.getInstance().insert(seccion, this);
-	}	
-	
 	public FichaPeriodontalView generarView() {
 		FichaPeriodontalView view = new FichaPeriodontalView();
 		Collection<SeccionView> seccionesView = new ArrayList<SeccionView>();
@@ -129,7 +112,6 @@ public class FichaPeriodontal {
 		}
 		view.setSecciones(seccionesView);
 		view.setOdontologo(odontologo.generarView());
-		view.setPaciente(paciente.generarView());
 		return view;
 	}
 }

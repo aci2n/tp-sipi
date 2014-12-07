@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 import persistencia.AdministradorPersistenciaHistoriasClinicas;
+import persistencia.AdministradorPersistenciaObservaciones;
 import persistencia.AdministradorPersistenciaOdontograma;
 import views.HistoriaClinicaView;
 import views.ObservacionView;
@@ -35,14 +36,15 @@ public class HistoriaClinica {
 	}
 	
 	public void agregarOdontograma(String idOdontograma, Date fecha, Odontologo odontologo) {
-		Odontograma odontograma = new Odontograma(idOdontograma,fecha,odontologo);
-				
+		Odontograma odontograma = new Odontograma(idOdontograma,fecha,odontologo);				
 		this.odontogramas.add(odontograma);
 		AdministradorPersistenciaOdontograma.getInstancia().insert(odontograma, this);
 	}
 	
 	public void agregarObservacion(Odontologo odontologo, Date fecha, String descripcion) {
-		this.observaciones.add(new Observacion(odontologo, fecha, descripcion, this));
+		Observacion observacion = new Observacion(odontologo, fecha, descripcion);
+		this.observaciones.add(observacion);
+		AdministradorPersistenciaObservaciones.getInstancia().insert(observacion, this);
 	}
 		
 	public FichaPeriodontal getFicha() {

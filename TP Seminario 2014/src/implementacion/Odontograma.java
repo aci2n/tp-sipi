@@ -4,7 +4,6 @@ import java.sql.Date;
 import java.util.ArrayList;
 import java.util.Collection;
 
-import persistencia.AdministradorPersistenciaOdontograma;
 import views.DienteView;
 import views.OdontogramaView;
 

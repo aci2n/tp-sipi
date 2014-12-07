@@ -1,7 +1,6 @@
 package persistencia;
 
 import implementacion.FichaPeriodontal;
-import implementacion.HistoriaClinica;
 import implementacion.Seccion;
 
 import java.sql.Connection;

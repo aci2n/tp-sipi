@@ -2,8 +2,6 @@ package implementacion;
 
 import views.EspecialidadView;
 
-
-
 public class Especialidad {
 	private String descripcion;
 

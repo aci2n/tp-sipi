@@ -1,17 +1,16 @@
 package test;
 
 import implementacion.Especialidad;
-import implementacion.FichaPeriodontal;
 import implementacion.HistoriaClinica;
 import implementacion.Odontologo;
 import implementacion.Paciente;
-import implementacion.Seccion;
 import implementacion.Turno;
 
 import java.sql.Date;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
+import persistencia.AdministradorPersistenciaHistoriasClinicas;
 import persistencia.AdministradorPersistenciaPaciente;
 
 public class Test2 {
@@ -21,20 +20,16 @@ public class Test2 {
 			
 			Paciente paciente = new Paciente();
 			paciente.setApellido("Calace");
-			paciente.setDni("37521882");
-			paciente.setEmail("alvarocalace@hotmail.com");
-	
-			paciente.setFechaNacimiento(formarDateSQL("04/01/1994"));
-		
+			paciente.setDni("37521883");
+			paciente.setEmail("alvarocalace@hotmail.com");	
+			paciente.setFechaNacimiento(formarDateSQL("04/01/1994"));		
 			paciente.setGenero("masculino");
 			paciente.setNombre("Alvaro");
 			paciente.setObraSocial("OSDE");
 			paciente.setPlanObraSocial("OSDE Soy Diamond");
 			paciente.setTelefono("43830700");
-			
-			AdministradorPersistenciaPaciente admPaciente = AdministradorPersistenciaPaciente.getInstancia();
-			
-			//admPaciente.insert(paciente);		
+						
+			AdministradorPersistenciaPaciente.getInstancia().insert(paciente);		
 			//admPaciente.delete(paciente);
 			
 			HistoriaClinica historia = new HistoriaClinica();
@@ -42,7 +37,7 @@ public class Test2 {
 			historia.setDescripcion("macaco");
 			historia.setPaciente(paciente);
 			
-			//AdministradorPersistenciaHistoriasClinicas.getInstancia().insert(historia);
+			AdministradorPersistenciaHistoriasClinicas.getInstancia().insert(historia);
 			
 			Odontologo odontologo = new Odontologo();
 			
@@ -60,6 +55,7 @@ public class Test2 {
 			
 			//historia.altaObservacion(odontologo, new Date((format.parse("15/11/2014")).getTime()), "El paciente muestra gengivitis aguda.");
 			
+			/*
 			FichaPeriodontal ficha = new FichaPeriodontal();
 			ficha.setOdontologo(odontologo);
 			ficha.setPaciente(paciente);
@@ -73,6 +69,8 @@ public class Test2 {
 			seccion.setPosicionSeccion("1");
 			seccion.setProfundidad(5);
 			seccion.setSangrado(false);
+			
+			*/
 			
 			//ficha.agregarSeccion(seccion);
 			
@@ -106,7 +104,9 @@ public class Test2 {
 			
 			*/
 			
-			historia.agregarOdontograma("424",getFechaActualSQL(), odontologo);
+			//historia.agregarOdontograma("424",getFechaActualSQL(), odontologo);
+			
+			historia.asignarFichaPeriodontal(odontologo);
 			
 		}
 		

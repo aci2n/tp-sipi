@@ -1,9 +1,6 @@
 package implementacion;
 
-import persistencia.AdministradorPersistenciaCaras;
 import views.CaraView;
-
-
 
 public class Cara {
 	public final static String posicion1 = "Vestibular";
@@ -14,9 +11,8 @@ public class Cara {
 	private String posicion;
 	private String estado;
 	
-	public Cara(String posicion, String estado){
+	public Cara(String posicion){
 		this.posicion=posicion;
-		this.estado=estado;
 	}
 	
 	public Cara() {

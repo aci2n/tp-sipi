@@ -1,6 +1,7 @@
 package persistencia;
 
 import implementacion.FichaPeriodontal;
+import implementacion.HistoriaClinica;
 import implementacion.Seccion;
 
 import java.sql.Connection;
@@ -30,6 +31,11 @@ public class AdministradorPersistenciaFichaPeriodontal extends AdministradorPers
 			ps.setString(2, ficha.getPaciente().getDni());
 			
 			ps.execute();
+			
+			for (Seccion s : ficha.getSecciones())
+				AdministradorPersistenciaSeccion.getInstance().insert(s, ficha);
+			
+			
 			con.close();
 		}
 		catch (SQLException e){
@@ -70,7 +76,6 @@ public class AdministradorPersistenciaFichaPeriodontal extends AdministradorPers
 				ficha = new FichaPeriodontal();
 				
 				ficha.setOdontologo(Controlador.getInstancia().obtenerOdontologo(rs.getString("matricula")));
-				ficha.setPaciente(Controlador.getInstancia().obtenerPaciente(rs.getString("dni")));
 				ficha.setSecciones(AdministradorPersistenciaSeccion.getInstance().buscarSecciones(ficha));
 			}
 		}

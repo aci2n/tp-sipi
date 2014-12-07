@@ -14,6 +14,14 @@ public class Seccion {
 	private String posicionSeccion;
 	private String posicionDiente;
 	
+	public Seccion(String posicionDiente, String posicionSeccion) {
+		this.posicionDiente=posicionDiente;
+		this.posicionSeccion=posicionSeccion;
+	}
+
+	public Seccion() {
+	}
+
 	public boolean sosLaSeccion(String posicionSeccion, String posicionDiente) {
 		return this.posicionDiente.equals(posicionSeccion) && this.posicionDiente.equals(posicionDiente);
 	}

@@ -26,54 +26,30 @@ public class Odontograma {
 		int i;
 		
 		for (i = 11;i<=18;i++)
-			this.dientes.add(new Diente(Integer.toString(i),this));
+			this.dientes.add(new Diente(Integer.toString(i)));
 		
 		for (i = 21;i<=28;i++)
-			this.dientes.add(new Diente(Integer.toString(i),this));
+			this.dientes.add(new Diente(Integer.toString(i)));
 		
 		for (i = 31;i<=38;i++)
-			this.dientes.add(new Diente(Integer.toString(i),this));
+			this.dientes.add(new Diente(Integer.toString(i)));
 		
 		for (i = 51;i<=55;i++)
-			this.dientes.add(new Diente(Integer.toString(i),this));
+			this.dientes.add(new Diente(Integer.toString(i)));
 		
 		for (i = 61;i<=65;i++)
-			this.dientes.add(new Diente(Integer.toString(i),this));
+			this.dientes.add(new Diente(Integer.toString(i)));
 		
 		for (i = 71;i<=75;i++)
-			this.dientes.add(new Diente(Integer.toString(i),this));
+			this.dientes.add(new Diente(Integer.toString(i)));
 		
 		for (i = 81;i<=85;i++)
-			this.dientes.add(new Diente(Integer.toString(i),this));		
+			this.dientes.add(new Diente(Integer.toString(i)));		
 	}
 	
 	public Odontograma() {
 	}
 
-	public void altaProtesisDiente(int posicionDiente) {
-	
-	}
-	
-	public void modificarEstadoDiente(int posicionDiente, String estado) {
-	
-	}
-	
-	public Diente obtenerDiente(int posicionDiente) {
-		return null;
-	}
-	
-	public void modificarEstadoCaraDiente(int posicionDiente, int posicionCara, String estadoCara) {
-	
-	}
-	
-	public void modificarPuenteDientes(int[] posicionesDientes) {
-	
-	}
-	
-	public int buscarPuenteDientes(int[] idDientes) {
-		return 0;
-	}
-	
 	public Collection<String> getSintomas() {
 		return null;
 	}

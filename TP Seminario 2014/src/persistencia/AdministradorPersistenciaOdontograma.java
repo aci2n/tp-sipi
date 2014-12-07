@@ -36,11 +36,11 @@ public class AdministradorPersistenciaOdontograma extends AdministradorPersisten
 			ps.setDate(3, odontograma.getFecha());
 			ps.setString(4, odontograma.getOdontologo().getMatricula());
 			
+			ps.execute();			
+			
 			for (Diente diente : odontograma.getDientes()){
 				AdministradorPersistenciaDiente.getInstancia().insert(diente,odontograma);
 			}
-
-			ps.execute();			
 			
 			con.close();
 		}

@@ -1,13 +1,27 @@
 package implementacion;
 
+import persistencia.AdministradorPersistenciaCaras;
 import views.CaraView;
 
 
 
 public class Cara {
+	public final static String posicion1 = "Vestibular";
+	public final static String posicion2 = "Mesial";
+	public final static String posicion3 = "Oclusal";
+	public final static String posicion4 = "Lingual";
+	public final static String posicion5 = "Distal";
 	private String posicion;
 	private String estado;
 	
+	public Cara(String posicion, String estado){
+		this.posicion=posicion;
+		this.estado=estado;
+	}
+	
+	public Cara() {
+	}
+
 	public boolean sosLaCara(String posicionCara) {
 		return this.posicion==posicionCara;
 	}

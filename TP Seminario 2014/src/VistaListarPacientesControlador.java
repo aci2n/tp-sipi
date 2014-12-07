@@ -101,9 +101,8 @@ public class VistaListarPacientesControlador implements Initializable {
 
 		// CREA Y RETORNA LA LISTA QUE CONTIENE LOS PACIENTES
 
-		//pacientes.add(new PacienteView("a", "a", "a", "a", "a", "a", "a", "a", "a"));
-		for(Paciente p : Controlador.getInstancia().getPacientes())
-			pacientes.add(p.generarView());
+		for(PacienteView p : Controlador.getInstancia().obtenerPacientesView())
+			pacientes.add(p);
 
 		return pacientes;
 	}

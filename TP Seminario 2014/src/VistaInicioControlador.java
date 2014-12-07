@@ -49,17 +49,6 @@ public class VistaInicioControlador implements Initializable {
 	@FXML
 	private Button cerrarBoton;
 
-	/**
-	 * Event handler fired when the user requests a new vista.
-	 *
-	 * @param event
-	 *            the event that triggered the handler.
-	 */
-	@FXML
-	public void nextPane(ActionEvent event) {
-		// VistaNavigator.loadVista(VistaNavigator.VISTA_2);
-
-	}
 
 	/**
 	 * Crea y muestra una ventana emergente
@@ -70,36 +59,36 @@ public class VistaInicioControlador implements Initializable {
 	@FXML
 	public void accionarBotonHora(ActionEvent event) {
 
-		Stage dialog = new Stage();
-		dialog.initStyle(StageStyle.TRANSPARENT);
-		dialog.initModality(Modality.WINDOW_MODAL);
-		dialog.initOwner(vistaHolder.getScene().getWindow());
-
-		VentanaEmergente ventanaE = new VentanaEmergente();
-
-		dialog.setScene(ventanaE.obtenerScene("ALERTA",
-				"¿Estás seguro que deseas eliminar al paciente seleccionado?"));
-		ventanaE.getCerrar().setOnAction(new EventHandler<ActionEvent>() {
-
-			@Override
-			public void handle(ActionEvent event) {
-
-				//dialog.close();
-				vistaHolder.setDisable(false);
-			}
-		});
-		ventanaE.getExit().setOnAction(new EventHandler<ActionEvent>() {
-
-			@Override
-			public void handle(ActionEvent event) {
-
-				//dialog.close();
-				vistaHolder.setDisable(false);
-			}
-		});
-
-		dialog.show();
-		vistaHolder.setDisable(true);
+//		Stage dialog = new Stage();
+//		dialog.initStyle(StageStyle.TRANSPARENT);
+//		dialog.initModality(Modality.WINDOW_MODAL);
+//		dialog.initOwner(vistaHolder.getScene().getWindow());
+//
+//		VentanaEmergente ventanaE = new VentanaEmergente();
+//
+//		dialog.setScene(ventanaE.obtenerScene("ALERTA",
+//				"¿Estás seguro que deseas eliminar al paciente seleccionado?"));
+//		ventanaE.getCerrar().setOnAction(new EventHandler<ActionEvent>() {
+//
+//			@Override
+//			public void handle(ActionEvent event) {
+//
+//				//dialog.close();
+//				vistaHolder.setDisable(false);
+//			}
+//		});
+//		ventanaE.getExit().setOnAction(new EventHandler<ActionEvent>() {
+//
+//			@Override
+//			public void handle(ActionEvent event) {
+//
+//				//dialog.close();
+//				vistaHolder.setDisable(false);
+//			}
+//		});
+//
+//		dialog.show();
+//		vistaHolder.setDisable(true);
 
 	}
 

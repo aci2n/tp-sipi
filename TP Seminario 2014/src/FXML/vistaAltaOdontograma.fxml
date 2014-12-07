@@ -1049,7 +1049,7 @@
                   <HBox alignment="CENTER" spacing="30.0">
                      <children>
                         <Button fx:id="botonGuardar" mnemonicParsing="false" text="Guardar" />
-                        <Button fx:id="botonCancelar" mnemonicParsing="false" text="Cacelar" />
+                        <Button fx:id="botonCancelar" mnemonicParsing="false" text="Cancelar" />
                      </children>
                   </HBox>
                </children>

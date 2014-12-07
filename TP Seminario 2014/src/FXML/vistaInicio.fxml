@@ -12,9 +12,6 @@
 <StackPane fx:id="vistaHolder" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="VistaInicioControlador">
   <children>
       <BorderPane>
-         <bottom>
-          <Button fx:id="boton" mnemonicParsing="false" onAction="#nextPane" text="Next Pane" BorderPane.alignment="CENTER" />
-         </bottom>
          <right>
             <BorderPane BorderPane.alignment="TOP_CENTER">
                <top>

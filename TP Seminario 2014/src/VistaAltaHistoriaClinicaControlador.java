@@ -1,4 +1,4 @@
-package ventanas;
+
 import java.net.URL;
 import java.sql.Date;
 import java.util.ResourceBundle;

@@ -1,4 +1,4 @@
-package ventanas;
+
 import java.io.IOException;
 
 import javafx.application.Application;
@@ -59,7 +59,7 @@ public class Main extends Application {
 		Scene scene = new Scene(mainPane);
 
 		scene.getStylesheets().setAll(
-				getClass().getResource("/estilos/vista.css").toExternalForm());
+				getClass().getResource("vista.css").toExternalForm());
 		
 
 		return scene;

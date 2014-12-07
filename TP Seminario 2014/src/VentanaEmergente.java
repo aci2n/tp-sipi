@@ -1,4 +1,4 @@
-package ventanas;
+
 
 import javafx.animation.FadeTransition;
 import javafx.geometry.Insets;

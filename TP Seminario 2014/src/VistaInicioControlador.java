@@ -1,4 +1,4 @@
-package ventanas;
+
 
 import java.io.IOException;
 import java.net.URL;
@@ -84,7 +84,7 @@ public class VistaInicioControlador implements Initializable {
 			@Override
 			public void handle(ActionEvent event) {
 
-				dialog.close();
+				//dialog.close();
 				vistaHolder.setDisable(false);
 			}
 		});
@@ -93,7 +93,7 @@ public class VistaInicioControlador implements Initializable {
 			@Override
 			public void handle(ActionEvent event) {
 
-				dialog.close();
+				//dialog.close();
 				vistaHolder.setDisable(false);
 			}
 		});

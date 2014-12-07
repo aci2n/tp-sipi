@@ -17,7 +17,8 @@ import persistencia.AdministradorPersistenciaOdontologos;
 import persistencia.AdministradorPersistenciaPaciente;
 import persistencia.AdministradorPersistenciaSintomas;
 import persistencia.AdministradorPersistenciaTurnos;
-import views.SeccionView;
+import views.PacienteView;
+import views.TurnoView;
 
 public class Controlador {
 	
@@ -40,6 +41,34 @@ public class Controlador {
 		if (instancia==null)
 			instancia = new Controlador();
 		return instancia;
+	}
+	
+	public void altaPaciente(PacienteView pacienteView) {
+		Paciente paciente = obtenerPaciente(pacienteView.getDni());
+		if (paciente == null) {
+			paciente = new Paciente(pacienteView.getDni(),
+					pacienteView.getNombre(),
+					pacienteView.getApellido(),
+					pacienteView.getTelefono(),
+					pacienteView.getEmail(),
+					pacienteView.getFechaNacimiento(),
+					pacienteView.getGenero(),
+					pacienteView.getObraSocial(),
+					pacienteView.getPlanObraSocial());
+			this.pacientes.add(paciente);
+		}
+	}
+	
+	public void altaTurno(TurnoView turnoView) {
+		Turno turno = obtenerTurno(turnoView.getPaciente().getDni(), turnoView.getOdontologo().getMatricula(), turnoView.getFecha());
+		if (turno == null) {
+			Paciente paciente = obtenerPaciente(turnoView.getPaciente().getDni());
+			Odontologo odontologo = obtenerOdontologo(turnoView.getOdontologo().getMatricula());
+			if (paciente != null && odontologo != null) {
+				turno = new Turno(paciente, odontologo, turnoView.getDescripcion(), turnoView.getFecha());
+				turnos.add(turno);
+			}
+		}
 	}
 	
 	public void altaHistoriaClinica(String dni, String descripcion) {
@@ -75,85 +104,14 @@ public class Controlador {
 		return proyecciones;
 	}
 	
-	public void modificarSeccionHistoriaFicha(String dni, SeccionView seccionView) {
-		FichaPeriodontal ficha = obtenerFicha(dni);
-		if (ficha != null) {
-			ficha.modificarSeccion(seccionView.getPosicionSeccion(), seccionView.getPosicionDiente(), seccionView.isSangrado(), seccionView.isPlaca(), seccionView.getMargen());
+	public void actualizarHistoriaClinica(String dni, String matricula, Date fecha, String descripcion) {
+		HistoriaClinica historia = obtenerHistoriaClinica(dni);
+		if (historia != null) {
+			historia.setDescripcion(descripcion);
+			AdministradorPersistenciaHistoriasClinicas.getInstancia().update(historia);
 		}
 	}
 	
-	public void actualizarHistoriaClinica(String dni, String matricula, Date fecha, String descripcion) {
-	
-	}
-	
-	public Odontologo buscarOdontologo(String dni) {
-		return null;
-	}
-	
-	public HistoriaClinica buscarHistoriaClinica(String dni) {
-		return null;
-	}
-	
-	public void ingresarEstadoDiente(int dni, int idDiente, String estado) {
-	
-	}
-	
-	public void ingresarProtesis(int dni, int idDiente) {
-	
-	}
-	
-	public void ingresarEstadoCara(int dni, int idDiente, int idCara, String estadoCara) {
-	
-	}
-	
-	public void ingresarDientesPuente(int dni, int[] idDientes) {
-	
-	}
-	
-	public Prediccion analisisPredictivoHistoriaClinica(int dni) {
-		return null;
-	}
-	
-	public float[] calcularProbabilidadesHistorias(Collection<String> Sintomas) {
-		return null;
-	}
-	
-	public float[] calcularProbabilidades(Collection<String> Sintomas, Collection<String> SintomasOtros) {
-		return null;
-	}
-
-	public Collection<Paciente> getPacientes() {
-		return pacientes;
-	}
-
-	public void setPacientes(Collection<Paciente> pacientes) {
-		this.pacientes = pacientes;
-	}
-
-	public Collection<Turno> getTurnos() {
-		return turnos;
-	}
-
-	public void setTurnos(Collection<Turno> turnos) {
-		this.turnos = turnos;
-	}
-
-	public Collection<Odontologo> getOdontologos() {
-		return odontologos;
-	}
-
-	public void setOdontologos(Collection<Odontologo> odontologos) {
-		this.odontologos = odontologos;
-	}
-
-	public Collection<HistoriaClinica> getHistoriasClinicas() {
-		return historiasClinicas;
-	}
-
-	public void setHistoriasClinicas(Collection<HistoriaClinica> historiasClinicas) {
-		this.historiasClinicas = historiasClinicas;
-	}
-
 	public Odontologo obtenerOdontologo(String matricula) {
 		Odontologo odontologo = null;
 		for (Odontologo odon : odontologos) {
@@ -210,6 +168,22 @@ public class Controlador {
 		return null;
 	}
 	
+	public Turno obtenerTurno(String dni, String matricula, Date fecha) {
+		Turno turno = null;
+		for (Turno turn : turnos) {
+			if (turn.sosElTurno(dni, matricula, fecha)) {
+				turno = turn;
+			}
+		}
+		if (turno == null) {
+			turno = AdministradorPersistenciaTurnos.getInstancia().buscarTurno(matricula, dni, fecha);
+			if (turno != null) {
+				turnos.add(turno);
+			}
+		}
+		return turno;
+	}
+	
 	//metodos para el test
 	
 	public void altaPacienteTest(String dni){
@@ -240,4 +214,37 @@ public class Controlador {
 			}
 		}
 	}
+
+	public Collection<Paciente> getPacientes() {
+		return pacientes;
+	}
+
+	public void setPacientes(Collection<Paciente> pacientes) {
+		this.pacientes = pacientes;
+	}
+
+	public Collection<Turno> getTurnos() {
+		return turnos;
+	}
+
+	public void setTurnos(Collection<Turno> turnos) {
+		this.turnos = turnos;
+	}
+
+	public Collection<Odontologo> getOdontologos() {
+		return odontologos;
+	}
+
+	public void setOdontologos(Collection<Odontologo> odontologos) {
+		this.odontologos = odontologos;
+	}
+
+	public Collection<HistoriaClinica> getHistoriasClinicas() {
+		return historiasClinicas;
+	}
+
+	public void setHistoriasClinicas(Collection<HistoriaClinica> historiasClinicas) {
+		this.historiasClinicas = historiasClinicas;
+	}
+
 }

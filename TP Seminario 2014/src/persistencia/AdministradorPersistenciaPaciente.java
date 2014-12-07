@@ -23,12 +23,11 @@ public class AdministradorPersistenciaPaciente extends AdministradorPersistencia
 		return instance;
 	}
 
-	public void insert(Object o) {
-		Paciente paciente = (Paciente) o;
-		
+	public void insert(Paciente paciente) {	
 		try{
 			Connection con = Conexion.connect();
-			PreparedStatement ps = con.prepareStatement("INSERT INTO "+super.getDatabase()+".dbo.Pacientes VALUES (?,?,?,?,?,?,?,?,?)");
+			PreparedStatement ps = con.prepareStatement("INSERT INTO "+super.getDatabase()+".dbo.Pacientes"
+					+ "(dni, nombre, apellido, telefono, email, fecha_nac, genero, obra_social, plan_obra_social) VALUES (?,?,?,?,?,?,?,?,?)");
 			ps.setString(1, paciente.getDni());
 			ps.setString(2, paciente.getNombre());
 			ps.setString(3, paciente.getApellido());
@@ -48,9 +47,7 @@ public class AdministradorPersistenciaPaciente extends AdministradorPersistencia
 		}
 	}
 
-	public void update(Object o) {
-		Paciente paciente = (Paciente) o;
-		
+	public void update(Paciente paciente) {
 		try{
 			Connection con = Conexion.connect();
 			PreparedStatement ps = con.prepareStatement("UPDATE "+super.getDatabase()+".dbo.Pacientes"
@@ -82,11 +79,10 @@ public class AdministradorPersistenciaPaciente extends AdministradorPersistencia
 		}
 	}
 	
-	public void delete(Object o) {
-		Paciente paciente = (Paciente) o;
+	public void delete(Paciente paciente) {
 		try{
 			Connection con = Conexion.connect();
-			PreparedStatement ps = con.prepareStatement("DELETE FROM "+super.getDatabase()+".dbo.Pacientes WHERE dni like ?");
+			PreparedStatement ps = con.prepareStatement("UPDATE "+super.getDatabase()+".dbo.Pacientes SET activo = 0 WHERE dni like ?");
 			ps.setString(1, paciente.getDni());		
 			ps.execute();
 			con.close();

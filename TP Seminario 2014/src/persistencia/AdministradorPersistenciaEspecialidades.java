@@ -25,7 +25,7 @@ public class AdministradorPersistenciaEspecialidades extends
 		// TODO Auto-generated method stub
 		try{
 			Connection con = Conexion.connect();
-			PreparedStatement ps = con.prepareStatement("INSERT INTO "+super.getDatabase()+".dbo.Especialidades values(?,?)");
+			PreparedStatement ps = con.prepareStatement("INSERT INTO "+super.getDatabase()+".dbo.Especialidades_Odontologos(matricula, nombre_especialidad) values(?,?)");
 			ps.setString(1, odon.getMatricula());
 			ps.setString(2,esp.getDescripcion());
 			ps.execute();

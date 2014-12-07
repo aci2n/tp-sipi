@@ -20,7 +20,7 @@ public class AdministradorPersistenciaSintomas extends AdministradorPersistencia
 			instancia = new AdministradorPersistenciaSintomas();
 		return instancia;
 	}
-	
+
 	public void insert(String sintoma) {
 		try{
 			Connection con = Conexion.connect();
@@ -35,7 +35,7 @@ public class AdministradorPersistenciaSintomas extends AdministradorPersistencia
 			e.printStackTrace();
 		}
 	}
-
+	
 	public Collection<String> buscarSintomas(){
 		Collection<String> sintomas = new ArrayList<String>();
 		try{

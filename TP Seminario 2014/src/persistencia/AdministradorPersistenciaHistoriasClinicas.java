@@ -28,7 +28,7 @@ public class AdministradorPersistenciaHistoriasClinicas extends AdministradorPer
 	public void insert(HistoriaClinica historia) {
 		try{
 			Connection con = Conexion.connect();
-			PreparedStatement ps = con.prepareStatement("INSERT INTO "+super.getDatabase()+".dbo.HistoriasClinicas(dni, descripcion) VALUES (?,?,?)");
+			PreparedStatement ps = con.prepareStatement("INSERT INTO "+super.getDatabase()+".dbo.HistoriasClinicas(dni, descripcion) VALUES (?,?)");
 			ps.setString(1, historia.getPaciente().getDni());
 			ps.setString(2, historia.getDescripcion());
 			

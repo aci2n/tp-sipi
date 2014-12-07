@@ -31,7 +31,7 @@ public class AdministradorPersistenciaOdontologos extends
 
 		try{
 			Connection con = Conexion.connect();
-			PreparedStatement ps = con.prepareStatement("INSERT INTO "+super.getDatabase()+".dbo.Odontologos VALUES (?,?,?)");
+			PreparedStatement ps = con.prepareStatement("INSERT INTO "+super.getDatabase()+".dbo.Odontologos (matricula, nombre, apellido) VALUES (?,?,?)");
 			ps.setString(1, o.getMatricula());
 			ps.setString(2, o.getNombre());
 			ps.setString(3, o.getApellido());

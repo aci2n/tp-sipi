@@ -34,8 +34,12 @@ public class AdministradorPersistenciaDiente extends AdministradorPersistencia {
 			ps.setString(4, diente.getIdPuente());
 			ps.setString(5, diente.getIdProtesis());
 			
+			ps.execute();
+			
 			for (Cara cara : diente.getCaras())
 				AdministradorPersistenciaCaras.getInstancia().insert(cara, diente, odontograma);
+			
+			con.close();
 			 
 		}
 		catch (SQLException e){

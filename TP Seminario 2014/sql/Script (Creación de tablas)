@@ -25,7 +25,7 @@ CREATE TABLE FichasPeriodontales(
 	matricula varchar(15),
 	activo bit default 1,
 	constraint fk_fichas_periodontales_odontologos foreign key(matricula) references Odontologos,
-	constraint fk_fichas_periodontales_odontologos foreign key(dni) references Pacientes,
+	constraint fk_fichas_periodontales_pacientes foreign key(dni) references HistoriasClinicas,
 	constraint pk_ficha_periodontal primary key (dni)
 );
 
@@ -48,7 +48,6 @@ CREATE TABLE HistoriasClinicas(
 	activo bit default 1,
 	constraint pk_historias_clinicas primary key (dni),
 	constraint fk_historias_clinicas_pacientes foreign key (dni) references Pacientes,
-	constraint fk_historias_clinicas_fichas foreign key (id_ficha) references FichasPeriodontales,
 );
 
 CREATE TABLE Odontogramas( 

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<fx:root type="javafx.scene.layout.AnchorPane" xmlns:fx="http://javafx.com/fxml">
+<VBox alignment="CENTER" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="60.0" spacing="3.0" styleClass="box" stylesheets="@../workspace%20luna/SistOdontologico/src/a.css">
+         <children>
+            <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" styleClass="toggleButton" stylesheets="@../workspace%20luna/SistOdontologico/src/a.css" />
+            <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" styleClass="toggleButton" stylesheets="@../workspace%20luna/SistOdontologico/src/a.css" />
+            <ToggleButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" styleClass="toggleButton" stylesheets="@../workspace%20luna/SistOdontologico/src/a.css" />
+         </children>
+         <VBox.margin>
+            <Insets bottom="2.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="60.0" spacing="3.0" styleClass="box" stylesheets="@../workspace%20luna/SistOdontologico/src/a.css">
+         <children>
+            <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" styleClass="toggleButton2" stylesheets="@../workspace%20luna/SistOdontologico/src/a.css" />
+            <ToggleButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" styleClass="toggleButton2" stylesheets="@../workspace%20luna/SistOdontologico/src/a.css" />
+            <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" styleClass="toggleButton2" stylesheets="@../workspace%20luna/SistOdontologico/src/a.css" />
+         </children>
+         <VBox.margin>
+            <Insets bottom="2.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="60.0" styleClass="box" stylesheets="@../workspace%20luna/SistOdontologico/src/a.css">
+         <children>
+            <TextField fx:id="textfield">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </TextField>
+            <TextField>
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </TextField>
+            <TextField>
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </TextField>
+         </children>
+         <VBox.margin>
+            <Insets bottom="2.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="60.0" styleClass="box" stylesheets="@../workspace%20luna/SistOdontologico/src/a.css">
+         <children>
+            <TextField>
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </TextField>
+            <TextField>
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </TextField>
+            <TextField>
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </TextField>
+         </children>
+         <VBox.margin>
+            <Insets bottom="2.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="60.0" styleClass="box" stylesheets="@../workspace%20luna/SistOdontologico/src/a.css">
+         <children>
+            <TextField>
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </TextField>
+            <TextField>
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </TextField>
+            <TextField>
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </TextField>
+         </children>
+         <VBox.margin>
+            <Insets bottom="2.0" />
+         </VBox.margin>
+      </HBox>
+   </children>
+</VBox>
+  </fx:root>
+

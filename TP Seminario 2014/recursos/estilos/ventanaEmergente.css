@@ -1,0 +1,91 @@
+.root{
+	-fx-border-insets: 8;
+	-fx-background-insets: 5;
+  	/*-fx-border-style: solid;*/
+	-fx-background-color: white;
+	-fx-background-radius: 4;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 10, 0.5, 0.0, 0.0);
+    -fx-font-family: "Calibri";
+}
+
+.button{
+	-fx-cursor: hand;
+	-fx-text-fill: white;
+	-fx-font-weight: bold;
+	-fx-font-size: 14;
+}
+
+
+	/* HBOX 1*/
+
+.hbox1{	
+	-fx-border-color: #ecf0f1;
+	-fx-border-insets: 0 5 0 5;
+    -fx-border-width: 0 0 1 0;
+}
+
+.titulo {
+	-fx-text-fill: #2c3e50;
+	-fx-font-weight: bold;
+	-fx-font-size: 20;
+}
+
+.exit{
+	-fx-background-color: transparent;
+	-fx-background-size: 12	12;
+	-fx-background-image: url("Imagenes/cruz.png");
+	-fx-background-repeat: no-repeat;
+	-fx-background-position: center;
+}
+
+.exit:hover{
+	-fx-background-image: url("Imagenes/cruz_hover.png");
+	-fx-background-size: 12	12;
+	
+}
+
+	/* HBOX 2*/
+
+.hbox2{
+	-fx-background-insets: 8;	
+}
+
+.body {
+	-fx-text-fill: #34495e;
+	-fx-font-size: 14;
+}
+
+	/* HBOX 3*/
+
+.hbox3{
+	
+	/*
+	 * -fx-border-insets: 0, 20;
+	 * 
+	 */
+	-fx-background-insets: 8 5 8 ;
+	-fx-background-color: #ecf0f1;
+	-fx-background-radius: 4;
+
+}
+
+.confirmar{
+	-fx-background-color: #e74c3c;
+}
+
+.confirmar:hover{
+	-fx-background-color: #c0392b;
+}
+
+.cerrar{
+	-fx-background-color: #1abc9c;
+}
+
+.cerrar:hover{
+	-fx-background-color: #16a085;
+}
+
+
+.hbox .label{
+			
+}

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.chart.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<StackPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="VistaAnalisisPredictivoControlador">
+   <children>
+      <VBox alignment="CENTER" spacing="30.0" style="-fx-background-color: white;">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="30.0" prefWidth="200.0" spacing="10.0" style="-fx-background-color: #3498db;">
+               <children>
+                  <ImageView fx:id="imagenAnalisisPredictivo" fitHeight="20.0" fitWidth="20.0" pickOnBounds="FALSE" HBox.hgrow="NEVER">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <Label text="Análisis Predictivo de la Historia Clínica" textFill="WHITE">
+                     <font>
+                        <Font name="Calibri Bold" size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+               <effect>
+                  <DropShadow color="#7f8c8d" height="7.0" radius="1.25" width="0.0" />
+               </effect>
+            </HBox>
+            <AnchorPane fx:id="boxFiltrarPacientes" prefHeight="80.0">
+               <children>
+                  <HBox alignment="CENTER_LEFT" nodeOrientation="LEFT_TO_RIGHT" spacing="10.0">
+                     <children>
+                        <Label text="Ingrese el DNI del paciente para realizar el analisis" />
+                        <TextField fx:id="textFiltrarTabla" prefWidth="250.0" promptText="Ingrese DNI unicamente" />
+                        <Button fx:id="botonRealizarAnalisis" mnemonicParsing="false" onAction="#realizarAnalisis" text="Realizar análisis" />
+                     </children>
+                     <padding>
+                        <Insets left="10.0" top="30.0" />
+                     </padding>
+                  </HBox>
+                  <Label style="-fx-border-color: #95a5a6; -fx-border-radius: 2; -fx-background-color: #eef2f3;" text="Busqueda del Paciente" textFill="#7f8c8d">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                     <padding>
+                        <Insets left="5.0" right="5.0" />
+                     </padding>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets bottom="15.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets left="20.0" right="50.0" top="10.0" />
+               </VBox.margin>
+            </AnchorPane>
+            <PieChart fx:id="grafico" title="Análisis Predictivo del paciente">
+               <VBox.margin>
+                  <Insets bottom="20.0" left="100.0" right="100.0" />
+               </VBox.margin>
+            </PieChart>
+         </children>
+         <effect>
+            <DropShadow />
+         </effect>
+         <StackPane.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </StackPane.margin>
+      </VBox>
+   </children>
+</StackPane>

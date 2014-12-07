@@ -1,0 +1,1066 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<StackPane fx:id="stackOdontograma" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="VistaAltaOdontogramaControlador">
+   <children>
+      <ScrollPane fitToHeight="true" fitToWidth="true" prefHeight="1000.0" prefWidth="1000.0">
+         <content>
+            <VBox spacing="20.0">
+               <children>
+                  <BorderPane>
+                     <center>
+                        <VBox alignment="CENTER" spacing="30.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <AnchorPane fx:id="boxFiltrarPacientes" minHeight="-Infinity" prefHeight="80.0">
+                                 <children>
+                                    <HBox alignment="CENTER_LEFT" nodeOrientation="LEFT_TO_RIGHT" spacing="10.0">
+                                       <children>
+                                          <TextField fx:id="filtrarFicha" prefWidth="250.0" promptText="Ingrese el DNI  del paciente" />
+                                          <Button fx:id="botonBuscar" mnemonicParsing="false" onAction="#buscarPaciente" text="Buscar Historia Clínica">
+                                             <font>
+                                                <Font name="Calibri" size="14.0" />
+                                             </font>
+                                          </Button>
+                                       </children>
+                                       <padding>
+                                          <Insets left="10.0" top="30.0" />
+                                       </padding>
+                                    </HBox>
+                                    <Label style="-fx-border-color: #95a5a6; -fx-border-radius: 2; -fx-background-color: #eef2f3;" text="Busqueda de Historia Clínica" textFill="#7f8c8d">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets left="5.0" right="5.0" />
+                                       </padding>
+                                    </Label>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets right="10.0" />
+                                 </VBox.margin>
+                              </AnchorPane>
+                              <VBox fx:id="boxOdontograma" spacing="20.0" style="-fx-background-color: white;">
+                                 <children>
+                                    <HBox alignment="CENTER_LEFT" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" style="-fx-background-color: #3498db;">
+                                       <children>
+                                          <Label text="Odontrograna" textFill="WHITE">
+                                             <font>
+                                                <Font name="Calibri Bold" size="14.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets left="10.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" spacing="10.0">
+                                       <children>
+                                          <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                                             <children>
+                                                <Button fx:id="diente1" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="100.0" prefWidth="70.0">
+                                                   <VBox.margin>
+                                                      <Insets bottom="20.0" />
+                                                   </VBox.margin>
+                                                </Button>
+                                                <HBox alignment="CENTER" prefHeight="438.0" prefWidth="634.0">
+                                                   <children>
+                                                      <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                      <VBox alignment="CENTER">
+                                                         <children>
+                                                            <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button layoutX="10.0" layoutY="35.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                         </children>
+                                                      </VBox>
+                                                      <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                   </children>
+                                                </HBox>
+                                                <Label text="1" textFill="#2980b9">
+                                                   <font>
+                                                      <Font name="Calibri" size="18.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets top="10.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                             </children>
+                                          </VBox>
+                                          <VBox alignment="CENTER" layoutX="419.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0">
+                                             <children>
+                                                <Button fx:id="diente2" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="100.0" prefWidth="70.0">
+                                                   <VBox.margin>
+                                                      <Insets bottom="20.0" />
+                                                   </VBox.margin>
+                                                </Button>
+                                                <HBox alignment="CENTER" prefHeight="438.0" prefWidth="634.0">
+                                                   <children>
+                                                      <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                      <VBox alignment="CENTER">
+                                                         <children>
+                                                            <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button layoutX="10.0" layoutY="35.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                         </children>
+                                                      </VBox>
+                                                      <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                   </children>
+                                                </HBox>
+                                                <Label text="2" textFill="#2980b9">
+                                                   <font>
+                                                      <Font name="Calibri" size="18.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets top="10.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                             </children>
+                                          </VBox>
+                                          <VBox alignment="CENTER" layoutX="364.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0">
+                                             <children>
+                                                <Button fx:id="diente3" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="100.0" prefWidth="70.0">
+                                                   <VBox.margin>
+                                                      <Insets bottom="20.0" />
+                                                   </VBox.margin>
+                                                </Button>
+                                                <HBox alignment="CENTER" prefHeight="438.0" prefWidth="634.0">
+                                                   <children>
+                                                      <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                      <VBox alignment="CENTER">
+                                                         <children>
+                                                            <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button layoutX="10.0" layoutY="35.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                         </children>
+                                                      </VBox>
+                                                      <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                   </children>
+                                                </HBox>
+                                                <Label text="3" textFill="#2980b9">
+                                                   <font>
+                                                      <Font name="Calibri" size="18.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets top="10.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                             </children>
+                                          </VBox>
+                                          <VBox alignment="CENTER" layoutX="474.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0">
+                                             <children>
+                                                <Button fx:id="diente4" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="100.0" prefWidth="70.0">
+                                                   <VBox.margin>
+                                                      <Insets bottom="20.0" />
+                                                   </VBox.margin>
+                                                </Button>
+                                                <HBox alignment="CENTER" prefHeight="438.0" prefWidth="634.0">
+                                                   <children>
+                                                      <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                      <VBox alignment="CENTER">
+                                                         <children>
+                                                            <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button layoutX="10.0" layoutY="35.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                         </children>
+                                                      </VBox>
+                                                      <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                   </children>
+                                                </HBox>
+                                                <Label text="4" textFill="#2980b9">
+                                                   <font>
+                                                      <Font name="Calibri" size="18.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets top="10.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                             </children>
+                                          </VBox>
+                                          <VBox alignment="CENTER" layoutX="474.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0">
+                                             <children>
+                                                <Button fx:id="diente5" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="100.0" prefWidth="70.0">
+                                                   <VBox.margin>
+                                                      <Insets bottom="20.0" />
+                                                   </VBox.margin>
+                                                </Button>
+                                                <HBox alignment="CENTER" prefHeight="438.0" prefWidth="634.0">
+                                                   <children>
+                                                      <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                      <VBox alignment="CENTER">
+                                                         <children>
+                                                            <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button layoutX="10.0" layoutY="35.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                         </children>
+                                                      </VBox>
+                                                      <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                   </children>
+                                                </HBox>
+                                                <Label text="5" textFill="#2980b9">
+                                                   <font>
+                                                      <Font name="Calibri" size="18.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets top="10.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                             </children>
+                                          </VBox>
+                                          <VBox alignment="CENTER" layoutX="584.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0">
+                                             <children>
+                                                <Button fx:id="diente6" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="100.0" prefWidth="70.0">
+                                                   <VBox.margin>
+                                                      <Insets bottom="20.0" />
+                                                   </VBox.margin>
+                                                </Button>
+                                                <HBox alignment="CENTER" prefHeight="438.0" prefWidth="634.0">
+                                                   <children>
+                                                      <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                      <VBox alignment="CENTER">
+                                                         <children>
+                                                            <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button layoutX="10.0" layoutY="35.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                         </children>
+                                                      </VBox>
+                                                      <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                   </children>
+                                                </HBox>
+                                                <Label text="6" textFill="#2980b9">
+                                                   <font>
+                                                      <Font name="Calibri" size="18.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets top="10.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                             </children>
+                                          </VBox>
+                                          <VBox alignment="CENTER" layoutX="254.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0">
+                                             <children>
+                                                <Button fx:id="diente7" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="100.0" prefWidth="70.0">
+                                                   <VBox.margin>
+                                                      <Insets bottom="20.0" />
+                                                   </VBox.margin>
+                                                </Button>
+                                                <HBox alignment="CENTER" prefHeight="438.0" prefWidth="634.0">
+                                                   <children>
+                                                      <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                      <VBox alignment="CENTER">
+                                                         <children>
+                                                            <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button layoutX="10.0" layoutY="35.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                         </children>
+                                                      </VBox>
+                                                      <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                   </children>
+                                                </HBox>
+                                                <Label text="7" textFill="#2980b9">
+                                                   <font>
+                                                      <Font name="Calibri" size="18.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets top="10.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                             </children>
+                                          </VBox>
+                                          <VBox alignment="CENTER" layoutX="364.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0">
+                                             <children>
+                                                <Button fx:id="diente8" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="100.0" prefWidth="70.0">
+                                                   <VBox.margin>
+                                                      <Insets bottom="20.0" />
+                                                   </VBox.margin>
+                                                </Button>
+                                                <HBox alignment="CENTER" prefHeight="438.0" prefWidth="634.0">
+                                                   <children>
+                                                      <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                      <VBox alignment="CENTER">
+                                                         <children>
+                                                            <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button layoutX="10.0" layoutY="35.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                         </children>
+                                                      </VBox>
+                                                      <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                   </children>
+                                                </HBox>
+                                                <Label text="8" textFill="#2980b9">
+                                                   <font>
+                                                      <Font name="Calibri" size="18.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets top="10.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                             </children>
+                                          </VBox>
+                                          <VBox alignment="CENTER" layoutX="804.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0">
+                                             <children>
+                                                <Button fx:id="diente9" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="100.0" prefWidth="70.0">
+                                                   <VBox.margin>
+                                                      <Insets bottom="20.0" />
+                                                   </VBox.margin>
+                                                </Button>
+                                                <HBox alignment="CENTER" prefHeight="438.0" prefWidth="634.0">
+                                                   <children>
+                                                      <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                      <VBox alignment="CENTER">
+                                                         <children>
+                                                            <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button layoutX="10.0" layoutY="35.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                         </children>
+                                                      </VBox>
+                                                      <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                   </children>
+                                                </HBox>
+                                                <Label text="9" textFill="#2980b9">
+                                                   <font>
+                                                      <Font name="Calibri" size="18.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets top="10.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                             </children>
+                                          </VBox>
+                                          <VBox alignment="CENTER" layoutX="474.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0">
+                                             <children>
+                                                <Button fx:id="diente10" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="100.0" prefWidth="70.0">
+                                                   <VBox.margin>
+                                                      <Insets bottom="20.0" />
+                                                   </VBox.margin>
+                                                </Button>
+                                                <HBox alignment="CENTER" prefHeight="438.0" prefWidth="634.0">
+                                                   <children>
+                                                      <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                      <VBox alignment="CENTER">
+                                                         <children>
+                                                            <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button layoutX="10.0" layoutY="35.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                         </children>
+                                                      </VBox>
+                                                      <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                   </children>
+                                                </HBox>
+                                                <Label text="10" textFill="#2980b9">
+                                                   <font>
+                                                      <Font name="Calibri" size="18.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets top="10.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                             </children>
+                                          </VBox>
+                                          <VBox alignment="CENTER" layoutX="254.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0">
+                                             <children>
+                                                <Button fx:id="diente11" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="100.0" prefWidth="70.0">
+                                                   <VBox.margin>
+                                                      <Insets bottom="20.0" />
+                                                   </VBox.margin>
+                                                </Button>
+                                                <HBox alignment="CENTER" prefHeight="438.0" prefWidth="634.0">
+                                                   <children>
+                                                      <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                      <VBox alignment="CENTER">
+                                                         <children>
+                                                            <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button layoutX="10.0" layoutY="35.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                         </children>
+                                                      </VBox>
+                                                      <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                   </children>
+                                                </HBox>
+                                                <Label text="11" textFill="#2980b9">
+                                                   <font>
+                                                      <Font name="Calibri" size="18.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets top="10.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                             </children>
+                                          </VBox>
+                                          <VBox alignment="CENTER" layoutX="694.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0">
+                                             <children>
+                                                <Button fx:id="diente12" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="100.0" prefWidth="70.0">
+                                                   <VBox.margin>
+                                                      <Insets bottom="20.0" />
+                                                   </VBox.margin>
+                                                </Button>
+                                                <HBox alignment="CENTER" prefHeight="438.0" prefWidth="634.0">
+                                                   <children>
+                                                      <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                      <VBox alignment="CENTER">
+                                                         <children>
+                                                            <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button layoutX="10.0" layoutY="35.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                         </children>
+                                                      </VBox>
+                                                      <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                   </children>
+                                                </HBox>
+                                                <Label text="12" textFill="#2980b9">
+                                                   <font>
+                                                      <Font name="Calibri" size="18.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets top="10.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                             </children>
+                                          </VBox>
+                                          <VBox alignment="CENTER" layoutX="364.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0">
+                                             <children>
+                                                <Button fx:id="diente13" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="100.0" prefWidth="70.0">
+                                                   <VBox.margin>
+                                                      <Insets bottom="20.0" />
+                                                   </VBox.margin>
+                                                </Button>
+                                                <HBox alignment="CENTER" prefHeight="438.0" prefWidth="634.0">
+                                                   <children>
+                                                      <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                      <VBox alignment="CENTER">
+                                                         <children>
+                                                            <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button layoutX="10.0" layoutY="35.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                         </children>
+                                                      </VBox>
+                                                      <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                   </children>
+                                                </HBox>
+                                                <Label text="13" textFill="#2980b9">
+                                                   <font>
+                                                      <Font name="Calibri" size="18.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets top="10.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                             </children>
+                                          </VBox>
+                                          <VBox alignment="CENTER" layoutX="584.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0">
+                                             <children>
+                                                <Button fx:id="diente14" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="100.0" prefWidth="70.0">
+                                                   <VBox.margin>
+                                                      <Insets bottom="20.0" />
+                                                   </VBox.margin>
+                                                </Button>
+                                                <HBox alignment="CENTER" prefHeight="438.0" prefWidth="634.0">
+                                                   <children>
+                                                      <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                      <VBox alignment="CENTER">
+                                                         <children>
+                                                            <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button layoutX="10.0" layoutY="35.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                         </children>
+                                                      </VBox>
+                                                      <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                   </children>
+                                                </HBox>
+                                                <Label text="14" textFill="#2980b9">
+                                                   <font>
+                                                      <Font name="Calibri" size="18.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets top="10.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                             </children>
+                                          </VBox>
+                                          <VBox alignment="CENTER" layoutX="34.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0">
+                                             <children>
+                                                <Button fx:id="diente15" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="100.0" prefWidth="70.0">
+                                                   <VBox.margin>
+                                                      <Insets bottom="20.0" />
+                                                   </VBox.margin>
+                                                </Button>
+                                                <HBox alignment="CENTER" prefHeight="438.0" prefWidth="634.0">
+                                                   <children>
+                                                      <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                      <VBox alignment="CENTER">
+                                                         <children>
+                                                            <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button layoutX="10.0" layoutY="35.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                         </children>
+                                                      </VBox>
+                                                      <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                   </children>
+                                                </HBox>
+                                                <Label text="15" textFill="#2980b9">
+                                                   <font>
+                                                      <Font name="Calibri" size="18.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets top="10.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                             </children>
+                                          </VBox>
+                                          <VBox alignment="CENTER" layoutX="144.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0">
+                                             <children>
+                                                <Button fx:id="diente16" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="100.0" prefWidth="70.0">
+                                                   <VBox.margin>
+                                                      <Insets bottom="20.0" />
+                                                   </VBox.margin>
+                                                </Button>
+                                                <HBox alignment="CENTER" prefHeight="438.0" prefWidth="634.0">
+                                                   <children>
+                                                      <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                      <VBox alignment="CENTER">
+                                                         <children>
+                                                            <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button layoutX="10.0" layoutY="35.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                         </children>
+                                                      </VBox>
+                                                      <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                   </children>
+                                                </HBox>
+                                                <Label text="16" textFill="#2980b9">
+                                                   <font>
+                                                      <Font name="Calibri" size="18.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets top="10.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" spacing="10.0">
+                                       <children>
+                                          <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                                             <children>
+                                                <Label text="17" textFill="#2980b9">
+                                                   <font>
+                                                      <Font name="Calibri" size="18.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets bottom="10.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                                <HBox alignment="CENTER" prefHeight="438.0" prefWidth="634.0">
+                                                   <children>
+                                                      <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                      <VBox alignment="CENTER">
+                                                         <children>
+                                                            <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button layoutX="10.0" layoutY="35.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                         </children>
+                                                      </VBox>
+                                                      <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                   </children>
+                                                </HBox>
+                                                <Button fx:id="diente17" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="100.0" prefWidth="70.0">
+                                                   <VBox.margin>
+                                                      <Insets top="20.0" />
+                                                   </VBox.margin>
+                                                </Button>
+                                             </children>
+                                          </VBox>
+                                          <VBox alignment="CENTER" layoutX="515.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0">
+                                             <children>
+                                                <Label text="18" textFill="#2980b9">
+                                                   <font>
+                                                      <Font name="Calibri" size="18.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets bottom="10.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                                <HBox alignment="CENTER" prefHeight="438.0" prefWidth="634.0">
+                                                   <children>
+                                                      <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                      <VBox alignment="CENTER">
+                                                         <children>
+                                                            <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button layoutX="10.0" layoutY="35.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                         </children>
+                                                      </VBox>
+                                                      <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                   </children>
+                                                </HBox>
+                                                <Button fx:id="diente18" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="100.0" prefWidth="70.0">
+                                                   <VBox.margin>
+                                                      <Insets top="20.0" />
+                                                   </VBox.margin>
+                                                </Button>
+                                             </children>
+                                          </VBox>
+                                          <VBox alignment="CENTER" layoutX="570.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0">
+                                             <children>
+                                                <Label text="19" textFill="#2980b9">
+                                                   <font>
+                                                      <Font name="Calibri" size="18.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets bottom="10.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                                <HBox alignment="CENTER" prefHeight="438.0" prefWidth="634.0">
+                                                   <children>
+                                                      <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                      <VBox alignment="CENTER">
+                                                         <children>
+                                                            <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button layoutX="10.0" layoutY="35.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                         </children>
+                                                      </VBox>
+                                                      <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                   </children>
+                                                </HBox>
+                                                <Button fx:id="diente19" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="100.0" prefWidth="70.0">
+                                                   <VBox.margin>
+                                                      <Insets top="20.0" />
+                                                   </VBox.margin>
+                                                </Button>
+                                             </children>
+                                          </VBox>
+                                          <VBox alignment="CENTER" layoutX="460.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0">
+                                             <children>
+                                                <Label text="20" textFill="#2980b9">
+                                                   <font>
+                                                      <Font name="Calibri" size="18.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets bottom="10.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                                <HBox alignment="CENTER" prefHeight="438.0" prefWidth="634.0">
+                                                   <children>
+                                                      <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                      <VBox alignment="CENTER">
+                                                         <children>
+                                                            <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button layoutX="10.0" layoutY="35.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                         </children>
+                                                      </VBox>
+                                                      <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                   </children>
+                                                </HBox>
+                                                <Button fx:id="diente20" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="100.0" prefWidth="70.0">
+                                                   <VBox.margin>
+                                                      <Insets top="20.0" />
+                                                   </VBox.margin>
+                                                </Button>
+                                             </children>
+                                          </VBox>
+                                          <VBox alignment="CENTER" layoutX="570.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0">
+                                             <children>
+                                                <Label text="21" textFill="#2980b9">
+                                                   <font>
+                                                      <Font name="Calibri" size="18.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets bottom="10.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                                <HBox alignment="CENTER" prefHeight="438.0" prefWidth="634.0">
+                                                   <children>
+                                                      <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                      <VBox alignment="CENTER">
+                                                         <children>
+                                                            <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button layoutX="10.0" layoutY="35.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                         </children>
+                                                      </VBox>
+                                                      <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                   </children>
+                                                </HBox>
+                                                <Button fx:id="diente21" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="100.0" prefWidth="70.0">
+                                                   <VBox.margin>
+                                                      <Insets top="20.0" />
+                                                   </VBox.margin>
+                                                </Button>
+                                             </children>
+                                          </VBox>
+                                          <VBox alignment="CENTER" layoutX="460.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0">
+                                             <children>
+                                                <Label text="22" textFill="#2980b9">
+                                                   <font>
+                                                      <Font name="Calibri" size="18.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets bottom="10.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                                <HBox alignment="CENTER" prefHeight="438.0" prefWidth="634.0">
+                                                   <children>
+                                                      <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                      <VBox alignment="CENTER">
+                                                         <children>
+                                                            <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button layoutX="10.0" layoutY="35.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                         </children>
+                                                      </VBox>
+                                                      <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                   </children>
+                                                </HBox>
+                                                <Button fx:id="diente22" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="100.0" prefWidth="70.0">
+                                                   <VBox.margin>
+                                                      <Insets top="20.0" />
+                                                   </VBox.margin>
+                                                </Button>
+                                             </children>
+                                          </VBox>
+                                          <VBox alignment="CENTER" layoutX="680.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0">
+                                             <children>
+                                                <Label text="23" textFill="#2980b9">
+                                                   <font>
+                                                      <Font name="Calibri" size="18.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets bottom="10.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                                <HBox alignment="CENTER" prefHeight="438.0" prefWidth="634.0">
+                                                   <children>
+                                                      <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                      <VBox alignment="CENTER">
+                                                         <children>
+                                                            <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button layoutX="10.0" layoutY="35.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                         </children>
+                                                      </VBox>
+                                                      <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                   </children>
+                                                </HBox>
+                                                <Button fx:id="diente23" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="100.0" prefWidth="70.0">
+                                                   <VBox.margin>
+                                                      <Insets top="20.0" />
+                                                   </VBox.margin>
+                                                </Button>
+                                             </children>
+                                          </VBox>
+                                          <VBox alignment="CENTER" layoutX="350.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0">
+                                             <children>
+                                                <Label text="24" textFill="#2980b9">
+                                                   <font>
+                                                      <Font name="Calibri" size="18.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets bottom="10.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                                <HBox alignment="CENTER" prefHeight="438.0" prefWidth="634.0">
+                                                   <children>
+                                                      <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                      <VBox alignment="CENTER">
+                                                         <children>
+                                                            <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button layoutX="10.0" layoutY="35.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                         </children>
+                                                      </VBox>
+                                                      <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                   </children>
+                                                </HBox>
+                                                <Button fx:id="diente24" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="100.0" prefWidth="70.0">
+                                                   <VBox.margin>
+                                                      <Insets top="20.0" />
+                                                   </VBox.margin>
+                                                </Button>
+                                             </children>
+                                          </VBox>
+                                          <VBox alignment="CENTER" layoutX="350.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0">
+                                             <children>
+                                                <Label text="25" textFill="#2980b9">
+                                                   <font>
+                                                      <Font name="Calibri" size="18.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets bottom="10.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                                <HBox alignment="CENTER" prefHeight="438.0" prefWidth="634.0">
+                                                   <children>
+                                                      <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                      <VBox alignment="CENTER">
+                                                         <children>
+                                                            <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button layoutX="10.0" layoutY="35.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                         </children>
+                                                      </VBox>
+                                                      <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                   </children>
+                                                </HBox>
+                                                <Button fx:id="diente25" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="100.0" prefWidth="70.0">
+                                                   <VBox.margin>
+                                                      <Insets top="20.0" />
+                                                   </VBox.margin>
+                                                </Button>
+                                             </children>
+                                          </VBox>
+                                          <VBox alignment="CENTER" layoutX="680.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0">
+                                             <children>
+                                                <Label text="26" textFill="#2980b9">
+                                                   <font>
+                                                      <Font name="Calibri" size="18.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets bottom="10.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                                <HBox alignment="CENTER" prefHeight="438.0" prefWidth="634.0">
+                                                   <children>
+                                                      <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                      <VBox alignment="CENTER">
+                                                         <children>
+                                                            <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button layoutX="10.0" layoutY="35.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                         </children>
+                                                      </VBox>
+                                                      <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                   </children>
+                                                </HBox>
+                                                <Button fx:id="diente26" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="100.0" prefWidth="70.0">
+                                                   <VBox.margin>
+                                                      <Insets top="20.0" />
+                                                   </VBox.margin>
+                                                </Button>
+                                             </children>
+                                          </VBox>
+                                          <VBox alignment="CENTER" layoutX="900.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0">
+                                             <children>
+                                                <Label text="27" textFill="#2980b9">
+                                                   <font>
+                                                      <Font name="Calibri" size="18.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets bottom="10.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                                <HBox alignment="CENTER" prefHeight="438.0" prefWidth="634.0">
+                                                   <children>
+                                                      <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                      <VBox alignment="CENTER">
+                                                         <children>
+                                                            <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button layoutX="10.0" layoutY="35.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                         </children>
+                                                      </VBox>
+                                                      <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                   </children>
+                                                </HBox>
+                                                <Button fx:id="diente27" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="100.0" prefWidth="70.0">
+                                                   <VBox.margin>
+                                                      <Insets top="20.0" />
+                                                   </VBox.margin>
+                                                </Button>
+                                             </children>
+                                          </VBox>
+                                          <VBox alignment="CENTER" layoutX="570.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0">
+                                             <children>
+                                                <Label text="28" textFill="#2980b9">
+                                                   <font>
+                                                      <Font name="Calibri" size="18.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets bottom="10.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                                <HBox alignment="CENTER" prefHeight="438.0" prefWidth="634.0">
+                                                   <children>
+                                                      <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                      <VBox alignment="CENTER">
+                                                         <children>
+                                                            <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button layoutX="10.0" layoutY="35.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                         </children>
+                                                      </VBox>
+                                                      <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                   </children>
+                                                </HBox>
+                                                <Button fx:id="diente28" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="100.0" prefWidth="70.0">
+                                                   <VBox.margin>
+                                                      <Insets top="20.0" />
+                                                   </VBox.margin>
+                                                </Button>
+                                             </children>
+                                          </VBox>
+                                          <VBox alignment="CENTER" layoutX="240.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0">
+                                             <children>
+                                                <Label text="29" textFill="#2980b9">
+                                                   <font>
+                                                      <Font name="Calibri" size="18.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets bottom="10.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                                <HBox alignment="CENTER" prefHeight="438.0" prefWidth="634.0">
+                                                   <children>
+                                                      <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                      <VBox alignment="CENTER">
+                                                         <children>
+                                                            <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button layoutX="10.0" layoutY="35.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                         </children>
+                                                      </VBox>
+                                                      <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                   </children>
+                                                </HBox>
+                                                <Button fx:id="diente29" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="100.0" prefWidth="70.0">
+                                                   <VBox.margin>
+                                                      <Insets top="20.0" />
+                                                   </VBox.margin>
+                                                </Button>
+                                             </children>
+                                          </VBox>
+                                          <VBox alignment="CENTER" layoutX="790.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0">
+                                             <children>
+                                                <Label text="30" textFill="#2980b9">
+                                                   <font>
+                                                      <Font name="Calibri" size="18.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets bottom="10.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                                <HBox alignment="CENTER" prefHeight="438.0" prefWidth="634.0">
+                                                   <children>
+                                                      <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                      <VBox alignment="CENTER">
+                                                         <children>
+                                                            <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button layoutX="10.0" layoutY="35.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                         </children>
+                                                      </VBox>
+                                                      <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                   </children>
+                                                </HBox>
+                                                <Button fx:id="diente30" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="100.0" prefWidth="70.0">
+                                                   <VBox.margin>
+                                                      <Insets top="20.0" />
+                                                   </VBox.margin>
+                                                </Button>
+                                             </children>
+                                          </VBox>
+                                          <VBox alignment="CENTER" layoutX="460.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0">
+                                             <children>
+                                                <Label text="31" textFill="#2980b9">
+                                                   <font>
+                                                      <Font name="Calibri" size="18.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets bottom="10.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                                <HBox alignment="CENTER" prefHeight="438.0" prefWidth="634.0">
+                                                   <children>
+                                                      <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                      <VBox alignment="CENTER">
+                                                         <children>
+                                                            <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button layoutX="10.0" layoutY="35.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                         </children>
+                                                      </VBox>
+                                                      <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                   </children>
+                                                </HBox>
+                                                <Button fx:id="diente31" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="100.0" prefWidth="70.0">
+                                                   <VBox.margin>
+                                                      <Insets top="20.0" />
+                                                   </VBox.margin>
+                                                </Button>
+                                             </children>
+                                          </VBox>
+                                          <VBox alignment="CENTER" layoutX="130.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0">
+                                             <children>
+                                                <Label text="32" textFill="#2980b9">
+                                                   <font>
+                                                      <Font name="Calibri" size="18.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets bottom="10.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                                <HBox alignment="CENTER" prefHeight="438.0" prefWidth="634.0">
+                                                   <children>
+                                                      <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                      <VBox alignment="CENTER">
+                                                         <children>
+                                                            <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button layoutX="10.0" layoutY="35.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                         </children>
+                                                      </VBox>
+                                                      <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                   </children>
+                                                </HBox>
+                                                <Button fx:id="diente32" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="100.0" prefWidth="70.0">
+                                                   <VBox.margin>
+                                                      <Insets top="20.0" />
+                                                   </VBox.margin>
+                                                </Button>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="10.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                 </children>
+                                 <effect>
+                                    <DropShadow color="#95a5a6" />
+                                 </effect>
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" />
+                                 </VBox.margin>
+                              </VBox>
+                           </children>
+                        </VBox>
+                     </center>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </BorderPane>
+                  <HBox alignment="CENTER" spacing="30.0">
+                     <children>
+                        <Button fx:id="botonGuardar" mnemonicParsing="false" text="Guardar" />
+                        <Button fx:id="botonCancelar" mnemonicParsing="false" text="Cacelar" />
+                     </children>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets top="10.0" />
+               </padding>
+            </VBox>
+         </content>
+         <padding>
+            <Insets left="10.0" right="10.0" />
+         </padding>
+      </ScrollPane>
+   </children>
+</StackPane>

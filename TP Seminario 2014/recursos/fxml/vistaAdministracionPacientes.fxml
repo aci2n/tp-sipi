@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<StackPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+	<children>
+		<BorderPane style="-fx-border-color: #bdc3c7;">
+			<top>
+				<HBox alignment="CENTER_LEFT" prefHeight="30.0" prefWidth="200.0" spacing="10.0" style="-fx-background-color: #3498db; -fx-background-radius: 4;" BorderPane.alignment="CENTER">
+					<children>
+						<ImageView fx:id="imagenPacientes" fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+							<HBox.margin>
+								<Insets left="10.0" />
+							</HBox.margin>
+						</ImageView>
+						<Label text="Administración de Pacientes" textFill="WHITE">
+							<font>
+								<Font name="Calibri Bold" size="15.0" />
+							</font>
+						</Label>
+					</children>
+					<BorderPane.margin>
+						<Insets bottom="5.0" />
+					</BorderPane.margin>
+				</HBox>
+			</top>
+			<center>
+				<TabPane style="-fx-border-color: #bdc3c7;" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+					<tabs>
+						<Tab text="Alta de Pacientes">
+							<content>
+								<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <BorderPane>
+                                 <top>
+                                    <VBox fx:id="headerAltaPaciente" alignment="CENTER" prefHeight="40.0" prefWidth="400.0" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <Label text="REGISTRO DE PACIENTE">
+                                             <font>
+                                                <Font name="Nirmala UI" size="14.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </VBox>
+                                 </top>
+                              </BorderPane>
+                           </children></AnchorPane>
+							</content>
+						</Tab>
+						<Tab text="Modificación de Pacientes">
+							<content>
+								<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+							</content>
+						</Tab>
+						<Tab text="Baja de Pacientes">
+							<content>
+								<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+							</content>
+						</Tab>
+					</tabs>
+				</TabPane>
+			</center>
+			<padding>
+				<Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+			</padding>
+			
+		</BorderPane>
+	</children>
+</StackPane>

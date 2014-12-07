@@ -1,0 +1,287 @@
+/**
+ * vista.css
+ *   Place in the same source directory as Main.java
+ *   Ensure that your build system copies this file to your build output directory.
+ */
+ 
+ /* CONFIGURACION GENERAL */
+ 
+ .root{
+ 
+ 	-fx-font-family: "Roboto-Light";
+ }
+ 
+ .button{
+ 	-fx-cursor: hand;
+ }
+ 
+ /* VISTA PRINCIPAL */
+
+#headerLabel {	
+    -fx-background-color: white;
+    -fx-padding: 5px;
+  	-fx-border-top-color: black;
+  	
+}
+
+#vistaHolder {
+    -fx-background-color: #ecf0f1;
+}
+
+#vista1 {
+    -fx-background-color: #ecf0f1;
+}
+
+/* LOGO */
+
+#home {
+
+	-fx-background-color: white;
+	-fx-background-image: url("Imagenes/logo2.png");
+	-fx-background-repeat: no-repeat;
+	-fx-background-position: center;
+	
+}
+
+#menu{
+	-fx-font-size: 14;
+}
+
+#menu:hover{
+
+	-fx-background-color: #2980b9;
+	-fx-font-size: 14;
+}
+
+#vistaAltaPaciente{
+
+	-fx-background-color: #ecf0f1;
+}
+
+#botonSalir{
+
+	-fx-font-size: 14;
+	-fx-background-color: white;
+	-fx-text-fill: black;
+	-fx-background-radius: 0;
+}
+
+#botonHome{
+
+	-fx-background-color: white;
+	-fx-text-fill: black;
+	-fx-font-size: 14;
+	
+}
+
+#botonHome:hover{
+
+	-fx-text-fill: white;
+	-fx-background-color: #2980b9;
+	
+}
+
+
+
+#botonSalir:hover{
+
+	-fx-text-fill: white;
+	-fx-background-color: #c0392b;	
+}
+
+#paneHora{
+
+	-fx-background-color: #2980b9;
+	-fx-text-fill: white;
+}
+
+#paneHora .label{ 
+	-fx-text-fill: white;
+}
+
+#imagenHora{
+	-fx-image: url("Imagenes/reloj.png");
+
+}
+
+#imagenPacientes{
+	-fx-image: url("Imagenes/pacientes.png");
+	-fx-background-repeat: no-repeat;
+	-fx-background-position: center;
+}
+
+#imagenAnalisisPredictivo{
+	
+	-fx-image: url("Imagenes/analisis.png");
+	-fx-background-repeat: no-repeat;
+	-fx-background-position: center;
+	
+}
+
+
+#paneFecha{
+
+	-fx-background-color: #16a085;
+	-fx-text-fill: white;
+}
+
+#paneFecha .label{
+
+	-fx-text-fill: white;
+}
+
+
+#imagenFecha{
+	-fx-image: url("Imagenes/calendario.png");
+
+}
+
+
+#paneFecha{
+
+	-fx-background-color: #e74c3c;
+	-fx-text-fill: white;
+}
+
+#botonHora{
+	
+	-fx-background-color: transparent;
+	
+}
+
+#botonHora:hover{
+
+	-fx-background-color: #bdc3c7;
+}
+
+#botonFecha{
+	
+	-fx-background-color: transparent;
+}
+
+#botonFecha:hover{
+
+	-fx-background-color: #bdc3c7;
+}
+
+#labelTurnos{
+	-fx-background-color: #34495e;
+	-fx-text-fill: white;
+}
+
+#borderPaneAltaPaciente{
+
+	-fx-background-color: white;
+	-fx-border-color: #bdc3c7;
+	-fx-border-width: 1;
+}
+
+#headerAltaPaciente{
+	-fx-background-color: #3498db;
+	-fx-text-fill: white;
+}
+
+#headerAltaPaciente .label{
+	-fx-text-fill: white;
+}
+
+#tNombre{
+	-fx-background-radius: 0;
+	-fx-text-fill: #2c3e50;
+}
+
+#tablaListarPacientes{
+
+	-fx-border-color: #bdc3c7;
+}
+
+
+#tablaListarPacientes .column-header{
+  
+	-fx-font-size: 12;
+}
+
+#boxFiltrarPacientes{
+
+	-fx-border-color: #bdc3c7;
+	-fx-border-radius: 2;
+}
+
+#botonBuscar{
+
+	-fx-background-color: #27ae60;
+	-fx-background-radius: 2;
+	-fx-font-size: 14;
+	
+}
+
+#botonNuevoPaciente{
+
+	-fx-background-color: #27ae60;
+	-fx-background-radius: 2;
+	-fx-font-size: 14;
+	
+}
+
+#botonVerTodos{
+
+	-fx-background-radius: 2;
+	-fx-font-size: 14;
+	-fx-text-fill: white;
+}
+
+#imagenRaya {
+	-fx-image: url("Imagenes/listado.png");
+	-fx-background-repeat: no-repeat;
+	-fx-background-position: center;
+}
+
+.button{
+	
+	-fx-background-radius: 0;
+	-fx-text-fill: white;
+	-fx-font-size: 15;
+	
+}
+.button:hover{
+	
+	-fx-background-color: #16a085;
+}
+
+.toggleButton{
+	-fx-background-radius: 0;
+	-fx-background-color: #bdc3c7;
+
+}
+
+.toggleButton:selected{	
+	-fx-background-color: #e74c3c;
+}
+
+.toggleButton2{
+	-fx-background-radius: 0;
+	-fx-background-color: #bdc3c7;
+
+}
+
+.toggleButton2:selected{	
+	-fx-background-color: #3498db;
+}
+
+.box{
+	-fx-background-color: white;
+	-fx-border-color: #bdc3c7;
+}
+
+#scrollAltaFicha .scroll-bar:horizontal, .scroll-bar:vertical{
+	
+	-fx-background-color: transparent;
+}
+
+#scrollAltaFicha .scroll-bar:horizontal .thumb, .scroll-bar:vertical .thumb{
+	
+	-fx-background-color: #95a5a6;
+	-fx-background-radius: 0;
+}
+
+

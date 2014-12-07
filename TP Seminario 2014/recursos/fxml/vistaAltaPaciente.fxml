@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<StackPane fx:id="vistaAltaPaciente" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onDragDetected="#seleccionarSalir" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="VistaPrincipalControlador">
+   <children>
+      <BorderPane fx:id="borderPaneAltaPaciente" prefHeight="500.0" prefWidth="400.0">
+         <bottom>
+            <Button mnemonicParsing="false" text="REGISTRAR" BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets bottom="15.0" />
+               </BorderPane.margin>
+               <font>
+                  <Font name="Calibri Light" size="14.0" />
+               </font></Button>
+         </bottom>
+         <center>
+            <VBox fx:id="boxAltaPaciente" alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="15.0">
+               <children>
+                  <TextField fx:id="tNombre" maxWidth="300.0" prefWidth="300.0" promptText="Nombre" />
+                  <TextField fx:id="tApellido" maxWidth="300.0" prefWidth="300.0" promptText="Apellido" />
+                  <TextField fx:id="tDni" maxWidth="300.0" prefWidth="300.0" promptText="DNI" />
+                  <TextField fx:id="tDomicilio" maxWidth="300.0" prefWidth="300.0" promptText="Domicilio" />
+                  <TextField fx:id="tTelefono" maxWidth="300.0" prefWidth="300.0" promptText="Teléfono" />
+                  <TextField fx:id="tEmail" maxWidth="300.0" prefWidth="300.0" promptText="E-mail" />
+                  <DatePicker fx:id="calendario" maxWidth="300.0" prefWidth="300.0" promptText="Fecha de nacimiento" />
+                  <ComboBox fx:id="genero" maxHeight="200.0" maxWidth="300.0" prefWidth="300.0" promptText="Género" />
+                  <TextField fx:id="tObraSocial" maxWidth="300.0" prefWidth="300.0" promptText="Obra social" />
+                  <TextField fx:id="tPlan" maxWidth="300.0" prefWidth="300.0" promptText="Plan" />
+               </children>
+            </VBox>
+         </center>
+         <top>
+            <VBox fx:id="headerAltaPaciente" alignment="CENTER" prefHeight="40.0" prefWidth="400.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label text="REGISTRO DE PACIENTE">
+                     <font>
+                        <Font name="Nirmala UI" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+         </top>
+      </BorderPane>
+   </children>
+</StackPane>

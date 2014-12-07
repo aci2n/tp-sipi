@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?scenebuilder-stylesheet vista.css?>
+
+<VBox fx:id="ventana" prefHeight="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="VistaPrincipalControlador">
+	<children>
+		<HBox fx:id="headerLabel" alignment="BOTTOM_LEFT" prefHeight="80.0" prefWidth="916.0" style="-fx-background-color: white;">
+			<children>
+				<HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+					<children>
+						<Button fx:id="home" mnemonicParsing="false">
+							<graphic>
+								<ImageView fx:id="logo" fitHeight="64.0" fitWidth="64.0">
+									<!-- 	<Image url="@register.png" />
+									</image> -->
+								</ImageView>
+							</graphic>
+						</Button>
+					</children>
+				</HBox>
+				<HBox alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
+					<children>
+						<Button fx:id="botonHome" mnemonicParsing="false" onAction="#seleccionarPrincipal" text="INICIO">
+							<cursor>
+								<Cursor fx:constant="HAND" />
+							</cursor>
+						</Button>
+						<MenuBar fx:id="menu" style="-fx-background-color: white;">
+							<cursor>
+								<Cursor fx:constant="HAND" />
+							</cursor>
+							<menus>
+								<Menu fx:id="menu" mnemonicParsing="false" text="PACIENTES">
+									<items>
+										<MenuItem fx:id="altaPaciente" mnemonicParsing="false" onAction="#seleccionarVistaAltaPaciente" text="Alta" />
+										<MenuItem mnemonicParsing="false" text="Modificación" />
+										<MenuItem fx:id="bajaPaciente" mnemonicParsing="false" onAction="#seleccionarVistaAdministracionPacientes" text="Baja" />
+										<MenuItem mnemonicParsing="false" text="Buscar" />
+										<MenuItem fx:id="listarPacientes" mnemonicParsing="false" onAction="#seleccionarVistaListarPacientes" text="Listar" />
+									</items>
+								</Menu>
+								<Menu fx:id="menu" mnemonicParsing="false" text="TURNOS">
+									<items>
+										<MenuItem mnemonicParsing="false" text="Alta" />
+										<MenuItem mnemonicParsing="false" text="Modificación" />
+										<MenuItem mnemonicParsing="false" text="Baja" />
+										<MenuItem mnemonicParsing="false" text="Buscar" />
+										<MenuItem mnemonicParsing="false" text="Listar" />
+									</items>
+								</Menu>
+								<Menu fx:id="menu" mnemonicParsing="false" text="ODONTÓLOGOS">
+									<items>
+										<MenuItem mnemonicParsing="false" text="Alta" />
+										<MenuItem mnemonicParsing="false" text="Modificación" />
+										<MenuItem mnemonicParsing="false" text="Baja" />
+										<MenuItem mnemonicParsing="false" text="Buscar" />
+										<MenuItem mnemonicParsing="false" onAction="#seleccionarVistaListarOdontologos" text="Listar" />
+									</items>
+								</Menu>
+								<Menu fx:id="menu" mnemonicParsing="false" text="HISTORIAS CLÍNICAS">
+									<items>
+										<MenuItem mnemonicParsing="false" onAction="#seleccionarVistaAltaFichaPeriodontal" text="Alta Historia Clinica" />
+										<MenuItem mnemonicParsing="false" onAction="#seleccionarVistaAltaOdontograma" text="Alta Odontograma" />
+										<MenuItem mnemonicParsing="false" onAction="#seleccionarVistaAnalisisPredictivo" text="Análisis Predictivo" />
+																			
+									</items>
+								</Menu>
+								<Menu fx:id="menu" mnemonicParsing="false" text="OPCIONES" />
+							</menus>
+						</MenuBar>
+						<Button fx:id="botonSalir" mnemonicParsing="false" onAction="#seleccionarSalir" text="SALIR">
+							<cursor>
+								<Cursor fx:constant="HAND" />
+							</cursor>
+						</Button>
+					</children>
+				</HBox>
+			</children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+		</HBox>
+		<StackPane fx:id="vistaHolder" maxHeight="1.7976931348623157E308" VBox.vgrow="ALWAYS">
+         <effect>
+            <InnerShadow color="#0000007a" height="26.81" offsetY="2.0" radius="6.2025" width="0.0" />
+         </effect></StackPane>
+	</children>
+</VBox>

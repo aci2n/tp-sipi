@@ -3,6 +3,7 @@ package implementacion;
 import views.ItemPrediccionView;
 
 
+
 public class ItemPrediccion {
 	
 	private String sintomaAnalisis;

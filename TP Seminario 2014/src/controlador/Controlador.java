@@ -18,6 +18,8 @@ import persistencia.AdministradorPersistenciaPaciente;
 import persistencia.AdministradorPersistenciaSintomas;
 import persistencia.AdministradorPersistenciaTurnos;
 import views.EspecialidadView;
+import views.FichaPeriodontalView;
+import views.HistoriaClinicaView;
 import views.OdontologoView;
 import views.PacienteView;
 import views.TurnoView;
@@ -116,6 +118,19 @@ public class Controlador {
 		}
 		return odontologo;
 	}
+	
+	public OdontologoView obtenerOdontologoView (String matricula) {
+		Odontologo odontologo = obtenerOdontologo(matricula);
+		return odontologo != null ? odontologo.generarView() : null;
+	}
+	
+	public Collection<OdontologoView> obtenerOdontologosView() {
+		Collection<OdontologoView> odontologos = new ArrayList<OdontologoView>();
+		for (Odontologo odontologo : this.odontologos) {
+			odontologos.add(odontologo.generarView());
+		}
+		return odontologos;
+	}
 
 	public Paciente obtenerPaciente(String dni) {
 		Paciente paciente = null;
@@ -133,6 +148,19 @@ public class Controlador {
 		return paciente;
 	}
 	
+	public PacienteView obtenerPacienteView(String dni) {
+		Paciente paciente = obtenerPaciente(dni);
+		return paciente != null? paciente.generarView() : null;
+	}
+	
+	public Collection<PacienteView> obtenerPacientesView() {
+		Collection<PacienteView> pacientes = new ArrayList<PacienteView>();
+		for (Paciente paciente : this.pacientes) {
+			pacientes.add(paciente.generarView());
+		}
+		return pacientes;
+	}
+	
 	public HistoriaClinica obtenerHistoriaClinica(String dni) {
 		HistoriaClinica historia = null;
 		for (HistoriaClinica hist : historiasClinicas) {
@@ -148,6 +176,19 @@ public class Controlador {
 		}
 		return historia;
 	}
+	
+	public HistoriaClinicaView obtenerHistoriaClinicaView(String dni) {
+		HistoriaClinica historia = obtenerHistoriaClinica(dni);
+		return historia != null ? historia.generarView() : null;
+	}
+	
+	public Collection<HistoriaClinicaView> obtenerHistoriasClinicasView() {
+		Collection<HistoriaClinicaView> historias = new ArrayList<HistoriaClinicaView>();
+		for (HistoriaClinica historia : this.historiasClinicas) {
+			historias.add(historia.generarView());
+		}
+		return historias;
+	}
 
 	public FichaPeriodontal obtenerFicha(String dni) {
 		HistoriaClinica historia = obtenerHistoriaClinica(dni);
@@ -155,6 +196,11 @@ public class Controlador {
 			return historia.getFicha();
 		}
 		return null;
+	}
+	
+	public FichaPeriodontalView obtenerFichaView(String dni) {
+		FichaPeriodontal ficha = obtenerFicha(dni);
+		return ficha != null? ficha.generarView() : null;
 	}
 	
 	public Turno obtenerTurno(String dni, String matricula, Date fecha) {
@@ -171,6 +217,19 @@ public class Controlador {
 			}
 		}
 		return turno;
+	}
+	
+	public TurnoView obtenerTurnoView(String dni, String matricula, Date fecha) {
+		Turno turno = obtenerTurno(dni, matricula, fecha);
+		return turno != null? turno.generarView() : null;
+	}
+	
+	public Collection<TurnoView> obtenerTurnosView() {
+		Collection<TurnoView> turnos = new ArrayList<TurnoView>();
+		for (Turno turno : this.turnos) {
+			turnos.add(turno.generarView());
+		}
+		return turnos;
 	}
 	
 	public Collection<Proyeccion> analisisPredictivoHistoriaClinica(String dni) {

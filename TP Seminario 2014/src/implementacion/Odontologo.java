@@ -18,7 +18,11 @@ public class Odontologo {
 		this.matricula = matricula;
 		this.nombre = nombre;
 		this.apellido = apellido;
-		this.especialidades = especialidades;
+		if (especialidades != null) {
+			this.especialidades = especialidades;
+		} else {
+			this.especialidades = new ArrayList<Especialidad>();
+		}
 		AdministradorPersistenciaOdontologos.getInstancia().insert(this);
 	}
 	
@@ -62,10 +66,12 @@ public class Odontologo {
 		this.matricula = matricula;
 	}
 	
-	public void agregarEspecialidad(Especialidad especialidad) {
+	public void agregarEspecialidad(String descripcion) {
 		if (especialidades == null) {
 			especialidades = new ArrayList<Especialidad>();
 		}
+		Especialidad especialidad = new Especialidad();
+		especialidad.setDescripcion(descripcion);
 		if (!especialidades.contains(especialidad)) {
 			especialidades.add(especialidad);
 			AdministradorPersistenciaEspecialidades.getInstancia().insert(especialidad, this);

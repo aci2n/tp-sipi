@@ -115,5 +115,6 @@ CREATE TABLE Observaciones(
 
 CREATE TABLE Sintomas(
 	nombre varchar(30) not null,
+	activo bit default 1,
 	constraint pk_sintomas primary key (nombre)
 );

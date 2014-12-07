@@ -17,6 +17,8 @@ import persistencia.AdministradorPersistenciaOdontologos;
 import persistencia.AdministradorPersistenciaPaciente;
 import persistencia.AdministradorPersistenciaSintomas;
 import persistencia.AdministradorPersistenciaTurnos;
+import views.EspecialidadView;
+import views.OdontologoView;
 import views.PacienteView;
 import views.TurnoView;
 
@@ -71,6 +73,16 @@ public class Controlador {
 		}
 	}
 	
+	public void altaOdontologo(OdontologoView odontologoView) {
+		Odontologo odontologo = obtenerOdontologo(odontologoView.getMatricula());
+		if (odontologo == null) {
+			odontologo = new Odontologo(odontologoView.getMatricula(), odontologoView.getNombre(), odontologoView.getApellido(), null);
+			for (EspecialidadView espView : odontologoView.getEspecialidades()) {
+				odontologo.agregarEspecialidad(espView.getDescripcion());
+			}
+		}
+	}
+	
 	public void altaHistoriaClinica(String dni, String descripcion) {
 		Paciente paciente = obtenerPaciente(dni);
 		if (paciente != null) {
@@ -82,33 +94,10 @@ public class Controlador {
 		}
 	}
 	
-	public Collection<Proyeccion> analisisPredictivoHistoriaClinica(String dni) {
-		HistoriaClinica historia = obtenerHistoriaClinica(dni);
-		Collection<Proyeccion> proyecciones = new ArrayList<Proyeccion>();
-		if (historia != null){
-			Collection<String> sintomasDetectados = historia.detectarSintomas(sintomas);
-			Prediccion prediccion;
-			Collection<HistoriaClinica> historiasSinContarLaAnalizada = this.historiasClinicas;
-			historiasSinContarLaAnalizada.remove(historia);
-			for (String sintoma : sintomasDetectados){
-				prediccion = new Prediccion(sintoma);
-				for (HistoriaClinica h : historiasSinContarLaAnalizada)
-					if (h.tenesElSintoma(sintoma)){
-						for (String sintomaAnalisis : h.detectarSintomas(sintomas))
-							prediccion.agregarItemPrediccion(sintomaAnalisis);
-						prediccion.aumentarCantidad();
-					}
-				proyecciones.add(prediccion.generarProyeccion());
-			}				
-		}
-		return proyecciones;
-	}
-	
-	public void actualizarHistoriaClinica(String dni, String matricula, Date fecha, String descripcion) {
-		HistoriaClinica historia = obtenerHistoriaClinica(dni);
-		if (historia != null) {
-			historia.setDescripcion(descripcion);
-			AdministradorPersistenciaHistoriasClinicas.getInstancia().update(historia);
+	public void altaSintoma(String sintoma) {
+		if (!sintomas.contains(sintoma)) {
+			AdministradorPersistenciaSintomas.getInstancia().insert(sintoma);
+			sintomas.add(sintoma);
 		}
 	}
 	
@@ -183,6 +172,37 @@ public class Controlador {
 		}
 		return turno;
 	}
+	
+	public Collection<Proyeccion> analisisPredictivoHistoriaClinica(String dni) {
+		HistoriaClinica historia = obtenerHistoriaClinica(dni);
+		Collection<Proyeccion> proyecciones = new ArrayList<Proyeccion>();
+		if (historia != null){
+			Collection<String> sintomasDetectados = historia.detectarSintomas(sintomas);
+			Prediccion prediccion;
+			Collection<HistoriaClinica> historiasSinContarLaAnalizada = this.historiasClinicas;
+			historiasSinContarLaAnalizada.remove(historia);
+			for (String sintoma : sintomasDetectados){
+				prediccion = new Prediccion(sintoma);
+				for (HistoriaClinica h : historiasSinContarLaAnalizada)
+					if (h.tenesElSintoma(sintoma)){
+						for (String sintomaAnalisis : h.detectarSintomas(sintomas))
+							prediccion.agregarItemPrediccion(sintomaAnalisis);
+						prediccion.aumentarCantidad();
+					}
+				proyecciones.add(prediccion.generarProyeccion());
+			}				
+		}
+		return proyecciones;
+	}
+	
+	public void actualizarHistoriaClinica(String dni, String matricula, Date fecha, String descripcion) {
+		HistoriaClinica historia = obtenerHistoriaClinica(dni);
+		if (historia != null) {
+			historia.setDescripcion(descripcion);
+			AdministradorPersistenciaHistoriasClinicas.getInstancia().update(historia);
+		}
+	}
+	
 	
 	//metodos para el test
 	

@@ -36,6 +36,11 @@ public class AdministradorPersistenciaOdontologos extends
 			ps.setString(2, o.getNombre());
 			ps.setString(3, o.getApellido());
 			ps.execute();
+			
+			for (Especialidad especialidad : o.getEspecialidades()) {
+				AdministradorPersistenciaEspecialidades.getInstancia().insert(especialidad, o);
+			}
+			
 			con.close();
 		}
 		catch (SQLException e){

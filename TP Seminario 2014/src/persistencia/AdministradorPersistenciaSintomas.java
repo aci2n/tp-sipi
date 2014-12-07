@@ -20,12 +20,27 @@ public class AdministradorPersistenciaSintomas extends AdministradorPersistencia
 			instancia = new AdministradorPersistenciaSintomas();
 		return instancia;
 	}
+	
+	public void insert(String sintoma) {
+		try{
+			Connection con = Conexion.connect();
+			PreparedStatement ps = con.prepareStatement("INSERT INTO "+super.getDatabase()+".dbo.Sintomas VALUES (?)");
+			ps.setString(1, sintoma);
+			
+			ps.execute();
+			
+			con.close();
+		}
+		catch (SQLException e){
+			e.printStackTrace();
+		}
+	}
 
 	public Collection<String> buscarSintomas(){
 		Collection<String> sintomas = new ArrayList<String>();
 		try{
 			Connection con = Conexion.connect();
-			PreparedStatement ps = con.prepareStatement("SELECT * FROM "+super.getDatabase()+".dbo.Sintomas");
+			PreparedStatement ps = con.prepareStatement("SELECT * FROM "+super.getDatabase()+".dbo.Sintomas WHERE activo = 1");
 			
 			ResultSet rs = ps.executeQuery();
 			

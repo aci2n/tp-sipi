@@ -12,14 +12,24 @@ public class FichaPeriodontal {
 	private Odontologo odontologo;
 	
 	public FichaPeriodontal() {
-	
 	}
 	
-	public void modificarSeccion(String seccion, String sDiente, boolean sangrado, boolean placa, int margen) {
-	
+	public void modificarSeccion(String posicionSeccion, String posicionDiente, boolean sangrado, boolean placa, int margen) {
+		Seccion seccion = buscarSeccion(posicionSeccion, posicionDiente);
+		if (seccion != null) {
+			seccion.setSangrado(sangrado);
+			seccion.setPlaca(placa);
+			seccion.setMargen(margen);
+			AdministradorPersistenciaSeccion.getInstance().update(seccion, this);
+		}
 	}
 	
-	public Seccion buscarSeccion(int seccion) {
+	public Seccion buscarSeccion(String posicionSeccion, String posicionDiente) {
+		for (Seccion seccion : secciones) {
+			if (seccion.sosLaSeccion(posicionSeccion, posicionDiente)) {
+				return seccion;
+			}
+		}
 		return null;
 	}
 	

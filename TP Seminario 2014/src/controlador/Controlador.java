@@ -8,15 +8,16 @@ import implementacion.Prediccion;
 import implementacion.Proyeccion;
 import implementacion.Turno;
 
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.sql.Date;
 
 import persistencia.AdministradorPersistenciaHistoriasClinicas;
 import persistencia.AdministradorPersistenciaOdontologos;
 import persistencia.AdministradorPersistenciaPaciente;
 import persistencia.AdministradorPersistenciaSintomas;
 import persistencia.AdministradorPersistenciaTurnos;
+import views.SeccionView;
 
 public class Controlador {
 	
@@ -41,13 +42,13 @@ public class Controlador {
 		return instancia;
 	}
 	
-	public void altaHistoriaClinica(String dni) {
+	public void altaHistoriaClinica(String dni, String descripcion) {
 		Paciente paciente = obtenerPaciente(dni);
 		if (paciente != null) {
 			HistoriaClinica historia = obtenerHistoriaClinica(dni);
 			if (historia == null) {
-				historia = new HistoriaClinica();
-				historia.setPaciente(paciente);
+				historia = new HistoriaClinica(paciente, descripcion);
+				historiasClinicas.add(historia);
 			}
 		}
 	}
@@ -74,8 +75,11 @@ public class Controlador {
 		return proyecciones;
 	}
 	
-	public void modificarSeccionHistoriaFicha(int dni, String seccion, String sDiente, boolean sangrado, boolean placa, int margen) {
-	
+	public void modificarSeccionHistoriaFicha(String dni, SeccionView seccionView) {
+		FichaPeriodontal ficha = obtenerFicha(dni);
+		if (ficha != null) {
+			ficha.modificarSeccion(seccionView.getPosicionSeccion(), seccionView.getPosicionDiente(), seccionView.isSangrado(), seccionView.isPlaca(), seccionView.getMargen());
+		}
 	}
 	
 	public void actualizarHistoriaClinica(String dni, String matricula, Date fecha, String descripcion) {

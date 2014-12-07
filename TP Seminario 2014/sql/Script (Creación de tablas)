@@ -30,7 +30,7 @@ CREATE TABLE FichasPeriodontales(
 );
 
 CREATE TABLE Seccion(
-	id_ficha varchar(15) not null,
+	dni varchar(15) not null,
 	posicion_diente varchar(10),
 	posicion_seccion varchar(10),
 	margen int,
@@ -38,8 +38,8 @@ CREATE TABLE Seccion(
 	sangrado bit,
 	placa bit,
 	activo bit default 1,
-	constraint pk_seccion primary key (id_ficha, posicion_diente, posicion_seccion),
-	constraint fk_seccion_ficha_periodontal foreign key (id_ficha) references FichasPeriodontales
+	constraint pk_seccion primary key (dni, posicion_diente, posicion_seccion),
+	constraint fk_seccion_ficha_periodontal foreign key (dni) references FichasPeriodontales
 );
 
 CREATE TABLE HistoriasClinicas(

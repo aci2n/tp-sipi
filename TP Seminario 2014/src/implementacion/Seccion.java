@@ -12,8 +12,8 @@ public class Seccion {
 	private String posicionSeccion;
 	private String posicionDiente;
 	
-	public boolean sosLaSeccion(String seccion, String sDiente) {
-		return this.posicionDiente.equals(seccion) && this.posicionDiente.equals(sDiente);
+	public boolean sosLaSeccion(String posicionSeccion, String posicionDiente) {
+		return this.posicionDiente.equals(posicionSeccion) && this.posicionDiente.equals(posicionDiente);
 	}
 	
 	public Collection<String> getSintomas() {

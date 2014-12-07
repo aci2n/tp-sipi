@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.sql.Date;
 
+import persistencia.AdministradorPersistenciaHistoriasClinicas;
+import controlador.Controlador;
+
 
 
 public class HistoriaClinica {
@@ -13,14 +16,15 @@ public class HistoriaClinica {
 	private Collection<Observacion> observaciones;
 	private String descripcion;
 	
-	public HistoriaClinica(String dni) {
-	
-	}
-	
-	public HistoriaClinica() {
+	public HistoriaClinica(Paciente paciente, String descripcion) {
+		this.paciente = paciente;
+		this.descripcion = descripcion;
 		this.odontogramas = new ArrayList<Odontograma>();
 		this.observaciones = new ArrayList<Observacion>();
-				
+		AdministradorPersistenciaHistoriasClinicas.getInstancia().insert(this);
+	}
+	
+	public HistoriaClinica() {		
 	}
 
 	public void altaFichaPeriodontal() {

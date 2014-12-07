@@ -1,6 +1,10 @@
 package implementacion;
 
+import java.util.ArrayList;
 import java.util.Collection;
+
+import views.CaraView;
+import views.DienteView;
 
 
 
@@ -77,5 +81,19 @@ public class Diente {
 		observacion.setDescripcion(estado);
 		observacion.setOdontologo(odontograma.getOdontologo());
 		return observacion;
+	}
+	
+	public DienteView generarView() {
+		DienteView view = new DienteView();
+		Collection<CaraView> carasView = new ArrayList<CaraView>();
+		for (Cara cara : caras) {
+			carasView.add(cara.generarView());
+		}
+		view.setCaras(carasView);
+		view.setEstado(estado);
+		view.setIdProtesis(idProtesis);
+		view.setIdPuente(idPuente);
+		view.setPosicion(posicion);
+		return view;
 	}
 }

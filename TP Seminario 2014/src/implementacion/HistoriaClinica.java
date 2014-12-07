@@ -1,11 +1,13 @@
 package implementacion;
 
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.sql.Date;
 
 import persistencia.AdministradorPersistenciaHistoriasClinicas;
-import controlador.Controlador;
+import views.HistoriaClinicaView;
+import views.ObservacionView;
+import views.OdontogramaView;
 
 
 
@@ -159,5 +161,23 @@ public class HistoriaClinica {
 			observaciones.addAll(odontograma.generarObservaciones());
 		}
 		return observaciones;
+	}
+	
+	public HistoriaClinicaView generarView() {
+		HistoriaClinicaView view = new HistoriaClinicaView();
+		Collection<OdontogramaView> odontogramasView = new ArrayList<OdontogramaView>();
+		for (Odontograma odontograma : odontogramas) {
+			odontogramasView.add(odontograma.generarView());
+		}
+		view.setOdontogramas(odontogramasView);
+		Collection<ObservacionView> observacionesView = new ArrayList<ObservacionView>();
+		for (Observacion observacion : observaciones) {
+			observacionesView.add(observacion.generarView());
+		}
+		view.setObservaciones(observacionesView);
+		view.setDescripcion(descripcion);
+		view.setFicha(ficha.generarView());
+		view.setPaciente(paciente.generarView());
+		return view;
 	}
 }

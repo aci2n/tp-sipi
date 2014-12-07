@@ -11,7 +11,6 @@ public class PacienteView {
 	private String email;
 	private Date fechaNacimiento;
 	private String genero;
-	private boolean estado;
 	private String obraSocial;
 	private String planObraSocial;
 	
@@ -56,12 +55,6 @@ public class PacienteView {
 	}
 	public void setGenero(String genero) {
 		this.genero = genero;
-	}
-	public boolean isEstado() {
-		return estado;
-	}
-	public void setEstado(boolean estado) {
-		this.estado = estado;
 	}
 	public String getObraSocial() {
 		return obraSocial;

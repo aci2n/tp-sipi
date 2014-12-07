@@ -4,6 +4,9 @@ import java.sql.Date;
 import java.util.ArrayList;
 import java.util.Collection;
 
+import views.DienteView;
+import views.OdontogramaView;
+
 
 
 public class Odontograma {
@@ -85,5 +88,18 @@ public class Odontograma {
 			observaciones.add(diente.generarObservacion(this));
 		}
 		return observaciones;
+	}
+	
+	public OdontogramaView generarView() {
+		OdontogramaView view = new OdontogramaView();
+		Collection<DienteView> dientesView = new ArrayList<DienteView>();
+		for (Diente diente : dientes) {
+			dientesView.add(diente.generarView());
+		}
+		view.setDientes(dientesView);
+		view.setFecha(fecha);
+		view.setIdOdontograma(idOdontograma);
+		view.setOdontologo(odontologo.generarView());
+		return view;
 	}
 }

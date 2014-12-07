@@ -8,14 +8,6 @@ public class ObservacionView {
 	private Date fecha;
 	private String descripcion;
 	private OdontologoView odontologo;
-	
-	public ObservacionView(OdontologoView odontologo, Date fecha, String descripcion) {
-	
-	}
-
-	public ObservacionView() {
-		
-	}
 
 	public Date getFecha() {
 		return fecha;

@@ -9,13 +9,6 @@ public class OdontologoView {
 	private String nombre;
 	private String apellido;
 	private Collection<EspecialidadView> especialidades;
-	
-	public OdontologoView(String matricula, String nombre, String apellido, Collection<EspecialidadView> especialidades){
-		this.matricula = matricula;
-		this.nombre = nombre;
-		this.apellido = apellido;
-		this.especialidades = especialidades;
-	}
 		
 	public boolean sosElOdontologo(String matricula) {
 		return this.matricula.equals(matricula);
@@ -35,6 +28,22 @@ public class OdontologoView {
 
 	public Collection<EspecialidadView> getEspecialidades() {
 		return especialidades;
+	}
+
+	public void setMatricula(String matricula) {
+		this.matricula = matricula;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public void setApellido(String apellido) {
+		this.apellido = apellido;
+	}
+
+	public void setEspecialidades(Collection<EspecialidadView> especialidades) {
+		this.especialidades = especialidades;
 	}
 
 

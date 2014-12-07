@@ -5,6 +5,8 @@ import java.util.Collection;
 
 import persistencia.AdministradorPersistenciaEspecialidades;
 import persistencia.AdministradorPersistenciaOdontologos;
+import views.EspecialidadView;
+import views.OdontologoView;
 
 
 
@@ -76,6 +78,19 @@ public class Odontologo {
 			especialidades.add(especialidad);
 			AdministradorPersistenciaEspecialidades.getInstancia().insert(especialidad, this);
 		}
+	}
+	
+	public OdontologoView generarView() {
+		OdontologoView view = new OdontologoView();
+		Collection<EspecialidadView> especialidadesView = new ArrayList<EspecialidadView>();
+		for (Especialidad especialidad : especialidades) {
+			especialidadesView.add(especialidad.generarView());
+		}
+		view.setEspecialidades(especialidadesView);
+		view.setApellido(apellido);
+		view.setMatricula(matricula);
+		view.setNombre(nombre);
+		return view;
 	}
 
 }

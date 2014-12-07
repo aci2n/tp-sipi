@@ -3,6 +3,7 @@ package implementacion;
 import java.sql.Date;
 
 import persistencia.AdministradorPersistenciaPaciente;
+import views.PacienteView;
 
 
 public class Paciente {
@@ -88,5 +89,19 @@ public class Paciente {
 	}
 	public boolean sosElPaciente(String dni) {
 		return this.dni.equals(dni);
+	}
+	
+	public PacienteView generarView() {
+		PacienteView view = new PacienteView();
+		view.setNombre(nombre);
+		view.setApellido(apellido);
+		view.setDni(dni);
+		view.setTelefono(telefono);
+		view.setEmail(email);
+		view.setFechaNacimiento(fechaNacimiento);
+		view.setGenero(genero);
+		view.setObraSocial(obraSocial);
+		view.setPlanObraSocial(planObraSocial);
+		return view;
 	}
 }

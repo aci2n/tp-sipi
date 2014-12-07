@@ -9,10 +9,6 @@ public class FichaPeriodontalView {
 	private Collection<SeccionView> secciones;
 	private OdontologoView odontologo;
 	
-	public FichaPeriodontalView() {
-	
-	}
-	
 	public void modificarSeccion(String seccion, String sDiente, boolean sangrado, boolean placa, int margen) {
 	
 	}

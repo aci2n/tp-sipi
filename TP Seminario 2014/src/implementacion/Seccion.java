@@ -2,6 +2,8 @@ package implementacion;
 
 import java.util.Collection;
 
+import views.SeccionView;
+
 
 
 public class Seccion {
@@ -66,6 +68,17 @@ public class Seccion {
 
 	public void setPosicionDiente(String posicionDiente) {
 		this.posicionDiente = posicionDiente;
+	}
+	
+	public SeccionView generarView() {
+		SeccionView view = new SeccionView();
+		view.setMargen(margen);
+		view.setPlaca(placa);
+		view.setPosicionDiente(posicionDiente);
+		view.setPosicionSeccion(posicionSeccion);
+		view.setProfundidad(profundidad);
+		view.setSangrado(sangrado);
+		return view;
 	}
 
 }

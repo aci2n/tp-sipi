@@ -11,13 +11,6 @@ public class HistoriaClinicaView {
 	private Collection<OdontogramaView> odontogramas;
 	private Collection<ObservacionView> observaciones;
 	private String descripcion;
-	
-	public HistoriaClinicaView(String dni) {
-	
-	}
-	
-	public HistoriaClinicaView() {
-	}
 
 	public void altaFichaPeriodontal() {
 	

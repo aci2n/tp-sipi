@@ -10,13 +10,6 @@ public class OdontogramaView {
 	private Collection<DienteView> dientes;
 	private Date fecha;
 	private OdontologoView odontologo;
-	
-	public OdontogramaView(Date fecha) {
-	
-	}
-	
-	public OdontogramaView() {
-	}
 
 	public void altaProtesisDiente(int posicionDiente) {
 	

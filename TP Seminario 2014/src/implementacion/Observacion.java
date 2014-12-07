@@ -3,6 +3,7 @@ package implementacion;
 import java.sql.Date;
 
 import persistencia.AdministradorPersistenciaObservaciones;
+import views.ObservacionView;
 
 
 
@@ -50,4 +51,12 @@ public class Observacion {
 	public boolean tenesElSintoma(String sintoma) {
 		return descripcion.toLowerCase().contains(sintoma.toLowerCase());
 	}	
+	
+	public ObservacionView generarView() {
+		ObservacionView view = new ObservacionView();
+		view.setDescripcion(descripcion);
+		view.setFecha(fecha);
+		view.setOdontologo(odontologo.generarView());
+		return view;
+	}
 }

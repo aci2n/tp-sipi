@@ -1,5 +1,7 @@
 package implementacion;
 
+import views.CaraView;
+
 
 
 public class Cara {
@@ -24,5 +26,12 @@ public class Cara {
 
 	public void setEstado(String estado) {
 		this.estado = estado;
+	}
+	
+	public CaraView generarView() {
+		CaraView view = new CaraView();
+		view.setEstado(estado);
+		view.setPosicion(posicion);
+		return view;
 	}
 }

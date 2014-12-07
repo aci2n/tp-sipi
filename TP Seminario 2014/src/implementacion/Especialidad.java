@@ -1,5 +1,7 @@
 package implementacion;
 
+import views.EspecialidadView;
+
 
 
 public class Especialidad {
@@ -23,5 +25,11 @@ public class Especialidad {
 	
 	public boolean sosLaEspecialidad(String descripcion) {
 		return this.descripcion.equalsIgnoreCase(descripcion);
+	}
+	
+	public EspecialidadView generarView() {
+		EspecialidadView view = new EspecialidadView();
+		view.setDescripcion(descripcion);
+		return view;
 	}
 }

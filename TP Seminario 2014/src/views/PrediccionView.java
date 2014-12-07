@@ -5,28 +5,26 @@ import java.util.Collection;
 
 
 public class PrediccionView {
-	private Collection<String> sintomasOtros;
-	private Collection<Float> porcentajes;
+	private String sintomaBase;
+	private float total;
+	private Collection<ItemPrediccionView> itemsPrediccion;
 	
-	public PrediccionView(Collection<String> SintomasOtros, Collection<Float> Porcentajes) {
-	
+	public String getSintomaBase() {
+		return sintomaBase;
 	}
-
-	public Collection<String> getSintomasOtros() {
-		return sintomasOtros;
+	public void setSintomaBase(String sintomaBase) {
+		this.sintomaBase = sintomaBase;
 	}
-
-	public void setSintomasOtros(Collection<String> sintomasOtros) {
-		this.sintomasOtros = sintomasOtros;
+	public float getTotal() {
+		return total;
 	}
-
-	public Collection<Float> getPorcentajes() {
-		return porcentajes;
+	public void setTotal(float total) {
+		this.total = total;
 	}
-
-	public void setPorcentajes(Collection<Float> porcentajes) {
-		this.porcentajes = porcentajes;
+	public Collection<ItemPrediccionView> getItemsPrediccion() {
+		return itemsPrediccion;
 	}
-	
-	
+	public void setItemsPrediccion(Collection<ItemPrediccionView> itemsPrediccion) {
+		this.itemsPrediccion = itemsPrediccion;
+	}
 }

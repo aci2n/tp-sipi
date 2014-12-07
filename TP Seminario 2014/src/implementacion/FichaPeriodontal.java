@@ -1,8 +1,11 @@
 package implementacion;
 
+import java.util.ArrayList;
 import java.util.Collection;
 
 import persistencia.AdministradorPersistenciaSeccion;
+import views.FichaPeriodontalView;
+import views.SeccionView;
 
 
 
@@ -66,5 +69,15 @@ public class FichaPeriodontal {
 		this.paciente = paciente;
 	}
 	
-	
+	public FichaPeriodontalView generarView() {
+		FichaPeriodontalView view = new FichaPeriodontalView();
+		Collection<SeccionView> seccionesView = new ArrayList<SeccionView>();
+		for (Seccion seccion : secciones) {
+			seccionesView.add(seccion.generarView());
+		}
+		view.setSecciones(seccionesView);
+		view.setOdontologo(odontologo.generarView());
+		view.setPaciente(paciente.generarView());
+		return view;
+	}
 }

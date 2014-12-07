@@ -3,6 +3,7 @@ package implementacion;
 import java.sql.Date;
 
 import persistencia.AdministradorPersistenciaTurnos;
+import views.TurnoView;
 
 
 
@@ -57,5 +58,14 @@ public class Turno {
 
 	public boolean sosElTurno(String dni, String matricula, Date fecha) {
 		return this.fecha.compareTo(fecha) == 0 && paciente.sosElPaciente(dni) && odontologo.sosElOdontologo(matricula);
+	}
+	
+	public TurnoView generarView() {
+		TurnoView view = new TurnoView();
+		view.setDescripcion(descripcion);
+		view.setFecha(fecha);
+		view.setOdontologo(odontologo.generarView());
+		view.setPaciente(paciente.generarView());
+		return view;
 	}
 }

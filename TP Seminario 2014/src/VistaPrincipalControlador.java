@@ -46,10 +46,6 @@ public class VistaPrincipalControlador {
 		VistaNavegador.loadVista(VistaNavegador.VISTA_5);
 	}
 
-	public void seleccionarSalir(ActionEvent e) {
-		System.exit(0);
-	}
-
 	public void seleccionarVistaAdministracionPacientes(ActionEvent event) {
 		VistaNavegador.loadVista(VistaNavegador.VISTA_6);
 	}
@@ -70,7 +66,10 @@ public class VistaPrincipalControlador {
 		VistaNavegador.loadVista(VistaNavegador.VISTA_9);
 	}
 
-	
+	public void seleccionarSalir(ActionEvent e) {
+		System.exit(0);
+	}
+
 
 	// public void testing(MouseEvent event) {
 	//

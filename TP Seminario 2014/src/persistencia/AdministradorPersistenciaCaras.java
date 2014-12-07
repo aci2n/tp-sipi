@@ -27,7 +27,7 @@ public class AdministradorPersistenciaCaras extends AdministradorPersistencia {
 	public void insert (Cara cara, Diente diente, Odontograma odontograma){
 		try{
 			Connection con = Conexion.connect();
-			PreparedStatement ps = con.prepareStatement("INSERT INTO "+super.getDatabase()+".dbo.Cara (posicion_cara, posicion_diente, id_odontograma, estado_cara) VALUES (?,?,?,?)");
+			PreparedStatement ps = con.prepareStatement("INSERT INTO "+super.getDatabase()+".dbo.Caras (posicion_cara, posicion_diente, id_odontograma, estado_cara) VALUES (?,?,?,?)");
 			ps.setString(1,cara.getPosicion());
 			ps.setString(2,diente.getPosicion());
 			ps.setString(3,odontograma.getIdOdontograma());

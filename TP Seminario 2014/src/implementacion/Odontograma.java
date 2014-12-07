@@ -4,6 +4,7 @@ import java.sql.Date;
 import java.util.ArrayList;
 import java.util.Collection;
 
+import persistencia.AdministradorPersistenciaOdontograma;
 import views.DienteView;
 import views.OdontogramaView;
 
@@ -15,8 +16,35 @@ public class Odontograma {
 	private Date fecha;
 	private Odontologo odontologo;
 	
-	public Odontograma(Date fecha) {
-	
+	public Odontograma(String idOdontograma, Date fecha, Odontologo odontologo) {
+		this.idOdontograma=idOdontograma;
+		this.fecha=fecha;
+		this.odontologo=odontologo;
+		
+		this.dientes= new ArrayList<Diente>();
+		
+		int i;
+		
+		for (i = 11;i<=18;i++)
+			this.dientes.add(new Diente(Integer.toString(i),this));
+		
+		for (i = 21;i<=28;i++)
+			this.dientes.add(new Diente(Integer.toString(i),this));
+		
+		for (i = 31;i<=38;i++)
+			this.dientes.add(new Diente(Integer.toString(i),this));
+		
+		for (i = 51;i<=55;i++)
+			this.dientes.add(new Diente(Integer.toString(i),this));
+		
+		for (i = 61;i<=65;i++)
+			this.dientes.add(new Diente(Integer.toString(i),this));
+		
+		for (i = 71;i<=75;i++)
+			this.dientes.add(new Diente(Integer.toString(i),this));
+		
+		for (i = 81;i<=85;i++)
+			this.dientes.add(new Diente(Integer.toString(i),this));		
 	}
 	
 	public Odontograma() {

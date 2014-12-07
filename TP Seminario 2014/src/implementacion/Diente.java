@@ -3,6 +3,7 @@ package implementacion;
 import java.util.ArrayList;
 import java.util.Collection;
 
+import persistencia.AdministradorPersistenciaDiente;
 import views.CaraView;
 import views.DienteView;
 
@@ -15,6 +16,23 @@ public class Diente {
 	private String estado;
 	private Collection<Cara> caras;
 	
+	public Diente (String posicion, Odontograma odontograma){
+		this.posicion=posicion;
+		this.idProtesis="-";
+		this.idPuente="-";
+		this.estado="-";
+		this.caras = new ArrayList<Cara>();
+		
+		this.caras.add(new Cara(Cara.posicion1,"-"));
+		this.caras.add(new Cara(Cara.posicion2,"-"));
+		this.caras.add(new Cara(Cara.posicion3,"-"));
+		this.caras.add(new Cara(Cara.posicion4,"-"));
+		this.caras.add(new Cara(Cara.posicion5,"-"));
+	}
+	
+	public Diente() {
+	}
+
 	public boolean sosElDiente(String posicion) {
 		return this.posicion==posicion;
 	}

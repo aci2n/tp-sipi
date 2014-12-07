@@ -261,38 +261,6 @@ public class Controlador {
 			AdministradorPersistenciaHistoriasClinicas.getInstancia().update(historia);
 		}
 	}
-	
-	
-	//metodos para el test
-	
-	public void altaPacienteTest(String dni){
-		Paciente paciente = new Paciente();
-		paciente.setDni(dni);
-		this.pacientes.add(paciente);
-	}
-	
-
-	public HistoriaClinica obtenerHistoriaClinicaTest(String dni) {
-		HistoriaClinica historia = null;
-		for (HistoriaClinica hist : historiasClinicas) {
-			if (hist.sosLaHistoria(dni)) {
-				historia = hist;
-			}
-		}
-		return historia;
-	}
-	
-	public void altaHistoriaClinicaTest(String dni) {
-		Paciente paciente = obtenerPaciente(dni);
-		if (paciente != null) {
-			HistoriaClinica historia = obtenerHistoriaClinicaTest(dni);
-			if (historia == null) {
-				historia = new HistoriaClinica();
-				historia.setPaciente(paciente);
-				this.historiasClinicas.add(historia);
-			}
-		}
-	}
 
 	public Collection<Paciente> getPacientes() {
 		return pacientes;

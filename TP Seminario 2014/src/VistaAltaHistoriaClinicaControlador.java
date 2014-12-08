@@ -37,7 +37,7 @@ public class VistaAltaHistoriaClinicaControlador implements Initializable {
 	@FXML
 	private BorderPane panelFichaPeriodontal;
 	@FXML
-	private Label datosPaciente;
+	private Label datosPaciente, labelDni;
 	@FXML
 	private TextField filtrarFicha, tDni;
 	@FXML
@@ -154,9 +154,10 @@ public class VistaAltaHistoriaClinicaControlador implements Initializable {
 
 	public void presionarBuscarPaciente(ActionEvent event) {
 
-		panelFichaPeriodontal.setDisable(false);
-		datosPaciente.setText(filtrarFicha.getText());
-
+		if(Controlador.getInstancia().obtenerPacienteView(tDni.getText()) != null){
+			panelFichaPeriodontal.setDisable(false);
+			labelDni.setText(tDni.getText());
+		}
 	}
 
 	public void guardarFicha(ActionEvent event) {
@@ -565,7 +566,7 @@ public class VistaAltaHistoriaClinicaControlador implements Initializable {
 
 	public void cancelar(ActionEvent event) {
 
-		//System.out.println(Integer.parseInt(d1t3.getText()));
+		this.initialize(null, null);
 	}
 
 }

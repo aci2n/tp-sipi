@@ -141,6 +141,7 @@
                                           <Insets bottom="10.0" />
                                        </VBox.margin>
                                     </HBox>
+                                    <Separator prefWidth="200.0" />
                                     <Label fx:id="superior" alignment="CENTER" text="SUPERIOR" underline="true">
                                        <VBox.margin>
                                           <Insets bottom="10.0" />

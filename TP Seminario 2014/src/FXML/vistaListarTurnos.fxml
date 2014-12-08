@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<StackPane fx:id="vistaListarTurnos" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="630.0" prefWidth="770.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="VistaListarTurnosControlador">
+   <children>
+      <BorderPane prefHeight="200.0" prefWidth="200.0">
+         <top>
+            <HBox alignment="CENTER_LEFT" prefHeight="30.0" prefWidth="200.0" spacing="10.0" style="-fx-background-color: #3498db; -fx-background-radius: 4;" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fx:id="imagenRaya" fitHeight="20.0" fitWidth="20.0" HBox.hgrow="NEVER">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <Label text="Listado de Odontólogos" textFill="#ffffffa8">
+                     <font>
+                        <Font name="Calibri Bold" size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+               <BorderPane.margin>
+                  <Insets bottom="10.0" />
+               </BorderPane.margin>
+               <effect>
+                  <DropShadow height="3.5" radius="0.375" width="0.0" />
+               </effect>
+            </HBox>
+         </top>
+         <StackPane.margin>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </StackPane.margin>
+         <center>
+            <BorderPane prefHeight="550.0" prefWidth="730.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+               <effect>
+                  <DropShadow />
+               </effect>
+               <top>
+                  <AnchorPane fx:id="boxFiltrarTurnos" prefHeight="80.0" prefWidth="670.0" BorderPane.alignment="CENTER">
+                     <BorderPane.margin>
+                        <Insets left="30.0" right="30.0" top="20.0" />
+                     </BorderPane.margin>
+                     <children>
+                        <HBox prefHeight="57.0" prefWidth="670.0" spacing="10.0">
+                           <padding>
+                              <Insets left="10.0" top="30.0" />
+                           </padding>
+                           <children>
+                              <TextField fx:id="textFiltrarTabla" prefHeight="25.0" prefWidth="254.0" promptText="Ingrese un sólo dato personal" />
+                              <Button fx:id="botonBuscar" mnemonicParsing="false" text="Buscar">
+                                 <font>
+                                    <Font name="Calibri" size="14.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="botonVerTodos" mnemonicParsing="false" text="Ver Todos">
+                                 <font>
+                                    <Font name="Calibri" size="14.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </HBox>
+                        <Label style="-fx-border-color: #95a5a6; -fx-border-radius: 2; -fx-background-color: #eef2f3;" text="Filtrado de odontologos" textFill="#7f8c8d">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                           <padding>
+                              <Insets left="5.0" right="5.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </top>
+               <center>
+                  <TableView fx:id="tablaListarOdontologos" fixedCellSize="0.0" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                    <columns>
+                      <TableColumn fx:id="columnaApellidoNombre" prefWidth="75.0" text="Odontologo" />
+                      <TableColumn fx:id="columnaPaciente" prefWidth="75.0" text="Paciente" />
+                        <TableColumn fx:id="columnaDni" prefWidth="75.0" text="DNI" />
+                        <TableColumn fx:id="columnaFecha" prefWidth="75.0" text="Fecha" />
+                        <TableColumn fx:id="columnaDescripcion" prefWidth="75.0" text="Comentarios" />
+                    </columns>
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                     <BorderPane.margin>
+                        <Insets bottom="30.0" left="30.0" right="30.0" top="20.0" />
+                     </BorderPane.margin>
+                  </TableView>
+               </center>
+            </BorderPane>
+         </center>
+      </BorderPane>
+   </children>
+</StackPane>

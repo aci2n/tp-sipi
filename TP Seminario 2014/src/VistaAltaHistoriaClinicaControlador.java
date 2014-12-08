@@ -157,6 +157,7 @@ public class VistaAltaHistoriaClinicaControlador implements Initializable {
 		if(Controlador.getInstancia().obtenerPacienteView(tDni.getText()) != null){
 			panelFichaPeriodontal.setDisable(false);
 			labelDni.setText(tDni.getText());
+			
 		}
 	}
 

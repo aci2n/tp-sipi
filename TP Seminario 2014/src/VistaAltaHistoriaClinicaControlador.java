@@ -25,6 +25,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
 import javafx.scene.image.WritableImage;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -32,7 +33,6 @@ import javafx.stage.StageStyle;
 
 public class VistaAltaHistoriaClinicaControlador implements Initializable {
 
-	
 	@FXML
 	private BorderPane panelFichaPeriodontal;
 	@FXML
@@ -78,6 +78,30 @@ public class VistaAltaHistoriaClinicaControlador implements Initializable {
 			d26p1, d26p2, d26p3, d27p1, d27p2, d27p3, d28p1, d28p2, d28p3,
 			d29p1, d29p2, d29p3, d30p1, d30p2, d30p3, d31p1, d31p2, d31p3,
 			d32p1, d32p2, d32p3;
+	@FXML
+	private TextField d1t1, d1t2, d1t3, d2t1, d2t2, d2t3, d3t1, d3t2, d3t3,
+			d4t1, d4t2, d4t3, d5t1, d5t2, d5t3, d6t1, d6t2, d6t3, d7t1, d7t2,
+			d7t3, d8t1, d8t2, d8t3, d9t1, d9t2, d9t3, d10t1, d10t2, d10t3,
+			d11t1, d11t2, d11t3, d12t1, d12t2, d12t3, d13t1, d13t2, d13t3,
+			d14t1, d14t2, d14t3, d15t1, d15t2, d15t3, d16t1, d16t2, d16t3,
+			d17t1, d17t2, d17t3, d18t1, d18t2, d18t3, d19t1, d19t2, d19t3,
+			d20t1, d20t2, d20t3, d21t1, d21t2, d21t3, d22t1, d22t2, d22t3,
+			d23t1, d23t2, d23t3, d24t1, d24t2, d24t3, d25t1, d25t2, d25t3,
+			d26t1, d26t2, d26t3, d27t1, d27t2, d27t3, d28t1, d28t2, d28t3,
+			d29t1, d29t2, d29t3, d30t1, d30t2, d30t3, d31t1, d31t2, d31t3,
+			d32t1, d32t2, d32t3;
+	@FXML
+	private TextField d1f1, d1f2, d1f3, d2f1, d2f2, d2f3, d3f1, d3f2, d3f3,
+			d4f1, d4f2, d4f3, d5f1, d5f2, d5f3, d6f1, d6f2, d6f3, d7f1, d7f2,
+			d7f3, d8f1, d8f2, d8f3, d9f1, d9f2, d9f3, d10f1, d10f2, d10f3,
+			d11f1, d11f2, d11f3, d12f1, d12f2, d12f3, d13f1, d13f2, d13f3,
+			d14f1, d14f2, d14f3, d15f1, d15f2, d15f3, d16f1, d16f2, d16f3,
+			d17f1, d17f2, d17f3, d18f1, d18f2, d18f3, d19f1, d19f2, d19f3,
+			d20f1, d20f2, d20f3, d21f1, d21f2, d21f3, d22f1, d22f2, d22f3,
+			d23f1, d23f2, d23f3, d24f1, d24f2, d24f3, d25f1, d25f2, d25f3,
+			d26f1, d26f2, d26f3, d27f1, d27f2, d27f3, d28f1, d28f2, d28f3,
+			d29f1, d29f2, d29f3, d30f1, d30f2, d30f3, d31f1, d31f2, d31f3,
+			d32f1, d32f2, d32f3;
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
@@ -86,11 +110,9 @@ public class VistaAltaHistoriaClinicaControlador implements Initializable {
 		panelFichaPeriodontal.getStylesheets().setAll(
 				getClass().getResource("historiaClinica.css").toExternalForm());
 
-	
-		d15p1.setSelected(true);
 	}
 
-	/* METODOS */	
+	/* METODOS */
 
 	private Stage generarPrevisualizacion(Node node) {
 
@@ -124,25 +146,406 @@ public class VistaAltaHistoriaClinicaControlador implements Initializable {
 
 		panelFichaPeriodontal.setDisable(false);
 		datosPaciente.setText(filtrarFicha.getText());
-	}
-	
-	public void guardarFicha(ActionEvent event){
-		
-		SeccionView d1s1 = new SeccionView();
-		SeccionView d1s2 = new SeccionView();
-		SeccionView d1s3 = new SeccionView();
-		
-		
+
 	}
 
+	@SuppressWarnings("unused")
+	public void guardarFicha(ActionEvent event) {
+
+		// DIENTE 1
+
+		SeccionView d1se1 = new SeccionView(d1s1.isSelected(),
+				d1p1.isSelected(), Integer.parseInt(d1t1.getText()),
+				Integer.parseInt(d1f1.getText()), "1", "1");
+		SeccionView d1se2 = new SeccionView(d1s2.isSelected(),
+				d1p2.isSelected(), Integer.parseInt(d1t2.getText()),
+				Integer.parseInt(d1f2.getText()), "2", "1");
+		SeccionView d1se3 = new SeccionView(d1s3.isSelected(),
+				d1p3.isSelected(), Integer.parseInt(d1t2.getText()),
+				Integer.parseInt(d1f2.getText()), "3", "1");
+
+		// DIENTE 2
+
+		SeccionView d2se1 = new SeccionView(d2s1.isSelected(),
+				d1p1.isSelected(), Integer.parseInt(d2t1.getText()),
+				Integer.parseInt(d2f1.getText()), "1", "2");
+		SeccionView d2se2 = new SeccionView(d2s2.isSelected(),
+				d2p2.isSelected(), Integer.parseInt(d2t2.getText()),
+				Integer.parseInt(d2f2.getText()), "2", "2");
+		SeccionView d2se3 = new SeccionView(d2s3.isSelected(),
+				d2p3.isSelected(), Integer.parseInt(d2t2.getText()),
+				Integer.parseInt(d2f3.getText()), "3", "2");
+
+		// DIENTE 3
+
+		SeccionView d3se1 = new SeccionView(d3s1.isSelected(),
+				d3p1.isSelected(), Integer.parseInt(d3t1.getText()),
+				Integer.parseInt(d3f1.getText()), "1", "3");
+		SeccionView d3se2 = new SeccionView(d3s2.isSelected(),
+				d3p2.isSelected(), Integer.parseInt(d3t2.getText()),
+				Integer.parseInt(d3f2.getText()), "2", "3");
+		SeccionView d3se3 = new SeccionView(d3s3.isSelected(),
+				d3p3.isSelected(), Integer.parseInt(d3t2.getText()),
+				Integer.parseInt(d3f2.getText()), "3", "3");
+
+		// DIENTE 4
+
+		SeccionView d4se1 = new SeccionView(d4s1.isSelected(),
+				d4p1.isSelected(), Integer.parseInt(d4t1.getText()),
+				Integer.parseInt(d4f1.getText()), "1", "4");
+		SeccionView d4se2 = new SeccionView(d4s2.isSelected(),
+				d4p2.isSelected(), Integer.parseInt(d4t2.getText()),
+				Integer.parseInt(d4f2.getText()), "2", "4");
+		SeccionView d4se3 = new SeccionView(d4s3.isSelected(),
+				d4p3.isSelected(), Integer.parseInt(d4t2.getText()),
+				Integer.parseInt(d4f2.getText()), "3", "4");
+
+		// DIENTE 5
+
+		SeccionView d5se1 = new SeccionView(d5s1.isSelected(),
+				d5p1.isSelected(), Integer.parseInt(d5t1.getText()),
+				Integer.parseInt(d5f1.getText()), "1", "5");
+		SeccionView d5se2 = new SeccionView(d5s2.isSelected(),
+				d5p2.isSelected(), Integer.parseInt(d5t2.getText()),
+				Integer.parseInt(d5f2.getText()), "2", "5");
+		SeccionView d5se3 = new SeccionView(d5s3.isSelected(),
+				d5p3.isSelected(), Integer.parseInt(d5t2.getText()),
+				Integer.parseInt(d5f2.getText()), "3", "5");
+
+		// DIENTE 6
+
+		SeccionView d6se1 = new SeccionView(d6s1.isSelected(),
+				d6p1.isSelected(), Integer.parseInt(d6t1.getText()),
+				Integer.parseInt(d6f1.getText()), "1", "6");
+		SeccionView d6se2 = new SeccionView(d6s2.isSelected(),
+				d6p2.isSelected(), Integer.parseInt(d6t2.getText()),
+				Integer.parseInt(d6f2.getText()), "2", "6");
+		SeccionView d6se3 = new SeccionView(d6s3.isSelected(),
+				d6p3.isSelected(), Integer.parseInt(d6t2.getText()),
+				Integer.parseInt(d6f2.getText()), "3", "6");
+
+		// DIENTE 7
+
+		SeccionView d7se1 = new SeccionView(d7s1.isSelected(),
+				d7p1.isSelected(), Integer.parseInt(d7t1.getText()),
+				Integer.parseInt(d7f1.getText()), "1", "7");
+		SeccionView d7se2 = new SeccionView(d7s2.isSelected(),
+				d7p2.isSelected(), Integer.parseInt(d7t2.getText()),
+				Integer.parseInt(d7f2.getText()), "2", "7");
+		SeccionView d7se3 = new SeccionView(d7s3.isSelected(),
+				d7p3.isSelected(), Integer.parseInt(d7t2.getText()),
+				Integer.parseInt(d7f2.getText()), "3", "7");
+
+		// DIENTE 8
+
+		SeccionView d8se1 = new SeccionView(d8s1.isSelected(),
+				d8p1.isSelected(), Integer.parseInt(d8t1.getText()),
+				Integer.parseInt(d8f1.getText()), "1", "8");
+		SeccionView d8se2 = new SeccionView(d8s2.isSelected(),
+				d8p2.isSelected(), Integer.parseInt(d8t2.getText()),
+				Integer.parseInt(d8f2.getText()), "2", "8");
+		SeccionView d8se3 = new SeccionView(d8s3.isSelected(),
+				d8p3.isSelected(), Integer.parseInt(d8t2.getText()),
+				Integer.parseInt(d8f2.getText()), "3", "8");
+
+		// DIENTE 9
+
+		SeccionView d9se1 = new SeccionView(d9s1.isSelected(),
+				d9p1.isSelected(), Integer.parseInt(d9t1.getText()),
+				Integer.parseInt(d9f1.getText()), "1", "9");
+		SeccionView d9se2 = new SeccionView(d9s2.isSelected(),
+				d9p2.isSelected(), Integer.parseInt(d9t2.getText()),
+				Integer.parseInt(d9f2.getText()), "2", "9");
+		SeccionView d9se3 = new SeccionView(d9s3.isSelected(),
+				d9p3.isSelected(), Integer.parseInt(d9t2.getText()),
+				Integer.parseInt(d9f2.getText()), "3", "9");
+
+		// DIENTE 10
+
+		SeccionView d10se1 = new SeccionView(d10s1.isSelected(),
+				d10p1.isSelected(), Integer.parseInt(d10t1.getText()),
+				Integer.parseInt(d10f1.getText()), "1", "10");
+		SeccionView d10se2 = new SeccionView(d10s2.isSelected(),
+				d10p2.isSelected(), Integer.parseInt(d10t2.getText()),
+				Integer.parseInt(d10f2.getText()), "2", "10");
+		SeccionView d10se3 = new SeccionView(d10s3.isSelected(),
+				d10p3.isSelected(), Integer.parseInt(d10t2.getText()),
+				Integer.parseInt(d10f2.getText()), "3", "10");
+
+		// DIENTE 11
+
+		SeccionView d11se1 = new SeccionView(d11s1.isSelected(),
+				d11p1.isSelected(), Integer.parseInt(d11t1.getText()),
+				Integer.parseInt(d11f1.getText()), "1", "11");
+		SeccionView d11se2 = new SeccionView(d11s2.isSelected(),
+				d11p2.isSelected(), Integer.parseInt(d11t2.getText()),
+				Integer.parseInt(d11f2.getText()), "2", "11");
+		SeccionView d11se3 = new SeccionView(d11s3.isSelected(),
+				d11p3.isSelected(), Integer.parseInt(d11t2.getText()),
+				Integer.parseInt(d11f2.getText()), "3", "11");
+
+		// DIENTE 12
+
+		SeccionView d12se1 = new SeccionView(d12s1.isSelected(),
+				d12p1.isSelected(), Integer.parseInt(d12t1.getText()),
+				Integer.parseInt(d12f1.getText()), "1", "12");
+		SeccionView d12se2 = new SeccionView(d12s2.isSelected(),
+				d12p2.isSelected(), Integer.parseInt(d12t2.getText()),
+				Integer.parseInt(d12f2.getText()), "2", "12");
+		SeccionView d12se3 = new SeccionView(d12s3.isSelected(),
+				d12p3.isSelected(), Integer.parseInt(d12t2.getText()),
+				Integer.parseInt(d12f2.getText()), "3", "12");
+
+		// DIENTE 13
+
+		SeccionView d13se1 = new SeccionView(d13s1.isSelected(),
+				d13p1.isSelected(), Integer.parseInt(d13t1.getText()),
+				Integer.parseInt(d13f1.getText()), "1", "13");
+		SeccionView d13se2 = new SeccionView(d13s2.isSelected(),
+				d13p2.isSelected(), Integer.parseInt(d13t2.getText()),
+				Integer.parseInt(d13f2.getText()), "2", "13");
+		SeccionView d13se3 = new SeccionView(d13s3.isSelected(),
+				d13p3.isSelected(), Integer.parseInt(d13t2.getText()),
+				Integer.parseInt(d13f2.getText()), "3", "13");
+
+		// DIENTE 14
+
+		SeccionView d14se1 = new SeccionView(d14s1.isSelected(),
+				d14p1.isSelected(), Integer.parseInt(d14t1.getText()),
+				Integer.parseInt(d14f1.getText()), "1", "14");
+		SeccionView d14se2 = new SeccionView(d14s2.isSelected(),
+				d14p2.isSelected(), Integer.parseInt(d14t2.getText()),
+				Integer.parseInt(d14f2.getText()), "2", "14");
+		SeccionView d14se3 = new SeccionView(d14s3.isSelected(),
+				d14p3.isSelected(), Integer.parseInt(d14t2.getText()),
+				Integer.parseInt(d14f2.getText()), "3", "14");
+
+		// DIENTE 15
+
+		SeccionView d15se1 = new SeccionView(d15s1.isSelected(),
+				d15p1.isSelected(), Integer.parseInt(d15t1.getText()),
+				Integer.parseInt(d15f1.getText()), "1", "15");
+		SeccionView d15se2 = new SeccionView(d15s2.isSelected(),
+				d15p2.isSelected(), Integer.parseInt(d15t2.getText()),
+				Integer.parseInt(d15f2.getText()), "2", "15");
+		SeccionView d15se3 = new SeccionView(d15s3.isSelected(),
+				d15p3.isSelected(), Integer.parseInt(d15t2.getText()),
+				Integer.parseInt(d15f2.getText()), "3", "15");
+
+		// DIENTE 16
+
+		SeccionView d16se1 = new SeccionView(d16s1.isSelected(),
+				d16p1.isSelected(), Integer.parseInt(d16t1.getText()),
+				Integer.parseInt(d16f1.getText()), "1", "16");
+		SeccionView d16se2 = new SeccionView(d16s2.isSelected(),
+				d16p2.isSelected(), Integer.parseInt(d16t2.getText()),
+				Integer.parseInt(d16f2.getText()), "2", "16");
+		SeccionView d16se3 = new SeccionView(d16s3.isSelected(),
+				d16p3.isSelected(), Integer.parseInt(d16t2.getText()),
+				Integer.parseInt(d16f2.getText()), "3", "16");
+
+		// DIENTE 17
+
+		SeccionView d17se1 = new SeccionView(d17s1.isSelected(),
+				d17p1.isSelected(), Integer.parseInt(d17t1.getText()),
+				Integer.parseInt(d17f1.getText()), "1", "17");
+		SeccionView d17se2 = new SeccionView(d17s2.isSelected(),
+				d17p2.isSelected(), Integer.parseInt(d17t2.getText()),
+				Integer.parseInt(d17f2.getText()), "2", "17");
+		SeccionView d17se3 = new SeccionView(d17s3.isSelected(),
+				d17p3.isSelected(), Integer.parseInt(d17t2.getText()),
+				Integer.parseInt(d17f2.getText()), "3", "17");
+
+		// DIENTE 18
+
+		SeccionView d18se1 = new SeccionView(d18s1.isSelected(),
+				d18p1.isSelected(), Integer.parseInt(d18t1.getText()),
+				Integer.parseInt(d18f1.getText()), "1", "18");
+		SeccionView d18se2 = new SeccionView(d18s2.isSelected(),
+				d18p2.isSelected(), Integer.parseInt(d18t2.getText()),
+				Integer.parseInt(d18f2.getText()), "2", "18");
+		SeccionView d18se3 = new SeccionView(d18s3.isSelected(),
+				d18p3.isSelected(), Integer.parseInt(d18t2.getText()),
+				Integer.parseInt(d18f2.getText()), "3", "18");
+
+		// DIENTE 19
+
+		SeccionView d19se1 = new SeccionView(d19s1.isSelected(),
+				d19p1.isSelected(), Integer.parseInt(d19t1.getText()),
+				Integer.parseInt(d19f1.getText()), "1", "19");
+		SeccionView d19se2 = new SeccionView(d19s2.isSelected(),
+				d19p2.isSelected(), Integer.parseInt(d19t2.getText()),
+				Integer.parseInt(d19f2.getText()), "2", "19");
+		SeccionView d19se3 = new SeccionView(d19s3.isSelected(),
+				d19p3.isSelected(), Integer.parseInt(d19t2.getText()),
+				Integer.parseInt(d19f2.getText()), "3", "19");
+
+		// DIENTE 20
+
+		SeccionView d20se1 = new SeccionView(d20s1.isSelected(),
+				d20p1.isSelected(), Integer.parseInt(d20t1.getText()),
+				Integer.parseInt(d20f1.getText()), "1", "20");
+		SeccionView d20se2 = new SeccionView(d20s2.isSelected(),
+				d20p2.isSelected(), Integer.parseInt(d20t2.getText()),
+				Integer.parseInt(d20f2.getText()), "2", "20");
+		SeccionView d20se3 = new SeccionView(d20s3.isSelected(),
+				d20p3.isSelected(), Integer.parseInt(d20t2.getText()),
+				Integer.parseInt(d20f2.getText()), "3", "20");
+
+		// DIENTE 21
+
+		SeccionView d21se1 = new SeccionView(d21s1.isSelected(),
+				d21p1.isSelected(), Integer.parseInt(d21t1.getText()),
+				Integer.parseInt(d21f1.getText()), "1", "21");
+		SeccionView d21se2 = new SeccionView(d21s2.isSelected(),
+				d21p2.isSelected(), Integer.parseInt(d21t2.getText()),
+				Integer.parseInt(d21f2.getText()), "2", "21");
+		SeccionView d21se3 = new SeccionView(d21s3.isSelected(),
+				d21p3.isSelected(), Integer.parseInt(d21t2.getText()),
+				Integer.parseInt(d21f2.getText()), "3", "21");
+
+		// DIENTE 22
+
+		SeccionView d22se1 = new SeccionView(d22s1.isSelected(),
+				d22p1.isSelected(), Integer.parseInt(d22t1.getText()),
+				Integer.parseInt(d22f1.getText()), "1", "22");
+		SeccionView d22se2 = new SeccionView(d22s2.isSelected(),
+				d22p2.isSelected(), Integer.parseInt(d22t2.getText()),
+				Integer.parseInt(d22f2.getText()), "2", "22");
+		SeccionView d22se3 = new SeccionView(d22s3.isSelected(),
+				d22p3.isSelected(), Integer.parseInt(d22t2.getText()),
+				Integer.parseInt(d22f2.getText()), "3", "22");
+
+		// DIENTE 23
+
+		SeccionView d23se1 = new SeccionView(d23s1.isSelected(),
+				d23p1.isSelected(), Integer.parseInt(d23t1.getText()),
+				Integer.parseInt(d23f1.getText()), "1", "23");
+		SeccionView d23se2 = new SeccionView(d23s2.isSelected(),
+				d23p2.isSelected(), Integer.parseInt(d23t2.getText()),
+				Integer.parseInt(d23f2.getText()), "2", "23");
+		SeccionView d23se3 = new SeccionView(d23s3.isSelected(),
+				d23p3.isSelected(), Integer.parseInt(d23t2.getText()),
+				Integer.parseInt(d23f2.getText()), "3", "23");
+
+		// DIENTE 24
+
+		SeccionView d24se1 = new SeccionView(d24s1.isSelected(),
+				d24p1.isSelected(), Integer.parseInt(d24t1.getText()),
+				Integer.parseInt(d24f1.getText()), "1", "24");
+		SeccionView d24se2 = new SeccionView(d24s2.isSelected(),
+				d24p2.isSelected(), Integer.parseInt(d24t2.getText()),
+				Integer.parseInt(d24f2.getText()), "2", "24");
+		SeccionView d24se3 = new SeccionView(d24s3.isSelected(),
+				d24p3.isSelected(), Integer.parseInt(d24t2.getText()),
+				Integer.parseInt(d24f2.getText()), "3", "24");
+
+		// DIENTE 25
+
+		SeccionView d25se1 = new SeccionView(d25s1.isSelected(),
+				d25p1.isSelected(), Integer.parseInt(d25t1.getText()),
+				Integer.parseInt(d25f1.getText()), "1", "25");
+		SeccionView d25se2 = new SeccionView(d25s2.isSelected(),
+				d25p2.isSelected(), Integer.parseInt(d25t2.getText()),
+				Integer.parseInt(d25f2.getText()), "2", "25");
+		SeccionView d25se3 = new SeccionView(d25s3.isSelected(),
+				d25p3.isSelected(), Integer.parseInt(d25t2.getText()),
+				Integer.parseInt(d25f2.getText()), "3", "25");
+
+		// DIENTE 26
+
+		SeccionView d26se1 = new SeccionView(d26s1.isSelected(),
+				d26p1.isSelected(), Integer.parseInt(d26t1.getText()),
+				Integer.parseInt(d26f1.getText()), "1", "26");
+		SeccionView d26se2 = new SeccionView(d26s2.isSelected(),
+				d26p2.isSelected(), Integer.parseInt(d26t2.getText()),
+				Integer.parseInt(d26f2.getText()), "2", "26");
+		SeccionView d26se3 = new SeccionView(d26s3.isSelected(),
+				d26p3.isSelected(), Integer.parseInt(d26t2.getText()),
+				Integer.parseInt(d26f2.getText()), "3", "26");
+
+		// DIENTE 27
+
+		SeccionView d27se1 = new SeccionView(d27s1.isSelected(),
+				d27p1.isSelected(), Integer.parseInt(d27t1.getText()),
+				Integer.parseInt(d27f1.getText()), "1", "27");
+		SeccionView d27se2 = new SeccionView(d27s2.isSelected(),
+				d27p2.isSelected(), Integer.parseInt(d27t2.getText()),
+				Integer.parseInt(d27f2.getText()), "2", "27");
+		SeccionView d27se3 = new SeccionView(d27s3.isSelected(),
+				d27p3.isSelected(), Integer.parseInt(d27t2.getText()),
+				Integer.parseInt(d27f2.getText()), "3", "27");
+
+		// DIENTE 28
+
+		SeccionView d28se1 = new SeccionView(d28s1.isSelected(),
+				d28p1.isSelected(), Integer.parseInt(d28t1.getText()),
+				Integer.parseInt(d28f1.getText()), "1", "28");
+		SeccionView d28se2 = new SeccionView(d28s2.isSelected(),
+				d28p2.isSelected(), Integer.parseInt(d28t2.getText()),
+				Integer.parseInt(d28f2.getText()), "2", "28");
+		SeccionView d28se3 = new SeccionView(d28s3.isSelected(),
+				d28p3.isSelected(), Integer.parseInt(d28t2.getText()),
+				Integer.parseInt(d28f2.getText()), "3", "28");
+
+		// DIENTE 29
+
+		SeccionView d29se1 = new SeccionView(d29s1.isSelected(),
+				d29p1.isSelected(), Integer.parseInt(d29t1.getText()),
+				Integer.parseInt(d29f1.getText()), "1", "29");
+		SeccionView d29se2 = new SeccionView(d29s2.isSelected(),
+				d29p2.isSelected(), Integer.parseInt(d29t2.getText()),
+				Integer.parseInt(d29f2.getText()), "2", "29");
+		SeccionView d29se3 = new SeccionView(d29s3.isSelected(),
+				d29p3.isSelected(), Integer.parseInt(d29t2.getText()),
+				Integer.parseInt(d29f2.getText()), "3", "29");
+
+		// DIENTE 30
+
+		SeccionView d30se1 = new SeccionView(d30s1.isSelected(),
+				d30p1.isSelected(), Integer.parseInt(d30t1.getText()),
+				Integer.parseInt(d30f1.getText()), "1", "30");
+		SeccionView d30se2 = new SeccionView(d30s2.isSelected(),
+				d30p2.isSelected(), Integer.parseInt(d30t2.getText()),
+				Integer.parseInt(d30f2.getText()), "2", "30");
+		SeccionView d30se3 = new SeccionView(d30s3.isSelected(),
+				d30p3.isSelected(), Integer.parseInt(d30t2.getText()),
+				Integer.parseInt(d30f2.getText()), "3", "30");
+
+		// DIENTE 31
+
+		SeccionView d31se1 = new SeccionView(d31s1.isSelected(),
+				d31p1.isSelected(), Integer.parseInt(d31t1.getText()),
+				Integer.parseInt(d31f1.getText()), "1", "31");
+		SeccionView d31se2 = new SeccionView(d31s2.isSelected(),
+				d31p2.isSelected(), Integer.parseInt(d31t2.getText()),
+				Integer.parseInt(d31f2.getText()), "2", "31");
+		SeccionView d31se3 = new SeccionView(d31s3.isSelected(),
+				d31p3.isSelected(), Integer.parseInt(d31t2.getText()),
+				Integer.parseInt(d31f2.getText()), "3", "31");
+
+		// DIENTE 32
+
+		SeccionView d32se1 = new SeccionView(d32s1.isSelected(),
+				d32p1.isSelected(), Integer.parseInt(d32t1.getText()),
+				Integer.parseInt(d32f1.getText()), "1", "32");
+		SeccionView d32se2 = new SeccionView(d32s2.isSelected(),
+				d32p2.isSelected(), Integer.parseInt(d32t2.getText()),
+				Integer.parseInt(d32f2.getText()), "2", "32");
+		SeccionView d32se3 = new SeccionView(d32s3.isSelected(),
+				d32p3.isSelected(), Integer.parseInt(d32t2.getText()),
+				Integer.parseInt(d32f2.getText()), "3", "32");
+
 	
+
+		
+
+	}
 
 	public void mostrarPrevisualizacion(ActionEvent event) {
 
 		this.generarPrevisualizacion(boxFichaPeriodontal).show();
 	}
-
-	
 
 	public void eliminarFila(ActionEvent event) {
 

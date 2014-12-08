@@ -97,7 +97,7 @@
                                           <Label text="Paciente" />
                                           <TextField fx:id="tDni" promptText="Ingrese DNI" />
                                           <Label text="Descripción" />
-                                          <TextArea minHeight="-Infinity" prefHeight="50.0" prefWidth="250.0" promptText="Ingrese una descripción" wrapText="true" />
+                                          <TextArea fx:id="tDescripcion" minHeight="-Infinity" prefHeight="50.0" prefWidth="250.0" promptText="Ingrese una descripción" wrapText="true" />
                                           <Button fx:id="botonAltaHistoria" mnemonicParsing="false" onAction="#altaHistoriaClinica" text="Alta Historia Clinica">
                                              <HBox.margin>
                                                 <Insets left="30.0" />

@@ -539,11 +539,7 @@ public class VistaAltaHistoriaClinicaControlador implements Initializable {
 				Integer.parseInt(d32f2.getText()), "2", "32");
 		SeccionView d32se3 = new SeccionView(d32s3.isSelected(),
 				d32p3.isSelected(), Integer.parseInt(d32t2.getText()),
-				Integer.parseInt(d32f2.getText()), "3", "32");
-
-	
-		System.out.println(d1se3.getPosicionDiente() +" "+ d1se3.isSangrado());
-		
+				Integer.parseInt(d32f2.getText()), "3", "32");		
 
 	}
 

@@ -65,7 +65,11 @@ public class AdministradorPersistenciaCaras extends AdministradorPersistencia {
 		try{
 			Connection con = Conexion.connect();
 			PreparedStatement ps = con.prepareStatement("SELECT * FROM "+super.getDatabase()+".dbo.Caras WHERE activo = 1 AND id_odontograma = ? AND posicion_diente = ?");
+			ps.setString(1, odontograma.getIdOdontograma());
+			ps.setString(2, diente.getPosicion());
+			
 			ResultSet rs = ps.executeQuery();
+			
 			while (rs.next()){
 				cara = new Cara();
 				

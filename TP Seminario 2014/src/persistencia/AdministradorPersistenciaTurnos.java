@@ -91,7 +91,7 @@ public class AdministradorPersistenciaTurnos extends AdministradorPersistencia {
 				Turno turno = new Turno();
 				
 				turno.setOdontologo(Controlador.getInstancia().obtenerOdontologo(rs.getString("matricula")));
-				turno.setPaciente(Controlador.getInstancia().obtenerPaciente(rs.getString("paciente")));
+				turno.setPaciente(Controlador.getInstancia().obtenerPaciente(rs.getString("dni")));
 				turno.setFecha(rs.getDate("fecha"));
 				turno.setDescripcion(rs.getString("descripcion"));
 				

@@ -51,10 +51,7 @@ public class AdministradorPersistenciaFichaPeriodontal extends AdministradorPers
 			ps.setString(2, ficha.getOdontologo().getMatricula());
 			
 			for (Seccion seccion : ficha.getSecciones())
-				AdministradorPersistenciaSeccion.getInstance().delete(seccion, ficha, historia);
-			
-			for (Seccion seccion : ficha.getSecciones())
-				AdministradorPersistenciaSeccion.getInstance().insert(seccion, ficha, historia);
+				AdministradorPersistenciaSeccion.getInstance().delete(seccion, historia);
 			
 			con.close();
 		}
@@ -83,5 +80,23 @@ public class AdministradorPersistenciaFichaPeriodontal extends AdministradorPers
 			e.printStackTrace();
 		}
 		return ficha;		
+	}
+
+	public void update(FichaPeriodontal ficha, HistoriaClinica historia) {
+		try{
+			Connection con = Conexion.connect();
+			PreparedStatement ps = con.prepareStatement("UPDATE "+super.getDatabase()+".dbo.FichasPeriodontales SET matricula = ? WHERE dni like ?");
+			ps.setString(1, ficha.getOdontologo().getMatricula());
+			ps.setString(2, historia.getPaciente().getDni());
+			
+			ps.execute();
+			
+			for (Seccion s : ficha.getSecciones())
+				AdministradorPersistenciaSeccion.getInstance().update(s,historia);
+			
+		}
+		catch (SQLException e){
+			e.printStackTrace();
+		}
 	}
 }

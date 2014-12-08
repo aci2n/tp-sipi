@@ -85,7 +85,7 @@ public class AdministradorPersistenciaHistoriasClinicas extends AdministradorPer
 				
 				historia.setPaciente(Controlador.getInstancia().obtenerPaciente(rs.getString("dni")));
 				historia.setDescripcion(rs.getString("descripcion"));
-				historia.setFicha(Controlador.getInstancia().obtenerFicha(rs.getString("id_ficha")));
+				historia.setFicha(AdministradorPersistenciaFichaPeriodontal.getInstancia().buscarFicha(rs.getString("dni")));
 				historia.setOdontogramas(AdministradorPersistenciaOdontograma.getInstancia().buscarOdontogramas(historia));
 				historia.setObservaciones(AdministradorPersistenciaObservaciones.getInstancia().buscarObservaciones(historia));
 				
@@ -105,7 +105,7 @@ public class AdministradorPersistenciaHistoriasClinicas extends AdministradorPer
 		HistoriaClinica historia = null;
 		try{
 			Connection con = Conexion.connect();
-			PreparedStatement ps = con.prepareStatement("SELECT * FROM "+super.getDatabase()+"dbo.HistoriasClinicas WHERE dni like ? AND activo=1");
+			PreparedStatement ps = con.prepareStatement("SELECT * FROM "+super.getDatabase()+".dbo.HistoriasClinicas WHERE dni like ?");
 			ps.setString(1, dni);
 			
 			ResultSet rs = ps.executeQuery();
@@ -115,8 +115,9 @@ public class AdministradorPersistenciaHistoriasClinicas extends AdministradorPer
 				
 				historia.setPaciente(Controlador.getInstancia().obtenerPaciente(rs.getString("dni")));
 				historia.setDescripcion(rs.getString("descripcion"));
-				historia.setFicha(Controlador.getInstancia().obtenerFicha(rs.getString("id_ficha")));
-				
+				historia.setFicha(AdministradorPersistenciaFichaPeriodontal.getInstancia().buscarFicha(rs.getString("dni")));
+				historia.setOdontogramas(AdministradorPersistenciaOdontograma.getInstancia().buscarOdontogramas(historia));
+				historia.setObservaciones(AdministradorPersistenciaObservaciones.getInstancia().buscarObservaciones(historia));
 			}
 			
 			con.close();

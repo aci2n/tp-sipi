@@ -102,9 +102,10 @@ public class Test2 {
 			
 			*/
 			
-			historia.agregarOdontograma("430",getFechaActualSQL(), odontologo);
+			long tiempo = System.currentTimeMillis();
+			historia.agregarOdontograma("436",getFechaActualSQL(), odontologo);
 			
-			System.out.println("agregado");
+			System.out.println("agregado ("+(System.currentTimeMillis()-tiempo)/1000+" segundos)");
 			
 			//Controlador con = Controlador.getInstancia();
 			
@@ -112,9 +113,12 @@ public class Test2 {
 			
 			Odontograma o = new Odontograma("test1",getFechaActualSQL(), odontologo);
 			
-			historia.actualizarOdontograma("430", getFechaActualSQL(), odontologo, o.getDientes());
+			tiempo = System.currentTimeMillis();
 			
-			System.out.println("actualizado");
+			historia.actualizarOdontograma("436", getFechaActualSQL(), odontologo, o.getDientes());
+			
+			
+			System.out.println("actualizado ("+(System.currentTimeMillis()-tiempo)/1000+" segundos)");
 			
 			
 			//historia.asignarFichaPeriodontal(odontologo);

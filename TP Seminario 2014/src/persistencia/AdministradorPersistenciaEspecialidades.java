@@ -56,7 +56,7 @@ public class AdministradorPersistenciaEspecialidades extends
 		Especialidad esp;
 		try{
 			Connection con = Conexion.connect();
-			StringBuilder statement = new StringBuilder("SELECT * FROM "+super.getDatabase()+".dbo.Especialidades WHERE activo = 1");
+			StringBuilder statement = new StringBuilder("SELECT * FROM "+super.getDatabase()+".dbo.Especialidades_Odontologos WHERE activo = 1");
 			if (matricula != null) {
 				statement.append(" AND matricula like ?");
 			}
@@ -67,7 +67,7 @@ public class AdministradorPersistenciaEspecialidades extends
 			ResultSet rs = ps.executeQuery();
 			while (rs.next()){
 				esp = new Especialidad();
-				esp.setDescripcion(rs.getString("descripcion"));
+				esp.setDescripcion(rs.getString("nombre_especialidad"));
 				especialidades.add(esp);
 			}
 		}catch (SQLException e){
@@ -80,7 +80,7 @@ public class AdministradorPersistenciaEspecialidades extends
 		Especialidad especialidad = null;
 		try{
 			Connection con = Conexion.connect();
-			PreparedStatement ps = con.prepareStatement("SELECT * FROM "+super.getDatabase()+".dbo.Especialidades WHERE nombre_especialidad like ? AND activo = 1");
+			PreparedStatement ps = con.prepareStatement("SELECT * FROM "+super.getDatabase()+".dbo.Especialidades_Odontologos WHERE nombre_especialidad like ? AND activo = 1");
 			ps.setString(1, descripcion);
 			ResultSet rs = ps.executeQuery();
 			while (rs.next()) {

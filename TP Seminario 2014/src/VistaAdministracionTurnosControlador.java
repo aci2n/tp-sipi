@@ -40,10 +40,10 @@ public class VistaAdministracionTurnosControlador implements Initializable {
 	@SuppressWarnings("deprecation")
 	public void agregarTurno(ActionEvent event) {
 		if (tDni.getText()!=""){
-			if(comboOdontologos.getValue().compareTo("Odontologo")!=0){
+			if(comboOdontologos.getValue().compareTo("Odontologo")!=0 && comboOdontologos.getValue().compareTo("")!=0){
 				if(fecha.getValue()!=null){
-					if(comboHora.getValue().compareTo("Hora")!=0){
-						if(tDescripcion.getText().compareTo("")!=0){
+					if(comboHora.getValue().compareTo("Hora")!=0 && comboHora.getValue().compareTo("")!=0){
+						if(tDescripcion.getText().compareTo("")!=0 && tDescripcion.getText().compareTo("Descripcion")!=0){
 							Controlador con = Controlador.getInstancia();
 							OdontologoView ov = new OdontologoView();
 							PacienteView pv = new PacienteView();

@@ -133,12 +133,12 @@ public class Controlador {
 		}
 	}
 	
-	public void asignarFichaAHistoria(String dni, String matricula, FichaPeriodontalView ficha){
+	public void asignarFichaAHistoria(String dni, FichaPeriodontalView ficha){
 		HistoriaClinica historia = obtenerHistoriaClinica(dni);
-		Odontologo odontologo = obtenerOdontologo(matricula);
+		Odontologo odontologo = obtenerOdontologo(ficha.getOdontologo().getMatricula());
 		if (historia != null && odontologo != null){
 			if (historia.getFicha() == null)
-				historia.asignarFichaPeriodontal(odontologo);
+				historia.asignarFichaPeriodontal(odontologo, crearSeccionesDesdeView(ficha.getSecciones()));
 			else
 				historia.actualizarFichaPeriodontal(odontologo, crearSeccionesDesdeView(ficha.getSecciones()));
 		}

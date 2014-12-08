@@ -16,8 +16,8 @@ public class Observacion {
 		
 	}
 
-	public Observacion(Odontologo odontologo2, Timestamp fecha2,
-			String descripcion2, HistoriaClinica historia) {
+	public Observacion(Odontologo odontologo, Timestamp fecha,
+			String descripcion, HistoriaClinica historia) {
 		this.fecha=fecha;
 		this.descripcion=descripcion;
 		this.odontologo=odontologo;

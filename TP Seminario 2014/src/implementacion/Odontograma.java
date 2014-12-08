@@ -91,7 +91,9 @@ public class Odontograma {
 	public Collection<Observacion> generarObservaciones() {
 		Collection<Observacion> observaciones = new ArrayList<Observacion>();
 		for (Diente diente : dientes) {
-			observaciones.add(diente.generarObservacion(this));
+			Observacion o = diente.generarObservacion(this);
+			if (!o.getDescripcion().equals("-"))
+				observaciones.add(o);
 		}
 		return observaciones;
 	}

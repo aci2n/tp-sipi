@@ -77,7 +77,7 @@
 								</Menu>
                         <Menu mnemonicParsing="false" text="SINTOMAS">
                           <items>
-                            <MenuItem mnemonicParsing="false" onAction="#seleccionarVistaAltaSintoma" text="ALTA SINTOMA" />
+                            <MenuItem mnemonicParsing="false" onAction="#seleccionarVistaAltaSintoma" text="Alta Sintoma" />
                           </items>
                         </Menu>
 								<Menu fx:id="menu" mnemonicParsing="false" text="OPCIONES" />

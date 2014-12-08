@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.effect.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.geometry.*?>
@@ -9,26 +10,9 @@
 <?import javafx.scene.layout.*?>
 <?scenebuilder-stylesheet vista.css?>
 
-<StackPane fx:id="vistaHolder" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="VistaInicioControlador">
+<StackPane fx:id="vistaHolder" prefHeight="416.0" prefWidth="729.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="VistaInicioControlador">
   <children>
       <BorderPane>
-         <right>
-            <BorderPane BorderPane.alignment="TOP_CENTER">
-               <top>
-                  <Label fx:id="labelTurnos" text="Próximos Turnos" BorderPane.alignment="TOP_CENTER">
-                     <font>
-                        <Font name="Calibri Light" size="40.0" />
-                     </font>
-                     <padding>
-                        <Insets bottom="5.0" left="80.0" right="80.0" top="5.0" />
-                     </padding>
-                  </Label>
-               </top>
-               <BorderPane.margin>
-                  <Insets top="40.0" />
-               </BorderPane.margin>
-            </BorderPane>
-         </right>
          <left>
             <VBox fx:id="vboxFechaHora" alignment="TOP_CENTER" spacing="10.0" BorderPane.alignment="TOP_CENTER">
                <children>
@@ -87,6 +71,21 @@
                </BorderPane.margin>
             </VBox>
          </left>
+         <right>
+            <VBox prefHeight="301.0" prefWidth="339.0" spacing="20.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label alignment="BASELINE_CENTER" prefHeight="35.0" prefWidth="372.0" text="PROXIMOS TURNOS" textAlignment="CENTER">
+                     <font>
+                        <Font size="28.0" />
+                     </font>
+                  </Label>
+                  <ListView fx:id="listViewTurnos" opacity="0.75" prefHeight="164.0" prefWidth="339.0" />
+               </children>
+               <BorderPane.margin>
+                  <Insets right="15.0" top="40.0" />
+               </BorderPane.margin>
+            </VBox>
+         </right>
       </BorderPane>
   </children>
 </StackPane>

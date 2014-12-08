@@ -13,6 +13,8 @@ import javafx.animation.Animation;
 import javafx.animation.FadeTransition;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -21,11 +23,11 @@ import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.layout.StackPane;
-import javafx.stage.Modality;
-import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 import javafx.util.Duration;
+import views.TurnoView;
+import controlador.Controlador;
 
 //import org.controlsfx.control.PopOver;
 
@@ -48,6 +50,8 @@ public class VistaInicioControlador implements Initializable {
 	private StackPane ventanaEmergente;
 	@FXML
 	private Button cerrarBoton;
+	@FXML
+	private ListView<String> listViewTurnos;
 
 
 	/**
@@ -67,7 +71,7 @@ public class VistaInicioControlador implements Initializable {
 //		VentanaEmergente ventanaE = new VentanaEmergente();
 //
 //		dialog.setScene(ventanaE.obtenerScene("ALERTA",
-//				"¿Estás seguro que deseas eliminar al paciente seleccionado?"));
+//				"ï¿½Estï¿½s seguro que deseas eliminar al paciente seleccionado?"));
 //		ventanaE.getCerrar().setOnAction(new EventHandler<ActionEvent>() {
 //
 //			@Override
@@ -169,7 +173,12 @@ public class VistaInicioControlador implements Initializable {
 	public void initialize(URL location, ResourceBundle resources) {
 		// TODO Auto-generated method stub
 		this.comenzarHora();
-		fecha.setText(this.getFechaConFormato());
-
+		fecha.setText(this.getFechaConFormato());		
+		
+		ObservableList<String> datos = FXCollections.observableArrayList();
+		for (TurnoView t : Controlador.getInstancia().getProximosTurnos())
+			datos.add(t.getDatos());
+		
+		listViewTurnos.setItems(datos);		
 	}
 }

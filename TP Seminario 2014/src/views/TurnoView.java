@@ -34,4 +34,8 @@ public class TurnoView {
 	public void setFecha(Timestamp fecha) {
 		this.fecha = fecha;
 	}
+	
+	public String getDatos(){
+		return this.fecha.toString()+" - "+this.odontologo.getApellido()+", "+this.odontologo.getNombre()+" - "+this.paciente.getApellido()+", "+this.paciente.getNombre();
+	}
 }

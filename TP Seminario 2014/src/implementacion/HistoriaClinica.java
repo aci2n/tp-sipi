@@ -8,6 +8,7 @@ import persistencia.AdministradorPersistenciaFichaPeriodontal;
 import persistencia.AdministradorPersistenciaHistoriasClinicas;
 import persistencia.AdministradorPersistenciaObservaciones;
 import persistencia.AdministradorPersistenciaOdontograma;
+import views.DienteView;
 import views.HistoriaClinicaView;
 import views.ObservacionView;
 import views.OdontogramaView;
@@ -140,4 +141,23 @@ public class HistoriaClinica {
 		view.setPaciente(paciente.generarView());
 		return view;
 	}
+
+	public void actualizarOdontograma(String idOdontograma, Date fechaActualSQL, Odontologo odontologo, Collection<Diente> dientes) {
+		Odontograma odontograma = obtenerOdontograma(idOdontograma);
+		if (odontograma != null){
+			odontograma.setDientes(dientes);
+			odontograma.setOdontologo(odontologo);
+			odontograma.setFecha(fechaActualSQL);
+			AdministradorPersistenciaOdontograma.getInstancia().update(odontograma);
+		}		
+	}
+
+	private Odontograma obtenerOdontograma(String idOdontograma) {
+		for (Odontograma o : odontogramas)
+			if (o.sosElOdontograma(idOdontograma))
+				return o;
+		return null;
+	}
+	
+
 }

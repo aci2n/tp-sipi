@@ -96,4 +96,27 @@ public class AdministradorPersistenciaDiente extends AdministradorPersistencia {
 		}
 		return dientes;
 	}
+
+	public void update(Diente diente, Odontograma odontograma) {
+		try{
+			Connection con = Conexion.connect();
+			PreparedStatement ps = con.prepareStatement("UPDATE "+super.getDatabase()+".dbo.Dientes SET estado_diente = ?, id_puente = ?, id_protesis= ?"
+					+ " WHERE id_odontograma like ? AND posicion_diente like ?");
+			ps.setString(5, diente.getPosicion());
+			ps.setString(4, odontograma.getIdOdontograma());
+			ps.setString(1, diente.getEstado());
+			ps.setString(2, diente.getIdPuente());
+			ps.setString(3, diente.getIdProtesis());
+			
+			ps.execute();
+			
+			for (Cara cara : diente.getCaras())
+				AdministradorPersistenciaCaras.getInstancia().update(cara, diente, odontograma);			
+			
+			con.close();
+		}
+		catch (SQLException e){
+			e.printStackTrace();
+		}
+	}
 }

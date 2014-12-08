@@ -2,6 +2,7 @@ package test;
 
 import implementacion.Especialidad;
 import implementacion.HistoriaClinica;
+import implementacion.Odontograma;
 import implementacion.Odontologo;
 import implementacion.Paciente;
 import implementacion.Turno;
@@ -9,9 +10,6 @@ import implementacion.Turno;
 import java.sql.Date;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-
-import persistencia.AdministradorPersistenciaHistoriasClinicas;
-import persistencia.AdministradorPersistenciaPaciente;
 
 public class Test2 {
 
@@ -29,7 +27,7 @@ public class Test2 {
 			paciente.setPlanObraSocial("OSDE Soy Diamond");
 			paciente.setTelefono("43830700");
 						
-			AdministradorPersistenciaPaciente.getInstancia().insert(paciente);		
+			//AdministradorPersistenciaPaciente.getInstancia().insert(paciente);		
 			//admPaciente.delete(paciente);
 			
 			HistoriaClinica historia = new HistoriaClinica();
@@ -37,7 +35,7 @@ public class Test2 {
 			historia.setDescripcion("macaco");
 			historia.setPaciente(paciente);
 			
-			AdministradorPersistenciaHistoriasClinicas.getInstancia().insert(historia);
+			//AdministradorPersistenciaHistoriasClinicas.getInstancia().insert(historia);
 			
 			Odontologo odontologo = new Odontologo();
 			
@@ -104,9 +102,22 @@ public class Test2 {
 			
 			*/
 			
-			//historia.agregarOdontograma("424",getFechaActualSQL(), odontologo);
+			historia.agregarOdontograma("430",getFechaActualSQL(), odontologo);
 			
-			historia.asignarFichaPeriodontal(odontologo);
+			System.out.println("agregado");
+			
+			//Controlador con = Controlador.getInstancia();
+			
+			//con.altaOdontograma("37521884", "500", "122-555566");
+			
+			Odontograma o = new Odontograma("test1",getFechaActualSQL(), odontologo);
+			
+			historia.actualizarOdontograma("430", getFechaActualSQL(), odontologo, o.getDientes());
+			
+			System.out.println("actualizado");
+			
+			
+			//historia.asignarFichaPeriodontal(odontologo);
 			
 		}
 		

@@ -82,4 +82,23 @@ public class AdministradorPersistenciaCaras extends AdministradorPersistencia {
 		}
 		return caras;
 	}
+
+	public void update(Cara cara, Diente diente, Odontograma odontograma) {
+		try{
+			Connection con = Conexion.connect();
+			PreparedStatement ps = con.prepareStatement("UPDATE "+super.getDatabase()+".dbo.Caras SET estado_cara = ? WHERE posicion_cara like ? AND posicion_diente like ? AND id_odontograma like ?");
+			
+			ps.setString(2,cara.getPosicion());
+			ps.setString(3,diente.getPosicion());
+			ps.setString(4,odontograma.getIdOdontograma());
+			ps.setString(1,cara.getEstado());
+			
+			ps.execute();
+			
+			con.close();			
+		}
+		catch (SQLException e){
+			e.printStackTrace();
+		}
+	}
 }

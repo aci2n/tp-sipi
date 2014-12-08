@@ -1,5 +1,7 @@
 package controlador;
 
+import implementacion.Cara;
+import implementacion.Diente;
 import implementacion.FichaPeriodontal;
 import implementacion.HistoriaClinica;
 import implementacion.Odontologo;
@@ -17,9 +19,12 @@ import persistencia.AdministradorPersistenciaOdontologos;
 import persistencia.AdministradorPersistenciaPaciente;
 import persistencia.AdministradorPersistenciaSintomas;
 import persistencia.AdministradorPersistenciaTurnos;
+import views.CaraView;
+import views.DienteView;
 import views.EspecialidadView;
 import views.FichaPeriodontalView;
 import views.HistoriaClinicaView;
+import views.OdontogramaView;
 import views.OdontologoView;
 import views.PacienteView;
 import views.TurnoView;
@@ -63,6 +68,8 @@ public class Controlador {
 		}
 	}
 	
+	//ALTAS
+	
 	public void altaTurno(TurnoView turnoView) {
 		Turno turno = obtenerTurno(turnoView.getPaciente().getDni(), turnoView.getOdontologo().getMatricula(), turnoView.getFecha());
 		if (turno == null) {
@@ -102,6 +109,35 @@ public class Controlador {
 			sintomas.add(sintoma);
 		}
 	}
+	
+	public void altaOdontograma(String dni, String idOdontograma, String matricula){
+		HistoriaClinica historia = obtenerHistoriaClinica(dni);
+		Odontologo odontologo = obtenerOdontologo(matricula);
+		if (historia != null && odontologo != null){
+			historia.agregarOdontograma(idOdontograma, getFechaActualSQL(), odontologo);
+		}
+	}
+	
+	//ACTUALIZACIONES
+	
+	public void actualizarHistoriaClinica(String dni, String matricula, Date fecha, String descripcion) {
+		HistoriaClinica historia = obtenerHistoriaClinica(dni);
+		if (historia != null) {
+			historia.setDescripcion(descripcion);
+			AdministradorPersistenciaHistoriasClinicas.getInstancia().update(historia);
+		}
+	}
+	
+	public void actualizarOdontograma (String dni, OdontogramaView odontograma){
+		HistoriaClinica historia = obtenerHistoriaClinica(dni);
+		Odontologo odontologo = obtenerOdontologo(odontograma.getOdontologo().getMatricula());
+		if (historia != null && odontologo != null){
+			historia.actualizarOdontograma(odontograma.getIdOdontograma(), getFechaActualSQL(), odontologo, construirDientesDesdeView(odontograma.getDientes()));
+		}
+	}
+		
+	
+	//OBTENER (objeto, view, collection de views)
 	
 	public Odontologo obtenerOdontologo(String matricula) {
 		Odontologo odontologo = null;
@@ -230,7 +266,9 @@ public class Controlador {
 			turnos.add(turno.generarView());
 		}
 		return turnos;
-	}
+	}	
+	
+	//ANALISIS PREDICTIVO
 	
 	public Collection<Proyeccion> analisisPredictivoHistoriaClinica(String dni) {
 		HistoriaClinica historia = obtenerHistoriaClinica(dni);
@@ -254,76 +292,36 @@ public class Controlador {
 		return proyecciones;
 	}
 	
-	public void actualizarHistoriaClinica(String dni, String matricula, Date fecha, String descripcion) {
-		HistoriaClinica historia = obtenerHistoriaClinica(dni);
-		if (historia != null) {
-			historia.setDescripcion(descripcion);
-			AdministradorPersistenciaHistoriasClinicas.getInstancia().update(historia);
+	//UTILITARIAS
+	
+	private static java.sql.Date getFechaActualSQL(){
+		java.util.Calendar cal = java.util.Calendar.getInstance();
+		java.util.Date utilDate = cal.getTime();
+		return new Date(utilDate.getTime());
+	}	
+	
+	private Collection<Diente> construirDientesDesdeView(Collection<DienteView> dientesView){
+		Collection<Diente> dientes = new ArrayList<Diente>();
+		Diente diente;
+		for (DienteView d : dientesView){
+			diente = new Diente(d.getPosicion());
+			diente.setCaras(construirCarasDesdeView(d.getCaras()));
+			diente.setEstado(d.getEstado());
+			diente.setIdProtesis(d.getIdProtesis());
+			diente.setIdPuente(d.getIdPuente());
+			dientes.add(diente);
 		}
+		return dientes;
 	}
-	
-	
-	//metodos para el test
-	
-	public void altaPacienteTest(String dni){
-		Paciente paciente = new Paciente();
-		paciente.setDni(dni);
-		this.pacientes.add(paciente);
-	}
-	
 
-	public HistoriaClinica obtenerHistoriaClinicaTest(String dni) {
-		HistoriaClinica historia = null;
-		for (HistoriaClinica hist : historiasClinicas) {
-			if (hist.sosLaHistoria(dni)) {
-				historia = hist;
-			}
+	private Collection<Cara> construirCarasDesdeView(Collection<CaraView> carasView) {
+		Collection<Cara> caras = new ArrayList<Cara>();
+		Cara cara;
+		for (CaraView c : carasView){
+			cara = new Cara(c.getPosicion());
+			cara.setEstado(c.getEstado());
+			caras.add(cara);
 		}
-		return historia;
+		return caras;
 	}
-	
-	public void altaHistoriaClinicaTest(String dni) {
-		Paciente paciente = obtenerPaciente(dni);
-		if (paciente != null) {
-			HistoriaClinica historia = obtenerHistoriaClinicaTest(dni);
-			if (historia == null) {
-				historia = new HistoriaClinica();
-				historia.setPaciente(paciente);
-				this.historiasClinicas.add(historia);
-			}
-		}
-	}
-
-	public Collection<Paciente> getPacientes() {
-		return pacientes;
-	}
-
-	public void setPacientes(Collection<Paciente> pacientes) {
-		this.pacientes = pacientes;
-	}
-
-	public Collection<Turno> getTurnos() {
-		return turnos;
-	}
-
-	public void setTurnos(Collection<Turno> turnos) {
-		this.turnos = turnos;
-	}
-
-	public Collection<Odontologo> getOdontologos() {
-		return odontologos;
-	}
-
-	public void setOdontologos(Collection<Odontologo> odontologos) {
-		this.odontologos = odontologos;
-	}
-
-	public Collection<HistoriaClinica> getHistoriasClinicas() {
-		return historiasClinicas;
-	}
-
-	public void setHistoriasClinicas(Collection<HistoriaClinica> historiasClinicas) {
-		this.historiasClinicas = historiasClinicas;
-	}
-
 }

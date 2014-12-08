@@ -105,4 +105,8 @@ public class Odontograma {
 		view.setOdontologo(odontologo.generarView());
 		return view;
 	}
+
+	public boolean sosElOdontograma(String idOdontograma) {
+		return this.idOdontograma.equals(idOdontograma);
+	}	
 }

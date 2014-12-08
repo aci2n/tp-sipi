@@ -52,17 +52,16 @@ public class AdministradorPersistenciaOdontograma extends AdministradorPersisten
 	public void update(Odontograma odontograma) {
 		try{
 			Connection con = Conexion.connect();
-			PreparedStatement ps = con.prepareStatement("UPDATE "+super.getDatabase()+".dbo.Odontogramas SET fecha = ?, matricula = ? WHERE id_odontograma like ? AND activo=1");
+			PreparedStatement ps = con.prepareStatement("UPDATE "+super.getDatabase()+".dbo.Odontogramas SET fecha = ?, matricula = ? WHERE id_odontograma like ?");
 			ps.setDate(1, odontograma.getFecha());
 			ps.setString(2, odontograma.getOdontologo().getMatricula());
 			ps.setString(3, odontograma.getIdOdontograma());
 			
+			ps.execute();
+			
 			for (Diente diente : odontograma.getDientes()){
-				AdministradorPersistenciaDiente.getInstancia().delete(diente, odontograma);
+				AdministradorPersistenciaDiente.getInstancia().update(diente, odontograma);
 			}			
-			for (Diente diente : odontograma.getDientes()){
-				AdministradorPersistenciaDiente.getInstancia().insert(diente, odontograma);
-			}		
 			
 			con.close();
 		}

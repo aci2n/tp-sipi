@@ -550,6 +550,7 @@ public class VistaAltaHistoriaClinicaControlador implements Initializable {
 				.isSelected(), Integer.parseInt(d32t2.getText()), Integer
 				.parseInt(d32f2.getText()), "3", "32"));
 
+		
 		// SE CREA LA FICHA PERIODONTAL VIEW
 		
 		FichaPeriodontalView ficha = new FichaPeriodontalView();

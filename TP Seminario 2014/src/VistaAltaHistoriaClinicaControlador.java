@@ -119,7 +119,7 @@ public class VistaAltaHistoriaClinicaControlador implements Initializable {
 		ObservableList<String> odontologos = FXCollections.observableArrayList();
 		
 		for(OdontologoView o : Controlador.getInstancia().obtenerOdontologosView())
-			odontologos.add(o.getMatricula());
+			odontologos.add(concat(o.getApellido(), o.getNombre()));
 		
 		comboOdontologos.getItems().addAll(odontologos);
 		
@@ -549,8 +549,14 @@ public class VistaAltaHistoriaClinicaControlador implements Initializable {
 		// SE CREA LA FICHA PERIODONTAL VIEW
 		
 		FichaPeriodontalView ficha = new FichaPeriodontalView();
+		OdontologoView ov = new OdontologoView();
+		for (OdontologoView ov2: Controlador.getInstancia().obtenerOdontologosView()){
+			if(concat(ov2.getApellido(), ov2.getNombre()).compareTo(comboOdontologos.getSelectionModel().getSelectedItem())==0){
+				ov=ov2;
+			}
+		}
 		ficha.setOdontologo(Controlador.getInstancia().obtenerOdontologoView(
-				comboOdontologos.getSelectionModel().getSelectedItem()));
+				ov.getMatricula()));
 		ficha.setSecciones(seccionesView);
 		
 		// ASIGNA LA FICHA A LA HISTORIA CLINICA
@@ -567,6 +573,11 @@ public class VistaAltaHistoriaClinicaControlador implements Initializable {
 	public void cancelar(ActionEvent event) {
 
 		VistaNavegador.loadVista(VistaNavegador.VISTA_4);
+	}
+	
+	private String concat(String apellido, String nombre){
+		String nuevo = apellido+", "+nombre;
+		return nuevo;
 	}
 
 }

@@ -24,12 +24,13 @@ public class VistaNavegador {
     public static final String VISTA_6 = "/fxml/vistaAdministracionPacientes.fxml";
     public static final String VISTA_7 = "/fxml/vistaAltaOdontograma.fxml";
     public static final String VISTA_8 = "/fxml/vistaListarOdontologos.fxml";
-    public static final String VISTA_9 = "/fxml/vistaAnalisisPredictivoPie.fxml";
+    public static final String VISTA_9 = "/fxml/vistaAnalisisPredictivo.fxml";
     public static final String VISTA_10 = "/fxml/vistaAltaOdontologo.fxml";
     public static final String VISTA_11 = "/fxml/vistaAltaObservaciones.fxml";
     public static final String VISTA_12 = "/fxml/vistaAltaTurno.fxml";
     public static final String VISTA_13 = "/fxml/vistaListarTurnos.fxml";
     public static final String VISTA_14 = "/fxml/vistaAltaSintoma.fxml";
+    public static final String VISTA_15 = "/fxml/vistaAnalisisPredictivoGrafico.fxml";
     
     private static VistaPrincipalControlador mainController;
 

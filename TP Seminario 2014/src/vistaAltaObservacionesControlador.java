@@ -62,7 +62,7 @@ public class vistaAltaObservacionesControlador implements Initializable {
 		comboOdontologos2.setItems(odontologos);
 	}
 	
-	public void obtenerObservaciones(ActionEvent event) {
+	private void obtenerObservaciones() {
 
 		tablaObservaciones.getItems().addAll(this.generarObservacion());
 	}
@@ -76,6 +76,8 @@ public class vistaAltaObservacionesControlador implements Initializable {
 		String dni = textDNI.getText();
 		OdontologoView odontologo = comboOdontologos2.getValue();
 		String descripcion = textObservaciones.getText();
+		
+		obtenerObservaciones();
 		
 		if (dni != null && !dni.trim().equals("") && descripcion != null && !descripcion.trim().equals("") && odontologo != null) {
 			ObservacionView view = new ObservacionView();

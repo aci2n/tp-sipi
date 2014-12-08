@@ -10,7 +10,7 @@
 
 <StackPane fx:id="stackOdontograma" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="VistaAltaOdontogramaControlador">
    <children>
-      <ScrollPane fitToHeight="true" fitToWidth="true" prefHeight="1000.0" prefWidth="1000.0">
+      <ScrollPane fitToHeight="true" fitToWidth="true" prefHeight="1000.0" prefWidth="1500.0">
          <content>
             <VBox spacing="20.0">
                <children>
@@ -22,8 +22,8 @@
                                  <children>
                                     <HBox alignment="CENTER_LEFT" nodeOrientation="LEFT_TO_RIGHT" spacing="10.0">
                                        <children>
-                                          <TextField fx:id="filtrarFicha" prefWidth="250.0" promptText="Ingrese el DNI  del paciente" />
-                                          <Button fx:id="botonBuscar" mnemonicParsing="false" onAction="#buscarPaciente" text="Buscar Historia Clínica">
+                                          <TextField fx:id="tDni" prefWidth="250.0" promptText="Ingrese el DNI  del paciente" />
+                                          <Button fx:id="botonBuscar" mnemonicParsing="false" onAction="#buscaHistoriaClinica" text="Buscar Historia Clínica">
                                              <font>
                                                 <Font name="Calibri" size="14.0" />
                                              </font>
@@ -71,15 +71,15 @@
                                                 </Button>
                                                 <HBox alignment="CENTER" prefHeight="438.0" prefWidth="634.0">
                                                    <children>
-                                                      <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                      <Button fx:id="d1b2" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
                                                       <VBox alignment="CENTER">
                                                          <children>
-                                                            <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
-                                                            <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
-                                                            <Button layoutX="10.0" layoutY="35.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button fx:id="d1b1" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button fx:id="d1b3" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button fx:id="d1b5" layoutX="10.0" layoutY="35.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
                                                          </children>
                                                       </VBox>
-                                                      <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                      <Button fx:id="d1b4" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
                                                    </children>
                                                 </HBox>
                                                 <Label text="1" textFill="#2980b9">
@@ -101,15 +101,15 @@
                                                 </Button>
                                                 <HBox alignment="CENTER" prefHeight="438.0" prefWidth="634.0">
                                                    <children>
-                                                      <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                      <Button fx:id="d2b2" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
                                                       <VBox alignment="CENTER">
                                                          <children>
-                                                            <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
-                                                            <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
-                                                            <Button layoutX="10.0" layoutY="35.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button fx:id="d2b1" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button fx:id="d2b3" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button fx:id="d2b5" layoutX="10.0" layoutY="35.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
                                                          </children>
                                                       </VBox>
-                                                      <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                      <Button fx:id="d2b4" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
                                                    </children>
                                                 </HBox>
                                                 <Label text="2" textFill="#2980b9">
@@ -131,15 +131,15 @@
                                                 </Button>
                                                 <HBox alignment="CENTER" prefHeight="438.0" prefWidth="634.0">
                                                    <children>
-                                                      <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                      <Button fx:id="d3b2" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
                                                       <VBox alignment="CENTER">
                                                          <children>
-                                                            <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
-                                                            <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
-                                                            <Button layoutX="10.0" layoutY="35.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button fx:id="d3b1" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button fx:id="d3b3" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button fx:id="d3b5" layoutX="10.0" layoutY="35.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
                                                          </children>
                                                       </VBox>
-                                                      <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                      <Button fx:id="d3b4" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
                                                    </children>
                                                 </HBox>
                                                 <Label text="3" textFill="#2980b9">
@@ -161,15 +161,15 @@
                                                 </Button>
                                                 <HBox alignment="CENTER" prefHeight="438.0" prefWidth="634.0">
                                                    <children>
-                                                      <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                      <Button fx:id="d4b2" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
                                                       <VBox alignment="CENTER">
                                                          <children>
-                                                            <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
-                                                            <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
-                                                            <Button layoutX="10.0" layoutY="35.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button fx:id="d4b1" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button fx:id="d4b3" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button fx:id="d4b5" layoutX="10.0" layoutY="35.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
                                                          </children>
                                                       </VBox>
-                                                      <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                      <Button fx:id="d4b4" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
                                                    </children>
                                                 </HBox>
                                                 <Label text="4" textFill="#2980b9">
@@ -191,15 +191,15 @@
                                                 </Button>
                                                 <HBox alignment="CENTER" prefHeight="438.0" prefWidth="634.0">
                                                    <children>
-                                                      <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                      <Button fx:id="d5b2" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
                                                       <VBox alignment="CENTER">
                                                          <children>
-                                                            <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
-                                                            <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
-                                                            <Button layoutX="10.0" layoutY="35.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button fx:id="d5b1" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button fx:id="d5b3" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button fx:id="d5b5" layoutX="10.0" layoutY="35.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
                                                          </children>
                                                       </VBox>
-                                                      <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                      <Button fx:id="d5b4" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
                                                    </children>
                                                 </HBox>
                                                 <Label text="5" textFill="#2980b9">
@@ -221,15 +221,15 @@
                                                 </Button>
                                                 <HBox alignment="CENTER" prefHeight="438.0" prefWidth="634.0">
                                                    <children>
-                                                      <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                      <Button fx:id="d6b2" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
                                                       <VBox alignment="CENTER">
                                                          <children>
-                                                            <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
-                                                            <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
-                                                            <Button layoutX="10.0" layoutY="35.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button fx:id="d6b1" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button fx:id="d6b3" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button fx:id="d6b5" layoutX="10.0" layoutY="35.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
                                                          </children>
                                                       </VBox>
-                                                      <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                      <Button fx:id="d6b4" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
                                                    </children>
                                                 </HBox>
                                                 <Label text="6" textFill="#2980b9">
@@ -251,15 +251,15 @@
                                                 </Button>
                                                 <HBox alignment="CENTER" prefHeight="438.0" prefWidth="634.0">
                                                    <children>
-                                                      <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                      <Button fx:id="d7b2" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
                                                       <VBox alignment="CENTER">
                                                          <children>
-                                                            <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
-                                                            <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
-                                                            <Button layoutX="10.0" layoutY="35.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button fx:id="d7b1" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button fx:id="d7b3" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button fx:id="d7b5" layoutX="10.0" layoutY="35.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
                                                          </children>
                                                       </VBox>
-                                                      <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                      <Button fx:id="d7b4" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
                                                    </children>
                                                 </HBox>
                                                 <Label text="7" textFill="#2980b9">
@@ -281,15 +281,15 @@
                                                 </Button>
                                                 <HBox alignment="CENTER" prefHeight="438.0" prefWidth="634.0">
                                                    <children>
-                                                      <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                      <Button fx:id="d8b2" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
                                                       <VBox alignment="CENTER">
                                                          <children>
-                                                            <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
-                                                            <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
-                                                            <Button layoutX="10.0" layoutY="35.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button fx:id="d8b1" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button fx:id="d8b3" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button fx:id="d8b5" layoutX="10.0" layoutY="35.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
                                                          </children>
                                                       </VBox>
-                                                      <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                      <Button fx:id="d8b4" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
                                                    </children>
                                                 </HBox>
                                                 <Label text="8" textFill="#2980b9">
@@ -311,15 +311,15 @@
                                                 </Button>
                                                 <HBox alignment="CENTER" prefHeight="438.0" prefWidth="634.0">
                                                    <children>
-                                                      <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                      <Button fx:id="d9b2" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
                                                       <VBox alignment="CENTER">
                                                          <children>
-                                                            <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
-                                                            <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
-                                                            <Button layoutX="10.0" layoutY="35.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button fx:id="d9b1" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button fx:id="d9b3" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button fx:id="d9b5" layoutX="10.0" layoutY="35.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
                                                          </children>
                                                       </VBox>
-                                                      <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                      <Button fx:id="d9b4" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
                                                    </children>
                                                 </HBox>
                                                 <Label text="9" textFill="#2980b9">
@@ -341,15 +341,15 @@
                                                 </Button>
                                                 <HBox alignment="CENTER" prefHeight="438.0" prefWidth="634.0">
                                                    <children>
-                                                      <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                      <Button fx:id="d10b2" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
                                                       <VBox alignment="CENTER">
                                                          <children>
-                                                            <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
-                                                            <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
-                                                            <Button layoutX="10.0" layoutY="35.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button fx:id="d10b1" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button fx:id="d10b3" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button fx:id="d10b5" layoutX="10.0" layoutY="35.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
                                                          </children>
                                                       </VBox>
-                                                      <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                      <Button fx:id="d10b4" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
                                                    </children>
                                                 </HBox>
                                                 <Label text="10" textFill="#2980b9">
@@ -371,15 +371,15 @@
                                                 </Button>
                                                 <HBox alignment="CENTER" prefHeight="438.0" prefWidth="634.0">
                                                    <children>
-                                                      <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                      <Button fx:id="d11b2" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
                                                       <VBox alignment="CENTER">
                                                          <children>
-                                                            <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
-                                                            <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
-                                                            <Button layoutX="10.0" layoutY="35.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button fx:id="d11b1" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button fx:id="d11b3" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button fx:id="d11b5" layoutX="10.0" layoutY="35.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
                                                          </children>
                                                       </VBox>
-                                                      <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                      <Button fx:id="d11b4" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
                                                    </children>
                                                 </HBox>
                                                 <Label text="11" textFill="#2980b9">
@@ -401,15 +401,15 @@
                                                 </Button>
                                                 <HBox alignment="CENTER" prefHeight="438.0" prefWidth="634.0">
                                                    <children>
-                                                      <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                      <Button fx:id="d12b2" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
                                                       <VBox alignment="CENTER">
                                                          <children>
-                                                            <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
-                                                            <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
-                                                            <Button layoutX="10.0" layoutY="35.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button fx:id="d12b1" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button fx:id="d12b3" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button fx:id="d12b5" layoutX="10.0" layoutY="35.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
                                                          </children>
                                                       </VBox>
-                                                      <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                      <Button fx:id="d12b4" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
                                                    </children>
                                                 </HBox>
                                                 <Label text="12" textFill="#2980b9">
@@ -431,15 +431,15 @@
                                                 </Button>
                                                 <HBox alignment="CENTER" prefHeight="438.0" prefWidth="634.0">
                                                    <children>
-                                                      <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                      <Button fx:id="d13b2" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
                                                       <VBox alignment="CENTER">
                                                          <children>
-                                                            <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
-                                                            <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
-                                                            <Button layoutX="10.0" layoutY="35.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button fx:id="d13b1" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button fx:id="d13b3" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button fx:id="d13b5" layoutX="10.0" layoutY="35.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
                                                          </children>
                                                       </VBox>
-                                                      <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                      <Button fx:id="d13b4" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
                                                    </children>
                                                 </HBox>
                                                 <Label text="13" textFill="#2980b9">
@@ -461,15 +461,15 @@
                                                 </Button>
                                                 <HBox alignment="CENTER" prefHeight="438.0" prefWidth="634.0">
                                                    <children>
-                                                      <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                      <Button fx:id="d14b2" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
                                                       <VBox alignment="CENTER">
                                                          <children>
-                                                            <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
-                                                            <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
-                                                            <Button layoutX="10.0" layoutY="35.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button fx:id="d14b1" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button fx:id="d14b3" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button fx:id="d14b5" layoutX="10.0" layoutY="35.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
                                                          </children>
                                                       </VBox>
-                                                      <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                      <Button fx:id="d14b4" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
                                                    </children>
                                                 </HBox>
                                                 <Label text="14" textFill="#2980b9">
@@ -491,15 +491,15 @@
                                                 </Button>
                                                 <HBox alignment="CENTER" prefHeight="438.0" prefWidth="634.0">
                                                    <children>
-                                                      <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                      <Button fx:id="d15b2" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
                                                       <VBox alignment="CENTER">
                                                          <children>
-                                                            <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
-                                                            <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
-                                                            <Button layoutX="10.0" layoutY="35.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button fx:id="d15b1" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button fx:id="d15b3" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button fx:id="d15b5" layoutX="10.0" layoutY="35.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
                                                          </children>
                                                       </VBox>
-                                                      <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                      <Button fx:id="d15b4" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
                                                    </children>
                                                 </HBox>
                                                 <Label text="15" textFill="#2980b9">
@@ -521,15 +521,15 @@
                                                 </Button>
                                                 <HBox alignment="CENTER" prefHeight="438.0" prefWidth="634.0">
                                                    <children>
-                                                      <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                      <Button fx:id="d16b2" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
                                                       <VBox alignment="CENTER">
                                                          <children>
-                                                            <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
-                                                            <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
-                                                            <Button layoutX="10.0" layoutY="35.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button fx:id="d16b1" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button fx:id="d16b3" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button fx:id="d16b5" layoutX="10.0" layoutY="35.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
                                                          </children>
                                                       </VBox>
-                                                      <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                      <Button fx:id="d16b4" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
                                                    </children>
                                                 </HBox>
                                                 <Label text="16" textFill="#2980b9">
@@ -558,15 +558,15 @@
                                                 </Label>
                                                 <HBox alignment="CENTER" prefHeight="438.0" prefWidth="634.0">
                                                    <children>
-                                                      <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                      <Button fx:id="d17b2" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
                                                       <VBox alignment="CENTER">
                                                          <children>
-                                                            <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
-                                                            <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
-                                                            <Button layoutX="10.0" layoutY="35.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button fx:id="d17b1" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button fx:id="d17b3" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button fx:id="d17b5" layoutX="10.0" layoutY="35.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
                                                          </children>
                                                       </VBox>
-                                                      <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                      <Button fx:id="d17b4" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
                                                    </children>
                                                 </HBox>
                                                 <Button fx:id="diente17" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="100.0" prefWidth="70.0">
@@ -588,15 +588,15 @@
                                                 </Label>
                                                 <HBox alignment="CENTER" prefHeight="438.0" prefWidth="634.0">
                                                    <children>
-                                                      <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                      <Button fx:id="d18b2" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
                                                       <VBox alignment="CENTER">
                                                          <children>
-                                                            <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
-                                                            <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
-                                                            <Button layoutX="10.0" layoutY="35.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button fx:id="d18b1" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button fx:id="d18b3" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button fx:id="d18b5" layoutX="10.0" layoutY="35.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
                                                          </children>
                                                       </VBox>
-                                                      <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                      <Button fx:id="d18b4" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
                                                    </children>
                                                 </HBox>
                                                 <Button fx:id="diente18" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="100.0" prefWidth="70.0">
@@ -618,15 +618,15 @@
                                                 </Label>
                                                 <HBox alignment="CENTER" prefHeight="438.0" prefWidth="634.0">
                                                    <children>
-                                                      <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                      <Button fx:id="d19b2" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
                                                       <VBox alignment="CENTER">
                                                          <children>
-                                                            <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
-                                                            <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
-                                                            <Button layoutX="10.0" layoutY="35.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button fx:id="d19b1" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button fx:id="d19b3" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button fx:id="d19b5" layoutX="10.0" layoutY="35.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
                                                          </children>
                                                       </VBox>
-                                                      <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                      <Button fx:id="d19b4" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
                                                    </children>
                                                 </HBox>
                                                 <Button fx:id="diente19" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="100.0" prefWidth="70.0">
@@ -648,15 +648,15 @@
                                                 </Label>
                                                 <HBox alignment="CENTER" prefHeight="438.0" prefWidth="634.0">
                                                    <children>
-                                                      <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                      <Button fx:id="d20b2" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
                                                       <VBox alignment="CENTER">
                                                          <children>
-                                                            <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
-                                                            <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
-                                                            <Button layoutX="10.0" layoutY="35.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button fx:id="d20b1" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button fx:id="d20b3" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button fx:id="d20b5" layoutX="10.0" layoutY="35.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
                                                          </children>
                                                       </VBox>
-                                                      <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                      <Button fx:id="d20b4" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
                                                    </children>
                                                 </HBox>
                                                 <Button fx:id="diente20" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="100.0" prefWidth="70.0">
@@ -678,15 +678,15 @@
                                                 </Label>
                                                 <HBox alignment="CENTER" prefHeight="438.0" prefWidth="634.0">
                                                    <children>
-                                                      <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                      <Button fx:id="d21b2" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
                                                       <VBox alignment="CENTER">
                                                          <children>
-                                                            <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
-                                                            <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
-                                                            <Button layoutX="10.0" layoutY="35.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button fx:id="d21b1" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button fx:id="d21b3" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button fx:id="d21b5" layoutX="10.0" layoutY="35.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
                                                          </children>
                                                       </VBox>
-                                                      <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                      <Button fx:id="d21b4" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
                                                    </children>
                                                 </HBox>
                                                 <Button fx:id="diente21" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="100.0" prefWidth="70.0">
@@ -708,15 +708,15 @@
                                                 </Label>
                                                 <HBox alignment="CENTER" prefHeight="438.0" prefWidth="634.0">
                                                    <children>
-                                                      <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                      <Button fx:id="d22b2" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
                                                       <VBox alignment="CENTER">
                                                          <children>
-                                                            <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
-                                                            <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
-                                                            <Button layoutX="10.0" layoutY="35.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button fx:id="d22b1" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button fx:id="d22b3" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button fx:id="d22b5" layoutX="10.0" layoutY="35.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
                                                          </children>
                                                       </VBox>
-                                                      <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                      <Button fx:id="d22b4" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
                                                    </children>
                                                 </HBox>
                                                 <Button fx:id="diente22" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="100.0" prefWidth="70.0">
@@ -738,15 +738,15 @@
                                                 </Label>
                                                 <HBox alignment="CENTER" prefHeight="438.0" prefWidth="634.0">
                                                    <children>
-                                                      <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                      <Button fx:id="d23b2" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
                                                       <VBox alignment="CENTER">
                                                          <children>
-                                                            <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
-                                                            <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
-                                                            <Button layoutX="10.0" layoutY="35.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button fx:id="d23b1" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button fx:id="d23b3" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button fx:id="d23b5" layoutX="10.0" layoutY="35.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
                                                          </children>
                                                       </VBox>
-                                                      <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                      <Button fx:id="d23b4" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
                                                    </children>
                                                 </HBox>
                                                 <Button fx:id="diente23" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="100.0" prefWidth="70.0">
@@ -768,15 +768,15 @@
                                                 </Label>
                                                 <HBox alignment="CENTER" prefHeight="438.0" prefWidth="634.0">
                                                    <children>
-                                                      <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                      <Button fx:id="d24b2" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
                                                       <VBox alignment="CENTER">
                                                          <children>
-                                                            <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
-                                                            <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
-                                                            <Button layoutX="10.0" layoutY="35.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button fx:id="d24b1" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button fx:id="d24b3" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button fx:id="d24b5" layoutX="10.0" layoutY="35.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
                                                          </children>
                                                       </VBox>
-                                                      <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                      <Button fx:id="d24b4" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
                                                    </children>
                                                 </HBox>
                                                 <Button fx:id="diente24" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="100.0" prefWidth="70.0">
@@ -798,15 +798,15 @@
                                                 </Label>
                                                 <HBox alignment="CENTER" prefHeight="438.0" prefWidth="634.0">
                                                    <children>
-                                                      <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                      <Button fx:id="d25b2" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
                                                       <VBox alignment="CENTER">
                                                          <children>
-                                                            <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
-                                                            <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
-                                                            <Button layoutX="10.0" layoutY="35.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button fx:id="d25b1" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button fx:id="d25b3" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button fx:id="d25b5" layoutX="10.0" layoutY="35.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
                                                          </children>
                                                       </VBox>
-                                                      <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                      <Button fx:id="d25b4" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
                                                    </children>
                                                 </HBox>
                                                 <Button fx:id="diente25" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="100.0" prefWidth="70.0">
@@ -828,15 +828,15 @@
                                                 </Label>
                                                 <HBox alignment="CENTER" prefHeight="438.0" prefWidth="634.0">
                                                    <children>
-                                                      <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                      <Button fx:id="d26b2" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
                                                       <VBox alignment="CENTER">
                                                          <children>
-                                                            <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
-                                                            <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
-                                                            <Button layoutX="10.0" layoutY="35.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button fx:id="d26b1" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button fx:id="d26b3" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button fx:id="d26b5" layoutX="10.0" layoutY="35.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
                                                          </children>
                                                       </VBox>
-                                                      <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                      <Button fx:id="d26b4" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
                                                    </children>
                                                 </HBox>
                                                 <Button fx:id="diente26" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="100.0" prefWidth="70.0">
@@ -858,15 +858,15 @@
                                                 </Label>
                                                 <HBox alignment="CENTER" prefHeight="438.0" prefWidth="634.0">
                                                    <children>
-                                                      <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                      <Button fx:id="d27b2" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
                                                       <VBox alignment="CENTER">
                                                          <children>
-                                                            <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
-                                                            <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
-                                                            <Button layoutX="10.0" layoutY="35.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button fx:id="d27b1" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button fx:id="d27b3" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button fx:id="d27b5" layoutX="10.0" layoutY="35.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
                                                          </children>
                                                       </VBox>
-                                                      <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                      <Button fx:id="d27b4" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
                                                    </children>
                                                 </HBox>
                                                 <Button fx:id="diente27" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="100.0" prefWidth="70.0">
@@ -888,15 +888,15 @@
                                                 </Label>
                                                 <HBox alignment="CENTER" prefHeight="438.0" prefWidth="634.0">
                                                    <children>
-                                                      <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                      <Button fx:id="d28b2" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
                                                       <VBox alignment="CENTER">
                                                          <children>
-                                                            <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
-                                                            <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
-                                                            <Button layoutX="10.0" layoutY="35.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button fx:id="d28b1" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button fx:id="d28b3" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button fx:id="d28b5" layoutX="10.0" layoutY="35.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
                                                          </children>
                                                       </VBox>
-                                                      <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                      <Button fx:id="d28b4" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
                                                    </children>
                                                 </HBox>
                                                 <Button fx:id="diente28" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="100.0" prefWidth="70.0">
@@ -918,15 +918,15 @@
                                                 </Label>
                                                 <HBox alignment="CENTER" prefHeight="438.0" prefWidth="634.0">
                                                    <children>
-                                                      <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                      <Button fx:id="d29b2" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
                                                       <VBox alignment="CENTER">
                                                          <children>
-                                                            <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
-                                                            <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
-                                                            <Button layoutX="10.0" layoutY="35.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button fx:id="d29b1" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button fx:id="d29b3" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button fx:id="d29b5" layoutX="10.0" layoutY="35.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
                                                          </children>
                                                       </VBox>
-                                                      <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                      <Button fx:id="d29b4" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
                                                    </children>
                                                 </HBox>
                                                 <Button fx:id="diente29" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="100.0" prefWidth="70.0">
@@ -948,15 +948,15 @@
                                                 </Label>
                                                 <HBox alignment="CENTER" prefHeight="438.0" prefWidth="634.0">
                                                    <children>
-                                                      <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                      <Button fx:id="d30b2" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
                                                       <VBox alignment="CENTER">
                                                          <children>
-                                                            <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
-                                                            <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
-                                                            <Button layoutX="10.0" layoutY="35.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button fx:id="d30b1" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button fx:id="d30b3" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button fx:id="d30b5" layoutX="10.0" layoutY="35.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
                                                          </children>
                                                       </VBox>
-                                                      <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                      <Button fx:id="d30b4" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
                                                    </children>
                                                 </HBox>
                                                 <Button fx:id="diente30" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="100.0" prefWidth="70.0">
@@ -978,15 +978,15 @@
                                                 </Label>
                                                 <HBox alignment="CENTER" prefHeight="438.0" prefWidth="634.0">
                                                    <children>
-                                                      <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                      <Button fx:id="d31b2" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
                                                       <VBox alignment="CENTER">
                                                          <children>
-                                                            <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
-                                                            <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
-                                                            <Button layoutX="10.0" layoutY="35.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button fx:id="d31b1" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button fx:id="d31b3" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button fx:id="d31b5" layoutX="10.0" layoutY="35.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
                                                          </children>
                                                       </VBox>
-                                                      <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                      <Button fx:id="d31b4" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
                                                    </children>
                                                 </HBox>
                                                 <Button fx:id="diente31" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="100.0" prefWidth="70.0">
@@ -1008,15 +1008,15 @@
                                                 </Label>
                                                 <HBox alignment="CENTER" prefHeight="438.0" prefWidth="634.0">
                                                    <children>
-                                                      <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                      <Button fx:id="d32b2" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
                                                       <VBox alignment="CENTER">
                                                          <children>
-                                                            <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
-                                                            <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
-                                                            <Button layoutX="10.0" layoutY="35.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button fx:id="d32b1" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button fx:id="d32b3" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                            <Button fx:id="d32b5" layoutX="10.0" layoutY="35.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
                                                          </children>
                                                       </VBox>
-                                                      <Button layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
+                                                      <Button fx:id="d32b4" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" />
                                                    </children>
                                                 </HBox>
                                                 <Button fx:id="diente32" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="100.0" prefWidth="70.0">

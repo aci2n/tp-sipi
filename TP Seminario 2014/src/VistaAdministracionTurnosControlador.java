@@ -48,7 +48,7 @@ public class VistaAdministracionTurnosControlador implements Initializable {
 							OdontologoView ov = new OdontologoView();
 							PacienteView pv = new PacienteView();
 							TurnoView tv = new TurnoView();
-							SimpleDateFormat format = new SimpleDateFormat("yyyy/mm/dd HH:mm:ss");
+							SimpleDateFormat format = new SimpleDateFormat("yyyy-mm-dd HH:mm");
 							String fechaT = fecha.getValue().toString()+' '+comboHora.getValue();
 							java.util.Date fechaCompleta = null;
 							java.sql.Timestamp timestamp = null;
@@ -72,7 +72,7 @@ public class VistaAdministracionTurnosControlador implements Initializable {
 							Stage dialogStage = new Stage();
 							dialogStage.initModality(Modality.WINDOW_MODAL);
 							dialogStage.setScene(new Scene(VBoxBuilder.create().
-							    children(new Text("Turno registrado correctamente"), new Button("Continuar")).
+							    children(new Text("Turno registrado correctamente")).
 							    alignment(Pos.CENTER).padding(new Insets(5)).build()));
 							dialogStage.show();
  						}
@@ -87,13 +87,10 @@ public class VistaAdministracionTurnosControlador implements Initializable {
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		// TODO Auto-generated method stub
 		
-		//Cargador odontólogos persistentes al combo//
-		/*for (OdontologoView ov : Controlador.getInstancia().obtenerOdontologosView()){
+		for (OdontologoView ov : Controlador.getInstancia().obtenerOdontologosView()){
 			comboOdontologos.getItems().add(ov.getMatricula());
-		}*/
-		
-		comboOdontologos.getItems().addAll("Nico Pickelny", "De Simone, Gabriel", "Lucas Aguirre", "Cámara");
-		comboHora.getItems().addAll("8:30", "9:00", "10:00", "Nunca");
+		}
+		comboHora.getItems().addAll("8:30", "09:00", "10:00");
 		
 		}
 }

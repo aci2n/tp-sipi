@@ -119,6 +119,10 @@ public class VistaAltaHistoriaClinicaControlador implements Initializable {
 			odontologos.add(o.getMatricula());
 		
 		comboOdontologos.getItems().addAll(odontologos);
+		
+		labelDni.setText("-");
+		tDni.setText("");
+		tDescripcion.setText("");
 
 	}
 

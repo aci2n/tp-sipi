@@ -525,4 +525,9 @@ public class VistaAltaOdontogramaControlador implements Initializable {
 				odontograma);
 
 	}
+	
+	public void cancelar(ActionEvent event){
+		
+		VistaNavegador.loadVista(VistaNavegador.VISTA_7);
+	}
 }

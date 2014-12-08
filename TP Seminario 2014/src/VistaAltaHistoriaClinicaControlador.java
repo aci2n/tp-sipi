@@ -573,7 +573,7 @@ public class VistaAltaHistoriaClinicaControlador implements Initializable {
 
 	public void cancelar(ActionEvent event) {
 
-		this.initialize(null, null);
+		VistaNavegador.loadVista(VistaNavegador.VISTA_4);
 	}
 
 }

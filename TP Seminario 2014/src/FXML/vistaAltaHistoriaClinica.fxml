@@ -240,28 +240,6 @@
                                                    <Insets bottom="2.0" />
                                                 </VBox.margin>
                                              </HBox>
-                                             <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" styleClass="box">
-                                                <children>
-                                                   <TextField>
-                                                      <font>
-                                                         <Font size="10.0" />
-                                                      </font>
-                                                   </TextField>
-                                                   <TextField>
-                                                      <font>
-                                                         <Font size="10.0" />
-                                                      </font>
-                                                   </TextField>
-                                                   <TextField>
-                                                      <font>
-                                                         <Font size="10.0" />
-                                                      </font>
-                                                   </TextField>
-                                                </children>
-                                                <VBox.margin>
-                                                   <Insets bottom="2.0" />
-                                                </VBox.margin>
-                                             </HBox>
                                                 <Button fx:id="diente1" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="100.0" prefWidth="70.0">
                                                    <VBox.margin>
                                                       <Insets top="10.0" />
@@ -326,28 +304,6 @@
                                                          </font>
                                                       </TextField>
                                                       <TextField fx:id="d2f3" text="0">
-                                                         <font>
-                                                            <Font size="10.0" />
-                                                         </font>
-                                                      </TextField>
-                                                   </children>
-                                                   <VBox.margin>
-                                                      <Insets bottom="2.0" />
-                                                   </VBox.margin>
-                                                </HBox>
-                                                <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" styleClass="box">
-                                                   <children>
-                                                      <TextField>
-                                                         <font>
-                                                            <Font size="10.0" />
-                                                         </font>
-                                                      </TextField>
-                                                      <TextField>
-                                                         <font>
-                                                            <Font size="10.0" />
-                                                         </font>
-                                                      </TextField>
-                                                      <TextField>
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
@@ -430,28 +386,6 @@
                                                       <Insets bottom="2.0" />
                                                    </VBox.margin>
                                                 </HBox>
-                                                <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" styleClass="box">
-                                                   <children>
-                                                      <TextField>
-                                                         <font>
-                                                            <Font size="10.0" />
-                                                         </font>
-                                                      </TextField>
-                                                      <TextField>
-                                                         <font>
-                                                            <Font size="10.0" />
-                                                         </font>
-                                                      </TextField>
-                                                      <TextField>
-                                                         <font>
-                                                            <Font size="10.0" />
-                                                         </font>
-                                                      </TextField>
-                                                   </children>
-                                                   <VBox.margin>
-                                                      <Insets bottom="2.0" />
-                                                   </VBox.margin>
-                                                </HBox>
                                                 <Button fx:id="diente3" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="100.0" prefWidth="70.0">
                                                    <VBox.margin>
                                                       <Insets top="10.0" />
@@ -516,28 +450,6 @@
                                                          </font>
                                                       </TextField>
                                                       <TextField fx:id="d4f3" text="0">
-                                                         <font>
-                                                            <Font size="10.0" />
-                                                         </font>
-                                                      </TextField>
-                                                   </children>
-                                                   <VBox.margin>
-                                                      <Insets bottom="2.0" />
-                                                   </VBox.margin>
-                                                </HBox>
-                                                <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" styleClass="box">
-                                                   <children>
-                                                      <TextField>
-                                                         <font>
-                                                            <Font size="10.0" />
-                                                         </font>
-                                                      </TextField>
-                                                      <TextField>
-                                                         <font>
-                                                            <Font size="10.0" />
-                                                         </font>
-                                                      </TextField>
-                                                      <TextField>
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
@@ -620,28 +532,6 @@
                                                       <Insets bottom="2.0" />
                                                    </VBox.margin>
                                                 </HBox>
-                                                <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" styleClass="box">
-                                                   <children>
-                                                      <TextField>
-                                                         <font>
-                                                            <Font size="10.0" />
-                                                         </font>
-                                                      </TextField>
-                                                      <TextField>
-                                                         <font>
-                                                            <Font size="10.0" />
-                                                         </font>
-                                                      </TextField>
-                                                      <TextField>
-                                                         <font>
-                                                            <Font size="10.0" />
-                                                         </font>
-                                                      </TextField>
-                                                   </children>
-                                                   <VBox.margin>
-                                                      <Insets bottom="2.0" />
-                                                   </VBox.margin>
-                                                </HBox>
                                                 <Button fx:id="diente5" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="100.0" prefWidth="70.0">
                                                    <VBox.margin>
                                                       <Insets top="10.0" />
@@ -706,28 +596,6 @@
                                                          </font>
                                                       </TextField>
                                                       <TextField fx:id="d6f3" text="0">
-                                                         <font>
-                                                            <Font size="10.0" />
-                                                         </font>
-                                                      </TextField>
-                                                   </children>
-                                                   <VBox.margin>
-                                                      <Insets bottom="2.0" />
-                                                   </VBox.margin>
-                                                </HBox>
-                                                <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" styleClass="box">
-                                                   <children>
-                                                      <TextField>
-                                                         <font>
-                                                            <Font size="10.0" />
-                                                         </font>
-                                                      </TextField>
-                                                      <TextField>
-                                                         <font>
-                                                            <Font size="10.0" />
-                                                         </font>
-                                                      </TextField>
-                                                      <TextField>
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
@@ -810,28 +678,6 @@
                                                       <Insets bottom="2.0" />
                                                    </VBox.margin>
                                                 </HBox>
-                                                <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" styleClass="box">
-                                                   <children>
-                                                      <TextField>
-                                                         <font>
-                                                            <Font size="10.0" />
-                                                         </font>
-                                                      </TextField>
-                                                      <TextField>
-                                                         <font>
-                                                            <Font size="10.0" />
-                                                         </font>
-                                                      </TextField>
-                                                      <TextField>
-                                                         <font>
-                                                            <Font size="10.0" />
-                                                         </font>
-                                                      </TextField>
-                                                   </children>
-                                                   <VBox.margin>
-                                                      <Insets bottom="2.0" />
-                                                   </VBox.margin>
-                                                </HBox>
                                                 <Button fx:id="diente7" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="100.0" prefWidth="70.0">
                                                    <VBox.margin>
                                                       <Insets top="10.0" />
@@ -896,28 +742,6 @@
                                                          </font>
                                                       </TextField>
                                                       <TextField fx:id="d8f3" text="0">
-                                                         <font>
-                                                            <Font size="10.0" />
-                                                         </font>
-                                                      </TextField>
-                                                   </children>
-                                                   <VBox.margin>
-                                                      <Insets bottom="2.0" />
-                                                   </VBox.margin>
-                                                </HBox>
-                                                <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" styleClass="box">
-                                                   <children>
-                                                      <TextField>
-                                                         <font>
-                                                            <Font size="10.0" />
-                                                         </font>
-                                                      </TextField>
-                                                      <TextField>
-                                                         <font>
-                                                            <Font size="10.0" />
-                                                         </font>
-                                                      </TextField>
-                                                      <TextField>
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
@@ -1000,28 +824,6 @@
                                                       <Insets bottom="2.0" />
                                                    </VBox.margin>
                                                 </HBox>
-                                                <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" styleClass="box">
-                                                   <children>
-                                                      <TextField>
-                                                         <font>
-                                                            <Font size="10.0" />
-                                                         </font>
-                                                      </TextField>
-                                                      <TextField>
-                                                         <font>
-                                                            <Font size="10.0" />
-                                                         </font>
-                                                      </TextField>
-                                                      <TextField>
-                                                         <font>
-                                                            <Font size="10.0" />
-                                                         </font>
-                                                      </TextField>
-                                                   </children>
-                                                   <VBox.margin>
-                                                      <Insets bottom="2.0" />
-                                                   </VBox.margin>
-                                                </HBox>
                                                 <Button fx:id="diente9" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="100.0" prefWidth="70.0">
                                                    <VBox.margin>
                                                       <Insets top="10.0" />
@@ -1086,28 +888,6 @@
                                                          </font>
                                                       </TextField>
                                                       <TextField fx:id="d10f3" text="0">
-                                                         <font>
-                                                            <Font size="10.0" />
-                                                         </font>
-                                                      </TextField>
-                                                   </children>
-                                                   <VBox.margin>
-                                                      <Insets bottom="2.0" />
-                                                   </VBox.margin>
-                                                </HBox>
-                                                <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" styleClass="box">
-                                                   <children>
-                                                      <TextField>
-                                                         <font>
-                                                            <Font size="10.0" />
-                                                         </font>
-                                                      </TextField>
-                                                      <TextField>
-                                                         <font>
-                                                            <Font size="10.0" />
-                                                         </font>
-                                                      </TextField>
-                                                      <TextField>
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
@@ -1190,28 +970,6 @@
                                                       <Insets bottom="2.0" />
                                                    </VBox.margin>
                                                 </HBox>
-                                                <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" styleClass="box">
-                                                   <children>
-                                                      <TextField>
-                                                         <font>
-                                                            <Font size="10.0" />
-                                                         </font>
-                                                      </TextField>
-                                                      <TextField>
-                                                         <font>
-                                                            <Font size="10.0" />
-                                                         </font>
-                                                      </TextField>
-                                                      <TextField>
-                                                         <font>
-                                                            <Font size="10.0" />
-                                                         </font>
-                                                      </TextField>
-                                                   </children>
-                                                   <VBox.margin>
-                                                      <Insets bottom="2.0" />
-                                                   </VBox.margin>
-                                                </HBox>
                                                 <Button fx:id="diente11" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="100.0" prefWidth="70.0">
                                                    <VBox.margin>
                                                       <Insets top="10.0" />
@@ -1276,28 +1034,6 @@
                                                          </font>
                                                       </TextField>
                                                       <TextField fx:id="d12f3" text="0">
-                                                         <font>
-                                                            <Font size="10.0" />
-                                                         </font>
-                                                      </TextField>
-                                                   </children>
-                                                   <VBox.margin>
-                                                      <Insets bottom="2.0" />
-                                                   </VBox.margin>
-                                                </HBox>
-                                                <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" styleClass="box">
-                                                   <children>
-                                                      <TextField>
-                                                         <font>
-                                                            <Font size="10.0" />
-                                                         </font>
-                                                      </TextField>
-                                                      <TextField>
-                                                         <font>
-                                                            <Font size="10.0" />
-                                                         </font>
-                                                      </TextField>
-                                                      <TextField>
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
@@ -1380,28 +1116,6 @@
                                                       <Insets bottom="2.0" />
                                                    </VBox.margin>
                                                 </HBox>
-                                                <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" styleClass="box">
-                                                   <children>
-                                                      <TextField>
-                                                         <font>
-                                                            <Font size="10.0" />
-                                                         </font>
-                                                      </TextField>
-                                                      <TextField>
-                                                         <font>
-                                                            <Font size="10.0" />
-                                                         </font>
-                                                      </TextField>
-                                                      <TextField>
-                                                         <font>
-                                                            <Font size="10.0" />
-                                                         </font>
-                                                      </TextField>
-                                                   </children>
-                                                   <VBox.margin>
-                                                      <Insets bottom="2.0" />
-                                                   </VBox.margin>
-                                                </HBox>
                                                 <Button fx:id="diente13" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="100.0" prefWidth="70.0">
                                                    <VBox.margin>
                                                       <Insets top="10.0" />
@@ -1466,28 +1180,6 @@
                                                          </font>
                                                       </TextField>
                                                       <TextField fx:id="d14f3" text="0">
-                                                         <font>
-                                                            <Font size="10.0" />
-                                                         </font>
-                                                      </TextField>
-                                                   </children>
-                                                   <VBox.margin>
-                                                      <Insets bottom="2.0" />
-                                                   </VBox.margin>
-                                                </HBox>
-                                                <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" styleClass="box">
-                                                   <children>
-                                                      <TextField>
-                                                         <font>
-                                                            <Font size="10.0" />
-                                                         </font>
-                                                      </TextField>
-                                                      <TextField>
-                                                         <font>
-                                                            <Font size="10.0" />
-                                                         </font>
-                                                      </TextField>
-                                                      <TextField>
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
@@ -1570,28 +1262,6 @@
                                                       <Insets bottom="2.0" />
                                                    </VBox.margin>
                                                 </HBox>
-                                                <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" styleClass="box">
-                                                   <children>
-                                                      <TextField>
-                                                         <font>
-                                                            <Font size="10.0" />
-                                                         </font>
-                                                      </TextField>
-                                                      <TextField>
-                                                         <font>
-                                                            <Font size="10.0" />
-                                                         </font>
-                                                      </TextField>
-                                                      <TextField>
-                                                         <font>
-                                                            <Font size="10.0" />
-                                                         </font>
-                                                      </TextField>
-                                                   </children>
-                                                   <VBox.margin>
-                                                      <Insets bottom="2.0" />
-                                                   </VBox.margin>
-                                                </HBox>
                                                 <Button fx:id="diente15" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="100.0" prefWidth="70.0">
                                                    <VBox.margin>
                                                       <Insets top="10.0" />
@@ -1665,28 +1335,6 @@
                                                       <Insets bottom="2.0" />
                                                    </VBox.margin>
                                                 </HBox>
-                                                <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" styleClass="box">
-                                                   <children>
-                                                      <TextField>
-                                                         <font>
-                                                            <Font size="10.0" />
-                                                         </font>
-                                                      </TextField>
-                                                      <TextField>
-                                                         <font>
-                                                            <Font size="10.0" />
-                                                         </font>
-                                                      </TextField>
-                                                      <TextField>
-                                                         <font>
-                                                            <Font size="10.0" />
-                                                         </font>
-                                                      </TextField>
-                                                   </children>
-                                                   <VBox.margin>
-                                                      <Insets bottom="2.0" />
-                                                   </VBox.margin>
-                                                </HBox>
                                                 <Button fx:id="diente16" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="100.0" prefWidth="70.0">
                                                    <VBox.margin>
                                                       <Insets top="10.0" />
@@ -1719,11 +1367,6 @@
                                                    </font>
                                                 </Label>
                                                 <Label layoutX="10.0" layoutY="27.0" text="Profundidad de sondaje">
-                                                   <font>
-                                                      <Font name="System Bold" size="12.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label layoutX="10.0" layoutY="44.0" text="Label">
                                                    <font>
                                                       <Font name="System Bold" size="12.0" />
                                                    </font>
@@ -1795,28 +1438,6 @@
                                                          </font>
                                                       </TextField>
                                                       <TextField fx:id="d17f3" text="0">
-                                                         <font>
-                                                            <Font size="10.0" />
-                                                         </font>
-                                                      </TextField>
-                                                   </children>
-                                                   <VBox.margin>
-                                                      <Insets bottom="2.0" />
-                                                   </VBox.margin>
-                                                </HBox>
-                                                <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" styleClass="box">
-                                                   <children>
-                                                      <TextField>
-                                                         <font>
-                                                            <Font size="10.0" />
-                                                         </font>
-                                                      </TextField>
-                                                      <TextField>
-                                                         <font>
-                                                            <Font size="10.0" />
-                                                         </font>
-                                                      </TextField>
-                                                      <TextField>
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
@@ -1899,28 +1520,6 @@
                                                       <Insets bottom="2.0" />
                                                    </VBox.margin>
                                                 </HBox>
-                                                <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" styleClass="box">
-                                                   <children>
-                                                      <TextField>
-                                                         <font>
-                                                            <Font size="10.0" />
-                                                         </font>
-                                                      </TextField>
-                                                      <TextField>
-                                                         <font>
-                                                            <Font size="10.0" />
-                                                         </font>
-                                                      </TextField>
-                                                      <TextField>
-                                                         <font>
-                                                            <Font size="10.0" />
-                                                         </font>
-                                                      </TextField>
-                                                   </children>
-                                                   <VBox.margin>
-                                                      <Insets bottom="2.0" />
-                                                   </VBox.margin>
-                                                </HBox>
                                              </children>
                                           </VBox>
                                           <VBox alignment="CENTER" layoutX="677.0" layoutY="10.0" prefHeight="30.0" prefWidth="70.0">
@@ -1985,28 +1584,6 @@
                                                          </font>
                                                       </TextField>
                                                       <TextField fx:id="d19f3" text="0">
-                                                         <font>
-                                                            <Font size="10.0" />
-                                                         </font>
-                                                      </TextField>
-                                                   </children>
-                                                   <VBox.margin>
-                                                      <Insets bottom="2.0" />
-                                                   </VBox.margin>
-                                                </HBox>
-                                                <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" styleClass="box">
-                                                   <children>
-                                                      <TextField>
-                                                         <font>
-                                                            <Font size="10.0" />
-                                                         </font>
-                                                      </TextField>
-                                                      <TextField>
-                                                         <font>
-                                                            <Font size="10.0" />
-                                                         </font>
-                                                      </TextField>
-                                                      <TextField>
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
@@ -2089,28 +1666,6 @@
                                                       <Insets bottom="2.0" />
                                                    </VBox.margin>
                                                 </HBox>
-                                                <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" styleClass="box">
-                                                   <children>
-                                                      <TextField>
-                                                         <font>
-                                                            <Font size="10.0" />
-                                                         </font>
-                                                      </TextField>
-                                                      <TextField>
-                                                         <font>
-                                                            <Font size="10.0" />
-                                                         </font>
-                                                      </TextField>
-                                                      <TextField>
-                                                         <font>
-                                                            <Font size="10.0" />
-                                                         </font>
-                                                      </TextField>
-                                                   </children>
-                                                   <VBox.margin>
-                                                      <Insets bottom="2.0" />
-                                                   </VBox.margin>
-                                                </HBox>
                                              </children>
                                           </VBox>
                                           <VBox alignment="CENTER" layoutX="827.0" layoutY="10.0" prefHeight="30.0" prefWidth="70.0">
@@ -2175,28 +1730,6 @@
                                                          </font>
                                                       </TextField>
                                                       <TextField fx:id="d21f3" text="0">
-                                                         <font>
-                                                            <Font size="10.0" />
-                                                         </font>
-                                                      </TextField>
-                                                   </children>
-                                                   <VBox.margin>
-                                                      <Insets bottom="2.0" />
-                                                   </VBox.margin>
-                                                </HBox>
-                                                <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" styleClass="box">
-                                                   <children>
-                                                      <TextField>
-                                                         <font>
-                                                            <Font size="10.0" />
-                                                         </font>
-                                                      </TextField>
-                                                      <TextField>
-                                                         <font>
-                                                            <Font size="10.0" />
-                                                         </font>
-                                                      </TextField>
-                                                      <TextField>
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
@@ -2279,28 +1812,6 @@
                                                       <Insets bottom="2.0" />
                                                    </VBox.margin>
                                                 </HBox>
-                                                <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" styleClass="box">
-                                                   <children>
-                                                      <TextField>
-                                                         <font>
-                                                            <Font size="10.0" />
-                                                         </font>
-                                                      </TextField>
-                                                      <TextField>
-                                                         <font>
-                                                            <Font size="10.0" />
-                                                         </font>
-                                                      </TextField>
-                                                      <TextField>
-                                                         <font>
-                                                            <Font size="10.0" />
-                                                         </font>
-                                                      </TextField>
-                                                   </children>
-                                                   <VBox.margin>
-                                                      <Insets bottom="2.0" />
-                                                   </VBox.margin>
-                                                </HBox>
                                              </children>
                                           </VBox>
                                           <VBox alignment="CENTER" layoutX="677.0" layoutY="10.0" prefHeight="30.0" prefWidth="70.0">
@@ -2365,28 +1876,6 @@
                                                          </font>
                                                       </TextField>
                                                       <TextField fx:id="d23f3" text="0">
-                                                         <font>
-                                                            <Font size="10.0" />
-                                                         </font>
-                                                      </TextField>
-                                                   </children>
-                                                   <VBox.margin>
-                                                      <Insets bottom="2.0" />
-                                                   </VBox.margin>
-                                                </HBox>
-                                                <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" styleClass="box">
-                                                   <children>
-                                                      <TextField>
-                                                         <font>
-                                                            <Font size="10.0" />
-                                                         </font>
-                                                      </TextField>
-                                                      <TextField>
-                                                         <font>
-                                                            <Font size="10.0" />
-                                                         </font>
-                                                      </TextField>
-                                                      <TextField>
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
@@ -2469,28 +1958,6 @@
                                                       <Insets bottom="2.0" />
                                                    </VBox.margin>
                                                 </HBox>
-                                                <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" styleClass="box">
-                                                   <children>
-                                                      <TextField>
-                                                         <font>
-                                                            <Font size="10.0" />
-                                                         </font>
-                                                      </TextField>
-                                                      <TextField>
-                                                         <font>
-                                                            <Font size="10.0" />
-                                                         </font>
-                                                      </TextField>
-                                                      <TextField>
-                                                         <font>
-                                                            <Font size="10.0" />
-                                                         </font>
-                                                      </TextField>
-                                                   </children>
-                                                   <VBox.margin>
-                                                      <Insets bottom="2.0" />
-                                                   </VBox.margin>
-                                                </HBox>
                                              </children>
                                           </VBox>
                                           <VBox alignment="CENTER" layoutX="902.0" layoutY="10.0" prefHeight="30.0" prefWidth="70.0">
@@ -2555,28 +2022,6 @@
                                                          </font>
                                                       </TextField>
                                                       <TextField fx:id="d25f3" text="0">
-                                                         <font>
-                                                            <Font size="10.0" />
-                                                         </font>
-                                                      </TextField>
-                                                   </children>
-                                                   <VBox.margin>
-                                                      <Insets bottom="2.0" />
-                                                   </VBox.margin>
-                                                </HBox>
-                                                <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" styleClass="box">
-                                                   <children>
-                                                      <TextField>
-                                                         <font>
-                                                            <Font size="10.0" />
-                                                         </font>
-                                                      </TextField>
-                                                      <TextField>
-                                                         <font>
-                                                            <Font size="10.0" />
-                                                         </font>
-                                                      </TextField>
-                                                      <TextField>
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
@@ -2659,28 +2104,6 @@
                                                       <Insets bottom="2.0" />
                                                    </VBox.margin>
                                                 </HBox>
-                                                <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" styleClass="box">
-                                                   <children>
-                                                      <TextField>
-                                                         <font>
-                                                            <Font size="10.0" />
-                                                         </font>
-                                                      </TextField>
-                                                      <TextField>
-                                                         <font>
-                                                            <Font size="10.0" />
-                                                         </font>
-                                                      </TextField>
-                                                      <TextField>
-                                                         <font>
-                                                            <Font size="10.0" />
-                                                         </font>
-                                                      </TextField>
-                                                   </children>
-                                                   <VBox.margin>
-                                                      <Insets bottom="2.0" />
-                                                   </VBox.margin>
-                                                </HBox>
                                              </children>
                                           </VBox>
                                           <VBox alignment="CENTER" layoutX="452.0" layoutY="10.0" prefHeight="30.0" prefWidth="70.0">
@@ -2745,28 +2168,6 @@
                                                          </font>
                                                       </TextField>
                                                       <TextField fx:id="d27f3" text="0">
-                                                         <font>
-                                                            <Font size="10.0" />
-                                                         </font>
-                                                      </TextField>
-                                                   </children>
-                                                   <VBox.margin>
-                                                      <Insets bottom="2.0" />
-                                                   </VBox.margin>
-                                                </HBox>
-                                                <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" styleClass="box">
-                                                   <children>
-                                                      <TextField>
-                                                         <font>
-                                                            <Font size="10.0" />
-                                                         </font>
-                                                      </TextField>
-                                                      <TextField>
-                                                         <font>
-                                                            <Font size="10.0" />
-                                                         </font>
-                                                      </TextField>
-                                                      <TextField>
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
@@ -2849,28 +2250,6 @@
                                                       <Insets bottom="2.0" />
                                                    </VBox.margin>
                                                 </HBox>
-                                                <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" styleClass="box">
-                                                   <children>
-                                                      <TextField>
-                                                         <font>
-                                                            <Font size="10.0" />
-                                                         </font>
-                                                      </TextField>
-                                                      <TextField>
-                                                         <font>
-                                                            <Font size="10.0" />
-                                                         </font>
-                                                      </TextField>
-                                                      <TextField>
-                                                         <font>
-                                                            <Font size="10.0" />
-                                                         </font>
-                                                      </TextField>
-                                                   </children>
-                                                   <VBox.margin>
-                                                      <Insets bottom="2.0" />
-                                                   </VBox.margin>
-                                                </HBox>
                                              </children>
                                           </VBox>
                                           <VBox alignment="CENTER" layoutX="602.0" layoutY="10.0" prefHeight="30.0" prefWidth="70.0">
@@ -2935,28 +2314,6 @@
                                                          </font>
                                                       </TextField>
                                                       <TextField fx:id="d29f3" text="0">
-                                                         <font>
-                                                            <Font size="10.0" />
-                                                         </font>
-                                                      </TextField>
-                                                   </children>
-                                                   <VBox.margin>
-                                                      <Insets bottom="2.0" />
-                                                   </VBox.margin>
-                                                </HBox>
-                                                <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" styleClass="box">
-                                                   <children>
-                                                      <TextField>
-                                                         <font>
-                                                            <Font size="10.0" />
-                                                         </font>
-                                                      </TextField>
-                                                      <TextField>
-                                                         <font>
-                                                            <Font size="10.0" />
-                                                         </font>
-                                                      </TextField>
-                                                      <TextField>
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
@@ -3039,28 +2396,6 @@
                                                       <Insets bottom="2.0" />
                                                    </VBox.margin>
                                                 </HBox>
-                                                <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" styleClass="box">
-                                                   <children>
-                                                      <TextField>
-                                                         <font>
-                                                            <Font size="10.0" />
-                                                         </font>
-                                                      </TextField>
-                                                      <TextField>
-                                                         <font>
-                                                            <Font size="10.0" />
-                                                         </font>
-                                                      </TextField>
-                                                      <TextField>
-                                                         <font>
-                                                            <Font size="10.0" />
-                                                         </font>
-                                                      </TextField>
-                                                   </children>
-                                                   <VBox.margin>
-                                                      <Insets bottom="2.0" />
-                                                   </VBox.margin>
-                                                </HBox>
                                              </children>
                                           </VBox>
                                           <VBox alignment="CENTER" layoutX="827.0" layoutY="10.0" prefHeight="30.0" prefWidth="70.0">
@@ -3134,28 +2469,6 @@
                                                       <Insets bottom="2.0" />
                                                    </VBox.margin>
                                                 </HBox>
-                                                <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" styleClass="box">
-                                                   <children>
-                                                      <TextField>
-                                                         <font>
-                                                            <Font size="10.0" />
-                                                         </font>
-                                                      </TextField>
-                                                      <TextField>
-                                                         <font>
-                                                            <Font size="10.0" />
-                                                         </font>
-                                                      </TextField>
-                                                      <TextField>
-                                                         <font>
-                                                            <Font size="10.0" />
-                                                         </font>
-                                                      </TextField>
-                                                   </children>
-                                                   <VBox.margin>
-                                                      <Insets bottom="2.0" />
-                                                   </VBox.margin>
-                                                </HBox>
                                              </children>
                                           </VBox>
                                           <VBox alignment="CENTER" layoutX="752.0" layoutY="10.0" prefHeight="30.0" prefWidth="70.0">
@@ -3220,28 +2533,6 @@
                                                          </font>
                                                       </TextField>
                                                       <TextField fx:id="d32f3" text="0">
-                                                         <font>
-                                                            <Font size="10.0" />
-                                                         </font>
-                                                      </TextField>
-                                                   </children>
-                                                   <VBox.margin>
-                                                      <Insets bottom="2.0" />
-                                                   </VBox.margin>
-                                                </HBox>
-                                                <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" styleClass="box">
-                                                   <children>
-                                                      <TextField>
-                                                         <font>
-                                                            <Font size="10.0" />
-                                                         </font>
-                                                      </TextField>
-                                                      <TextField>
-                                                         <font>
-                                                            <Font size="10.0" />
-                                                         </font>
-                                                      </TextField>
-                                                      <TextField>
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>

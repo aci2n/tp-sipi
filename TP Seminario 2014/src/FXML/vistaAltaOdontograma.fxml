@@ -51,7 +51,7 @@
                                  <children>
                                     <HBox alignment="CENTER_LEFT" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" style="-fx-background-color: #3498db;">
                                        <children>
-                                          <Label text="Odontrograna" textFill="WHITE">
+                                          <Label text="Odontrograma" textFill="WHITE">
                                              <font>
                                                 <Font name="Calibri Bold" size="14.0" />
                                              </font>
@@ -61,6 +61,21 @@
                                           </Label>
                                        </children>
                                     </HBox>
+                                    <HBox alignment="CENTER_LEFT">
+                                       <children>
+                                          <Label text="Seleccione el odontólogo a cargo: ">
+                                             <HBox.margin>
+                                                <Insets left="10.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <ComboBox fx:id="comboOdontologos" prefWidth="150.0">
+                                             <HBox.margin>
+                                                <Insets left="20.0" />
+                                             </HBox.margin>
+                                          </ComboBox>
+                                       </children>
+                                    </HBox>
+                                    <Separator prefWidth="200.0" />
                                     <HBox alignment="CENTER" spacing="10.0">
                                        <children>
                                           <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
@@ -1049,9 +1064,6 @@
                      <VBox.margin>
                         <Insets top="10.0" />
                      </VBox.margin>
-                     <bottom>
-                        <StackPane prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
-                     </bottom>
                   </BorderPane>
                   <HBox alignment="CENTER" spacing="30.0">
                      <children>

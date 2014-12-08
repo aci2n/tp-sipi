@@ -2,31 +2,44 @@ package views;
 
 import java.util.Collection;
 
-
-
 public class DienteView {
 	private String posicion;
 	private String idProtesis;
 	private String idPuente;
 	private String estado;
 	private Collection<CaraView> caras;
-	
+
+	public DienteView() {
+
+	}
+
+	public DienteView(String posicion, String idProtesis, String idPuente,
+			String estado, Collection<CaraView> caras) {
+
+		this.posicion = posicion;
+		this.idProtesis = idProtesis;
+		this.idPuente = idPuente;
+		this.estado = estado;
+		this.caras = caras;
+
+	}
+
 	public boolean sosElDiente(String posicion) {
-		return this.posicion==posicion;
+		return this.posicion == posicion;
 	}
-	
+
 	public void modificarEstadoCara(String posicionCara, String estadoCara) {
-		
+
 	}
-	
+
 	public CaraView buscarCara(String posicionCara) {
 		return null;
 	}
-	
+
 	public void setPuenteNuevo() {
-		
+
 	}
-	
+
 	public Collection<String> getSintomas() {
 		return null;
 	}

@@ -6,6 +6,17 @@ public class CaraView {
 	private String posicion;
 	private String estado;
 	
+	
+	public CaraView(){
+		
+	}
+	
+	public CaraView(String pos, String estado){
+		
+		this.posicion = pos;
+		this.estado = estado;
+	}
+	
 	public boolean sosLaCara(String posicionCara) {
 		return this.posicion==posicionCara;
 	}

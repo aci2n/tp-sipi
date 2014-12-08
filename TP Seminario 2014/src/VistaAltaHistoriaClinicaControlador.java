@@ -557,7 +557,6 @@ public class VistaAltaHistoriaClinicaControlador implements Initializable {
 		ficha.setOdontologo(Controlador.getInstancia().obtenerOdontologoView(
 				comboOdontologos.getSelectionModel().getSelectedItem()));
 		ficha.setSecciones(seccionesView);
-
 		
 		// ASIGNA LA FICHA A LA HISTORIA CLINICA
 		

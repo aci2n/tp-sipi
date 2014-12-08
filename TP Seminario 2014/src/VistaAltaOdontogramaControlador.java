@@ -521,6 +521,8 @@ public class VistaAltaOdontogramaControlador implements Initializable {
 										.getSelectedItem()));
 		odontograma.setIdOdontograma("1");
 
+		Controlador.getInstancia().altaOdontograma(tDni.getText(), odontograma.getIdOdontograma(), odontograma.getOdontologo().getMatricula());
+		
 		Controlador.getInstancia().actualizarOdontograma(tDni.getText(),
 				odontograma);
 

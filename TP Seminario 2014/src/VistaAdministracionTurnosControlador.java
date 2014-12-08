@@ -3,6 +3,9 @@ import java.sql.Date;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ResourceBundle;
+
+import com.sun.jmx.snmp.Timestamp;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -47,9 +50,11 @@ public class VistaAdministracionTurnosControlador implements Initializable {
 							TurnoView tv = new TurnoView();
 							SimpleDateFormat format = new SimpleDateFormat("yyyy/mm/dd HH:mm:ss");
 							String fechaT = fecha.getValue().toString()+' '+comboHora.getValue();
-							Date fechaCompleta = null;
+							java.util.Date fechaCompleta = null;
+							java.sql.Timestamp timestamp = null;
 							try {
-								fechaCompleta = new Date(format.parse(fechaT).getTime());
+								fechaCompleta = format.parse(fechaT);
+								timestamp = new java.sql.Timestamp(fechaCompleta.getTime());
 							} catch (ParseException e) {
 								// TODO Auto-generated catch block
 								e.printStackTrace();
@@ -59,7 +64,7 @@ public class VistaAdministracionTurnosControlador implements Initializable {
 							ov = con.obtenerOdontologoView(comboOdontologos.getValue());
 							tv.setPaciente(pv);
 							tv.setOdontologo(ov);
-							//tv.setFecha(fechaCompleta);
+							tv.setFecha(timestamp);
 							tv.setDescripcion(tDescripcion.getText());
 	
 							con.altaTurno(tv);

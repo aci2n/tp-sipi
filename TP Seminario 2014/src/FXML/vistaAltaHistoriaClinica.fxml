@@ -57,8 +57,8 @@
                            <top>
                               <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="50.0" BorderPane.alignment="CENTER">
                                  <children>
-                                    <Button fx:id="botonGuardar" mnemonicParsing="false" text="Guardar" />
-                                    <Button fx:id="botonCancelar" mnemonicParsing="false" text="Cancelar" />
+                                    <Button fx:id="botonGuardar" mnemonicParsing="false" onAction="#guardarFicha" text="Guardar" />
+                                    <Button fx:id="botonCancelar" mnemonicParsing="false" onAction="#cancelar" text="Cancelar" />
                                  </children>
                               </HBox>
                            </top>
@@ -199,17 +199,17 @@
                                              </HBox>
                                              <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" styleClass="box">
                                                 <children>
-                                                   <TextField fx:id="d1t1">
+                                                   <TextField fx:id="d1t1" text="0">
                                                       <font>
                                                          <Font size="10.0" />
                                                       </font>
                                                    </TextField>
-                                                   <TextField fx:id="d1t2">
+                                                   <TextField fx:id="d1t2" text="0">
                                                       <font>
                                                          <Font size="10.0" />
                                                       </font>
                                                    </TextField>
-                                                   <TextField fx:id="d1t3">
+                                                   <TextField fx:id="d1t3" text="0">
                                                       <font>
                                                          <Font size="10.0" />
                                                       </font>
@@ -221,17 +221,17 @@
                                              </HBox>
                                              <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" styleClass="box">
                                                 <children>
-                                                   <TextField fx:id="d1f1">
+                                                   <TextField fx:id="d1f1" text="0">
                                                       <font>
                                                          <Font size="10.0" />
                                                       </font>
                                                    </TextField>
-                                                   <TextField fx:id="d1f2">
+                                                   <TextField fx:id="d1f2" text="0">
                                                       <font>
                                                          <Font size="10.0" />
                                                       </font>
                                                    </TextField>
-                                                   <TextField fx:id="d1f3">
+                                                   <TextField fx:id="d1f3" text="0">
                                                       <font>
                                                          <Font size="10.0" />
                                                       </font>
@@ -284,9 +284,9 @@
                                                 </HBox>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" spacing="3.0" styleClass="box">
                                                    <children>
-                                                      <ToggleButton id="toggleButton" fx:id="d1p1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
+                                                      <ToggleButton id="toggleButton" fx:id="d2p1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
                                                       <ToggleButton fx:id="d2p2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
-                                                      <ToggleButton id="toggleButton" fx:id="d3p3" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
+                                                      <ToggleButton id="toggleButton" fx:id="d2p3" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
                                                    </children>
                                                    <VBox.margin>
                                                       <Insets bottom="2.0" />
@@ -294,17 +294,17 @@
                                                 </HBox>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" styleClass="box">
                                                    <children>
-                                                      <TextField fx:id="d2t1">
+                                                      <TextField fx:id="d2t1" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d2t2">
+                                                      <TextField fx:id="d2t2" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d2t3">
+                                                      <TextField fx:id="d2t3" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
@@ -316,17 +316,17 @@
                                                 </HBox>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" styleClass="box">
                                                    <children>
-                                                      <TextField fx:id="d2f1">
+                                                      <TextField fx:id="d2f1" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d2f2">
+                                                      <TextField fx:id="d2f2" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d2f3">
+                                                      <TextField fx:id="d2f3" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
@@ -389,17 +389,17 @@
                                                 </HBox>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" styleClass="box">
                                                    <children>
-                                                      <TextField fx:id="d3t1">
+                                                      <TextField fx:id="d3t1" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d3t2">
+                                                      <TextField fx:id="d3t2" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d3t3">
+                                                      <TextField fx:id="d3t3" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
@@ -411,17 +411,17 @@
                                                 </HBox>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" styleClass="box">
                                                    <children>
-                                                      <TextField fx:id="d3f1">
+                                                      <TextField fx:id="d3f1" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d3f2">
+                                                      <TextField fx:id="d3f2" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d3f3">
+                                                      <TextField fx:id="d3f3" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
@@ -484,17 +484,17 @@
                                                 </HBox>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" styleClass="box">
                                                    <children>
-                                                      <TextField fx:id="d4t1">
+                                                      <TextField fx:id="d4t1" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d4t2">
+                                                      <TextField fx:id="d4t2" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d4t3">
+                                                      <TextField fx:id="d4t3" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
@@ -506,17 +506,17 @@
                                                 </HBox>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" styleClass="box">
                                                    <children>
-                                                      <TextField fx:id="d4f1">
+                                                      <TextField fx:id="d4f1" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d4f2">
+                                                      <TextField fx:id="d4f2" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d4f3">
+                                                      <TextField fx:id="d4f3" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
@@ -579,17 +579,17 @@
                                                 </HBox>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" styleClass="box">
                                                    <children>
-                                                      <TextField fx:id="d5t1">
+                                                      <TextField fx:id="d5t1" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d5t2">
+                                                      <TextField fx:id="d5t2" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d5t3">
+                                                      <TextField fx:id="d5t3" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
@@ -601,17 +601,17 @@
                                                 </HBox>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" styleClass="box">
                                                    <children>
-                                                      <TextField fx:id="d5f1">
+                                                      <TextField fx:id="d5f1" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d5f2">
+                                                      <TextField fx:id="d5f2" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d5f3">
+                                                      <TextField fx:id="d5f3" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
@@ -674,17 +674,17 @@
                                                 </HBox>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" styleClass="box">
                                                    <children>
-                                                      <TextField fx:id="d6t1">
+                                                      <TextField fx:id="d6t1" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d6t2">
+                                                      <TextField fx:id="d6t2" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d6t3">
+                                                      <TextField fx:id="d6t3" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
@@ -696,17 +696,17 @@
                                                 </HBox>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" styleClass="box">
                                                    <children>
-                                                      <TextField fx:id="d6f1">
+                                                      <TextField fx:id="d6f1" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d6f2">
+                                                      <TextField fx:id="d6f2" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d6f3">
+                                                      <TextField fx:id="d6f3" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
@@ -769,17 +769,17 @@
                                                 </HBox>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" styleClass="box">
                                                    <children>
-                                                      <TextField fx:id="d7t1">
+                                                      <TextField fx:id="d7t1" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d7t2">
+                                                      <TextField fx:id="d7t2" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d7t3">
+                                                      <TextField fx:id="d7t3" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
@@ -791,17 +791,17 @@
                                                 </HBox>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" styleClass="box">
                                                    <children>
-                                                      <TextField fx:id="d7f1">
+                                                      <TextField fx:id="d7f1" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d7f2">
+                                                      <TextField fx:id="d7f2" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d7f3">
+                                                      <TextField fx:id="d7f3" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
@@ -864,17 +864,17 @@
                                                 </HBox>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" styleClass="box">
                                                    <children>
-                                                      <TextField fx:id="d8t1">
+                                                      <TextField fx:id="d8t1" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d8t2">
+                                                      <TextField fx:id="d8t2" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d8t3">
+                                                      <TextField fx:id="d8t3" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
@@ -886,17 +886,17 @@
                                                 </HBox>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" styleClass="box">
                                                    <children>
-                                                      <TextField fx:id="d8f1">
+                                                      <TextField fx:id="d8f1" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d8f2">
+                                                      <TextField fx:id="d8f2" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d8f3">
+                                                      <TextField fx:id="d8f3" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
@@ -959,17 +959,17 @@
                                                 </HBox>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" styleClass="box">
                                                    <children>
-                                                      <TextField fx:id="d9t1">
+                                                      <TextField fx:id="d9t1" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d9t2">
+                                                      <TextField fx:id="d9t2" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d9t3">
+                                                      <TextField fx:id="d9t3" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
@@ -981,17 +981,17 @@
                                                 </HBox>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" styleClass="box">
                                                    <children>
-                                                      <TextField fx:id="d9f1">
+                                                      <TextField fx:id="d9f1" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d9f2">
+                                                      <TextField fx:id="d9f2" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d9f3">
+                                                      <TextField fx:id="d9f3" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
@@ -1054,17 +1054,17 @@
                                                 </HBox>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" styleClass="box">
                                                    <children>
-                                                      <TextField fx:id="d10t1">
+                                                      <TextField fx:id="d10t1" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d10t2">
+                                                      <TextField fx:id="d10t2" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d10t3">
+                                                      <TextField fx:id="d10t3" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
@@ -1076,17 +1076,17 @@
                                                 </HBox>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" styleClass="box">
                                                    <children>
-                                                      <TextField fx:id="d10f1">
+                                                      <TextField fx:id="d10f1" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d10f2">
+                                                      <TextField fx:id="d10f2" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d10f3">
+                                                      <TextField fx:id="d10f3" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
@@ -1131,7 +1131,7 @@
                                                    <children>
                                                       <ToggleButton id="toggleButton" fx:id="d11s1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
                                                       <ToggleButton id="toggleButton" fx:id="d11s2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
-                                                      <ToggleButton fx:id="d11s2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
+                                                      <ToggleButton fx:id="d11s3" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
                                                    </children>
                                                    <VBox.margin>
                                                       <Insets bottom="2.0" />
@@ -1149,17 +1149,17 @@
                                                 </HBox>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" styleClass="box">
                                                    <children>
-                                                      <TextField fx:id="d11t1">
+                                                      <TextField fx:id="d11t1" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d11t2">
+                                                      <TextField fx:id="d11t2" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d11t3">
+                                                      <TextField fx:id="d11t3" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
@@ -1171,17 +1171,17 @@
                                                 </HBox>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" styleClass="box">
                                                    <children>
-                                                      <TextField fx:id="d11f1">
+                                                      <TextField fx:id="d11f1" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d11f2">
+                                                      <TextField fx:id="d11f2" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d11f3">
+                                                      <TextField fx:id="d11f3" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
@@ -1244,17 +1244,17 @@
                                                 </HBox>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" styleClass="box">
                                                    <children>
-                                                      <TextField fx:id="d12t1">
+                                                      <TextField fx:id="d12t1" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d12t2">
+                                                      <TextField fx:id="d12t2" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d12t3">
+                                                      <TextField fx:id="d12t3" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
@@ -1266,17 +1266,17 @@
                                                 </HBox>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" styleClass="box">
                                                    <children>
-                                                      <TextField fx:id="d12f1">
+                                                      <TextField fx:id="d12f1" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d12f2">
+                                                      <TextField fx:id="d12f2" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d12f3">
+                                                      <TextField fx:id="d12f3" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
@@ -1339,17 +1339,17 @@
                                                 </HBox>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" styleClass="box">
                                                    <children>
-                                                      <TextField fx:id="d13t1">
+                                                      <TextField fx:id="d13t1" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d13t2">
+                                                      <TextField fx:id="d13t2" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d13t3">
+                                                      <TextField fx:id="d13t3" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
@@ -1361,17 +1361,17 @@
                                                 </HBox>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" styleClass="box">
                                                    <children>
-                                                      <TextField fx:id="d13f1">
+                                                      <TextField fx:id="d13f1" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d13f2">
+                                                      <TextField fx:id="d13f2" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d13f3">
+                                                      <TextField fx:id="d13f3" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
@@ -1434,17 +1434,17 @@
                                                 </HBox>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" styleClass="box">
                                                    <children>
-                                                      <TextField fx:id="d14t1">
+                                                      <TextField fx:id="d14t1" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d14t2">
+                                                      <TextField fx:id="d14t2" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d14t3">
+                                                      <TextField fx:id="d14t3" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
@@ -1456,17 +1456,17 @@
                                                 </HBox>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" styleClass="box">
                                                    <children>
-                                                      <TextField fx:id="d14f1">
+                                                      <TextField fx:id="d14f1" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d14f2">
+                                                      <TextField fx:id="d14f2" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d14f3">
+                                                      <TextField fx:id="d14f3" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
@@ -1529,17 +1529,17 @@
                                                 </HBox>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" styleClass="box">
                                                    <children>
-                                                      <TextField fx:id="d15t1">
+                                                      <TextField fx:id="d15t1" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d15t2">
+                                                      <TextField fx:id="d15t2" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d15t3">
+                                                      <TextField fx:id="d15t3" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
@@ -1551,17 +1551,17 @@
                                                 </HBox>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" styleClass="box">
                                                    <children>
-                                                      <TextField fx:id="d15f1">
+                                                      <TextField fx:id="d15f1" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d15f2">
+                                                      <TextField fx:id="d15f2" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d15f3">
+                                                      <TextField fx:id="d15f3" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
@@ -1624,17 +1624,17 @@
                                                 </HBox>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" styleClass="box">
                                                    <children>
-                                                      <TextField fx:id="d16t1">
+                                                      <TextField fx:id="d16t1" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d16t2">
+                                                      <TextField fx:id="d16t2" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d16t3">
+                                                      <TextField fx:id="d16t3" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
@@ -1646,17 +1646,17 @@
                                                 </HBox>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" styleClass="box">
                                                    <children>
-                                                      <TextField fx:id="d16f1">
+                                                      <TextField fx:id="d16f1" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d16f2">
+                                                      <TextField fx:id="d16f2" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d16f3">
+                                                      <TextField fx:id="d16f3" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
@@ -1763,17 +1763,17 @@
                                                 </HBox>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" styleClass="box">
                                                    <children>
-                                                      <TextField fx:id="d17t1">
+                                                      <TextField fx:id="d17t1" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d17t2">
+                                                      <TextField fx:id="d17t2" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d17t3">
+                                                      <TextField fx:id="d17t3" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
@@ -1785,17 +1785,17 @@
                                                 </HBox>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" styleClass="box">
                                                    <children>
-                                                      <TextField fx:id="d17f1">
+                                                      <TextField fx:id="d17f1" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d17f2">
+                                                      <TextField fx:id="d17f2" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d17f3">
+                                                      <TextField fx:id="d17f3" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
@@ -1858,17 +1858,17 @@
                                                 </HBox>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" styleClass="box">
                                                    <children>
-                                                      <TextField fx:id="d18t1">
+                                                      <TextField fx:id="d18t1" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d18t2">
+                                                      <TextField fx:id="d18t2" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d18t3">
+                                                      <TextField fx:id="d18t3" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
@@ -1880,17 +1880,17 @@
                                                 </HBox>
                                                 <HBox fx:id="a" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" styleClass="box">
                                                    <children>
-                                                      <TextField fx:id="d18f1">
+                                                      <TextField fx:id="d18f1" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d18f2">
+                                                      <TextField fx:id="d18f2" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d18f3">
+                                                      <TextField fx:id="d18f3" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
@@ -1953,17 +1953,17 @@
                                                 </HBox>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" styleClass="box">
                                                    <children>
-                                                      <TextField fx:id="d19t1">
+                                                      <TextField fx:id="d19t1" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d19t2">
+                                                      <TextField fx:id="d19t2" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d19t3">
+                                                      <TextField fx:id="d19t3" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
@@ -1975,17 +1975,17 @@
                                                 </HBox>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" styleClass="box">
                                                    <children>
-                                                      <TextField fx:id="d19f1">
+                                                      <TextField fx:id="d19f1" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d19f2">
+                                                      <TextField fx:id="d19f2" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d19f3">
+                                                      <TextField fx:id="d19f3" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
@@ -2048,17 +2048,17 @@
                                                 </HBox>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" styleClass="box">
                                                    <children>
-                                                      <TextField fx:id="d20t1">
+                                                      <TextField fx:id="d20t1" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d20t2">
+                                                      <TextField fx:id="d20t2" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d20t3">
+                                                      <TextField fx:id="d20t3" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
@@ -2070,17 +2070,17 @@
                                                 </HBox>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" styleClass="box">
                                                    <children>
-                                                      <TextField fx:id="d20f1">
+                                                      <TextField fx:id="d20f1" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d20f2">
+                                                      <TextField fx:id="d20f2" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d20f3">
+                                                      <TextField fx:id="d20f3" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
@@ -2143,17 +2143,17 @@
                                                 </HBox>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" styleClass="box">
                                                    <children>
-                                                      <TextField fx:id="d21t1">
+                                                      <TextField fx:id="d21t1" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d21t2">
+                                                      <TextField fx:id="d21t2" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d21t3">
+                                                      <TextField fx:id="d21t3" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
@@ -2165,17 +2165,17 @@
                                                 </HBox>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" styleClass="box">
                                                    <children>
-                                                      <TextField fx:id="d21f1">
+                                                      <TextField fx:id="d21f1" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d21f2">
+                                                      <TextField fx:id="d21f2" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d21f3">
+                                                      <TextField fx:id="d21f3" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
@@ -2238,17 +2238,17 @@
                                                 </HBox>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" styleClass="box">
                                                    <children>
-                                                      <TextField fx:id="d22t1">
+                                                      <TextField fx:id="d22t1" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d22t2">
+                                                      <TextField fx:id="d22t2" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d22t3">
+                                                      <TextField fx:id="d22t3" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
@@ -2260,17 +2260,17 @@
                                                 </HBox>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" styleClass="box">
                                                    <children>
-                                                      <TextField fx:id="d22f1">
+                                                      <TextField fx:id="d22f1" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d22f2">
+                                                      <TextField fx:id="d22f2" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d22f3">
+                                                      <TextField fx:id="d22f3" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
@@ -2333,17 +2333,17 @@
                                                 </HBox>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" styleClass="box">
                                                    <children>
-                                                      <TextField fx:id="d23t1">
+                                                      <TextField fx:id="d23t1" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d23t2">
+                                                      <TextField fx:id="d23t2" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d23t3">
+                                                      <TextField fx:id="d23t3" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
@@ -2355,17 +2355,17 @@
                                                 </HBox>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" styleClass="box">
                                                    <children>
-                                                      <TextField fx:id="d23f1">
+                                                      <TextField fx:id="d23f1" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d23f2">
+                                                      <TextField fx:id="d23f2" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d23f3">
+                                                      <TextField fx:id="d23f3" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
@@ -2428,17 +2428,17 @@
                                                 </HBox>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" styleClass="box">
                                                    <children>
-                                                      <TextField fx:id="d24t1">
+                                                      <TextField fx:id="d24t1" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d24t2">
+                                                      <TextField fx:id="d24t2" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d24t3">
+                                                      <TextField fx:id="d24t3" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
@@ -2450,17 +2450,17 @@
                                                 </HBox>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" styleClass="box">
                                                    <children>
-                                                      <TextField fx:id="d24t1">
+                                                      <TextField fx:id="d24f1" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d24t2">
+                                                      <TextField fx:id="d24f2" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d24t3">
+                                                      <TextField fx:id="d24f3" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
@@ -2523,17 +2523,17 @@
                                                 </HBox>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" styleClass="box">
                                                    <children>
-                                                      <TextField fx:id="d25t1">
+                                                      <TextField fx:id="d25t1" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d25t2">
+                                                      <TextField fx:id="d25t2" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d25t3">
+                                                      <TextField fx:id="d25t3" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
@@ -2545,17 +2545,17 @@
                                                 </HBox>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" styleClass="box">
                                                    <children>
-                                                      <TextField fx:id="d25f1">
+                                                      <TextField fx:id="d25f1" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d25f2">
+                                                      <TextField fx:id="d25f2" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d25f3">
+                                                      <TextField fx:id="d25f3" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
@@ -2618,17 +2618,17 @@
                                                 </HBox>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" styleClass="box">
                                                    <children>
-                                                      <TextField fx:id="d26t1">
+                                                      <TextField fx:id="d26t1" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d26t2">
+                                                      <TextField fx:id="d26t2" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d26t3">
+                                                      <TextField fx:id="d26t3" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
@@ -2640,17 +2640,17 @@
                                                 </HBox>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" styleClass="box">
                                                    <children>
-                                                      <TextField fx:id="d26f1">
+                                                      <TextField fx:id="d26f1" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d26f2">
+                                                      <TextField fx:id="d26f2" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d26f3">
+                                                      <TextField fx:id="d26f3" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
@@ -2713,17 +2713,17 @@
                                                 </HBox>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" styleClass="box">
                                                    <children>
-                                                      <TextField fx:id="d27t1">
+                                                      <TextField fx:id="d27t1" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d27t2">
+                                                      <TextField fx:id="d27t2" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d27t3">
+                                                      <TextField fx:id="d27t3" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
@@ -2735,17 +2735,17 @@
                                                 </HBox>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" styleClass="box">
                                                    <children>
-                                                      <TextField fx:id="d27f1">
+                                                      <TextField fx:id="d27f1" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d27f2">
+                                                      <TextField fx:id="d27f2" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d27f3">
+                                                      <TextField fx:id="d27f3" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
@@ -2808,17 +2808,17 @@
                                                 </HBox>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" styleClass="box">
                                                    <children>
-                                                      <TextField fx:id="d28t1">
+                                                      <TextField fx:id="d28t1" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d28t2">
+                                                      <TextField fx:id="d28t2" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d28t3">
+                                                      <TextField fx:id="d28t3" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
@@ -2830,17 +2830,17 @@
                                                 </HBox>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" styleClass="box">
                                                    <children>
-                                                      <TextField fx:id="d28f1">
+                                                      <TextField fx:id="d28f1" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d28f2">
+                                                      <TextField fx:id="d28f2" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d28f3">
+                                                      <TextField fx:id="d28f3" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
@@ -2903,17 +2903,17 @@
                                                 </HBox>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" styleClass="box">
                                                    <children>
-                                                      <TextField fx:id="d29t1">
+                                                      <TextField fx:id="d29t1" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d29t2">
+                                                      <TextField fx:id="d29t2" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d29t3">
+                                                      <TextField fx:id="d29t3" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
@@ -2925,17 +2925,17 @@
                                                 </HBox>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" styleClass="box">
                                                    <children>
-                                                      <TextField fx:id="d29f1">
+                                                      <TextField fx:id="d29f1" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d29f2">
+                                                      <TextField fx:id="d29f2" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d29f3">
+                                                      <TextField fx:id="d29f3" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
@@ -2998,17 +2998,17 @@
                                                 </HBox>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" styleClass="box">
                                                    <children>
-                                                      <TextField fx:id="d30t1">
+                                                      <TextField fx:id="d30t1" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d30t2">
+                                                      <TextField fx:id="d30t2" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d30t3">
+                                                      <TextField fx:id="d30t3" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
@@ -3020,17 +3020,17 @@
                                                 </HBox>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" styleClass="box">
                                                    <children>
-                                                      <TextField fx:id="d30f1">
+                                                      <TextField fx:id="d30f1" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d30f2">
+                                                      <TextField fx:id="d30f2" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d30f3">
+                                                      <TextField fx:id="d30f3" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
@@ -3093,17 +3093,17 @@
                                                 </HBox>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" styleClass="box">
                                                    <children>
-                                                      <TextField fx:id="d31t1">
+                                                      <TextField fx:id="d31t1" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d31t2">
+                                                      <TextField fx:id="d31t2" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d31t3">
+                                                      <TextField fx:id="d31t3" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
@@ -3115,17 +3115,17 @@
                                                 </HBox>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" styleClass="box">
                                                    <children>
-                                                      <TextField fx:id="d31f1">
+                                                      <TextField fx:id="d31f1" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d31f2">
+                                                      <TextField fx:id="d31f2" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d31f3">
+                                                      <TextField fx:id="d31f3" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
@@ -3188,17 +3188,17 @@
                                                 </HBox>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" styleClass="box">
                                                    <children>
-                                                      <TextField fx:id="d32t1">
+                                                      <TextField fx:id="d32t1" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d32t2">
+                                                      <TextField fx:id="d32t2" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d32t3">
+                                                      <TextField fx:id="d32t3" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
@@ -3210,17 +3210,17 @@
                                                 </HBox>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" styleClass="box">
                                                    <children>
-                                                      <TextField fx:id="d32f1">
+                                                      <TextField fx:id="d32f1" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d32f2">
+                                                      <TextField fx:id="d32f2" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
                                                       </TextField>
-                                                      <TextField fx:id="d32f3">
+                                                      <TextField fx:id="d32f3" text="0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>

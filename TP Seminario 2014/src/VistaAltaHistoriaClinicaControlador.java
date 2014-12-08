@@ -1,5 +1,7 @@
 import java.net.URL;
 import java.sql.Date;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.ResourceBundle;
 
 import controlador.Controlador;
@@ -164,6 +166,7 @@ public class VistaAltaHistoriaClinicaControlador implements Initializable {
 				d1p3.isSelected(), Integer.parseInt(d1t2.getText()),
 				Integer.parseInt(d1f2.getText()), "3", "1");
 
+		System.out.println(d1se3.getPosicionDiente());
 		// DIENTE 2
 
 		SeccionView d2se1 = new SeccionView(d2s1.isSelected(),
@@ -173,7 +176,7 @@ public class VistaAltaHistoriaClinicaControlador implements Initializable {
 				d2p2.isSelected(), Integer.parseInt(d2t2.getText()),
 				Integer.parseInt(d2f2.getText()), "2", "2");
 		SeccionView d2se3 = new SeccionView(d2s3.isSelected(),
-				d2p3.isSelected(), Integer.parseInt(d2t2.getText()),
+				d2p3.isSelected(), Integer.parseInt(d2t3.getText()),
 				Integer.parseInt(d2f3.getText()), "3", "2");
 
 		// DIENTE 3
@@ -187,7 +190,7 @@ public class VistaAltaHistoriaClinicaControlador implements Initializable {
 				d3p2.isSelected(), Integer.parseInt(d3t2.getText()),
 				Integer.parseInt(d3f2.getText()), "2", "3");
 		SeccionView d3se3 = new SeccionView(d3s3.isSelected(),
-				d3p3.isSelected(), Integer.parseInt(d3t2.getText()),
+				d3p3.isSelected(), Integer.parseInt(d3t3.getText()),
 				Integer.parseInt(d3f2.getText()), "3", "3");
 
 		// DIENTE 4
@@ -199,7 +202,7 @@ public class VistaAltaHistoriaClinicaControlador implements Initializable {
 				d4p2.isSelected(), Integer.parseInt(d4t2.getText()),
 				Integer.parseInt(d4f2.getText()), "2", "4");
 		SeccionView d4se3 = new SeccionView(d4s3.isSelected(),
-				d4p3.isSelected(), Integer.parseInt(d4t2.getText()),
+				d4p3.isSelected(), Integer.parseInt(d4t3.getText()),
 				Integer.parseInt(d4f2.getText()), "3", "4");
 
 		// DIENTE 5
@@ -211,7 +214,7 @@ public class VistaAltaHistoriaClinicaControlador implements Initializable {
 				d5p2.isSelected(), Integer.parseInt(d5t2.getText()),
 				Integer.parseInt(d5f2.getText()), "2", "5");
 		SeccionView d5se3 = new SeccionView(d5s3.isSelected(),
-				d5p3.isSelected(), Integer.parseInt(d5t2.getText()),
+				d5p3.isSelected(), Integer.parseInt(d5t3.getText()),
 				Integer.parseInt(d5f2.getText()), "3", "5");
 
 		// DIENTE 6
@@ -223,7 +226,7 @@ public class VistaAltaHistoriaClinicaControlador implements Initializable {
 				d6p2.isSelected(), Integer.parseInt(d6t2.getText()),
 				Integer.parseInt(d6f2.getText()), "2", "6");
 		SeccionView d6se3 = new SeccionView(d6s3.isSelected(),
-				d6p3.isSelected(), Integer.parseInt(d6t2.getText()),
+				d6p3.isSelected(), Integer.parseInt(d6t3.getText()),
 				Integer.parseInt(d6f2.getText()), "3", "6");
 
 		// DIENTE 7
@@ -235,7 +238,7 @@ public class VistaAltaHistoriaClinicaControlador implements Initializable {
 				d7p2.isSelected(), Integer.parseInt(d7t2.getText()),
 				Integer.parseInt(d7f2.getText()), "2", "7");
 		SeccionView d7se3 = new SeccionView(d7s3.isSelected(),
-				d7p3.isSelected(), Integer.parseInt(d7t2.getText()),
+				d7p3.isSelected(), Integer.parseInt(d7t3.getText()),
 				Integer.parseInt(d7f2.getText()), "3", "7");
 
 		// DIENTE 8
@@ -539,7 +542,7 @@ public class VistaAltaHistoriaClinicaControlador implements Initializable {
 				Integer.parseInt(d32f2.getText()), "3", "32");
 
 	
-
+		System.out.println(d1se3.getPosicionDiente() +" "+ d1se3.isSangrado());
 		
 
 	}
@@ -547,6 +550,11 @@ public class VistaAltaHistoriaClinicaControlador implements Initializable {
 	public void mostrarPrevisualizacion(ActionEvent event) {
 
 		this.generarPrevisualizacion(boxFichaPeriodontal).show();
+	}
+	
+	public void cancelar(ActionEvent event){
+		
+		System.out.println(Integer.parseInt(d1t3.getText()));
 	}
 
 	public void eliminarFila(ActionEvent event) {

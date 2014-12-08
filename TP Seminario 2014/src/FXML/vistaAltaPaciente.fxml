@@ -8,11 +8,11 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<StackPane fx:id="vistaAltaPaciente" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onDragDetected="#seleccionarSalir" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="VistaPrincipalControlador">
+<StackPane fx:id="vistaAltaPaciente" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="VistaAltaPacienteControlador">
    <children>
       <BorderPane fx:id="borderPaneAltaPaciente" prefHeight="500.0" prefWidth="400.0">
          <bottom>
-            <Button mnemonicParsing="false" text="REGISTRAR" BorderPane.alignment="CENTER">
+            <Button fx:id="botonAlta" mnemonicParsing="false" onAction="#agregarPaciente" text="DAR DE ALTA" BorderPane.alignment="CENTER">
                <BorderPane.margin>
                   <Insets bottom="15.0" />
                </BorderPane.margin>
@@ -29,8 +29,8 @@
                   <TextField fx:id="tDomicilio" maxWidth="300.0" prefWidth="300.0" promptText="Domicilio" />
                   <TextField fx:id="tTelefono" maxWidth="300.0" prefWidth="300.0" promptText="Teléfono" />
                   <TextField fx:id="tEmail" maxWidth="300.0" prefWidth="300.0" promptText="E-mail" />
-                  <DatePicker fx:id="calendario" maxWidth="300.0" prefWidth="300.0" promptText="Fecha de nacimiento" />
-                  <ComboBox fx:id="genero" maxHeight="200.0" maxWidth="300.0" prefWidth="300.0" promptText="Género" />
+                  <DatePicker fx:id="tNacimiento" maxWidth="300.0" prefWidth="300.0" promptText="Fecha de nacimiento" />
+                  <ComboBox fx:id="comboGenero" maxHeight="200.0" maxWidth="300.0" prefWidth="300.0" promptText="Género" />
                   <TextField fx:id="tObraSocial" maxWidth="300.0" prefWidth="300.0" promptText="Obra social" />
                   <TextField fx:id="tPlan" maxWidth="300.0" prefWidth="300.0" promptText="Plan" />
                </children>

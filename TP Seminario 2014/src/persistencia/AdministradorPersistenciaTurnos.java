@@ -111,7 +111,7 @@ public class AdministradorPersistenciaTurnos extends AdministradorPersistencia {
 		Turno turno = null;
 		try{
 			Connection con = Conexion.connect();
-			PreparedStatement ps = con.prepareStatement("SELECT * FROM "+super.getDatabase()+"dbo.Turnos WHERE matricula like ? AND dni like ? AND fecha = ? AND activo=1");
+			PreparedStatement ps = con.prepareStatement("SELECT * FROM "+super.getDatabase()+".dbo.Turnos WHERE matricula like ? AND dni like ? AND fecha = ? AND activo=1");
 			ps.setString(1, matricula);
 			ps.setString(2, dni);
 			ps.setTimestamp(3, fecha);

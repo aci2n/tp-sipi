@@ -1,24 +1,24 @@
 
-import implementacion.ItemPrediccion;
-import implementacion.Prediccion;
+import implementacion.Estadistica;
+import implementacion.EstadisticaHistoriaClinica;
 
+import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.ResourceBundle;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.chart.BarChart;
-import javafx.scene.chart.CategoryAxis;
-import javafx.scene.chart.XYChart;
+import javafx.scene.Node;
+import javafx.scene.chart.PieChart;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
 import controlador.Controlador;
 
 public class VistaAnalisisPredictivoControlador implements Initializable {
@@ -32,56 +32,71 @@ public class VistaAnalisisPredictivoControlador implements Initializable {
 	@FXML
 	private Button botonGraficar;
 	@FXML
-	private BarChart<String, Integer> grafico;
-	@FXML
-	private CategoryAxis ejeX;
-	@FXML
-	private Label labelCantidadPacientes;
-	
-	private ObservableList<String> observablePredicciones;
-	private ObservableList<XYChart.Data<String,Integer>> datos;
-	private Collection<Prediccion> predicciones = new ArrayList<Prediccion>();
-	XYChart.Series<String,Integer> series = new XYChart.Series<String,Integer>();
+	private VBox vBoxGrafico;
+
+	private Estadistica estadistica;
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		ejeX.setCategories(FXCollections.<String> observableArrayList(Controlador.getInstancia().obtenerSintomas()));
-		grafico.setAnimated(false);
+		
 	}
 
 	public void realizarAnalisis(ActionEvent event) {
-		predicciones = Controlador.getInstancia().analisisPredictivoHistoriaClinica(textFiltrarTabla.getText());
-		observablePredicciones = FXCollections.observableArrayList();
-		comboPredicciones.getItems().clear();
-		for (Prediccion p : predicciones)
-			observablePredicciones.add(p.getSintomaBase());
-		comboPredicciones.setItems(observablePredicciones);		
+		String dni = textFiltrarTabla.getText();
+		if (dni != null && !dni.trim().equals("")) {
+			Estadistica estadistica = Controlador.getInstancia().analisisPredictivoHistoriaClinica(dni); 
+			if (estadistica != null) {
+				ObservableList<String> observableSintomas = FXCollections.observableArrayList();
+				observableSintomas.setAll(estadistica.getSintomasBase());
+				
+				comboPredicciones.getItems().clear();
+				comboPredicciones.setItems(observableSintomas);
+				
+				this.estadistica = estadistica;
+			}
+		}		
 	}
 		
 	public void mostrarPrediccionDeSintoma (){	
-		if (comboPredicciones.getValue()!=null && !comboPredicciones.getValue().equals("Sintomas detectados")){
-			
-			grafico.getData().clear();
-			
-			Prediccion prediccion = null;
-			
-			for (Prediccion p : predicciones)
-				if (p.getSintomaBase().equals(comboPredicciones.getValue())){
-					prediccion = p;
-					break;
-				}
-			
-			datos = FXCollections.observableArrayList();
-								
-			for (ItemPrediccion i : prediccion.getItemsPrediccion()){
-				datos.add(new XYChart.Data<String, Integer>(i.getSintomaAnalisis(),i.getCantidad()));
-			}
-			
-			series = new XYChart.Series<String,Integer>(datos);
-			
-			labelCantidadPacientes.setText("Analisis realizado sobre las historias clinicas de "+prediccion.getTotal()+" pacientes que presentaron el mismo sintoma.");
-			
-			grafico.getData().add(series);
+		String sintomaBase = comboPredicciones.getValue();
+		if (sintomaBase != null && !sintomaBase.equals("Sintomas detectados")){
+			 try {
+		            setVista((Node) FXMLLoader.load(VistaNavegador.class.getResource(VistaNavegador.VISTA_15)));
+		            StackPane pane = (StackPane) vBoxGrafico.getChildren().get(0);
+		            PieChart grafico = (PieChart) pane.getChildren().get(0);
+		            ObservableList<PieChart.Data> data = FXCollections.observableArrayList();
+		            
+		            for (EstadisticaHistoriaClinica estadisticaHistoria : estadistica.getEstadisticasPaciente()) {
+		            	if (estadisticaHistoria.getSintomasPresentados().contains(sintomaBase)) {
+		            		for (String sintomaPresentado : estadisticaHistoria.getSintomasPresentados()) {
+		            			if (!sintomaPresentado.equals(sintomaBase)) {
+		            				añadirDatos(data, sintomaPresentado);
+		            			}
+		            		}
+		            	}
+		            }
+		            
+		            grafico.setData(data);
+		        } 
+			 catch (IOException e) {
+		            e.printStackTrace();
+		        }			
 		}
+		
+	}
+	
+	public void añadirDatos(ObservableList<PieChart.Data> data, String sintomaPresentado) {
+		for (PieChart.Data dato : data) {
+			if (dato.getName().equals(sintomaPresentado)) {
+				dato.setPieValue(dato.getPieValue() + 1);
+				return;
+			}
+		}
+		PieChart.Data dato = new PieChart.Data(sintomaPresentado, 1);
+		data.add(dato);
+	}
+	
+	public void setVista(Node node) {
+		vBoxGrafico.getChildren().setAll(node);
 	}
 }

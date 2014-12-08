@@ -2,12 +2,13 @@ package controlador;
 
 import implementacion.Cara;
 import implementacion.Diente;
+import implementacion.Estadistica;
+import implementacion.EstadisticaHistoriaClinica;
 import implementacion.FichaPeriodontal;
 import implementacion.HistoriaClinica;
 import implementacion.Observacion;
 import implementacion.Odontologo;
 import implementacion.Paciente;
-import implementacion.Prediccion;
 import implementacion.Seccion;
 import implementacion.Turno;
 
@@ -327,27 +328,31 @@ public class Controlador {
 	
 	//ANALISIS PREDICTIVO
 	
-	public Collection<Prediccion> analisisPredictivoHistoriaClinica(String dni) {
+	public Estadistica analisisPredictivoHistoriaClinica(String dni) {
+		Estadistica estadistica = null;
 		HistoriaClinica historia = obtenerHistoriaClinica(dni);
-		Collection<Prediccion> predicciones = new ArrayList<Prediccion>();
-		if (historia != null){
-			Collection<String> sintomasDetectados = historia.detectarSintomas(sintomas);
-			Prediccion prediccion;
-			Collection<HistoriaClinica> historiasSinContarLaAnalizada = new ArrayList<HistoriaClinica>();
-			historiasSinContarLaAnalizada.addAll(historiasClinicas);
-			historiasSinContarLaAnalizada.remove(historia);
-			for (String sintoma : sintomasDetectados){
-				prediccion = new Prediccion(sintoma);
-				for (HistoriaClinica h : historiasSinContarLaAnalizada)
-					if (h.tenesElSintoma(sintoma)){
-						for (String sintomaAnalisis : h.detectarSintomas(sintomas))
-							prediccion.agregarItemPrediccion(sintomaAnalisis);
-						prediccion.aumentarCantidad();
+		if (historia != null) {
+			Collection<String> sintomasPresentados = historia.detectarSintomas(sintomas);
+			if (!sintomasPresentados.isEmpty()) {
+				estadistica = new Estadistica();
+				estadistica.setSintomasBase(sintomasPresentados);
+				for (HistoriaClinica historiaClinica : historiasClinicas) {
+					boolean presentaSintoma = false;
+					for (String sintomaPresentado : sintomasPresentados) {
+						if (historiaClinica.tenesElSintoma(sintomaPresentado)) {
+							presentaSintoma = true;
+							break;
+						}
 					}
-				predicciones.add(prediccion);
-			}				
+					if (presentaSintoma) {
+						EstadisticaHistoriaClinica estadisticaHistoria = new EstadisticaHistoriaClinica();
+						estadisticaHistoria.setSintomasPresentados(historia.detectarSintomas(sintomas));
+						estadistica.agregarEstadisticaHistoriaClinica(estadisticaHistoria);
+					}
+				}
+			}
 		}
-		return predicciones;
+		return estadistica;
 	}
 	
 	//UTILITARIAS

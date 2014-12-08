@@ -31,7 +31,7 @@
                <children>
                   <Pane prefHeight="88.0" prefWidth="154.0">
                      <children>
-                        <TextField fx:id="textDNI" layoutX="21.0" layoutY="44.0" onInputMethodTextChanged="#obtenerObservaciones" prefHeight="25.0" prefWidth="116.0" />
+                        <TextField fx:id="textDNI" layoutX="21.0" layoutY="44.0" prefHeight="25.0" prefWidth="116.0" />
                         <Label layoutX="69.0" layoutY="6.0" text="DNI" />
                      </children>
                   </Pane>
@@ -75,7 +75,7 @@
             </TableView>
             <HBox fx:id="box1" alignment="CENTER" spacing="10.0">
                <children>
-                  <Button fx:id="botonEliminarFila" mnemonicParsing="false" text="Eliminar Fila" />
+                  <Button fx:id="botonEliminarFila" mnemonicParsing="false" onAction="#bajaObservacion" text="Eliminar Fila" />
                   <Button fx:id="botonLimpiarTabla" mnemonicParsing="false" text="Limpiar Tabla" />
                </children>
                <VBox.margin>

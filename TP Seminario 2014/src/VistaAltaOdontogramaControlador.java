@@ -1,14 +1,20 @@
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import controlador.Controlador;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.ContextMenu;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseButton;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
+
+import com.sun.glass.events.MouseEvent;
 
 public class VistaAltaOdontogramaControlador implements Initializable {
 
@@ -52,10 +58,86 @@ public class VistaAltaOdontogramaControlador implements Initializable {
 
 	public void buscaHistoriaClinica(ActionEvent event) {
 
-		if (Controlador.getInstancia().obtenerHistoriaClinicaView(
-				tDni.getText()) != null) {
-			boxOdontograma.setDisable(false);
-		}
+		// if (Controlador.getInstancia().obtenerHistoriaClinicaView(
+		// tDni.getText()) != null) {
+		// boxOdontograma.setDisable(false);
+		// }
+		boxOdontograma.setDisable(false);
 	}
 
+	public void agregarEstado(ActionEvent event) {
+		// Button was clicked, change color
+
+		final Button b = ((Button) event.getTarget());
+		
+		
+		ContextMenu contextMenu = new ContextMenu();
+		
+		MenuItem carie = new MenuItem("Carie");
+		MenuItem corona = new MenuItem("Corona");
+		MenuItem fractura = new MenuItem("Fractura");
+		MenuItem ausente = new MenuItem("Ausente");
+		MenuItem infeccion = new MenuItem("Infección");
+		MenuItem enfermedadPeriodontal = new MenuItem("Enfermedad Periodontal");
+		
+		contextMenu.getItems().addAll(carie, corona, fractura, ausente, infeccion, enfermedadPeriodontal);
+		
+		carie.setOnAction(new EventHandler<ActionEvent>() {
+		    @Override
+		    public void handle(ActionEvent event) {
+		    	b.setStyle("-fx-background-color: #16a085");
+		    	b.setText("Carie");
+		    }
+		});
+		
+
+		corona.setOnAction(new EventHandler<ActionEvent>() {
+		    @Override
+		    public void handle(ActionEvent event) {
+		    	b.setStyle("-fx-background-color:#2980b9");
+		    	b.setText("Corona");
+		    }
+		});
+		
+		ausente.setOnAction(new EventHandler<ActionEvent>() {
+		    @Override
+		    public void handle(ActionEvent event) {
+		    	b.setStyle("-fx-background-color:#34495e");
+		    	b.setText("Ausente");
+		    }
+		});
+		
+		fractura.setOnAction(new EventHandler<ActionEvent>() {
+		    @Override
+		    public void handle(ActionEvent event) {
+		    	b.setStyle("-fx-background-color:#e74c3c");
+		    	b.setText("Fractura");
+		    }
+		});
+		
+		infeccion.setOnAction(new EventHandler<ActionEvent>() {
+		    @Override
+		    public void handle(ActionEvent event) {
+		    	b.setStyle("-fx-background-color:#f1c40f");
+		    	b.setText("Infección");
+		    }
+		});
+		
+		enfermedadPeriodontal.setOnAction(new EventHandler<ActionEvent>() {
+		    @Override
+		    public void handle(ActionEvent event) {
+		    	b.setStyle("-fx-background-color:#c0392b");
+		    	b.setText("Enfermedad Periodontal");
+		    }
+		});
+
+
+		//((Button) event.getTarget()).setStyle("-fx-background-color:PINK");
+		((Button) event.getTarget()).setContextMenu(contextMenu);
+	}
+	
+	public void guardarOdontograma(ActionEvent event){
+		
+		System.out.println(this.d1b1.getText());
+	}
 }

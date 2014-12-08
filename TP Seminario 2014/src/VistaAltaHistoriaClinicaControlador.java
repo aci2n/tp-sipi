@@ -144,7 +144,7 @@ public class VistaAltaHistoriaClinicaControlador implements Initializable {
 				imagen.getHeight());
 
 		Stage ventanaPrevisualizacion = new Stage();
-		ventanaPrevisualizacion.setTitle("Previsualización");
+		ventanaPrevisualizacion.setTitle("Previsualizaciï¿½n");
 		ventanaPrevisualizacion.setScene(snapScene);
 		ventanaPrevisualizacion.initStyle(StageStyle.UNIFIED);
 
@@ -563,7 +563,7 @@ public class VistaAltaHistoriaClinicaControlador implements Initializable {
 		
 		// ASIGNA LA FICHA A LA HISTORIA CLINICA
 		
-		Controlador.getInstancia().asignarFichaAHistoria(tDni.getText(), ficha.getOdontologo().getMatricula(), ficha);
+		Controlador.getInstancia().asignarFichaAHistoria(tDni.getText(), ficha);
 
 	}
 

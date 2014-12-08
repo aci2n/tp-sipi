@@ -124,6 +124,7 @@ public class VistaAltaHistoriaClinicaControlador implements Initializable {
 		tDni.setText("");
 		tDescripcion.setText("");
 
+		
 	}
 
 	/* METODOS */

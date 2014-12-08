@@ -39,7 +39,9 @@ public class VistaAltaHistoriaClinicaControlador implements Initializable {
 	@FXML
 	private Label datosPaciente;
 	@FXML
-	private TextField filtrarFicha, tDni, tDescripcion;
+	private TextField filtrarFicha, tDni;
+	@FXML
+	private TextArea tDescripcion;
 	@FXML
 	private Button botonBuscar;
 	@FXML

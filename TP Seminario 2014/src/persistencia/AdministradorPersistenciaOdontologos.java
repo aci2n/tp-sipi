@@ -85,13 +85,14 @@ public class AdministradorPersistenciaOdontologos extends
 	}
 	
 	public Odontologo buscarOdontologo(String matricula){
-		Odontologo odon = new Odontologo();
+		Odontologo odon = null;
 		try{
 			Connection con = Conexion.connect();
 			PreparedStatement ps = con.prepareStatement("SELECT * FROM "+super.getDatabase()+".dbo.Odontologos WHERE matricula like ? AND activo=1");
 			ps.setString(1, matricula);
 			ResultSet rs = ps.executeQuery();
 			if (rs.next()){
+				odon = new Odontologo();
 				odon.setMatricula(rs.getString("matricula"));
 				odon.setApellido(rs.getString("apellido"));
 				odon.setNombre(rs.getString("nombre"));

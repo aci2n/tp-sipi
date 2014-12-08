@@ -54,7 +54,6 @@ public class VistaAltaOdontogramaControlador implements Initializable {
 
 		if (Controlador.getInstancia().obtenerHistoriaClinicaView(
 				tDni.getText()) != null) {
-
 			boxOdontograma.setDisable(false);
 		}
 	}

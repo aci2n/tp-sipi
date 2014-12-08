@@ -8,6 +8,7 @@ import implementacion.Odontologo;
 import implementacion.Paciente;
 import implementacion.Prediccion;
 import implementacion.Proyeccion;
+import implementacion.Seccion;
 import implementacion.Turno;
 
 import java.sql.Date;
@@ -27,6 +28,7 @@ import views.HistoriaClinicaView;
 import views.OdontogramaView;
 import views.OdontologoView;
 import views.PacienteView;
+import views.SeccionView;
 import views.TurnoView;
 
 public class Controlador {
@@ -100,6 +102,7 @@ public class Controlador {
 			for (EspecialidadView espView : odontologoView.getEspecialidades()) {
 				odontologo.agregarEspecialidad(espView.getDescripcion());
 			}
+			odontologos.add(odontologo);
 		}
 	}
 	
@@ -129,6 +132,14 @@ public class Controlador {
 		}
 	}
 	
+	public void asignarFichaAHistoria(String dni, String matricula){
+		HistoriaClinica historia = obtenerHistoriaClinica(dni);
+		Odontologo odontologo = obtenerOdontologo(matricula);
+		if (historia != null && odontologo != null){
+			historia.asignarFichaPeriodontal(odontologo);
+		}
+	}
+	
 	//ACTUALIZACIONES
 	
 	public void actualizarHistoriaClinica(String dni, String matricula, Date fecha, String descripcion) {
@@ -146,8 +157,15 @@ public class Controlador {
 			historia.actualizarOdontograma(odontograma.getIdOdontograma(), getFechaActualSQL(), odontologo, construirDientesDesdeView(odontograma.getDientes()));
 		}
 	}
-		
 	
+	public void actualizarFicha(String dni, FichaPeriodontalView ficha){
+		HistoriaClinica historia = obtenerHistoriaClinica(dni);
+		Odontologo odontologo = obtenerOdontologo(ficha.getOdontologo().getMatricula());
+		if (historia != null && odontologo != null){
+			historia.actualizarFichaPeriodontal(odontologo, crearSeccionesDesdeView(ficha.getSecciones()));
+		}
+	}		
+
 	//OBTENER OBJETO
 	
 	public Odontologo obtenerOdontologo(String matricula) {
@@ -338,5 +356,19 @@ public class Controlador {
 			caras.add(cara);
 		}
 		return caras;
+	}
+	
+	private Collection<Seccion> crearSeccionesDesdeView(Collection<SeccionView> seccionesView) {
+		Collection<Seccion> secciones = new ArrayList<Seccion>();
+		Seccion seccion;
+		for (SeccionView s : seccionesView){
+			seccion = new Seccion(s.getPosicionDiente(),s.getPosicionSeccion());
+			seccion.setMargen(s.getMargen());
+			seccion.setPlaca(s.isPlaca());
+			seccion.setProfundidad(s.getProfundidad());
+			seccion.setSangrado(s.isSangrado());
+			secciones.add(seccion);
+		}
+		return secciones;
 	}
 }

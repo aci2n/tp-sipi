@@ -13,6 +13,7 @@ public class Cara {
 	
 	public Cara(String posicion){
 		this.posicion=posicion;
+		this.estado="-";
 	}
 	
 	public Cara() {

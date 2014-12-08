@@ -8,7 +8,6 @@ import persistencia.AdministradorPersistenciaFichaPeriodontal;
 import persistencia.AdministradorPersistenciaHistoriasClinicas;
 import persistencia.AdministradorPersistenciaObservaciones;
 import persistencia.AdministradorPersistenciaOdontograma;
-import views.DienteView;
 import views.HistoriaClinicaView;
 import views.ObservacionView;
 import views.OdontogramaView;
@@ -157,6 +156,14 @@ public class HistoriaClinica {
 			if (o.sosElOdontograma(idOdontograma))
 				return o;
 		return null;
+	}
+
+	public void actualizarFichaPeriodontal(Odontologo odontologo, Collection<Seccion> secciones) {
+		if (this.ficha!=null){
+			ficha.setOdontologo(odontologo);
+			ficha.setSecciones(secciones);
+			AdministradorPersistenciaFichaPeriodontal.getInstancia().update(ficha,this);
+		}
 	}
 	
 

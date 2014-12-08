@@ -60,27 +60,20 @@ public class VistaAnalisisPredictivoControlador implements Initializable {
 	public void mostrarPrediccionDeSintoma (){	
 		String sintomaBase = comboPredicciones.getValue();
 		if (sintomaBase != null && !sintomaBase.equals("Sintomas detectados")){
-			 try {
-		            setVista((Node) FXMLLoader.load(VistaNavegador.class.getResource(VistaNavegador.VISTA_15)));
-		            StackPane pane = (StackPane) vBoxGrafico.getChildren().get(0);
-		            PieChart grafico = (PieChart) pane.getChildren().get(0);
-		            ObservableList<PieChart.Data> data = FXCollections.observableArrayList();
-		            
-		            for (EstadisticaHistoriaClinica estadisticaHistoria : estadistica.getEstadisticasPaciente()) {
-		            	if (estadisticaHistoria.getSintomasPresentados().contains(sintomaBase)) {
-		            		for (String sintomaPresentado : estadisticaHistoria.getSintomasPresentados()) {
-		            			if (!sintomaPresentado.equals(sintomaBase)) {
-		            				anadirDatos(data, sintomaPresentado);
-		            			}
-		            		}
-		            	}
-		            }
-		            
-		            grafico.setData(data);
-		        } 
-			 catch (IOException e) {
-		            e.printStackTrace();
-		        }			
+			PieChart grafico = (PieChart) vBoxGrafico.getChildren().get(0);
+			ObservableList<PieChart.Data> data = FXCollections.observableArrayList();
+			
+			for (EstadisticaHistoriaClinica estadisticaHistoria : estadistica.getEstadisticasPaciente()) {
+				if (estadisticaHistoria.getSintomasPresentados().contains(sintomaBase)) {
+					for (String sintomaPresentado : estadisticaHistoria.getSintomasPresentados()) {
+						if (!sintomaPresentado.equals(sintomaBase)) {
+							anadirDatos(data, sintomaPresentado);
+						}
+					}
+				}
+			}
+			
+			grafico.setData(data);			
 		}
 		
 	}
@@ -94,9 +87,5 @@ public class VistaAnalisisPredictivoControlador implements Initializable {
 		}
 		PieChart.Data dato = new PieChart.Data(sintomaPresentado, 1);
 		data.add(dato);
-	}
-	
-	public void setVista(Node node) {
-		vBoxGrafico.getChildren().setAll(node);
 	}
 }

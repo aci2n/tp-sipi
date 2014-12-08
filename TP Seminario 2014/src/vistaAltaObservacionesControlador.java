@@ -64,7 +64,7 @@ public class vistaAltaObservacionesControlador implements Initializable {
 	
 	private void obtenerObservaciones() {
 
-		tablaObservaciones.getItems().addAll(this.generarObservacion());
+		tablaObservaciones.setItems(this.generarObservacion());
 	}
 	
 	public void limpiarTabla(ActionEvent event) {
@@ -77,16 +77,15 @@ public class vistaAltaObservacionesControlador implements Initializable {
 		OdontologoView odontologo = comboOdontologos2.getValue();
 		String descripcion = textObservaciones.getText();
 		
-		obtenerObservaciones();
-		
 		if (dni != null && !dni.trim().equals("") && descripcion != null && !descripcion.trim().equals("") && odontologo != null) {
 			ObservacionView view = new ObservacionView();
 			view.setDescripcion(descripcion);
 			view.setFecha(new Timestamp(Calendar.getInstance().getTime().getTime()));
 			view.setOdontologo(odontologo);
 			Controlador.getInstancia().altaObservacion(dni, view);
-			tablaObservaciones.getItems().add(view);
 		}
+		
+		obtenerObservaciones();
 	}
 	
 	public void bajaObservacion(ActionEvent event) {
@@ -94,7 +93,8 @@ public class vistaAltaObservacionesControlador implements Initializable {
 		ObservacionView view = tablaObservaciones.getSelectionModel().getSelectedItem();
 		if (view != null && dni != null && !dni.trim().equals("")) {
 			Controlador.getInstancia().bajaObservacion(dni, view);
-			tablaObservaciones.getItems().remove(view);
+
+			obtenerObservaciones();
 		}
 	}
 	

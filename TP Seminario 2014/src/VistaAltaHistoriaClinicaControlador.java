@@ -31,8 +31,7 @@ import javafx.stage.StageStyle;
 
 public class VistaAltaHistoriaClinicaControlador implements Initializable {
 
-	private ObservableList<ObservacionView> observaciones = FXCollections
-			.observableArrayList();
+	
 	@FXML
 	private BorderPane panelFichaPeriodontal;
 	@FXML
@@ -91,17 +90,9 @@ public class VistaAltaHistoriaClinicaControlador implements Initializable {
 		// comboOdontologos.getItems().addAll("Odontologo 3");
 		// comboOdontologos.getItems().addAll("Odontologo 4");
 
-		comboOdontologos2.getItems().addAll("Odontologo 1");
 
-		columnaOdontologo
-				.setCellValueFactory(new PropertyValueFactory<ObservacionView, String>(
-						"odontologo"));
-		columnaFecha
-				.setCellValueFactory(new PropertyValueFactory<ObservacionView, String>(
-						"fecha"));
-		columnaDescripcion
-				.setCellValueFactory(new PropertyValueFactory<ObservacionView, String>(
-						"descripcion"));
+
+		
 
 		d15p1.setSelected(true);
 	}
@@ -109,15 +100,7 @@ public class VistaAltaHistoriaClinicaControlador implements Initializable {
 	/* METODOS */
 
 	@SuppressWarnings("deprecation")
-	private ObservableList<ObservacionView> generarObservacion() {
-
-		// CREA Y RETORNA LA LISTA QUE CONTIENE LAS OBSERVACIONES
-		observaciones = FXCollections.observableArrayList();
-
-		ObservacionView o = new ObservacionView();
-
-		return observaciones;
-	}
+	
 
 	private Stage generarPrevisualizacion(Node node) {
 
@@ -153,20 +136,14 @@ public class VistaAltaHistoriaClinicaControlador implements Initializable {
 		datosPaciente.setText(filtrarFicha.getText());
 	}
 
-	public void agregarObservacion(ActionEvent event) {
-
-		tablaObservaciones.getItems().addAll(this.generarObservacion());
-	}
+	
 
 	public void mostrarPrevisualizacion(ActionEvent event) {
 
 		this.generarPrevisualizacion(boxFichaPeriodontal).show();
 	}
 
-	public void limpiarTabla(ActionEvent event) {
-
-		tablaObservaciones.getItems().clear();
-	}
+	
 
 	public void eliminarFila(ActionEvent event) {
 

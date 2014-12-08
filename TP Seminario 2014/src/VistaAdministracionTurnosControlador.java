@@ -40,9 +40,9 @@ public class VistaAdministracionTurnosControlador implements Initializable {
 	@SuppressWarnings("deprecation")
 	public void agregarTurno(ActionEvent event) {
 		if (tDni.getText()!=""){
-			if(comboOdontologos.getValue().compareTo("Odontologo")!=0 && comboOdontologos.getValue().compareTo("")!=0){
+			if (comboOdontologos.getValue()!=null){
 				if(fecha.getValue()!=null){
-					if(comboHora.getValue().compareTo("Hora")!=0 && comboHora.getValue().compareTo("")!=0){
+					if(comboHora.getValue()!=null){
 						if(tDescripcion.getText().compareTo("")!=0 && tDescripcion.getText().compareTo("Descripcion")!=0){
 							Controlador con = Controlador.getInstancia();
 							OdontologoView ov = new OdontologoView();
@@ -59,27 +59,29 @@ public class VistaAdministracionTurnosControlador implements Initializable {
 								// TODO Auto-generated catch block
 								e.printStackTrace();
 							}
-							
-							pv = con.obtenerPacienteView(tDni.getText());
-							ov = con.obtenerOdontologoView(comboOdontologos.getValue());
-							tv.setPaciente(pv);
-							tv.setOdontologo(ov);
-							tv.setFecha(timestamp);
-							tv.setDescripcion(tDescripcion.getText());
-	
-							con.altaTurno(tv);
-							
-							Stage dialogStage = new Stage();
-							dialogStage.initModality(Modality.WINDOW_MODAL);
-							dialogStage.setScene(new Scene(VBoxBuilder.create().
-							    children(new Text("Turno registrado correctamente")).
-							    alignment(Pos.CENTER).padding(new Insets(5)).build()));
-							dialogStage.show();
+							if ((pv = con.obtenerPacienteView(tDni.getText()))!=null){
+								if ((ov = con.obtenerOdontologoView(comboOdontologos.getValue()))!=null){
+									tv.setPaciente(pv);
+									tv.setOdontologo(ov);
+									tv.setFecha(timestamp);
+									tv.setDescripcion(tDescripcion.getText());
+			
+									con.altaTurno(tv);
+									
+									Stage dialogStage = new Stage();
+									dialogStage.initModality(Modality.WINDOW_MODAL);
+									dialogStage.setScene(new Scene(VBoxBuilder.create().
+									    children(new Text("Turno registrado correctamente")).
+									    alignment(Pos.CENTER).padding(new Insets(5)).build()));
+									dialogStage.show();
+								}
+							}
  						}
 					}
 				}
 			}
 		}
+		
 
 	}
 

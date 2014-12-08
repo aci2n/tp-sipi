@@ -29,24 +29,22 @@ public class VistaAnalisisPredictivoControlador implements Initializable {
 	private TextField textFiltrarTabla;
 	@FXML
 	private ComboBox<String> comboPredicciones;
-	//private ObservableList<String> observablePredicciones = FXCollections.observableArrayList();
+	@FXML
+	private Button botonGraficar;
+	private ObservableList<String> observablePredicciones = FXCollections.observableArrayList();
 	private Collection<Prediccion> predicciones = new ArrayList<Prediccion>();
 		
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		grafico.setVisible(false);
+		grafico.setVisible(true);
 	}
 
-	/* EVENT HANDLERS */
-
 	public void realizarAnalisis(ActionEvent event) {
-
-		// SE GENERA EL ANALISIS PASANDOLE LOS DATOS ESTADISTICOS
-		
-		predicciones = Controlador.getInstancia().analisisPredictivoHistoriaClinica(textFiltrarTabla.getText());
-				
+		predicciones = Controlador.getInstancia().analisisPredictivoHistoriaClinica(textFiltrarTabla.getText());	
+		comboPredicciones.getItems().clear();
 		for (Prediccion p : predicciones)
-			comboPredicciones.getItems().add(p.getSintomaBase());
+			observablePredicciones.add(p.getSintomaBase());
+		comboPredicciones.setItems(observablePredicciones);		
 	}
 		
 	public void mostrarPrediccionDeSintoma (){		

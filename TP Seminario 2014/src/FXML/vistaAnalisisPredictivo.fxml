@@ -51,7 +51,8 @@
                         <Insets left="5.0" right="5.0" />
                      </padding>
                   </Label>
-                  <ComboBox fx:id="comboSintomas" layoutX="9.0" layoutY="67.0" onAction="#mostrarPrediccionDeSintoma" prefHeight="22.0" prefWidth="406.0" promptText="Sintomas detectados" />
+                  <ComboBox fx:id="comboPredicciones" layoutX="9.0" layoutY="67.0" prefHeight="22.0" prefWidth="406.0" promptText="Sintomas detectados" />
+                  <Button fx:id="botonGraficar" layoutX="426.0" layoutY="67.0" mnemonicParsing="false" onAction="#mostrarPrediccionDeSintoma" prefHeight="22.0" prefWidth="93.0" text="Graficar" />
                </children>
                <padding>
                   <Insets bottom="15.0" />

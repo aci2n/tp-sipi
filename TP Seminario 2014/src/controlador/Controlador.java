@@ -133,11 +133,14 @@ public class Controlador {
 		}
 	}
 	
-	public void asignarFichaAHistoria(String dni, String matricula){
+	public void asignarFichaAHistoria(String dni, String matricula, FichaPeriodontalView ficha){
 		HistoriaClinica historia = obtenerHistoriaClinica(dni);
 		Odontologo odontologo = obtenerOdontologo(matricula);
 		if (historia != null && odontologo != null){
-			historia.asignarFichaPeriodontal(odontologo);
+			if (historia.getFicha() == null)
+				historia.asignarFichaPeriodontal(odontologo);
+			else
+				historia.actualizarFichaPeriodontal(odontologo, crearSeccionesDesdeView(ficha.getSecciones()));
 		}
 	}
 	
@@ -148,6 +151,8 @@ public class Controlador {
 			historia.agregarObservacion(odontologo, observacion.getFecha(), observacion.getDescripcion());
 		}
 	}
+	
+	//BAJAS
 	
 	public void bajaObservacion(String dni, ObservacionView view) {
 		HistoriaClinica historia = obtenerHistoriaClinica(dni);
@@ -178,14 +183,7 @@ public class Controlador {
 			historia.actualizarOdontograma(odontograma.getIdOdontograma(), odontograma.getFecha(), odontologo, construirDientesDesdeView(odontograma.getDientes()));
 		}
 	}
-	
-	public void actualizarFicha(String dni, FichaPeriodontalView ficha){
-		HistoriaClinica historia = obtenerHistoriaClinica(dni);
-		Odontologo odontologo = obtenerOdontologo(ficha.getOdontologo().getMatricula());
-		if (historia != null && odontologo != null){
-			historia.actualizarFichaPeriodontal(odontologo, crearSeccionesDesdeView(ficha.getSecciones()));
-		}
-	}		
+		
 
 	//OBTENER OBJETO
 	

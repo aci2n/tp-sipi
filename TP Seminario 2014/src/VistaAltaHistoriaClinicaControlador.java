@@ -157,7 +157,6 @@ public class VistaAltaHistoriaClinicaControlador implements Initializable {
 
 	}
 
-	@SuppressWarnings("unused")
 	public void guardarFicha(ActionEvent event) {
 
 		Collection<SeccionView> seccionesView = new ArrayList<SeccionView>();

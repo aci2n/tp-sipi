@@ -1,16 +1,8 @@
 import java.net.URL;
-import java.sql.Date;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.ResourceBundle;
 
-import controlador.Controlador;
-import views.FichaPeriodontalView;
-import views.ObservacionView;
-import views.PacienteView;
-import views.SeccionView;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -27,15 +19,18 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleButton;
-import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
 import javafx.scene.image.WritableImage;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import views.FichaPeriodontalView;
+import views.ObservacionView;
+import views.OdontologoView;
+import views.SeccionView;
+import controlador.Controlador;
 
 public class VistaAltaHistoriaClinicaControlador implements Initializable {
 
@@ -115,6 +110,13 @@ public class VistaAltaHistoriaClinicaControlador implements Initializable {
 		panelFichaPeriodontal.setDisable(true);
 		panelFichaPeriodontal.getStylesheets().setAll(
 				getClass().getResource("historiaClinica.css").toExternalForm());
+		
+		ObservableList<String> odontologos = FXCollections.observableArrayList();
+		
+		for(OdontologoView o : Controlador.getInstancia().obtenerOdontologosView())
+			odontologos.add(o.getMatricula());
+		
+		comboOdontologos.getItems().addAll(odontologos);
 
 	}
 

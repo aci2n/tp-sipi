@@ -39,8 +39,10 @@ public class VistaAltaHistoriaClinicaControlador implements Initializable {
 	@FXML
 	private Label datosPaciente;
 	@FXML
-	private TextField filtrarFicha, tDni, tDescripcion;
+	private TextField filtrarFicha, tDni;
 	@FXML
+	private TextArea tDescripcion;
+	@FXML 
 	private Button botonBuscar;
 	@FXML
 	private Button botonCancelar, botonEliminarFila, botonLimpiarTabla;
@@ -563,7 +565,7 @@ public class VistaAltaHistoriaClinicaControlador implements Initializable {
 
 	public void cancelar(ActionEvent event) {
 
-		System.out.println(Integer.parseInt(d1t3.getText()));
+		//System.out.println(Integer.parseInt(d1t3.getText()));
 	}
 
 }

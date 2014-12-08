@@ -9,14 +9,14 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 /**
- * Clase main de la aplicación.
+ * Clase main de la aplicaciï¿½n.
  */
 public class Main extends Application {
 
 	@Override
 	public void start(Stage stage) throws Exception {
 
-		stage.setTitle("Sistema Odontológico");
+		stage.setTitle("Sistema Odontolï¿½gico");
 		stage.setScene(createScene(loadMainPane()));
 		stage.initStyle(StageStyle.DECORATED);
 		stage.setMaximized(true);
@@ -41,6 +41,7 @@ public class Main extends Application {
 
 		VistaPrincipalControlador mainController = loader.getController();
 
+		
 		VistaNavegador.setMainController(mainController);
 		VistaNavegador.loadVista(VistaNavegador.VISTA_1);
 

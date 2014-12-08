@@ -8,7 +8,6 @@ import implementacion.Observacion;
 import implementacion.Odontologo;
 import implementacion.Paciente;
 import implementacion.Prediccion;
-import implementacion.Proyeccion;
 import implementacion.Seccion;
 import implementacion.Turno;
 
@@ -326,9 +325,9 @@ public class Controlador {
 	
 	//ANALISIS PREDICTIVO
 	
-	public Collection<Proyeccion> analisisPredictivoHistoriaClinica(String dni) {
+	public Collection<Prediccion> analisisPredictivoHistoriaClinica(String dni) {
 		HistoriaClinica historia = obtenerHistoriaClinica(dni);
-		Collection<Proyeccion> proyecciones = new ArrayList<Proyeccion>();
+		Collection<Prediccion> predicciones = new ArrayList<Prediccion>();
 		if (historia != null){
 			Collection<String> sintomasDetectados = historia.detectarSintomas(sintomas);
 			Prediccion prediccion;
@@ -342,10 +341,10 @@ public class Controlador {
 							prediccion.agregarItemPrediccion(sintomaAnalisis);
 						prediccion.aumentarCantidad();
 					}
-				proyecciones.add(prediccion.generarProyeccion());
+				predicciones.add(prediccion);
 			}				
 		}
-		return proyecciones;
+		return predicciones;
 	}
 	
 	//UTILITARIAS

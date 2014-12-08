@@ -1,6 +1,5 @@
 package implementacion;
 
-import views.ItemPrediccionView;
 
 
 
@@ -24,12 +23,5 @@ public class ItemPrediccion {
 	}
 	public void setCantidad(float cantidad) {
 		this.cantidad = cantidad;
-	}
-	
-	public ItemPrediccionView generarView() {
-		ItemPrediccionView view = new ItemPrediccionView();
-		view.setCantidad(cantidad);
-		view.setSintomaAnalisis(sintomaAnalisis);
-		return view;
 	}
 }

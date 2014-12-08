@@ -3,9 +3,6 @@ package implementacion;
 import java.util.ArrayList;
 import java.util.Collection;
 
-import views.ItemPrediccionView;
-import views.PrediccionView;
-
 
 
 public class Prediccion {
@@ -59,27 +56,8 @@ public class Prediccion {
 	public void setItemsPrediccion(Collection<ItemPrediccion> itemsPrediccion) {
 		this.itemsPrediccion = itemsPrediccion;
 	}
-
-	public Proyeccion generarProyeccion(){
-		Proyeccion proyeccion = new Proyeccion(sintomaBase);
-		for (ItemPrediccion i : itemsPrediccion)
-			proyeccion.agregarItemProyeccion(i.getSintomaAnalisis(),(i.getCantidad()/total)*100);
-		return proyeccion;
-	}
 	
 	public void aumentarCantidad(){
 		this.total++;
-	}
-	
-	public PrediccionView generarView() {
-		PrediccionView view = new PrediccionView();
-		Collection<ItemPrediccionView> itemsPrediccionView = new ArrayList<ItemPrediccionView>();
-		for (ItemPrediccion item : itemsPrediccion) {
-			itemsPrediccionView.add(item.generarView());
-		}
-		view.setItemsPrediccion(itemsPrediccionView);
-		view.setSintomaBase(sintomaBase);
-		view.setTotal(total);
-		return view;
 	}
 }

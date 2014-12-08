@@ -30,5 +30,5 @@ public class Proyeccion {
 
 	public void agregarItemProyeccion(String sintomaAnalisis, float f) {
 		this.itemsProyeccion.add(new ItemProyeccion(sintomaAnalisis,f));
-	}	
+	}
 }

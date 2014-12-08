@@ -55,7 +55,7 @@ public class VistaAdministracionOdontologosControlador {
 			Stage dialogStage = new Stage();
 			dialogStage.initModality(Modality.WINDOW_MODAL);
 			dialogStage.setScene(new Scene(VBoxBuilder.create().
-			    children(new Text("Odontólogo registrado correctamente"), new Button("Continuar")).
+			    children(new Text("Odontólogo registrado correctamente")).
 			    alignment(Pos.CENTER).padding(new Insets(5)).build()));
 			dialogStage.show();
 		}

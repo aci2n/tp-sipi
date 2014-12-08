@@ -11,9 +11,11 @@ public class FichaPeriodontal {
 	private Collection<Seccion> secciones;
 	private Odontologo odontologo;
 	
-	public FichaPeriodontal(Odontologo odontologo, Paciente paciente, HistoriaClinica historiaClinica) {
+	public FichaPeriodontal(Odontologo odontologo, HistoriaClinica historiaClinica, Collection<Seccion> secciones) {
 		this.odontologo=odontologo;
-		this.secciones=new ArrayList<Seccion>();
+		this.secciones=secciones;
+		
+		/*
 		
 		int i;
 		
@@ -58,6 +60,8 @@ public class FichaPeriodontal {
 			this.secciones.add(new Seccion(Integer.toString(i),"2"));
 			this.secciones.add(new Seccion(Integer.toString(i),"3"));			
 		}		
+		
+		*/
 		
 		AdministradorPersistenciaFichaPeriodontal.getInstancia().insert(this, historiaClinica);
 	}
@@ -123,7 +127,7 @@ public class FichaPeriodontal {
 		for (Seccion seccion : secciones) {
 			Observacion observacion = seccion.generarObservacion();
 			if (observacion.getDescripcion() != null)
-				observaciones.add(seccion.generarObservacion());
+				observaciones.add(observacion);
 		}
 		return observaciones;
 	}

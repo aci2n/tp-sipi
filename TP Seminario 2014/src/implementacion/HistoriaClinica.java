@@ -6,7 +6,6 @@ import java.util.Collection;
 
 import persistencia.AdministradorPersistenciaFichaPeriodontal;
 import persistencia.AdministradorPersistenciaHistoriasClinicas;
-import persistencia.AdministradorPersistenciaObservaciones;
 import persistencia.AdministradorPersistenciaOdontograma;
 import views.HistoriaClinicaView;
 import views.ObservacionView;
@@ -31,8 +30,8 @@ public class HistoriaClinica {
 		this.odontogramas = new ArrayList<Odontograma>();
 	}
 
-	public void asignarFichaPeriodontal(Odontologo odontologo) {
-		FichaPeriodontal ficha = new FichaPeriodontal(odontologo, paciente, this);
+	public void asignarFichaPeriodontal(Odontologo odontologo, Collection<Seccion> secciones) {
+		FichaPeriodontal ficha = new FichaPeriodontal(odontologo, this, secciones);
 		this.ficha=ficha;	
 	}
 	

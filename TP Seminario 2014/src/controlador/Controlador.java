@@ -4,6 +4,7 @@ import implementacion.Cara;
 import implementacion.Diente;
 import implementacion.FichaPeriodontal;
 import implementacion.HistoriaClinica;
+import implementacion.Observacion;
 import implementacion.Odontologo;
 import implementacion.Paciente;
 import implementacion.Prediccion;
@@ -16,6 +17,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 import persistencia.AdministradorPersistenciaHistoriasClinicas;
+import persistencia.AdministradorPersistenciaObservaciones;
 import persistencia.AdministradorPersistenciaOdontologos;
 import persistencia.AdministradorPersistenciaPaciente;
 import persistencia.AdministradorPersistenciaSintomas;
@@ -145,6 +147,18 @@ public class Controlador {
 		Odontologo odontologo = obtenerOdontologo(observacion.getOdontologo().getMatricula());
 		if (historia != null && odontologo != null){
 			historia.agregarObservacion(odontologo, observacion.getFecha(), observacion.getDescripcion());
+		}
+	}
+	
+	public void bajaObservacion(String dni, ObservacionView view) {
+		HistoriaClinica historia = obtenerHistoriaClinica(dni);
+		Odontologo odontologo = obtenerOdontologo(view.getOdontologo().getMatricula());
+		if (historia != null && odontologo != null) {
+			Observacion observacion = historia.obtenerObservacion(odontologo, view.getFecha());
+			if (observacion != null) {
+				AdministradorPersistenciaObservaciones.getInstancia().delete(observacion, historia);
+				historia.getObservaciones().remove(observacion);
+			}
 		}
 	}
 	

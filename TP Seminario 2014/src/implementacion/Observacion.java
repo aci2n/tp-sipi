@@ -2,6 +2,7 @@ package implementacion;
 
 import java.sql.Timestamp;
 
+import persistencia.AdministradorPersistenciaObservaciones;
 import views.ObservacionView;
 
 
@@ -10,17 +11,18 @@ public class Observacion {
 	private Timestamp fecha;
 	private String descripcion;
 	private Odontologo odontologo;
-	
-	public Observacion(Odontologo odontologo, Timestamp fecha, String descripcion) {
-		this.fecha=fecha;
-		this.descripcion=descripcion;
-		this.odontologo=odontologo;
-	}
 
 	public Observacion() {
 		
 	}
 
+	public Observacion(Odontologo odontologo2, Timestamp fecha2,
+			String descripcion2, HistoriaClinica historia) {
+		this.fecha=fecha;
+		this.descripcion=descripcion;
+		this.odontologo=odontologo;
+		AdministradorPersistenciaObservaciones.getInstancia().insert(this, historia);
+	}
 
 	public Timestamp getFecha() {
 		return fecha;

@@ -32,21 +32,18 @@ public class HistoriaClinica {
 	}
 
 	public void asignarFichaPeriodontal(Odontologo odontologo) {
-		FichaPeriodontal ficha = new FichaPeriodontal(odontologo, paciente);
+		FichaPeriodontal ficha = new FichaPeriodontal(odontologo, paciente, this);
 		this.ficha=ficha;	
-		AdministradorPersistenciaFichaPeriodontal.getInstancia().insert(ficha, this);
 	}
 	
 	public void agregarOdontograma(String idOdontograma, Timestamp fecha, Odontologo odontologo) {
-		Odontograma odontograma = new Odontograma(idOdontograma,fecha,odontologo);				
+		Odontograma odontograma = new Odontograma(idOdontograma, fecha, odontologo, this);				
 		this.odontogramas.add(odontograma);
-		AdministradorPersistenciaOdontograma.getInstancia().insert(odontograma, this);
 	}
 	
 	public void agregarObservacion(Odontologo odontologo, Timestamp fecha, String descripcion) {
-		Observacion observacion = new Observacion(odontologo, fecha, descripcion);
+		Observacion observacion = new Observacion(odontologo, fecha, descripcion, this);
 		this.observaciones.add(observacion);
-		AdministradorPersistenciaObservaciones.getInstancia().insert(observacion, this);
 	}
 		
 	public FichaPeriodontal getFicha() {
@@ -164,5 +161,14 @@ public class HistoriaClinica {
 			ficha.setSecciones(secciones);
 			AdministradorPersistenciaFichaPeriodontal.getInstancia().update(ficha,this);
 		}
+	}
+	
+	public Observacion obtenerObservacion(Odontologo odontologo, Timestamp fecha) {
+		for (Observacion observacion : observaciones) {
+			if (observacion.getOdontologo().equals(odontologo) && observacion.getFecha().equals(fecha)) {
+				return observacion;
+			}
+		}
+		return null;
 	}
 }

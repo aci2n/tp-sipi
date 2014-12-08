@@ -4,6 +4,7 @@ import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Collection;
 
+import persistencia.AdministradorPersistenciaOdontograma;
 import views.DienteView;
 import views.OdontogramaView;
 
@@ -15,7 +16,7 @@ public class Odontograma {
 	private Timestamp fecha;
 	private Odontologo odontologo;
 	
-	public Odontograma(String idOdontograma, Timestamp fecha, Odontologo odontologo) {
+	public Odontograma(String idOdontograma, Timestamp fecha, Odontologo odontologo, HistoriaClinica historiaClinica) {
 		this.idOdontograma=idOdontograma;
 		this.fecha=fecha;
 		this.odontologo=odontologo;
@@ -43,7 +44,9 @@ public class Odontograma {
 			this.dientes.add(new Diente(Integer.toString(i)));
 		
 		for (i = 81;i<=85;i++)
-			this.dientes.add(new Diente(Integer.toString(i)));		
+			this.dientes.add(new Diente(Integer.toString(i)));	
+		
+		AdministradorPersistenciaOdontograma.getInstancia().insert(this, historiaClinica);
 	}
 	
 	public Odontograma() {

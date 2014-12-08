@@ -3,6 +3,7 @@ package implementacion;
 import java.util.ArrayList;
 import java.util.Collection;
 
+import persistencia.AdministradorPersistenciaFichaPeriodontal;
 import views.FichaPeriodontalView;
 import views.SeccionView;
 
@@ -10,7 +11,7 @@ public class FichaPeriodontal {
 	private Collection<Seccion> secciones;
 	private Odontologo odontologo;
 	
-	public FichaPeriodontal(Odontologo odontologo, Paciente paciente) {
+	public FichaPeriodontal(Odontologo odontologo, Paciente paciente, HistoriaClinica historiaClinica) {
 		this.odontologo=odontologo;
 		this.secciones=new ArrayList<Seccion>();
 		
@@ -57,6 +58,8 @@ public class FichaPeriodontal {
 			this.secciones.add(new Seccion(Integer.toString(i),"2"));
 			this.secciones.add(new Seccion(Integer.toString(i),"3"));			
 		}		
+		
+		AdministradorPersistenciaFichaPeriodontal.getInstancia().insert(this, historiaClinica);
 	}
 	
 	public FichaPeriodontal() {

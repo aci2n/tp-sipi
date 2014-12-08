@@ -45,7 +45,11 @@ public class OdontologoView {
 	public void setEspecialidades(Collection<EspecialidadView> especialidades) {
 		this.especialidades = especialidades;
 	}
-
+	
+	@Override
+	public String toString() {
+		return this.nombre + " " + this.apellido;
+	}
 
 
 }

@@ -27,23 +27,29 @@
                   <Insets />
                </VBox.margin>
             </HBox>
-            <HBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="136.0" prefWidth="664.0" spacing="20.0" style="-fx-border-color: #bdc3c7; -fx-border-radius: 2;" VBox.vgrow="ALWAYS">
+            <HBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="110.0" prefWidth="725.0" spacing="20.0" style="-fx-border-color: #bdc3c7; -fx-border-radius: 2;" VBox.vgrow="NEVER">
                <children>
-                  <FlowPane prefHeight="200.0" prefWidth="200.0">
+                  <Pane prefHeight="88.0" prefWidth="154.0">
                      <children>
-                        <Label minWidth="-Infinity" prefHeight="17.0" prefWidth="72.0" text="Observación" />
-                        <TextArea fx:id="textObservaciones" minHeight="-Infinity" minWidth="-Infinity" prefHeight="84.0" prefWidth="300.0" promptText="Descripción de la observación" wrapText="true" />
+                        <TextField fx:id="textDNI" layoutX="21.0" layoutY="44.0" onInputMethodTextChanged="#obtenerObservaciones" prefHeight="25.0" prefWidth="116.0" />
+                        <Label layoutX="69.0" layoutY="6.0" text="DNI" />
                      </children>
-                  </FlowPane>
+                  </Pane>
+                  <Pane maxWidth="1.7976931348623157E308" prefHeight="88.0" prefWidth="186.0">
+                     <children>
+                        <Label layoutX="55.0" layoutY="6.0" minWidth="-Infinity" prefHeight="17.0" prefWidth="72.0" text="Observación" />
+                        <TextArea fx:id="textObservaciones" layoutX="10.0" layoutY="32.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="56.0" prefWidth="162.0" promptText="Descripción de la observación" wrapText="true" />
+                     </children>
+                  </Pane>
                   <Pane minHeight="-Infinity" minWidth="-Infinity" prefHeight="114.0" prefWidth="188.0">
                      <children>
-                        <Label layoutY="26.0" minWidth="-Infinity" prefHeight="17.0" prefWidth="188.0" text="Seleccione el odontólogo a cargo: " />
-                        <ComboBox fx:id="comboOdontologos2" layoutX="14.0" layoutY="57.0" minWidth="-Infinity" prefWidth="150.0" />
+                        <Label layoutY="6.0" minWidth="-Infinity" prefHeight="17.0" prefWidth="188.0" text="Seleccione el odontólogo a cargo: " />
+                        <ComboBox fx:id="comboOdontologos2" layoutX="14.0" layoutY="45.0" minWidth="-Infinity" prefWidth="150.0" />
                      </children>
                   </Pane>
                   <Pane prefHeight="62.0" prefWidth="126.0">
                      <children>
-                        <Button fx:id="botonAgregarObs" layoutY="42.0" minWidth="-Infinity" mnemonicParsing="false" prefHeight="30.0" prefWidth="126.0" text="Agregar observación" />
+                        <Button fx:id="botonAgregarObs" layoutX="-2.0" layoutY="44.0" minWidth="-Infinity" mnemonicParsing="false" onAction="#altaObservacion" prefHeight="25.0" prefWidth="126.0" text="Agregar observación" />
                      </children>
                   </Pane>
                </children>

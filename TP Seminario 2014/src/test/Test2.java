@@ -7,9 +7,9 @@ import implementacion.Odontologo;
 import implementacion.Paciente;
 import implementacion.Turno;
 
-import java.sql.Date;
+import java.sql.Timestamp;
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
+import java.text.SimpleTimestampFormat;
 
 public class Test2 {
 
@@ -20,7 +20,7 @@ public class Test2 {
 			paciente.setApellido("Calace");
 			paciente.setDni("37521884");
 			paciente.setEmail("alvarocalace@hotmail.com");	
-			paciente.setFechaNacimiento(formarDateSQL("04/01/1994"));		
+			paciente.setFechaNacimiento(formarTimestampSQL("04/01/1994"));		
 			paciente.setGenero("masculino");
 			paciente.setNombre("Alvaro");
 			paciente.setObraSocial("OSDE");
@@ -51,7 +51,7 @@ public class Test2 {
 			//odontologo.agregarEspecialidad(especialidad);
 			
 			
-			//historia.altaObservacion(odontologo, new Date((format.parse("15/11/2014")).getTime()), "El paciente muestra gengivitis aguda.");
+			//historia.altaObservacion(odontologo, new Timestamp((format.parse("15/11/2014")).getTime()), "El paciente muestra gengivitis aguda.");
 			
 			/*
 			FichaPeriodontal ficha = new FichaPeriodontal();
@@ -75,14 +75,14 @@ public class Test2 {
 			Turno turno = new Turno();
 			
 			turno.setDescripcion("Implantación de brackets.");
-			turno.setFecha(formarDateSQL("24/12/2014"));
+			turno.setFecha(formarTimestampSQL("24/12/2014"));
 			turno.setOdontologo(odontologo);
 			turno.setPaciente(paciente);
 			
 			//AdministradorPersistenciaTurnos.getInstancia().insert(turno);
 			
 			/*Odontograma odontograma = new Odontograma();
-			odontograma.setFecha(formarDateSQL("05/12/2014"));
+			odontograma.setFecha(formarTimestampSQL("05/12/2014"));
 			odontograma.setIdOdontograma("1");
 			odontograma.setOdontologo(odontologo);
 			
@@ -130,20 +130,20 @@ public class Test2 {
 		}
 	}
 	
-	private static java.sql.Date formarDateSQL (String fecha){
-		SimpleDateFormat format = new SimpleDateFormat("dd/mm/yyyy");
+	private static java.sql.Timestamp formarTimestampSQL (String fecha){
+		SimpleTimestampFormat format = new SimpleTimestampFormat("dd/mm/yyyy");
 		try {
-			return new Date((format.parse(fecha)).getTime());
+			return new Timestamp((format.parse(fecha)).getTime());
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
 		return null;
 	}
 	
-	private static java.sql.Date getFechaActualSQL(){
+	private static java.sql.Timestamp getFechaActualSQL(){
 		java.util.Calendar cal = java.util.Calendar.getInstance();
-		java.util.Date utilDate = cal.getTime();
-		return new Date(utilDate.getTime());
+		java.util.Timestamp utilTimestamp = cal.getTime();
+		return new Timestamp(utilTimestamp.getTime());
 	}
 
 }

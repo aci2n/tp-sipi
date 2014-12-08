@@ -33,7 +33,7 @@ public class AdministradorPersistenciaOdontograma extends AdministradorPersisten
 			PreparedStatement ps = con.prepareStatement("INSERT INTO "+super.getDatabase()+".dbo.Odontogramas(dni, id_odontograma, fecha, matricula) VALUES (?,?,?,?)");
 			ps.setString(1, historia.getPaciente().getDni());
 			ps.setString(2, odontograma.getIdOdontograma());
-			ps.setDate(3, odontograma.getFecha());
+			ps.setTimestamp(3, odontograma.getFecha());
 			ps.setString(4, odontograma.getOdontologo().getMatricula());
 			
 			ps.execute();			
@@ -53,7 +53,7 @@ public class AdministradorPersistenciaOdontograma extends AdministradorPersisten
 		try{
 			Connection con = Conexion.connect();
 			PreparedStatement ps = con.prepareStatement("UPDATE "+super.getDatabase()+".dbo.Odontogramas SET fecha = ?, matricula = ? WHERE id_odontograma like ?");
-			ps.setDate(1, odontograma.getFecha());
+			ps.setTimestamp(1, odontograma.getFecha());
 			ps.setString(2, odontograma.getOdontologo().getMatricula());
 			ps.setString(3, odontograma.getIdOdontograma());
 			
@@ -100,7 +100,7 @@ public class AdministradorPersistenciaOdontograma extends AdministradorPersisten
 			if (rs.next()){
 				odontograma = new Odontograma();
 				
-				odontograma.setFecha(rs.getDate("fecha"));
+				odontograma.setFecha(rs.getTimestamp("fecha"));
 				odontograma.setOdontologo(Controlador.getInstancia().obtenerOdontologo(rs.getString("matricula")));
 				odontograma.setIdOdontograma(rs.getString("id_odontograma"));
 				odontograma.setDientes(AdministradorPersistenciaDiente.getInstancia().buscarDientes(odontograma));
@@ -128,7 +128,7 @@ public class AdministradorPersistenciaOdontograma extends AdministradorPersisten
 			while (rs.next()){
 				odontograma = new Odontograma();
 				
-				odontograma.setFecha(rs.getDate("fecha"));
+				odontograma.setFecha(rs.getTimestamp("fecha"));
 				odontograma.setOdontologo(Controlador.getInstancia().obtenerOdontologo(rs.getString("matricula")));
 				odontograma.setIdOdontograma(rs.getString("id_odontograma"));
 				odontograma.setDientes(AdministradorPersistenciaDiente.getInstancia().buscarDientes(odontograma));

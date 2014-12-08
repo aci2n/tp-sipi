@@ -2,10 +2,11 @@ package test;
 
 import implementacion.Odontograma;
 
-import java.sql.Date;
+import java.sql.Timestamp;
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
+import java.text.SimpleTimestampFormat;
 
+import views.ObservacionView;
 import views.OdontologoView;
 import views.PacienteView;
 import controlador.Controlador;
@@ -19,7 +20,7 @@ public class Test3 {
 		paciente.setApellido("Calace");
 		paciente.setDni("testpaciente1");
 		paciente.setEmail("alvarocalace@hotmail.com");	
-		paciente.setFechaNacimiento(formarDateSQL("04/01/1994"));		
+		paciente.setFechaNacimiento(formarTimestampSQL("04/01/1994"));		
 		paciente.setGenero("masculino");
 		paciente.setNombre("Alvaro");
 		paciente.setObraSocial("OSDE");
@@ -41,22 +42,28 @@ public class Test3 {
 		
 		//con.actualizarOdontograma(paciente.getDni(), o.generarView());
 
-		con.asignarFichaAHistoria(paciente.getDni(), odontologo.getMatricula());
+		//con.asignarFichaAHistoria(paciente.getDni(), odontologo.getMatricula());
 		
+		ObservacionView observacion = new ObservacionView();
+		observacion.setDescripcion("El cliente se murio.");
+		observacion.setFecha(getFechaActualSQL());
+		observacion.setOdontologo(odontologo);
+		
+		con.altaObservacion(paciente.getDni(), observacion);
 	}
 	
 	//UTILITARIAS
 	
-	private static java.sql.Date getFechaActualSQL(){
+	private static java.sql.Timestamp getFechaActualSQL(){
 		java.util.Calendar cal = java.util.Calendar.getInstance();
-		java.util.Date utilDate = cal.getTime();
-		return new Date(utilDate.getTime());
+		java.util.Timestamp utilTimestamp = cal.getTime();
+		return new Timestamp(utilTimestamp.getTime());
 	}	
 	
-	private static java.sql.Date formarDateSQL (String fecha){
-		SimpleDateFormat format = new SimpleDateFormat("dd/mm/yyyy");
+	private static java.sql.Timestamp formarTimestampSQL (String fecha){
+		SimpleTimestampFormat format = new SimpleTimestampFormat("dd/mm/yyyy");
 		try {
-			return new Date((format.parse(fecha)).getTime());
+			return new Timestamp((format.parse(fecha)).getTime());
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}

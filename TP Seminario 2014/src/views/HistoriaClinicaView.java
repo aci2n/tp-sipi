@@ -1,7 +1,7 @@
 package views;
 
 import java.util.Collection;
-import java.util.Date;
+import java.sql.Timestamp;
 
 
 
@@ -16,19 +16,19 @@ public class HistoriaClinicaView {
 	
 	}
 	
-	public void altaOdontograma(Date fecha) {
+	public void altaOdontograma(Timestamp fecha) {
 	
 	}
 	
-	public void altaObservacion(OdontologoView odontologo, Date fecha, String descripcion) {
+	public void altaObservacion(OdontologoView odontologo, Timestamp fecha, String descripcion) {
 	
 	}
 	
-	public void bajaOdontograma(Date fecha) {
+	public void bajaOdontograma(Timestamp fecha) {
 	
 	}
 	
-	public void bajaObservacion(OdontologoView odontologo, Date fecha) {
+	public void bajaObservacion(OdontologoView odontologo, Timestamp fecha) {
 	
 	}
 	

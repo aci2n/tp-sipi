@@ -33,7 +33,7 @@ public class AdministradorPersistenciaPaciente extends AdministradorPersistencia
 			ps.setString(3, paciente.getApellido());
 			ps.setString(4, paciente.getTelefono());
 			ps.setString(5, paciente.getEmail());
-			ps.setDate(6, paciente.getFechaNacimiento());
+			ps.setTimestamp(6, paciente.getFechaNacimiento());
 			ps.setString(7, paciente.getGenero());
 			ps.setString(8, paciente.getObraSocial());
 			ps.setString(9, paciente.getPlanObraSocial());
@@ -64,7 +64,7 @@ public class AdministradorPersistenciaPaciente extends AdministradorPersistencia
 			ps.setString(2, paciente.getApellido());
 			ps.setString(3, paciente.getTelefono());
 			ps.setString(4, paciente.getEmail());
-			ps.setDate(5, paciente.getFechaNacimiento());
+			ps.setTimestamp(5, paciente.getFechaNacimiento());
 			ps.setString(6, paciente.getGenero());
 			ps.setString(7, paciente.getObraSocial());
 			ps.setString(8, paciente.getPlanObraSocial());
@@ -106,7 +106,7 @@ public class AdministradorPersistenciaPaciente extends AdministradorPersistencia
 				paciente.setApellido(rs.getString("apellido"));
 				paciente.setDni(rs.getString("dni"));
 				paciente.setEmail(rs.getString("email"));
-				paciente.setFechaNacimiento(rs.getDate("fecha_nac"));
+				paciente.setFechaNacimiento(rs.getTimestamp("fecha_nac"));
 				paciente.setGenero(rs.getString("genero"));
 				paciente.setNombre(rs.getString("nombre"));
 				paciente.setObraSocial(rs.getString("obra_social"));
@@ -136,7 +136,7 @@ public class AdministradorPersistenciaPaciente extends AdministradorPersistencia
 				paciente.setApellido(rs.getString("apellido"));
 				paciente.setDni(rs.getString("dni"));
 				paciente.setEmail(rs.getString("email"));
-				paciente.setFechaNacimiento(rs.getDate("fecha_nac"));
+				paciente.setFechaNacimiento(rs.getTimestamp("fecha_nac"));
 				paciente.setGenero(rs.getString("genero"));
 				paciente.setNombre(rs.getString("nombre"));
 				paciente.setObraSocial(rs.getString("obra_social"));

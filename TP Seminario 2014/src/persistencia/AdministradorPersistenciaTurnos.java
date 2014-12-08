@@ -3,7 +3,7 @@ package persistencia;
 import implementacion.Turno;
 
 import java.sql.Connection;
-import java.sql.Date;
+import java.sql.Timestamp;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -32,7 +32,7 @@ public class AdministradorPersistenciaTurnos extends AdministradorPersistencia {
 			PreparedStatement ps = con.prepareStatement("INSERT INTO "+super.getDatabase()+".dbo.Turnos(matricula, dni, fecha, descripcion, activo) VALUES (?,?,?,?,1)");
 			ps.setString(1, turno.getOdontologo().getMatricula());
 			ps.setString(2,turno.getPaciente().getDni());
-			ps.setDate(3, turno.getFecha());
+			ps.setTimestamp(3, turno.getFecha());
 			ps.setString(4, turno.getDescripcion());
 			
 			ps.execute();
@@ -51,7 +51,7 @@ public class AdministradorPersistenciaTurnos extends AdministradorPersistencia {
 			ps.setString(1, turno.getDescripcion());
 			ps.setString(2, turno.getOdontologo().getMatricula());
 			ps.setString(3, turno.getPaciente().getDni());
-			ps.setDate(4,turno.getFecha());
+			ps.setTimestamp(4,turno.getFecha());
 			
 			ps.execute();
 			
@@ -68,7 +68,7 @@ public class AdministradorPersistenciaTurnos extends AdministradorPersistencia {
 			PreparedStatement ps = con.prepareStatement("UPDATE "+super.getDatabase()+".dbo.Turnos SET activo=0 WHERE matricula like ? AND paciente like ? AND fecha = ?");
 			ps.setString(1, turno.getOdontologo().getMatricula());
 			ps.setString(2, turno.getPaciente().getDni());
-			ps.setDate(3,turno.getFecha());
+			ps.setTimestamp(3,turno.getFecha());
 			
 			ps.execute();
 			
@@ -92,7 +92,7 @@ public class AdministradorPersistenciaTurnos extends AdministradorPersistencia {
 				
 				turno.setOdontologo(Controlador.getInstancia().obtenerOdontologo(rs.getString("matricula")));
 				turno.setPaciente(Controlador.getInstancia().obtenerPaciente(rs.getString("dni")));
-				turno.setFecha(rs.getDate("fecha"));
+				turno.setFecha(rs.getTimestamp("fecha"));
 				turno.setDescripcion(rs.getString("descripcion"));
 				
 				turnos.add(turno);
@@ -107,14 +107,14 @@ public class AdministradorPersistenciaTurnos extends AdministradorPersistencia {
 		return turnos;
 	}
 	
-	public Turno buscarTurno(String matricula, String dni, Date fecha){
+	public Turno buscarTurno(String matricula, String dni, Timestamp fecha){
 		Turno turno = null;
 		try{
 			Connection con = Conexion.connect();
 			PreparedStatement ps = con.prepareStatement("SELECT * FROM "+super.getDatabase()+"dbo.Turnos WHERE matricula like ? AND dni like ? AND fecha = ? AND activo=1");
 			ps.setString(1, matricula);
 			ps.setString(2, dni);
-			ps.setDate(3, fecha);
+			ps.setTimestamp(3, fecha);
 			
 			ResultSet rs = ps.executeQuery();
 			
@@ -123,7 +123,7 @@ public class AdministradorPersistenciaTurnos extends AdministradorPersistencia {
 				
 				turno.setOdontologo(Controlador.getInstancia().obtenerOdontologo(rs.getString("matricula")));
 				turno.setPaciente(Controlador.getInstancia().obtenerPaciente(rs.getString("paciente")));
-				turno.setFecha(rs.getDate("fecha"));
+				turno.setFecha(rs.getTimestamp("fecha"));
 				turno.setDescripcion(rs.getString("descripcion"));
 			}
 			

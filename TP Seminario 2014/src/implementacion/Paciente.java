@@ -1,6 +1,6 @@
 package implementacion;
 
-import java.sql.Date;
+import java.sql.Timestamp;
 
 import persistencia.AdministradorPersistenciaPaciente;
 import views.PacienteView;
@@ -12,7 +12,7 @@ public class Paciente {
 	private String apellido;
 	private String telefono;
 	private String email;
-	private Date fechaNacimiento;
+	private Timestamp fechaNacimiento;
 	private String genero;
 	private String obraSocial;
 	private String planObraSocial;
@@ -20,7 +20,7 @@ public class Paciente {
 	public Paciente() {
 	}
 	
-	public Paciente(String dni, String nombre, String apellido, String telefono, String email, Date fechaNacimiento, String genero, String obraSocial, String planObraSocial) {
+	public Paciente(String dni, String nombre, String apellido, String telefono, String email, Timestamp fechaNacimiento, String genero, String obraSocial, String planObraSocial) {
 		this.dni = dni;
 		this.nombre = nombre;
 		this.apellido = apellido;
@@ -63,10 +63,10 @@ public class Paciente {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public Date getFechaNacimiento() {
+	public Timestamp getFechaNacimiento() {
 		return fechaNacimiento;
 	}
-	public void setFechaNacimiento(Date fechaNacimiento) {
+	public void setFechaNacimiento(Timestamp fechaNacimiento) {
 		this.fechaNacimiento = fechaNacimiento;
 	}
 	public String getGenero() {

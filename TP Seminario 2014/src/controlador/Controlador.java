@@ -11,7 +11,7 @@ import implementacion.Proyeccion;
 import implementacion.Seccion;
 import implementacion.Turno;
 
-import java.sql.Date;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Collection;
 
@@ -25,6 +25,7 @@ import views.DienteView;
 import views.EspecialidadView;
 import views.FichaPeriodontalView;
 import views.HistoriaClinicaView;
+import views.ObservacionView;
 import views.OdontogramaView;
 import views.OdontologoView;
 import views.PacienteView;
@@ -39,14 +40,13 @@ public class Controlador {
 	private Collection<HistoriaClinica> historiasClinicas;
 	private Collection<String> sintomas;
 	private static Controlador instancia;
-	
-	
+		
 	private void inicializar(){
 		this.pacientes = AdministradorPersistenciaPaciente.getInstancia().buscarPacientes();
 		this.turnos = AdministradorPersistenciaTurnos.getInstancia().buscarTurnos();
 		this.odontologos = AdministradorPersistenciaOdontologos.getInstancia().buscarOdontologos();
 		this.sintomas = AdministradorPersistenciaSintomas.getInstancia().buscarSintomas();
-		//this.historiasClinicas = AdministradorPersistenciaHistoriasClinicas.getInstancia().buscarHistorias(); -> tarda mucho en arrancar si se inicializa aca
+		this.historiasClinicas = AdministradorPersistenciaHistoriasClinicas.getInstancia().buscarHistorias();
 	}
 	
 	private Controlador(){
@@ -140,9 +140,17 @@ public class Controlador {
 		}
 	}
 	
+	public void altaObservacion(String dni, ObservacionView observacion){
+		HistoriaClinica historia = obtenerHistoriaClinica(dni);
+		Odontologo odontologo = obtenerOdontologo(observacion.getOdontologo().getMatricula());
+		if (historia != null && odontologo != null){
+			historia.agregarObservacion(odontologo, observacion.getFecha(), observacion.getDescripcion());
+		}
+	}
+	
 	//ACTUALIZACIONES
 	
-	public void actualizarHistoriaClinica(String dni, String matricula, Date fecha, String descripcion) {
+	public void actualizarHistoriaClinica(String dni, String matricula, Timestamp fecha, String descripcion) {
 		HistoriaClinica historia = obtenerHistoriaClinica(dni);
 		if (historia != null) {
 			historia.setDescripcion(descripcion);
@@ -154,7 +162,7 @@ public class Controlador {
 		HistoriaClinica historia = obtenerHistoriaClinica(dni);
 		Odontologo odontologo = obtenerOdontologo(odontograma.getOdontologo().getMatricula());
 		if (historia != null && odontologo != null){
-			historia.actualizarOdontograma(odontograma.getIdOdontograma(), getFechaActualSQL(), odontologo, construirDientesDesdeView(odontograma.getDientes()));
+			historia.actualizarOdontograma(odontograma.getIdOdontograma(), odontograma.getFecha(), odontologo, construirDientesDesdeView(odontograma.getDientes()));
 		}
 	}
 	
@@ -216,7 +224,7 @@ public class Controlador {
 		return historia;
 	}
 	
-	public Turno obtenerTurno(String dni, String matricula, Date fecha) {
+	public Turno obtenerTurno(String dni, String matricula, Timestamp fecha) {
 		Turno turno = null;
 		for (Turno turn : turnos) {
 			if (turn.sosElTurno(dni, matricula, fecha)) {
@@ -288,7 +296,7 @@ public class Controlador {
 		return historias;
 	}	
 	
-	public TurnoView obtenerTurnoView(String dni, String matricula, Date fecha) {
+	public TurnoView obtenerTurnoView(String dni, String matricula, Timestamp fecha) {
 		Turno turno = obtenerTurno(dni, matricula, fecha);
 		return turno != null? turno.generarView() : null;
 	}
@@ -327,10 +335,8 @@ public class Controlador {
 	
 	//UTILITARIAS
 	
-	private static java.sql.Date getFechaActualSQL(){
-		java.util.Calendar cal = java.util.Calendar.getInstance();
-		java.util.Date utilDate = cal.getTime();
-		return new Date(utilDate.getTime());
+	private java.sql.Timestamp getFechaActualSQL(){
+		return new Timestamp(System.currentTimeMillis());
 	}	
 	
 	private Collection<Diente> construirDientesDesdeView(Collection<DienteView> dientesView){

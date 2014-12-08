@@ -1,19 +1,19 @@
 package views;
 
-import java.sql.Date;
+import java.sql.Timestamp;
 
 
 
 public class ObservacionView {
-	private Date fecha;
+	private Timestamp fecha;
 	private String descripcion;
 	private OdontologoView odontologo;
 
-	public Date getFecha() {
+	public Timestamp getFecha() {
 		return fecha;
 	}
 
-	public void setFecha(Date fecha) {
+	public void setFecha(Timestamp fecha) {
 		this.fecha = fecha;
 	}
 

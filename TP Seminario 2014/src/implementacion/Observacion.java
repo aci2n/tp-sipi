@@ -1,17 +1,17 @@
 package implementacion;
 
-import java.sql.Date;
+import java.sql.Timestamp;
 
 import views.ObservacionView;
 
 
 
 public class Observacion {
-	private Date fecha;
+	private Timestamp fecha;
 	private String descripcion;
 	private Odontologo odontologo;
 	
-	public Observacion(Odontologo odontologo, Date fecha, String descripcion) {
+	public Observacion(Odontologo odontologo, Timestamp fecha, String descripcion) {
 		this.fecha=fecha;
 		this.descripcion=descripcion;
 		this.odontologo=odontologo;
@@ -22,11 +22,11 @@ public class Observacion {
 	}
 
 
-	public Date getFecha() {
+	public Timestamp getFecha() {
 		return fecha;
 	}
 
-	public void setFecha(Date fecha) {
+	public void setFecha(Timestamp fecha) {
 		this.fecha = fecha;
 	}
 

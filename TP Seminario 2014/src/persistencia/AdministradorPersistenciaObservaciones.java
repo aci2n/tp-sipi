@@ -32,7 +32,7 @@ public class AdministradorPersistenciaObservaciones extends
 			PreparedStatement ps = con.prepareStatement("INSERT INTO "+super.getDatabase()+".dbo.Observaciones(dni, matricula, fecha, descripcion) VALUES (?,?,?,?)");
 			ps.setString(1,historia.getPaciente().getDni());
 			ps.setString(2, observacion.getOdontologo().getMatricula());
-			ps.setDate(3, observacion.getFecha());
+			ps.setTimestamp(3, observacion.getFecha());
 			ps.setString(4, observacion.getDescripcion());
 			
 			ps.execute();
@@ -51,7 +51,7 @@ public class AdministradorPersistenciaObservaciones extends
 			ps.setString(1, observacion.getDescripcion());
 			ps.setString(2, observacion.getOdontologo().getMatricula());
 			ps.setString(3, historia.getPaciente().getDni());
-			ps.setDate(4, observacion.getFecha());
+			ps.setTimestamp(4, observacion.getFecha());
 			
 			ps.execute();
 			
@@ -67,7 +67,7 @@ public class AdministradorPersistenciaObservaciones extends
 			Connection con = Conexion.connect();
 			PreparedStatement ps = con.prepareStatement("UPDATE "+super.getDatabase()+".dbo.Observaciones SET activo = 0 WHERE dni = ? AND fecha = ?");
 			ps.setString(1, historia.getPaciente().getDni());
-			ps.setDate(2, observacion.getFecha());
+			ps.setTimestamp(2, observacion.getFecha());
 			
 			ps.execute();
 			
@@ -93,7 +93,7 @@ public class AdministradorPersistenciaObservaciones extends
 				
 				observacion.setOdontologo(Controlador.getInstancia().obtenerOdontologo(rs.getString("matricula")));
 				observacion.setDescripcion(rs.getString("descripcion"));
-				observacion.setFecha(rs.getDate("fecha"));
+				observacion.setFecha(rs.getTimestamp("fecha"));
 				
 				observaciones.add(observacion);
 			}

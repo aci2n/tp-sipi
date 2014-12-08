@@ -1,6 +1,6 @@
 package views;
 
-import java.sql.Date;
+import java.sql.Timestamp;
 
 
 
@@ -8,7 +8,7 @@ public class TurnoView {
 	private PacienteView paciente;
 	private OdontologoView odontologo;
 	private String descripcion;
-	private Date fecha;
+	private Timestamp fecha;
 	
 	public PacienteView getPaciente() {
 		return paciente;
@@ -28,10 +28,10 @@ public class TurnoView {
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
 	}
-	public Date getFecha() {
+	public Timestamp getFecha() {
 		return fecha;
 	}
-	public void setFecha(Date fecha) {
+	public void setFecha(Timestamp fecha) {
 		this.fecha = fecha;
 	}
 }

@@ -1,6 +1,6 @@
 package views;
 
-import java.sql.Date;
+import java.sql.Timestamp;
 
 
 public class PacienteView {
@@ -9,7 +9,7 @@ public class PacienteView {
 	private String apellido;
 	private String telefono;
 	private String email;
-	private Date fechaNacimiento;
+	private Timestamp fechaNacimiento;
 	private String genero;
 	private String obraSocial;
 	private String planObraSocial;
@@ -44,10 +44,10 @@ public class PacienteView {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public Date getFechaNacimiento() {
+	public Timestamp getFechaNacimiento() {
 		return fechaNacimiento;
 	}
-	public void setFechaNacimiento(Date fechaNacimiento) {
+	public void setFechaNacimiento(Timestamp fechaNacimiento) {
 		this.fechaNacimiento = fechaNacimiento;
 	}
 	public String getGenero() {

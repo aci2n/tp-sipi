@@ -1,6 +1,6 @@
 package implementacion;
 
-import java.sql.Date;
+import java.sql.Timestamp;
 
 import persistencia.AdministradorPersistenciaTurnos;
 import views.TurnoView;
@@ -11,12 +11,12 @@ public class Turno {
 	private Paciente paciente;
 	private Odontologo odontologo;
 	private String descripcion;
-	private Date fecha;
+	private Timestamp fecha;
 	
 	public Turno() {
 	}
 	
-	public Turno(Paciente paciente, Odontologo odontologo, String descripcion, Date fecha) {
+	public Turno(Paciente paciente, Odontologo odontologo, String descripcion, Timestamp fecha) {
 		this.paciente = paciente;
 		this.odontologo = odontologo;
 		this.descripcion = descripcion;
@@ -48,15 +48,15 @@ public class Turno {
 		this.descripcion = descripcion;
 	}
 	
-	public Date getFecha() {
+	public Timestamp getFecha() {
 		return fecha;
 	}
 	
-	public void setFecha(Date fecha) {
+	public void setFecha(Timestamp fecha) {
 		this.fecha = fecha;
 	}
 
-	public boolean sosElTurno(String dni, String matricula, Date fecha) {
+	public boolean sosElTurno(String dni, String matricula, Timestamp fecha) {
 		return this.fecha.compareTo(fecha) == 0 && paciente.sosElPaciente(dni) && odontologo.sosElOdontologo(matricula);
 	}
 	

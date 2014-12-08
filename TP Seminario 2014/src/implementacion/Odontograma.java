@@ -1,6 +1,6 @@
 package implementacion;
 
-import java.sql.Date;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Collection;
 
@@ -12,10 +12,10 @@ import views.OdontogramaView;
 public class Odontograma {
 	private String idOdontograma;
 	private Collection<Diente> dientes;
-	private Date fecha;
+	private Timestamp fecha;
 	private Odontologo odontologo;
 	
-	public Odontograma(String idOdontograma, Date fecha, Odontologo odontologo) {
+	public Odontograma(String idOdontograma, Timestamp fecha, Odontologo odontologo) {
 		this.idOdontograma=idOdontograma;
 		this.fecha=fecha;
 		this.odontologo=odontologo;
@@ -61,11 +61,11 @@ public class Odontograma {
 		this.dientes = dientes;
 	}
 
-	public Date getFecha() {
+	public Timestamp getFecha() {
 		return fecha;
 	}
 
-	public void setFecha(Date fecha) {
+	public void setFecha(Timestamp fecha) {
 		this.fecha = fecha;
 	}
 

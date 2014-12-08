@@ -1,14 +1,14 @@
 package views;
 
 import java.util.Collection;
-import java.sql.Date;
+import java.sql.Timestamp;
 
 
 
 public class OdontogramaView {
 	private String idOdontograma;
 	private Collection<DienteView> dientes;
-	private Date fecha;
+	private Timestamp fecha;
 	private OdontologoView odontologo;
 
 	public void altaProtesisDiente(int posicionDiente) {
@@ -47,11 +47,11 @@ public class OdontogramaView {
 		this.dientes = dientes;
 	}
 
-	public Date getFecha() {
+	public Timestamp getFecha() {
 		return fecha;
 	}
 
-	public void setFecha(Date fecha) {
+	public void setFecha(Timestamp fecha) {
 		this.fecha = fecha;
 	}
 

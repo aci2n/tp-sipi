@@ -1,6 +1,6 @@
 package implementacion;
 
-import java.sql.Date;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Collection;
 
@@ -37,13 +37,13 @@ public class HistoriaClinica {
 		AdministradorPersistenciaFichaPeriodontal.getInstancia().insert(ficha, this);
 	}
 	
-	public void agregarOdontograma(String idOdontograma, Date fecha, Odontologo odontologo) {
+	public void agregarOdontograma(String idOdontograma, Timestamp fecha, Odontologo odontologo) {
 		Odontograma odontograma = new Odontograma(idOdontograma,fecha,odontologo);				
 		this.odontogramas.add(odontograma);
 		AdministradorPersistenciaOdontograma.getInstancia().insert(odontograma, this);
 	}
 	
-	public void agregarObservacion(Odontologo odontologo, Date fecha, String descripcion) {
+	public void agregarObservacion(Odontologo odontologo, Timestamp fecha, String descripcion) {
 		Observacion observacion = new Observacion(odontologo, fecha, descripcion);
 		this.observaciones.add(observacion);
 		AdministradorPersistenciaObservaciones.getInstancia().insert(observacion, this);
@@ -141,7 +141,7 @@ public class HistoriaClinica {
 		return view;
 	}
 
-	public void actualizarOdontograma(String idOdontograma, Date fechaActualSQL, Odontologo odontologo, Collection<Diente> dientes) {
+	public void actualizarOdontograma(String idOdontograma, Timestamp fechaActualSQL, Odontologo odontologo, Collection<Diente> dientes) {
 		Odontograma odontograma = obtenerOdontograma(idOdontograma);
 		if (odontograma != null){
 			odontograma.setDientes(dientes);

@@ -29,6 +29,7 @@ import javafx.stage.StageStyle;
 import views.FichaPeriodontalView;
 import views.ObservacionView;
 import views.OdontologoView;
+import views.PacienteView;
 import views.SeccionView;
 import controlador.Controlador;
 
@@ -153,22 +154,18 @@ public class VistaAltaHistoriaClinicaControlador implements Initializable {
 
 	/* EVENT HANDLERS */
 
-	public void altaHistoriaClinica(ActionEvent event) {
-
-		Controlador.getInstancia().altaHistoriaClinica(tDni.getText(),
-				tDescripcion.getText());
-	}
-
 	public void presionarBuscarPaciente(ActionEvent event) {
-
-		if(Controlador.getInstancia().obtenerPacienteView(tDni.getText()) != null){
+		PacienteView paciente = Controlador.getInstancia().obtenerPacienteView(tDni.getText());
+		if(paciente != null){
 			panelFichaPeriodontal.setDisable(false);
-			labelDni.setText(tDni.getText());
-			
+			labelDni.setText(paciente.getNombre() + " " + paciente.getApellido());
 		}
 	}
 
 	public void guardarFicha(ActionEvent event) {
+		
+		Controlador.getInstancia().altaHistoriaClinica(tDni.getText(),
+				tDescripcion.getText());
 
 		Collection<SeccionView> seccionesView = new ArrayList<SeccionView>();
 		// DIENTE 1

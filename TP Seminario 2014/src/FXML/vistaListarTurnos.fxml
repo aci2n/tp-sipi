@@ -53,13 +53,13 @@
                               <Insets left="10.0" top="30.0" />
                            </padding>
                            <children>
-                              <TextField fx:id="textFiltrarTabla" prefHeight="25.0" prefWidth="254.0" promptText="Ingrese un sólo dato personal" />
-                              <Button fx:id="botonBuscar" mnemonicParsing="false" text="Buscar">
+                              <TextField fx:id="textFiltrarTabla" prefHeight="25.0" prefWidth="254.0" promptText="Ingrese un sólo dato del odontologo" />
+                              <Button fx:id="botonBuscar" mnemonicParsing="false" onAction="#filtrarTabla" text="Buscar">
                                  <font>
                                     <Font name="Calibri" size="14.0" />
                                  </font>
                               </Button>
-                              <Button fx:id="botonVerTodos" mnemonicParsing="false" text="Ver Todos">
+                              <Button fx:id="botonVerTodos" mnemonicParsing="false" onAction="#verTodos" text="Ver Todos">
                                  <font>
                                     <Font name="Calibri" size="14.0" />
                                  </font>
@@ -78,9 +78,10 @@
                   </AnchorPane>
                </top>
                <center>
-                  <TableView fx:id="tablaListarOdontologos" fixedCellSize="0.0" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                  <TableView fx:id="tablaListarTurnos" fixedCellSize="0.0" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                     <columns>
-                      <TableColumn fx:id="columnaApellidoNombre" prefWidth="75.0" text="Odontologo" />
+                        <TableColumn fx:id="columnaOdontologo" prefWidth="75.0" text="Odontologo" />
+                        <TableColumn fx:id="columnaMatricula" prefWidth="75.0" text="Matricula" />
                       <TableColumn fx:id="columnaPaciente" prefWidth="75.0" text="Paciente" />
                         <TableColumn fx:id="columnaDni" prefWidth="75.0" text="DNI" />
                         <TableColumn fx:id="columnaFecha" prefWidth="75.0" text="Fecha" />

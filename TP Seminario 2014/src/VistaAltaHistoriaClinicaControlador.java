@@ -123,10 +123,7 @@ public class VistaAltaHistoriaClinicaControlador implements Initializable {
 		
 		comboOdontologos.getItems().addAll(odontologos);
 		
-		labelDni.setText("-");
-		tDni.setText("");
-		tDescripcion.setText("");
-
+		
 		
 	}
 

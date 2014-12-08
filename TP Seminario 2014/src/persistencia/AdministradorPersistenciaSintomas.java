@@ -24,7 +24,7 @@ public class AdministradorPersistenciaSintomas extends AdministradorPersistencia
 	public void insert(String sintoma) {
 		try{
 			Connection con = Conexion.connect();
-			PreparedStatement ps = con.prepareStatement("INSERT INTO "+super.getDatabase()+".dbo.Sintomas VALUES (?)");
+			PreparedStatement ps = con.prepareStatement("INSERT INTO "+super.getDatabase()+".dbo.Sintomas(nombre) VALUES (?)");
 			ps.setString(1, sintoma);
 			
 			ps.execute();

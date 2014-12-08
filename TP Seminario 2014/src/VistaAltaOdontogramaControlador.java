@@ -512,6 +512,8 @@ public class VistaAltaOdontogramaControlador implements Initializable {
 
 		dientes.add(new DienteView("32", "0", "0", "null", d32caras));
 
+		// CARGA
+		
 		OdontogramaView odontograma = new OdontogramaView();
 		odontograma.setDientes(dientes);
 		odontograma

@@ -68,7 +68,7 @@
                         <Insets />
                      </VBox.margin>
                      <center>
-                        <VBox alignment="CENTER" spacing="10.0" BorderPane.alignment="CENTER">
+                        <VBox fx:id="panelFichaPeriodontal" alignment="CENTER" spacing="10.0" BorderPane.alignment="CENTER">
                            <children>
                               <VBox fx:id="boxHistoriaClinica" spacing="10.0" style="-fx-background-color: white;">
                                  <children>

@@ -1,10 +1,7 @@
 import java.net.URL;
-import java.sql.Date;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ResourceBundle;
-
-import com.sun.jmx.snmp.Timestamp;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -26,6 +23,7 @@ import views.TurnoView;
 import controlador.Controlador;
 
 
+@SuppressWarnings("deprecation")
 public class VistaAdministracionTurnosControlador implements Initializable {
 
 	@FXML
@@ -37,7 +35,6 @@ public class VistaAdministracionTurnosControlador implements Initializable {
 	@FXML
 	private Button altaTurno;
 	
-	@SuppressWarnings("deprecation")
 	public void agregarTurno(ActionEvent event) {
 		if (tDni.getText()!=""){
 			if (comboOdontologos.getValue()!=null){

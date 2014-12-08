@@ -5,7 +5,6 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ResourceBundle;
 
-import controlador.Controlador;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -22,7 +21,9 @@ import javafx.scene.text.Text;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import views.PacienteView;
+import controlador.Controlador;
 
+@SuppressWarnings("deprecation")
 public class VistaAdministracionPacientesControlador implements Initializable{
 
 	@FXML

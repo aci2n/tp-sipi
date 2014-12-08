@@ -4,10 +4,6 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.ResourceBundle;
 
-import views.CaraView;
-import views.DienteView;
-import views.OdontogramaView;
-import views.OdontologoView;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -19,13 +15,12 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.ContextMenu;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextField;
-import javafx.scene.input.MouseButton;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
-import javafx.stage.Stage;
-
-import com.sun.glass.events.MouseEvent;
-
+import views.CaraView;
+import views.DienteView;
+import views.OdontogramaView;
+import views.OdontologoView;
 import controlador.Controlador;
 
 public class VistaAltaOdontogramaControlador implements Initializable {

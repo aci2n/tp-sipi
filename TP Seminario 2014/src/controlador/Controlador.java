@@ -381,11 +381,7 @@ public class Controlador {
 	}
 	
 	//UTILITARIAS
-	
-	private java.sql.Timestamp getFechaActualSQL(){
-		return new Timestamp(System.currentTimeMillis());
-	}	
-	
+		
 	private Collection<Diente> construirDientesDesdeView(Collection<DienteView> dientesView){
 		Collection<Diente> dientes = new ArrayList<Diente>();
 		Diente diente;

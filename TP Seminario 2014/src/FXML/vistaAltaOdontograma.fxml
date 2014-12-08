@@ -51,7 +51,7 @@
                                  <children>
                                     <HBox alignment="CENTER_LEFT" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" style="-fx-background-color: #3498db;">
                                        <children>
-                                          <Label text="Odontrograma" textFill="WHITE">
+                                          <Label text="Odontograma" textFill="WHITE">
                                              <font>
                                                 <Font name="Calibri Bold" size="14.0" />
                                              </font>

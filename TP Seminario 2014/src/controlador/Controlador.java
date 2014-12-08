@@ -14,6 +14,7 @@ import implementacion.Turno;
 
 import java.sql.Timestamp;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 
 import persistencia.AdministradorPersistenciaHistoriasClinicas;
@@ -324,6 +325,30 @@ public class Controlador {
 	
 	public Collection<String> obtenerSintomas(){
 		return this.sintomas;
+	}
+	
+	public TurnoView[] getProximosTurnos(){
+		int cantTurnos = 8;
+		
+		if (cantTurnos>this.turnos.size())
+			cantTurnos=this.turnos.size();
+		
+		Turno[] turnos = new Turno[this.turnos.size()];
+		
+		int i = 0;		
+		for (Turno t : this.turnos){
+			turnos[i] = t;
+			i++;
+		}
+		
+		Arrays.sort(turnos);
+		
+		TurnoView[] turnosView = new TurnoView[cantTurnos];
+		
+		for (i=0;i<cantTurnos;i++)
+			turnosView[i]=turnos[i].generarView();
+		
+		return turnosView;
 	}
 	
 	//ANALISIS PREDICTIVO

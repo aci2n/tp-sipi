@@ -7,7 +7,7 @@ import views.TurnoView;
 
 
 
-public class Turno {
+public class Turno implements Comparable<Turno>{
 	private Paciente paciente;
 	private Odontologo odontologo;
 	private String descripcion;
@@ -67,5 +67,10 @@ public class Turno {
 		view.setOdontologo(odontologo.generarView());
 		view.setPaciente(paciente.generarView());
 		return view;
+	}
+
+	@Override
+	public int compareTo(Turno o) {
+		return this.fecha.compareTo(o.getFecha());
 	}
 }

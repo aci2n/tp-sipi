@@ -70,7 +70,7 @@ public class VistaAnalisisPredictivoControlador implements Initializable {
 		            	if (estadisticaHistoria.getSintomasPresentados().contains(sintomaBase)) {
 		            		for (String sintomaPresentado : estadisticaHistoria.getSintomasPresentados()) {
 		            			if (!sintomaPresentado.equals(sintomaBase)) {
-		            				añadirDatos(data, sintomaPresentado);
+		            				anadirDatos(data, sintomaPresentado);
 		            			}
 		            		}
 		            	}
@@ -85,7 +85,7 @@ public class VistaAnalisisPredictivoControlador implements Initializable {
 		
 	}
 	
-	public void añadirDatos(ObservableList<PieChart.Data> data, String sintomaPresentado) {
+	public void anadirDatos(ObservableList<PieChart.Data> data, String sintomaPresentado) {
 		for (PieChart.Data dato : data) {
 			if (dato.getName().equals(sintomaPresentado)) {
 				dato.setPieValue(dato.getPieValue() + 1);

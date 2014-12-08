@@ -123,8 +123,6 @@ public class VistaAltaHistoriaClinicaControlador implements Initializable {
 		
 		comboOdontologos.getItems().addAll(odontologos);
 		
-		
-		
 	}
 
 	/* METODOS */

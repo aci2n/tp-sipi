@@ -48,7 +48,7 @@
                         </AnchorPane>
                      </top>
                   </BorderPane>
-                  <BorderPane minWidth="-Infinity" prefWidth="1200.0">
+                  <BorderPane fx:id="panelFichaPeriodontal" minWidth="-Infinity" prefWidth="1200.0">
                      <bottom>
                         <BorderPane BorderPane.alignment="CENTER">
                            <BorderPane.margin>
@@ -68,7 +68,7 @@
                         <Insets />
                      </VBox.margin>
                      <center>
-                        <VBox fx:id="panelFichaPeriodontal" alignment="CENTER" spacing="10.0" BorderPane.alignment="CENTER">
+                        <VBox alignment="CENTER" spacing="10.0" BorderPane.alignment="CENTER">
                            <children>
                               <VBox fx:id="boxHistoriaClinica" spacing="10.0" style="-fx-background-color: white;">
                                  <children>

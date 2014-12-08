@@ -89,4 +89,21 @@ public class Seccion {
 		return view;
 	}
 
+	public Observacion generarObservacion() {
+		Observacion observacion = new Observacion();
+		observacion.setFecha(null);
+		StringBuilder sintomas = new StringBuilder();
+		if (sangrado)
+			sintomas.append("sangrado ");
+		if (placa)
+			sintomas.append("placa ");
+		String descripcion = sintomas.toString();
+		if (!descripcion.equals(""))
+			observacion.setDescripcion(descripcion);
+		else
+			observacion.setDescripcion(null);
+		observacion.setOdontologo(null);
+		return observacion;
+	}
+
 }

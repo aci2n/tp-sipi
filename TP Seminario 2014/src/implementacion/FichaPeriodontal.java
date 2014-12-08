@@ -117,4 +117,14 @@ public class FichaPeriodontal {
 		view.setOdontologo(odontologo.generarView());
 		return view;
 	}
+
+	public Collection<Observacion> generarObservaciones() {
+		Collection<Observacion> observaciones = new ArrayList<Observacion>();
+		for (Seccion seccion : secciones) {
+			Observacion observacion = seccion.generarObservacion();
+			if (observacion.getDescripcion() != null)
+				observaciones.add(seccion.generarObservacion());
+		}
+		return observaciones;
+	}
 }

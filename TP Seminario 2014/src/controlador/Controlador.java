@@ -38,17 +38,28 @@ public class Controlador {
 	private Collection<String> sintomas;
 	private static Controlador instancia;
 	
-	private Controlador(){
+	
+	private void inicializar(){
 		this.pacientes = AdministradorPersistenciaPaciente.getInstancia().buscarPacientes();
 		this.turnos = AdministradorPersistenciaTurnos.getInstancia().buscarTurnos();
 		this.odontologos = AdministradorPersistenciaOdontologos.getInstancia().buscarOdontologos();
-		this.historiasClinicas = AdministradorPersistenciaHistoriasClinicas.getInstancia().buscarHistorias();
 		this.sintomas = AdministradorPersistenciaSintomas.getInstancia().buscarSintomas();
+		//this.historiasClinicas = AdministradorPersistenciaHistoriasClinicas.getInstancia().buscarHistorias(); -> tarda mucho en arrancar si se inicializa aca
+	}
+	
+	private Controlador(){
+		pacientes = new ArrayList<Paciente>();
+		sintomas = new ArrayList<String>();
+		odontologos = new ArrayList<Odontologo>();
+		turnos = new ArrayList<Turno>();
+		historiasClinicas = new ArrayList<HistoriaClinica>();
 	}
 	
 	public static Controlador getInstancia(){
-		if (instancia==null)
+		if (instancia==null){
 			instancia = new Controlador();
+			instancia.inicializar();
+		}
 		return instancia;
 	}
 	
@@ -137,7 +148,7 @@ public class Controlador {
 	}
 		
 	
-	//OBTENER (objeto, view, collection de views)
+	//OBTENER OBJETO
 	
 	public Odontologo obtenerOdontologo(String matricula) {
 		Odontologo odontologo = null;
@@ -153,20 +164,7 @@ public class Controlador {
 			}
 		}
 		return odontologo;
-	}
-	
-	public OdontologoView obtenerOdontologoView (String matricula) {
-		Odontologo odontologo = obtenerOdontologo(matricula);
-		return odontologo != null ? odontologo.generarView() : null;
-	}
-	
-	public Collection<OdontologoView> obtenerOdontologosView() {
-		Collection<OdontologoView> odontologos = new ArrayList<OdontologoView>();
-		for (Odontologo odontologo : this.odontologos) {
-			odontologos.add(odontologo.generarView());
-		}
-		return odontologos;
-	}
+	}	
 
 	public Paciente obtenerPaciente(String dni) {
 		Paciente paciente = null;
@@ -182,19 +180,6 @@ public class Controlador {
 			}
 		}
 		return paciente;
-	}
-	
-	public PacienteView obtenerPacienteView(String dni) {
-		Paciente paciente = obtenerPaciente(dni);
-		return paciente != null? paciente.generarView() : null;
-	}
-	
-	public Collection<PacienteView> obtenerPacientesView() {
-		Collection<PacienteView> pacientes = new ArrayList<PacienteView>();
-		for (Paciente paciente : this.pacientes) {
-			pacientes.add(paciente.generarView());
-		}
-		return pacientes;
 	}
 	
 	public HistoriaClinica obtenerHistoriaClinica(String dni) {
@@ -213,32 +198,6 @@ public class Controlador {
 		return historia;
 	}
 	
-	public HistoriaClinicaView obtenerHistoriaClinicaView(String dni) {
-		HistoriaClinica historia = obtenerHistoriaClinica(dni);
-		return historia != null ? historia.generarView() : null;
-	}
-	
-	public Collection<HistoriaClinicaView> obtenerHistoriasClinicasView() {
-		Collection<HistoriaClinicaView> historias = new ArrayList<HistoriaClinicaView>();
-		for (HistoriaClinica historia : this.historiasClinicas) {
-			historias.add(historia.generarView());
-		}
-		return historias;
-	}
-
-	public FichaPeriodontal obtenerFicha(String dni) {
-		HistoriaClinica historia = obtenerHistoriaClinica(dni);
-		if (historia != null) {
-			return historia.getFicha();
-		}
-		return null;
-	}
-	
-	public FichaPeriodontalView obtenerFichaView(String dni) {
-		FichaPeriodontal ficha = obtenerFicha(dni);
-		return ficha != null? ficha.generarView() : null;
-	}
-	
 	public Turno obtenerTurno(String dni, String matricula, Date fecha) {
 		Turno turno = null;
 		for (Turno turn : turnos) {
@@ -254,6 +213,62 @@ public class Controlador {
 		}
 		return turno;
 	}
+	
+	//OBTENER VIEW
+	
+	public OdontologoView obtenerOdontologoView (String matricula) {
+		Odontologo odontologo = obtenerOdontologo(matricula);
+		return odontologo != null ? odontologo.generarView() : null;
+	}
+	
+	public PacienteView obtenerPacienteView(String dni) {
+		Paciente paciente = obtenerPaciente(dni);
+		return paciente != null? paciente.generarView() : null;
+	}
+	
+	public HistoriaClinicaView obtenerHistoriaClinicaView(String dni) {
+		HistoriaClinica historia = obtenerHistoriaClinica(dni);
+		return historia != null ? historia.generarView() : null;
+	}
+
+	public FichaPeriodontalView obtenerFichaView(String dni) {
+		FichaPeriodontal ficha = obtenerFicha(dni);
+		return ficha != null? ficha.generarView() : null;
+	}
+	
+	public FichaPeriodontal obtenerFicha(String dni) {
+		HistoriaClinica historia = obtenerHistoriaClinica(dni);
+		if (historia != null) {
+			return historia.getFicha();
+		}
+		return null;
+	}
+	
+	//OBTENER COLLECTION DE VIEWS
+	
+	public Collection<PacienteView> obtenerPacientesView() {
+		Collection<PacienteView> pacientes = new ArrayList<PacienteView>();
+		for (Paciente paciente : this.pacientes) {
+			pacientes.add(paciente.generarView());
+		}
+		return pacientes;
+	}	
+	
+	public Collection<OdontologoView> obtenerOdontologosView() {
+		Collection<OdontologoView> odontologos = new ArrayList<OdontologoView>();
+		for (Odontologo odontologo : this.odontologos) {
+			odontologos.add(odontologo.generarView());
+		}
+		return odontologos;
+	}
+	
+	public Collection<HistoriaClinicaView> obtenerHistoriasClinicasView() {
+		Collection<HistoriaClinicaView> historias = new ArrayList<HistoriaClinicaView>();
+		for (HistoriaClinica historia : this.historiasClinicas) {
+			historias.add(historia.generarView());
+		}
+		return historias;
+	}	
 	
 	public TurnoView obtenerTurnoView(String dni, String matricula, Date fecha) {
 		Turno turno = obtenerTurno(dni, matricula, fecha);

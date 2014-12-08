@@ -59,7 +59,7 @@ public class VistaAdministracionTurnosControlador implements Initializable {
 							ov = con.obtenerOdontologoView(comboOdontologos.getValue());
 							tv.setPaciente(pv);
 							tv.setOdontologo(ov);
-							tv.setFecha(fechaCompleta);
+							//tv.setFecha(fechaCompleta);
 							tv.setDescripcion(tDescripcion.getText());
 	
 							con.altaTurno(tv);

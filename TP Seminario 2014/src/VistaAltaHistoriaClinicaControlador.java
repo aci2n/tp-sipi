@@ -4,6 +4,7 @@ import java.util.ResourceBundle;
 
 import controlador.Controlador;
 import views.ObservacionView;
+import views.SeccionView;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -85,22 +86,11 @@ public class VistaAltaHistoriaClinicaControlador implements Initializable {
 		panelFichaPeriodontal.getStylesheets().setAll(
 				getClass().getResource("historiaClinica.css").toExternalForm());
 
-		// comboOdontologos.getItems().addAll("Odontologo 1");
-		// comboOdontologos.getItems().addAll("Odontologo 2");
-		// comboOdontologos.getItems().addAll("Odontologo 3");
-		// comboOdontologos.getItems().addAll("Odontologo 4");
-
-
-
-		
-
+	
 		d15p1.setSelected(true);
 	}
 
-	/* METODOS */
-
-	@SuppressWarnings("deprecation")
-	
+	/* METODOS */	
 
 	private Stage generarPrevisualizacion(Node node) {
 
@@ -134,6 +124,15 @@ public class VistaAltaHistoriaClinicaControlador implements Initializable {
 
 		panelFichaPeriodontal.setDisable(false);
 		datosPaciente.setText(filtrarFicha.getText());
+	}
+	
+	public void guardarFicha(ActionEvent event){
+		
+		SeccionView d1s1 = new SeccionView();
+		SeccionView d1s2 = new SeccionView();
+		SeccionView d1s3 = new SeccionView();
+		
+		
 	}
 
 	

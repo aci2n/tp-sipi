@@ -12,6 +12,21 @@ public class SeccionView {
 	private String posicionSeccion;
 	private String posicionDiente;
 	
+	public SeccionView(){
+		
+	}
+	
+	public SeccionView(boolean sangrado, boolean placa, int margen, int profundidad, String posSeccion, String posDiente){
+		
+		this.sangrado = sangrado;
+		this.placa = placa;
+		this.margen = margen;
+		this.profundidad = profundidad;
+		this.posicionSeccion = posSeccion;
+		this.posicionDiente = posDiente;
+		
+	}
+	
 	public boolean sosLaSeccion(String seccion, String sDiente) {
 		return this.posicionDiente.equals(seccion) && this.posicionDiente.equals(sDiente);
 	}

@@ -73,6 +73,10 @@ public class VistaPrincipalControlador {
 	public void seleccionarVistaAltaObservaciones(ActionEvent event){
 		VistaNavegador.loadVista(VistaNavegador.VISTA_11);	
 	}
+	
+	public void seleccionarVistaAltaTurno(ActionEvent event){
+		VistaNavegador.loadVista(VistaNavegador.VISTA_12);	
+	}
 
 	public void seleccionarSalir(ActionEvent e) {
 		System.exit(0);

@@ -8,7 +8,7 @@ import javafx.scene.layout.StackPane;
 //import org.controlsfx.control.PopOver;
 
 /**
- * Clase Principal que maneja la administración de las vistas.
+ * Clase Principal que maneja la administraciï¿½n de las vistas.
  */
 public class VistaPrincipalControlador {
 
@@ -80,6 +80,10 @@ public class VistaPrincipalControlador {
 
 	public void seleccionarVistaListarTurnos(ActionEvent event){
 		VistaNavegador.loadVista(VistaNavegador.VISTA_13);	
+	}
+	
+	public void seleccionarVistaAltaSintoma(ActionEvent event){
+		VistaNavegador.loadVista(VistaNavegador.VISTA_14);
 	}
 	
 	public void seleccionarSalir(ActionEvent e) {

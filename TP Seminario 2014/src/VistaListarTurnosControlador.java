@@ -223,7 +223,7 @@ public class VistaListarTurnosControlador implements Initializable {
 			return matricula;
 		}
 
-		public String getNombre() {
+		public String getOdontologo() {
 			return odontologo;
 		}
 

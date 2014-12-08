@@ -54,7 +54,7 @@
 										<MenuItem mnemonicParsing="false" text="Modificación" />
 										<MenuItem mnemonicParsing="false" text="Baja" />
 										<MenuItem mnemonicParsing="false" text="Buscar" />
-										<MenuItem mnemonicParsing="false" text="Listar" />
+										<MenuItem fx:id="listarTurnos" mnemonicParsing="false" onAction="#seleccionarVistaListarTurnos" text="Listar" />
 									</items>
 								</Menu>
 								<Menu fx:id="menu" mnemonicParsing="false" text="ODONTÓLOGOS">

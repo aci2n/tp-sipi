@@ -12,17 +12,16 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.geometry.Side;
-import javafx.scene.chart.PieChart;
+import javafx.scene.chart.BarChart;
+import javafx.scene.chart.XYChart;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import controlador.Controlador;
 
 public class VistaAnalisisPredictivoControlador implements Initializable {
 
-	@FXML
-	private PieChart grafico;
 	@FXML
 	private Button botonRealizarAnalisis;
 	@FXML
@@ -31,23 +30,31 @@ public class VistaAnalisisPredictivoControlador implements Initializable {
 	private ComboBox<String> comboPredicciones;
 	@FXML
 	private Button botonGraficar;
-	private ObservableList<String> observablePredicciones = FXCollections.observableArrayList();
+	@FXML
+	private BarChart<String, Integer> grafico;
+	@FXML
+	private Label labelCantidadPacientes;
+	
+	private ObservableList<String> observablePredicciones;
 	private Collection<Prediccion> predicciones = new ArrayList<Prediccion>();
-		
+	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		grafico.setVisible(true);
+		grafico.setAnimated(false);
 	}
 
 	public void realizarAnalisis(ActionEvent event) {
-		predicciones = Controlador.getInstancia().analisisPredictivoHistoriaClinica(textFiltrarTabla.getText());	
+		predicciones = Controlador.getInstancia().analisisPredictivoHistoriaClinica(textFiltrarTabla.getText());
+		observablePredicciones = FXCollections.observableArrayList();
 		comboPredicciones.getItems().clear();
 		for (Prediccion p : predicciones)
 			observablePredicciones.add(p.getSintomaBase());
 		comboPredicciones.setItems(observablePredicciones);		
 	}
 		
-	public void mostrarPrediccionDeSintoma (){		
+	public void mostrarPrediccionDeSintoma (){	
+		
+		grafico.getData().clear();
 		
 		Prediccion prediccion = null;
 		
@@ -56,15 +63,16 @@ public class VistaAnalisisPredictivoControlador implements Initializable {
 				prediccion = p;
 				break;
 			}
-		
-		ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList();
-		
-		for (ItemPrediccion i : prediccion.getItemsPrediccion())
-			pieChartData.add(new PieChart.Data(i.getSintomaAnalisis(),i.getCantidad()));
 				
-		grafico.setData(pieChartData);
-		grafico.setLegendSide(Side.RIGHT);
-		grafico.setVisible(true);
+		XYChart.Series<String,Integer> series = new XYChart.Series<String,Integer>();
+							
+		for (ItemPrediccion i : prediccion.getItemsPrediccion()){
+			series.getData().add(new XYChart.Data<String, Integer>(i.getSintomaAnalisis(),i.getCantidad()));
+		}
+		
+		labelCantidadPacientes.setText("Cantidad de pacientes analizados: "+prediccion.getTotal());
+		
+		grafico.getData().add(series);
 		
 	}
 }

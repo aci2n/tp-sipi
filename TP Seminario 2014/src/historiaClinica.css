@@ -33,6 +33,11 @@
 	-fx-background-color: #c0392b;
 }
 
+#botonAltaHistoria{
+	
+	-fx-background-color: red;
+}
+
 #botonCancelar{
 	-fx-background-color: #95a5a6;
 }

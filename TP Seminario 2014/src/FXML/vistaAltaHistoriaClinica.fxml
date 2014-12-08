@@ -12,7 +12,7 @@
 
 <StackPane fx:id="vistaHolder" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="VistaAltaHistoriaClinicaControlador">
    <children>
-      <ScrollPane fitToHeight="true" fitToWidth="true" prefHeight="1700.0" prefWidth="1000.0">
+      <ScrollPane fitToHeight="true" fitToWidth="true" prefHeight="1700.0" prefWidth="1500.0">
          <content>
             <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" spacing="20.0">
                <children>
@@ -51,109 +51,24 @@
                   <BorderPane fx:id="panelFichaPeriodontal" minWidth="-Infinity" prefWidth="1200.0">
                      <bottom>
                         <BorderPane BorderPane.alignment="CENTER">
-                           <bottom>
+                           <BorderPane.margin>
+                              <Insets top="20.0" />
+                           </BorderPane.margin>
+                           <top>
                               <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="50.0" BorderPane.alignment="CENTER">
                                  <children>
                                     <Button fx:id="botonGuardar" mnemonicParsing="false" text="Guardar" />
                                     <Button fx:id="botonCancelar" mnemonicParsing="false" text="Cancelar" />
                                  </children>
                               </HBox>
-                           </bottom>
-                           <center>
-                              <VBox spacing="20.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
-                                 <children>
-                                    <HBox alignment="CENTER_LEFT" minHeight="-Infinity" prefHeight="30.0" style="-fx-background-color: #3498db;">
-                                       <children>
-                                          <Label text="Listado de Observaciones" textFill="WHITE" HBox.hgrow="ALWAYS">
-                                             <font>
-                                                <Font name="Calibri Bold" size="14.0" />
-                                             </font>
-                                             <HBox.margin>
-                                                <Insets left="10.0" />
-                                             </HBox.margin></Label>
-                                       </children>
-                                       <VBox.margin>
-                                          <Insets />
-                                       </VBox.margin>
-                                    </HBox>
-                                    <HBox prefHeight="100.0" prefWidth="200.0" spacing="20.0" style="-fx-border-color: #bdc3c7; -fx-border-radius: 2;" VBox.vgrow="ALWAYS">
-                                       <children>
-                                          <Label text="Observación" />
-                                          <TextArea fx:id="textObservaciones" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="300.0" promptText="Descripción de la observación" wrapText="true" HBox.hgrow="NEVER">
-                                             <HBox.margin>
-                                                <Insets left="10.0" />
-                                             </HBox.margin></TextArea>
-                                          <HBox>
-                                             <children>
-                                                <Label text="Seleccione el odontólogo a cargo: ">
-                                                   <HBox.margin>
-                                                      <Insets left="10.0" />
-                                                   </HBox.margin>
-                                                </Label>
-                                                <ComboBox fx:id="comboOdontologos2" prefWidth="150.0">
-                                                   <HBox.margin>
-                                                      <Insets left="20.0" />
-                                                   </HBox.margin>
-                                                </ComboBox>
-                                             </children>
-                                          </HBox>
-                                          <HBox alignment="CENTER">
-                                             <children>
-                                                <Button fx:id="botonAgregarObs" mnemonicParsing="false" onAction="#agregarObservacion" text="Agregar observación" />
-                                             </children>
-                                             <HBox.margin>
-                                                <Insets left="40.0" />
-                                             </HBox.margin>
-                                          </HBox>
-                                       </children>
-                                       <VBox.margin>
-                                          <Insets left="40.0" right="40.0" />
-                                       </VBox.margin>
-                                       <padding>
-                                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                                       </padding>
-                                    </HBox>
-                                    <TableView fx:id="tablaObservaciones" minHeight="-Infinity" prefHeight="200.0">
-                                      <columns>
-                                        <TableColumn fx:id="columnaOdontologo" prefWidth="75.0" text="Odontólogo" />
-                                          <TableColumn fx:id="columnaFecha" prefWidth="75.0" text="Fecha" />
-                                          <TableColumn fx:id="columnaDescripcion" prefWidth="75.0" text="Descripción" />
-                                      </columns>
-                                       <columnResizePolicy>
-                                          <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
-                                       </columnResizePolicy>
-                                       <VBox.margin>
-                                          <Insets bottom="20.0" left="100.0" right="100.0" top="20.0" />
-                                       </VBox.margin>
-                                    </TableView>
-                                    <HBox fx:id="box1" alignment="CENTER" spacing="10.0">
-                                       <children>
-                                          <Button fx:id="botonEliminarFila" mnemonicParsing="false" onAction="#eliminarFila" text="Eliminar Fila" />
-                                          <Button fx:id="botonLimpiarTabla" mnemonicParsing="false" onAction="#limpiarTabla" text="Limpiar Tabla" />
-                                       </children>
-                                       <VBox.margin>
-                                          <Insets bottom="20.0" />
-                                       </VBox.margin>
-                                    </HBox>
-                                 </children>
-                                 <BorderPane.margin>
-                                    <Insets />
-                                 </BorderPane.margin>
-                                 <effect>
-                                    <DropShadow color="#95a5a6" />
-                                 </effect>
-                              </VBox>
-                           </center>
-                           <BorderPane.margin>
-                              <Insets top="20.0" />
-                           </BorderPane.margin>
+                           </top>
                         </BorderPane>
                      </bottom>
                      <VBox.margin>
                         <Insets />
                      </VBox.margin>
                      <center>
-                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+                        <VBox alignment="CENTER" spacing="10.0" BorderPane.alignment="CENTER">
                            <children>
                               <VBox spacing="10.0" style="-fx-background-color: white;">
                                  <children>
@@ -177,21 +92,20 @@
                                           <Insets />
                                        </VBox.margin>
                                     </HBox>
-                                    <HBox alignment="CENTER_LEFT">
+                                    <HBox spacing="30.0">
                                        <children>
-                                          <Label text="Seleccione el odontólogo a cargo: ">
+                                          <Label text="Paciente" />
+                                          <TextField fx:id="tDni" promptText="Ingrese DNI" />
+                                          <Label text="Descripción" />
+                                          <TextArea minHeight="-Infinity" prefHeight="50.0" prefWidth="250.0" promptText="Ingrese una descripción" />
+                                          <Button fx:id="botonAltaHistoria" mnemonicParsing="false" text="Alta Historia Clinica">
                                              <HBox.margin>
-                                                <Insets left="10.0" />
+                                                <Insets left="30.0" />
                                              </HBox.margin>
-                                          </Label>
-                                          <ComboBox fx:id="comboOdontologos" prefWidth="150.0">
-                                             <HBox.margin>
-                                                <Insets left="20.0" />
-                                             </HBox.margin>
-                                          </ComboBox>
+                                          </Button>
                                        </children>
                                        <VBox.margin>
-                                          <Insets bottom="10.0" />
+                                          <Insets bottom="10.0" left="10.0" />
                                        </VBox.margin>
                                     </HBox>
                                  </children>
@@ -209,6 +123,23 @@
                                              </HBox.margin>
                                           </Label>
                                        </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT">
+                                       <children>
+                                          <Label text="Seleccione el odontólogo a cargo: ">
+                                             <HBox.margin>
+                                                <Insets left="10.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <ComboBox fx:id="comboOdontologos" prefWidth="150.0">
+                                             <HBox.margin>
+                                                <Insets left="20.0" />
+                                             </HBox.margin>
+                                          </ComboBox>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="10.0" />
+                                       </VBox.margin>
                                     </HBox>
                                     <Label fx:id="superior" alignment="CENTER" text="SUPERIOR" underline="true">
                                        <VBox.margin>
@@ -248,9 +179,9 @@
                                           <children>
                                              <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" spacing="3.0" styleClass="box">
                                                 <children>
-                                                   <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
-                                                   <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
-                                                   <ToggleButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
+                                                   <ToggleButton id="toggleButton" fx:id="d1s1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
+                                                   <ToggleButton id="toggleButton" fx:id="d1s2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
+                                                   <ToggleButton fx:id="d1s3" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
                                                 </children>
                                                 <VBox.margin>
                                                    <Insets bottom="2.0" />
@@ -258,9 +189,9 @@
                                              </HBox>
                                              <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" spacing="3.0" styleClass="box">
                                                 <children>
-                                                   <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
-                                                   <ToggleButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
-                                                   <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
+                                                   <ToggleButton id="toggleButton" fx:id="d1p1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
+                                                   <ToggleButton fx:id="d1p2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
+                                                   <ToggleButton id="toggleButton" fx:id="d1p3" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
                                                 </children>
                                                 <VBox.margin>
                                                    <Insets bottom="2.0" />
@@ -343,9 +274,9 @@
                                              <children>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" spacing="3.0" styleClass="box">
                                                    <children>
-                                                      <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
-                                                      <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
-                                                      <ToggleButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
+                                                      <ToggleButton id="toggleButton" fx:id="d2s1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
+                                                      <ToggleButton id="toggleButton" fx:id="d2s2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
+                                                      <ToggleButton fx:id="d2s3" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
                                                    </children>
                                                    <VBox.margin>
                                                       <Insets bottom="2.0" />
@@ -353,9 +284,9 @@
                                                 </HBox>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" spacing="3.0" styleClass="box">
                                                    <children>
-                                                      <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
-                                                      <ToggleButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
-                                                      <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
+                                                      <ToggleButton id="toggleButton" fx:id="d1p1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
+                                                      <ToggleButton fx:id="d2p2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
+                                                      <ToggleButton id="toggleButton" fx:id="d3p3" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
                                                    </children>
                                                    <VBox.margin>
                                                       <Insets bottom="2.0" />
@@ -438,9 +369,9 @@
                                              <children>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" spacing="3.0" styleClass="box">
                                                    <children>
-                                                      <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
-                                                      <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
-                                                      <ToggleButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
+                                                      <ToggleButton id="toggleButton" fx:id="d3s1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
+                                                      <ToggleButton id="toggleButton" fx:id="d3s2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
+                                                      <ToggleButton fx:id="d3s3" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
                                                    </children>
                                                    <VBox.margin>
                                                       <Insets bottom="2.0" />
@@ -448,9 +379,9 @@
                                                 </HBox>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" spacing="3.0" styleClass="box">
                                                    <children>
-                                                      <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
-                                                      <ToggleButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
-                                                      <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
+                                                      <ToggleButton id="toggleButton" fx:id="d3p1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
+                                                      <ToggleButton fx:id="d3p2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
+                                                      <ToggleButton id="toggleButton" fx:id="d3p3" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
                                                    </children>
                                                    <VBox.margin>
                                                       <Insets bottom="2.0" />
@@ -533,9 +464,9 @@
                                              <children>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" spacing="3.0" styleClass="box">
                                                    <children>
-                                                      <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
-                                                      <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
-                                                      <ToggleButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
+                                                      <ToggleButton id="toggleButton" fx:id="d4s1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
+                                                      <ToggleButton id="toggleButton" fx:id="d4s2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
+                                                      <ToggleButton fx:id="d4s3" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
                                                    </children>
                                                    <VBox.margin>
                                                       <Insets bottom="2.0" />
@@ -543,9 +474,9 @@
                                                 </HBox>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" spacing="3.0" styleClass="box">
                                                    <children>
-                                                      <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
-                                                      <ToggleButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
-                                                      <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
+                                                      <ToggleButton id="toggleButton" fx:id="d4p1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
+                                                      <ToggleButton fx:id="d4p2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
+                                                      <ToggleButton id="toggleButton" fx:id="d4p3" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
                                                    </children>
                                                    <VBox.margin>
                                                       <Insets bottom="2.0" />
@@ -628,9 +559,9 @@
                                              <children>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" spacing="3.0" styleClass="box">
                                                    <children>
-                                                      <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
-                                                      <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
-                                                      <ToggleButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
+                                                      <ToggleButton id="toggleButton" fx:id="d5s1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
+                                                      <ToggleButton id="toggleButton" fx:id="d5s2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
+                                                      <ToggleButton fx:id="d5s3" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
                                                    </children>
                                                    <VBox.margin>
                                                       <Insets bottom="2.0" />
@@ -638,9 +569,9 @@
                                                 </HBox>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" spacing="3.0" styleClass="box">
                                                    <children>
-                                                      <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
-                                                      <ToggleButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
-                                                      <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
+                                                      <ToggleButton id="toggleButton" fx:id="d5p1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
+                                                      <ToggleButton fx:id="d5p2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
+                                                      <ToggleButton id="toggleButton" fx:id="d5p3" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
                                                    </children>
                                                    <VBox.margin>
                                                       <Insets bottom="2.0" />
@@ -723,9 +654,9 @@
                                              <children>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" spacing="3.0" styleClass="box">
                                                    <children>
-                                                      <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
-                                                      <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
-                                                      <ToggleButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
+                                                      <ToggleButton id="toggleButton" fx:id="d6s1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
+                                                      <ToggleButton id="toggleButton" fx:id="d6s2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
+                                                      <ToggleButton fx:id="d6s3" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
                                                    </children>
                                                    <VBox.margin>
                                                       <Insets bottom="2.0" />
@@ -733,9 +664,9 @@
                                                 </HBox>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" spacing="3.0" styleClass="box">
                                                    <children>
-                                                      <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
-                                                      <ToggleButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
-                                                      <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
+                                                      <ToggleButton id="toggleButton" fx:id="d6p1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
+                                                      <ToggleButton fx:id="d6p2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
+                                                      <ToggleButton id="toggleButton" fx:id="d6p3" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
                                                    </children>
                                                    <VBox.margin>
                                                       <Insets bottom="2.0" />
@@ -818,9 +749,9 @@
                                              <children>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" spacing="3.0" styleClass="box">
                                                    <children>
-                                                      <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
-                                                      <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
-                                                      <ToggleButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
+                                                      <ToggleButton id="toggleButton" fx:id="d7s1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
+                                                      <ToggleButton id="toggleButton" fx:id="d7s2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
+                                                      <ToggleButton fx:id="d7s3" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
                                                    </children>
                                                    <VBox.margin>
                                                       <Insets bottom="2.0" />
@@ -828,9 +759,9 @@
                                                 </HBox>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" spacing="3.0" styleClass="box">
                                                    <children>
-                                                      <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
-                                                      <ToggleButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
-                                                      <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
+                                                      <ToggleButton id="toggleButton" fx:id="d7p1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
+                                                      <ToggleButton fx:id="d7p2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
+                                                      <ToggleButton id="toggleButton" fx:id="d7p3" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
                                                    </children>
                                                    <VBox.margin>
                                                       <Insets bottom="2.0" />
@@ -913,9 +844,9 @@
                                              <children>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" spacing="3.0" styleClass="box">
                                                    <children>
-                                                      <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
-                                                      <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
-                                                      <ToggleButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
+                                                      <ToggleButton id="toggleButton" fx:id="d8s1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
+                                                      <ToggleButton id="toggleButton" fx:id="d8s2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
+                                                      <ToggleButton fx:id="d8s3" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
                                                    </children>
                                                    <VBox.margin>
                                                       <Insets bottom="2.0" />
@@ -923,9 +854,9 @@
                                                 </HBox>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" spacing="3.0" styleClass="box">
                                                    <children>
-                                                      <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
-                                                      <ToggleButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
-                                                      <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
+                                                      <ToggleButton id="toggleButton" fx:id="d8p1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
+                                                      <ToggleButton fx:id="d8p2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
+                                                      <ToggleButton id="toggleButton" fx:id="d8p3" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
                                                    </children>
                                                    <VBox.margin>
                                                       <Insets bottom="2.0" />
@@ -1008,9 +939,9 @@
                                              <children>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" spacing="3.0" styleClass="box">
                                                    <children>
-                                                      <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
-                                                      <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
-                                                      <ToggleButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
+                                                      <ToggleButton id="toggleButton" fx:id="d9s1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
+                                                      <ToggleButton id="toggleButton" fx:id="d9s2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
+                                                      <ToggleButton fx:id="d9s3" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
                                                    </children>
                                                    <VBox.margin>
                                                       <Insets bottom="2.0" />
@@ -1018,9 +949,9 @@
                                                 </HBox>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" spacing="3.0" styleClass="box">
                                                    <children>
-                                                      <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
-                                                      <ToggleButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
-                                                      <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
+                                                      <ToggleButton id="toggleButton" fx:id="d9p1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
+                                                      <ToggleButton fx:id="d9p2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
+                                                      <ToggleButton id="toggleButton" fx:id="d9p3" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
                                                    </children>
                                                    <VBox.margin>
                                                       <Insets bottom="2.0" />
@@ -1103,9 +1034,9 @@
                                              <children>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" spacing="3.0" styleClass="box">
                                                    <children>
-                                                      <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
-                                                      <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
-                                                      <ToggleButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
+                                                      <ToggleButton id="toggleButton" fx:id="d10s1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
+                                                      <ToggleButton id="toggleButton" fx:id="d10s2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
+                                                      <ToggleButton fx:id="d10s3" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
                                                    </children>
                                                    <VBox.margin>
                                                       <Insets bottom="2.0" />
@@ -1113,9 +1044,9 @@
                                                 </HBox>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" spacing="3.0" styleClass="box">
                                                    <children>
-                                                      <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
-                                                      <ToggleButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
-                                                      <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
+                                                      <ToggleButton id="toggleButton" fx:id="d10p1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
+                                                      <ToggleButton fx:id="d10p2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
+                                                      <ToggleButton id="toggleButton" fx:id="d10p3" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
                                                    </children>
                                                    <VBox.margin>
                                                       <Insets bottom="2.0" />
@@ -1198,9 +1129,9 @@
                                              <children>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" spacing="3.0" styleClass="box">
                                                    <children>
-                                                      <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
-                                                      <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
-                                                      <ToggleButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
+                                                      <ToggleButton id="toggleButton" fx:id="d11s1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
+                                                      <ToggleButton id="toggleButton" fx:id="d11s2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
+                                                      <ToggleButton fx:id="d11s2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
                                                    </children>
                                                    <VBox.margin>
                                                       <Insets bottom="2.0" />
@@ -1208,9 +1139,9 @@
                                                 </HBox>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" spacing="3.0" styleClass="box">
                                                    <children>
-                                                      <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
-                                                      <ToggleButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
-                                                      <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
+                                                      <ToggleButton id="toggleButton" fx:id="d11p1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
+                                                      <ToggleButton fx:id="d11p2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
+                                                      <ToggleButton id="toggleButton" fx:id="d11p3" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
                                                    </children>
                                                    <VBox.margin>
                                                       <Insets bottom="2.0" />
@@ -1293,9 +1224,9 @@
                                              <children>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" spacing="3.0" styleClass="box">
                                                    <children>
-                                                      <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
-                                                      <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
-                                                      <ToggleButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
+                                                      <ToggleButton id="toggleButton" fx:id="d12s1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
+                                                      <ToggleButton id="toggleButton" fx:id="d12s2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
+                                                      <ToggleButton fx:id="d12s3" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
                                                    </children>
                                                    <VBox.margin>
                                                       <Insets bottom="2.0" />
@@ -1303,9 +1234,9 @@
                                                 </HBox>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" spacing="3.0" styleClass="box">
                                                    <children>
-                                                      <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
-                                                      <ToggleButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
-                                                      <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
+                                                      <ToggleButton id="toggleButton" fx:id="d12p1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
+                                                      <ToggleButton fx:id="d12p2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
+                                                      <ToggleButton id="toggleButton" fx:id="d12p3" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
                                                    </children>
                                                    <VBox.margin>
                                                       <Insets bottom="2.0" />
@@ -1388,9 +1319,9 @@
                                              <children>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" spacing="3.0" styleClass="box">
                                                    <children>
-                                                      <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
-                                                      <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
-                                                      <ToggleButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
+                                                      <ToggleButton id="toggleButton" fx:id="d13s1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
+                                                      <ToggleButton id="toggleButton" fx:id="d13s2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
+                                                      <ToggleButton fx:id="d13s3" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
                                                    </children>
                                                    <VBox.margin>
                                                       <Insets bottom="2.0" />
@@ -1398,9 +1329,9 @@
                                                 </HBox>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" spacing="3.0" styleClass="box">
                                                    <children>
-                                                      <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
-                                                      <ToggleButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
-                                                      <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
+                                                      <ToggleButton id="toggleButton" fx:id="d13p1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
+                                                      <ToggleButton fx:id="d13p2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
+                                                      <ToggleButton id="toggleButton" fx:id="d13p3" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
                                                    </children>
                                                    <VBox.margin>
                                                       <Insets bottom="2.0" />
@@ -1483,9 +1414,9 @@
                                              <children>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" spacing="3.0" styleClass="box">
                                                    <children>
-                                                      <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
-                                                      <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
-                                                      <ToggleButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
+                                                      <ToggleButton id="toggleButton" fx:id="d14s1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
+                                                      <ToggleButton id="toggleButton" fx:id="d14s2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
+                                                      <ToggleButton fx:id="d14s3" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
                                                    </children>
                                                    <VBox.margin>
                                                       <Insets bottom="2.0" />
@@ -1493,9 +1424,9 @@
                                                 </HBox>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" spacing="3.0" styleClass="box">
                                                    <children>
-                                                      <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
-                                                      <ToggleButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
-                                                      <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
+                                                      <ToggleButton id="toggleButton" fx:id="d14p1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
+                                                      <ToggleButton fx:id="d14p2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
+                                                      <ToggleButton id="toggleButton" fx:id="d14p3" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
                                                    </children>
                                                    <VBox.margin>
                                                       <Insets bottom="2.0" />
@@ -1578,9 +1509,9 @@
                                              <children>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" spacing="3.0" styleClass="box">
                                                    <children>
-                                                      <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
-                                                      <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
-                                                      <ToggleButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
+                                                      <ToggleButton id="toggleButton" fx:id="d15s1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
+                                                      <ToggleButton id="toggleButton" fx:id="d15s2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
+                                                      <ToggleButton fx:id="d15s3" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
                                                    </children>
                                                    <VBox.margin>
                                                       <Insets bottom="2.0" />
@@ -1588,9 +1519,9 @@
                                                 </HBox>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" spacing="3.0" styleClass="box">
                                                    <children>
-                                                      <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
-                                                      <ToggleButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
-                                                      <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
+                                                      <ToggleButton id="toggleButton" fx:id="d15p1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
+                                                      <ToggleButton fx:id="d15p2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
+                                                      <ToggleButton id="toggleButton" fx:id="d15p3" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
                                                    </children>
                                                    <VBox.margin>
                                                       <Insets bottom="2.0" />
@@ -1673,9 +1604,9 @@
                                              <children>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" spacing="3.0" styleClass="box">
                                                    <children>
-                                                      <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
-                                                      <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
-                                                      <ToggleButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
+                                                      <ToggleButton id="toggleButton" fx:id="d16s1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
+                                                      <ToggleButton id="toggleButton" fx:id="d16s2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
+                                                      <ToggleButton fx:id="d16s3" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
                                                    </children>
                                                    <VBox.margin>
                                                       <Insets bottom="2.0" />
@@ -1683,9 +1614,9 @@
                                                 </HBox>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" spacing="3.0" styleClass="box">
                                                    <children>
-                                                      <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
-                                                      <ToggleButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
-                                                      <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
+                                                      <ToggleButton id="toggleButton" fx:id="d16p1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
+                                                      <ToggleButton fx:id="d16p2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
+                                                      <ToggleButton id="toggleButton" fx:id="d16p3" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
                                                    </children>
                                                    <VBox.margin>
                                                       <Insets bottom="2.0" />
@@ -1812,9 +1743,9 @@
                                                 </Button>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" spacing="3.0" styleClass="box">
                                                    <children>
-                                                      <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
-                                                      <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
-                                                      <ToggleButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
+                                                      <ToggleButton id="toggleButton" fx:id="d17s1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
+                                                      <ToggleButton id="toggleButton" fx:id="d17s2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
+                                                      <ToggleButton fx:id="d17s3" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
                                                    </children>
                                                    <VBox.margin>
                                                       <Insets bottom="2.0" />
@@ -1822,9 +1753,9 @@
                                                 </HBox>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" spacing="3.0" styleClass="box">
                                                    <children>
-                                                      <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
-                                                      <ToggleButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
-                                                      <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
+                                                      <ToggleButton id="toggleButton" fx:id="d17p1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
+                                                      <ToggleButton fx:id="d17p2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
+                                                      <ToggleButton id="toggleButton" fx:id="d17p3" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
                                                    </children>
                                                    <VBox.margin>
                                                       <Insets bottom="2.0" />
@@ -1907,9 +1838,9 @@
                                                 </Button>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" spacing="3.0" styleClass="box">
                                                    <children>
-                                                      <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
-                                                      <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
-                                                      <ToggleButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
+                                                      <ToggleButton id="toggleButton" fx:id="d18s1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
+                                                      <ToggleButton id="toggleButton" fx:id="d18s2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
+                                                      <ToggleButton fx:id="d18s3" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
                                                    </children>
                                                    <VBox.margin>
                                                       <Insets bottom="2.0" />
@@ -1917,9 +1848,9 @@
                                                 </HBox>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" spacing="3.0" styleClass="box">
                                                    <children>
-                                                      <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
-                                                      <ToggleButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
-                                                      <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
+                                                      <ToggleButton id="toggleButton" fx:id="d18p1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
+                                                      <ToggleButton fx:id="d18p2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
+                                                      <ToggleButton id="toggleButton" fx:id="d18p3" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
                                                    </children>
                                                    <VBox.margin>
                                                       <Insets bottom="2.0" />
@@ -2002,9 +1933,9 @@
                                                 </Button>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" spacing="3.0" styleClass="box">
                                                    <children>
-                                                      <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
-                                                      <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
-                                                      <ToggleButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
+                                                      <ToggleButton id="toggleButton" fx:id="d19s1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
+                                                      <ToggleButton id="toggleButton" fx:id="d19s2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
+                                                      <ToggleButton fx:id="d19s3" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
                                                    </children>
                                                    <VBox.margin>
                                                       <Insets bottom="2.0" />
@@ -2012,9 +1943,9 @@
                                                 </HBox>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" spacing="3.0" styleClass="box">
                                                    <children>
-                                                      <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
-                                                      <ToggleButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
-                                                      <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
+                                                      <ToggleButton id="toggleButton" fx:id="d19p1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
+                                                      <ToggleButton fx:id="d19p2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
+                                                      <ToggleButton id="toggleButton" fx:id="d19p3" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
                                                    </children>
                                                    <VBox.margin>
                                                       <Insets bottom="2.0" />
@@ -2097,9 +2028,9 @@
                                                 </Button>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" spacing="3.0" styleClass="box">
                                                    <children>
-                                                      <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
-                                                      <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
-                                                      <ToggleButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
+                                                      <ToggleButton id="toggleButton" fx:id="d20s1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
+                                                      <ToggleButton id="toggleButton" fx:id="d20s2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
+                                                      <ToggleButton fx:id="d20s3" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
                                                    </children>
                                                    <VBox.margin>
                                                       <Insets bottom="2.0" />
@@ -2107,9 +2038,9 @@
                                                 </HBox>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" spacing="3.0" styleClass="box">
                                                    <children>
-                                                      <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
-                                                      <ToggleButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
-                                                      <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
+                                                      <ToggleButton id="toggleButton" fx:id="d20p1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
+                                                      <ToggleButton fx:id="d20p2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
+                                                      <ToggleButton id="toggleButton" fx:id="d20p3" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
                                                    </children>
                                                    <VBox.margin>
                                                       <Insets bottom="2.0" />
@@ -2192,9 +2123,9 @@
                                                 </Button>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" spacing="3.0" styleClass="box">
                                                    <children>
-                                                      <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
-                                                      <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
-                                                      <ToggleButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
+                                                      <ToggleButton id="toggleButton" fx:id="d21s1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
+                                                      <ToggleButton id="toggleButton" fx:id="d21s2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
+                                                      <ToggleButton fx:id="d21s3" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
                                                    </children>
                                                    <VBox.margin>
                                                       <Insets bottom="2.0" />
@@ -2202,9 +2133,9 @@
                                                 </HBox>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" spacing="3.0" styleClass="box">
                                                    <children>
-                                                      <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
-                                                      <ToggleButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
-                                                      <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
+                                                      <ToggleButton id="toggleButton" fx:id="d21p1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
+                                                      <ToggleButton fx:id="d21p2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
+                                                      <ToggleButton id="toggleButton" fx:id="d21p3" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
                                                    </children>
                                                    <VBox.margin>
                                                       <Insets bottom="2.0" />
@@ -2287,9 +2218,9 @@
                                                 </Button>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" spacing="3.0" styleClass="box">
                                                    <children>
-                                                      <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
-                                                      <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
-                                                      <ToggleButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
+                                                      <ToggleButton id="toggleButton" fx:id="d22s1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
+                                                      <ToggleButton id="toggleButton" fx:id="d22s2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
+                                                      <ToggleButton fx:id="d22s3" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
                                                    </children>
                                                    <VBox.margin>
                                                       <Insets bottom="2.0" />
@@ -2297,9 +2228,9 @@
                                                 </HBox>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" spacing="3.0" styleClass="box">
                                                    <children>
-                                                      <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
-                                                      <ToggleButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
-                                                      <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
+                                                      <ToggleButton id="toggleButton" fx:id="d22p1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
+                                                      <ToggleButton fx:id="d22p2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
+                                                      <ToggleButton id="toggleButton" fx:id="d22p3" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
                                                    </children>
                                                    <VBox.margin>
                                                       <Insets bottom="2.0" />
@@ -2382,9 +2313,9 @@
                                                 </Button>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" spacing="3.0" styleClass="box">
                                                    <children>
-                                                      <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
-                                                      <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
-                                                      <ToggleButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
+                                                      <ToggleButton id="toggleButton" fx:id="d23s1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
+                                                      <ToggleButton id="toggleButton" fx:id="d23s2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
+                                                      <ToggleButton fx:id="d23s3" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
                                                    </children>
                                                    <VBox.margin>
                                                       <Insets bottom="2.0" />
@@ -2392,9 +2323,9 @@
                                                 </HBox>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" spacing="3.0" styleClass="box">
                                                    <children>
-                                                      <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
-                                                      <ToggleButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
-                                                      <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
+                                                      <ToggleButton id="toggleButton" fx:id="d23p1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
+                                                      <ToggleButton fx:id="d23p2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
+                                                      <ToggleButton id="toggleButton" fx:id="d23p3" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
                                                    </children>
                                                    <VBox.margin>
                                                       <Insets bottom="2.0" />
@@ -2477,9 +2408,9 @@
                                                 </Button>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" spacing="3.0" styleClass="box">
                                                    <children>
-                                                      <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
-                                                      <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
-                                                      <ToggleButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
+                                                      <ToggleButton id="toggleButton" fx:id="d24s1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
+                                                      <ToggleButton id="toggleButton" fx:id="d24s2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
+                                                      <ToggleButton fx:id="d24s3" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
                                                    </children>
                                                    <VBox.margin>
                                                       <Insets bottom="2.0" />
@@ -2487,9 +2418,9 @@
                                                 </HBox>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" spacing="3.0" styleClass="box">
                                                    <children>
-                                                      <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
-                                                      <ToggleButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
-                                                      <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
+                                                      <ToggleButton id="toggleButton" fx:id="d24p1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
+                                                      <ToggleButton fx:id="d24p2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
+                                                      <ToggleButton id="toggleButton" fx:id="d24p3" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
                                                    </children>
                                                    <VBox.margin>
                                                       <Insets bottom="2.0" />
@@ -2572,9 +2503,9 @@
                                                 </Button>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" spacing="3.0" styleClass="box">
                                                    <children>
-                                                      <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
-                                                      <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
-                                                      <ToggleButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
+                                                      <ToggleButton id="toggleButton" fx:id="d25s1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
+                                                      <ToggleButton id="toggleButton" fx:id="d25s2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
+                                                      <ToggleButton fx:id="d25s3" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
                                                    </children>
                                                    <VBox.margin>
                                                       <Insets bottom="2.0" />
@@ -2582,9 +2513,9 @@
                                                 </HBox>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" spacing="3.0" styleClass="box">
                                                    <children>
-                                                      <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
-                                                      <ToggleButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
-                                                      <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
+                                                      <ToggleButton id="toggleButton" fx:id="d25p1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
+                                                      <ToggleButton fx:id="d25p2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
+                                                      <ToggleButton id="toggleButton" fx:id="d25p3" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton2" />
                                                    </children>
                                                    <VBox.margin>
                                                       <Insets bottom="2.0" />
@@ -2667,9 +2598,9 @@
                                                 </Button>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" spacing="3.0" styleClass="box">
                                                    <children>
-                                                      <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
-                                                      <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
-                                                      <ToggleButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
+                                                      <ToggleButton id="toggleButton" fx:id="d26s1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
+                                                      <ToggleButton id="toggleButton" fx:id="d26s2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
+                                                      <ToggleButton fx:id="d26s3" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
                                                    </children>
                                                    <VBox.margin>
                                                       <Insets bottom="2.0" />
@@ -2762,9 +2693,9 @@
                                                 </Button>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" spacing="3.0" styleClass="box">
                                                    <children>
-                                                      <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
-                                                      <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
-                                                      <ToggleButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
+                                                      <ToggleButton id="toggleButton" fx:id="d27s1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
+                                                      <ToggleButton id="toggleButton" fx:id="d27s2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
+                                                      <ToggleButton fx:id="d27s3" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
                                                    </children>
                                                    <VBox.margin>
                                                       <Insets bottom="2.0" />
@@ -2857,9 +2788,9 @@
                                                 </Button>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" spacing="3.0" styleClass="box">
                                                    <children>
-                                                      <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
-                                                      <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
-                                                      <ToggleButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
+                                                      <ToggleButton id="toggleButton" fx:id="d28s1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
+                                                      <ToggleButton id="toggleButton" fx:id="d28s2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
+                                                      <ToggleButton fx:id="d28s3" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
                                                    </children>
                                                    <VBox.margin>
                                                       <Insets bottom="2.0" />
@@ -2952,9 +2883,9 @@
                                                 </Button>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" spacing="3.0" styleClass="box">
                                                    <children>
-                                                      <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
-                                                      <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
-                                                      <ToggleButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
+                                                      <ToggleButton id="toggleButton" fx:id="d29s1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
+                                                      <ToggleButton id="toggleButton" fx:id="d29s2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
+                                                      <ToggleButton fx:id="d29s3" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
                                                    </children>
                                                    <VBox.margin>
                                                       <Insets bottom="2.0" />
@@ -3047,9 +2978,9 @@
                                                 </Button>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" spacing="3.0" styleClass="box">
                                                    <children>
-                                                      <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
-                                                      <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
-                                                      <ToggleButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
+                                                      <ToggleButton id="toggleButton" fx:id="d30s1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
+                                                      <ToggleButton id="toggleButton" fx:id="d30s2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
+                                                      <ToggleButton fx:id="d30s3" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
                                                    </children>
                                                    <VBox.margin>
                                                       <Insets bottom="2.0" />
@@ -3142,9 +3073,9 @@
                                                 </Button>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" spacing="3.0" styleClass="box">
                                                    <children>
-                                                      <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
-                                                      <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
-                                                      <ToggleButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
+                                                      <ToggleButton id="toggleButton" fx:id="d31s1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
+                                                      <ToggleButton id="toggleButton" fx:id="d31s2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
+                                                      <ToggleButton fx:id="d31s3" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
                                                    </children>
                                                    <VBox.margin>
                                                       <Insets bottom="2.0" />
@@ -3237,9 +3168,9 @@
                                                 </Button>
                                                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" spacing="3.0" styleClass="box">
                                                    <children>
-                                                      <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
-                                                      <ToggleButton id="toggleButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
-                                                      <ToggleButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
+                                                      <ToggleButton id="toggleButton" fx:id="d32s1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
+                                                      <ToggleButton id="toggleButton" fx:id="d32s2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
+                                                      <ToggleButton fx:id="d32s3" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="toggleButton" />
                                                    </children>
                                                    <VBox.margin>
                                                       <Insets bottom="2.0" />

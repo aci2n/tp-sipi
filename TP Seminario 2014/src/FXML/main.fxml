@@ -70,6 +70,7 @@
 									<items>
 										<MenuItem mnemonicParsing="false" onAction="#seleccionarVistaAltaFichaPeriodontal" text="Alta Historia Clinica" />
 										<MenuItem mnemonicParsing="false" onAction="#seleccionarVistaAltaOdontograma" text="Alta Odontograma" />
+                              <MenuItem mnemonicParsing="false" onAction="#seleccionarVistaAltaObservaciones" text="Alta Observaciones" />
 										<MenuItem mnemonicParsing="false" onAction="#seleccionarVistaAnalisisPredictivo" text="Análisis Predictivo" />
 																			
 									</items>

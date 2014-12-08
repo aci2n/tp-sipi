@@ -26,6 +26,7 @@ public class VistaNavegador {
     public static final String VISTA_8 = "/fxml/vistaListarOdontologos.fxml";
     public static final String VISTA_9 = "/fxml/vistaAnalisisPredictivo.fxml";
     public static final String VISTA_10 = "/fxml/vistaAltaOdontologo.fxml";
+    public static final String VISTA_11 = "/fxml/vistaAltaObservaciones.fxml";
     
     private static VistaPrincipalControlador mainController;
 

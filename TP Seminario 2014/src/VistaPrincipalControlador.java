@@ -69,6 +69,10 @@ public class VistaPrincipalControlador {
 	public void seleccionarVistaAltaOdontologo(ActionEvent event) {
 		VistaNavegador.loadVista(VistaNavegador.VISTA_10);
 	}
+	
+	public void seleccionarVistaAltaObservaciones(ActionEvent event){
+		VistaNavegador.loadVista(VistaNavegador.VISTA_11);	
+	}
 
 	public void seleccionarSalir(ActionEvent e) {
 		System.exit(0);

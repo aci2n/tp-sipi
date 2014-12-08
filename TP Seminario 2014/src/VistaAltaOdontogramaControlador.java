@@ -1,4 +1,5 @@
 import java.net.URL;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.ResourceBundle;
@@ -99,7 +100,7 @@ public class VistaAltaOdontogramaControlador implements Initializable {
 		MenuItem corona = new MenuItem("Corona");
 		MenuItem fractura = new MenuItem("Fractura");
 		MenuItem ausente = new MenuItem("Ausente");
-		MenuItem infeccion = new MenuItem("Infección");
+		MenuItem infeccion = new MenuItem("Infecciï¿½n");
 		MenuItem enfermedadPeriodontal = new MenuItem("Enfermedad Periodontal");
 
 		contextMenu.getItems().addAll(carie, corona, fractura, ausente,
@@ -141,7 +142,7 @@ public class VistaAltaOdontogramaControlador implements Initializable {
 			@Override
 			public void handle(ActionEvent event) {
 				b.setStyle("-fx-background-color:#f1c40f");
-				b.setText("Infección");
+				b.setText("Infecciï¿½n");
 			}
 		});
 
@@ -522,16 +523,20 @@ public class VistaAltaOdontogramaControlador implements Initializable {
 								comboOdontologos.getSelectionModel()
 										.getSelectedItem()));
 		odontograma.setIdOdontograma("1");
+		odontograma.setFecha(getFechaActualSQL());
 
-		Controlador.getInstancia().altaOdontograma(tDni.getText(), odontograma.getIdOdontograma(), odontograma.getOdontologo().getMatricula());
+		Controlador.getInstancia().altaOdontograma(tDni.getText(), odontograma);
 		
-		Controlador.getInstancia().actualizarOdontograma(tDni.getText(),
-				odontograma);
+		/*Controlador.getInstancia().actualizarOdontograma(tDni.getText(),
+				odontograma);*/
 
 	}
 	
-	public void cancelar(ActionEvent event){
-		
+	public void cancelar(ActionEvent event){		
 		VistaNavegador.loadVista(VistaNavegador.VISTA_7);
 	}
+	
+	private java.sql.Timestamp getFechaActualSQL(){
+		return new Timestamp(System.currentTimeMillis());
+	}	
 }

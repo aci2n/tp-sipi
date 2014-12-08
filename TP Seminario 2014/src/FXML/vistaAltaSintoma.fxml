@@ -8,12 +8,15 @@
 
 <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="174.0" prefWidth="328.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="VistaAltaSintomaControlador">
    <children>
-      <VBox alignment="BASELINE_CENTER" prefHeight="77.0" prefWidth="328.0" spacing="20.0">
+      <VBox alignment="BASELINE_CENTER" prefHeight="140.0" prefWidth="328.0" spacing="20.0">
          <children>
-            <Label alignment="BASELINE_CENTER" prefHeight="45.0" prefWidth="600.0" text="ALTA SINTOMA">
+            <Label alignment="BASELINE_CENTER" prefHeight="45.0" prefWidth="600.0" text="ALTA SINTOMA" textAlignment="CENTER">
                <font>
-                  <Font size="24.0" />
-               </font></Label>
+                  <Font size="16.0" />
+               </font>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin></Label>
             <TextField fx:id="textNombre" prefHeight="22.0" prefWidth="305.0" promptText="Nombre">
                <VBox.margin>
                   <Insets left="10.0" right="10.0" />

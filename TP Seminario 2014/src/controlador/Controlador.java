@@ -240,6 +240,15 @@ public class Controlador {
 		return turno;
 	}
 	
+	
+	public FichaPeriodontal obtenerFicha(String dni) {
+		HistoriaClinica historia = obtenerHistoriaClinica(dni);
+		if (historia != null) {
+			return historia.getFicha();
+		}
+		return null;
+	}
+	
 	//OBTENER VIEW
 	
 	public OdontologoView obtenerOdontologoView (String matricula) {
@@ -260,14 +269,11 @@ public class Controlador {
 	public FichaPeriodontalView obtenerFichaView(String dni) {
 		FichaPeriodontal ficha = obtenerFicha(dni);
 		return ficha != null? ficha.generarView() : null;
-	}
+	}	
 	
-	public FichaPeriodontal obtenerFicha(String dni) {
-		HistoriaClinica historia = obtenerHistoriaClinica(dni);
-		if (historia != null) {
-			return historia.getFicha();
-		}
-		return null;
+	public TurnoView obtenerTurnoView(String dni, String matricula, Timestamp fecha) {
+		Turno turno = obtenerTurno(dni, matricula, fecha);
+		return turno != null? turno.generarView() : null;
 	}
 	
 	//OBTENER COLLECTION DE VIEWS
@@ -295,11 +301,6 @@ public class Controlador {
 		}
 		return historias;
 	}	
-	
-	public TurnoView obtenerTurnoView(String dni, String matricula, Timestamp fecha) {
-		Turno turno = obtenerTurno(dni, matricula, fecha);
-		return turno != null? turno.generarView() : null;
-	}
 	
 	public Collection<TurnoView> obtenerTurnosView() {
 		Collection<TurnoView> turnos = new ArrayList<TurnoView>();

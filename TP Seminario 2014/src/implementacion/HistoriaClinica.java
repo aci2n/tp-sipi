@@ -141,12 +141,12 @@ public class HistoriaClinica {
 		return view;
 	}
 
-	public void actualizarOdontograma(String idOdontograma, Timestamp fechaActualSQL, Odontologo odontologo, Collection<Diente> dientes) {
+	public void actualizarOdontograma(String idOdontograma, Timestamp fecha, Odontologo odontologo, Collection<Diente> dientes) {
 		Odontograma odontograma = obtenerOdontograma(idOdontograma);
 		if (odontograma != null){
 			odontograma.setDientes(dientes);
 			odontograma.setOdontologo(odontologo);
-			odontograma.setFecha(fechaActualSQL);
+			odontograma.setFecha(fecha);
 			AdministradorPersistenciaOdontograma.getInstancia().update(odontograma);
 		}		
 	}
@@ -165,6 +165,4 @@ public class HistoriaClinica {
 			AdministradorPersistenciaFichaPeriodontal.getInstancia().update(ficha,this);
 		}
 	}
-	
-
 }

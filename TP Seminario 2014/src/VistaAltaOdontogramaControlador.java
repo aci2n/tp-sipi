@@ -132,7 +132,7 @@ public class VistaAltaOdontogramaControlador implements Initializable {
 		});
 
 
-		//((Button) event.getTarget()).setStyle("-fx-background-color:PINK");
+		
 		((Button) event.getTarget()).setContextMenu(contextMenu);
 	}
 	

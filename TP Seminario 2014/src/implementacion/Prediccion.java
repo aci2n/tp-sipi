@@ -8,7 +8,7 @@ import java.util.Collection;
 public class Prediccion {
 	
 	private String sintomaBase;
-	private float total;
+	private int total;
 	private Collection<ItemPrediccion> itemsPrediccion;
 	
 	public Prediccion (String sintomaBase) {
@@ -41,11 +41,11 @@ public class Prediccion {
 		this.sintomaBase = sintomaBase;
 	}
 
-	public float getTotal() {
+	public int getTotal() {
 		return total;
 	}
 
-	public void setTotal(float total) {
+	public void setTotal(int total) {
 		this.total = total;
 	}
 

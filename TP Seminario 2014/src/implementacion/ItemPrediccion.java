@@ -6,7 +6,7 @@ package implementacion;
 public class ItemPrediccion {
 	
 	private String sintomaAnalisis;
-	private float cantidad;
+	private int cantidad;
 	
 	public ItemPrediccion(String sintomaAnalisis) {
 		this.sintomaAnalisis=sintomaAnalisis;
@@ -18,10 +18,10 @@ public class ItemPrediccion {
 	public void setSintomaAnalisis(String sintomaAnalisis) {
 		this.sintomaAnalisis = sintomaAnalisis;
 	}
-	public float getCantidad() {
+	public int getCantidad() {
 		return cantidad;
 	}
-	public void setCantidad(float cantidad) {
+	public void setCantidad(int cantidad) {
 		this.cantidad = cantidad;
 	}
 }

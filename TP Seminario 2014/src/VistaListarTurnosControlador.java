@@ -122,7 +122,7 @@ public class VistaListarTurnosControlador implements Initializable {
 			tvl.setDni(tv.getPaciente().getDni());
 			tvl.setFecha(tv.getFecha());
 			tvl.setDescripcion(tv.getDescripcion());
-			turnos.add(tvl);
+			
 			
 
 		}

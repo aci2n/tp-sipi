@@ -553,7 +553,6 @@ public class VistaAltaHistoriaClinicaControlador implements Initializable {
 		
 		// SE CREA LA FICHA PERIODONTAL VIEW
 		
-		
 		FichaPeriodontalView ficha = new FichaPeriodontalView();
 		ficha.setOdontologo(Controlador.getInstancia().obtenerOdontologoView(
 				comboOdontologos.getSelectionModel().getSelectedItem()));

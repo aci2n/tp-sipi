@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<StackPane fx:id="vistaAltaOdontologo" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="VistaAdministracionOdontologosControlador">
+   <children>
+      <BorderPane fx:id="borderPaneAltaOdontologo" prefHeight="340.0" prefWidth="400.0">
+         <bottom>
+            <Button fx:id="buttonAltaOdontologo" mnemonicParsing="false" onAction="#altaOdontologo" text="REGISTRAR" BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets bottom="15.0" />
+               </BorderPane.margin>
+               <font>
+                  <Font name="Calibri Light" size="14.0" />
+               </font></Button>
+         </bottom>
+         <center>
+            <VBox fx:id="boxAltaOdontologo" alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="15.0">
+               <children>
+                  <TextField fx:id="tNombre" maxWidth="300.0" prefWidth="300.0" promptText="Nombre" />
+                  <TextField fx:id="tApellido" maxWidth="300.0" prefWidth="300.0" promptText="Apellido" />
+                  <TextField fx:id="tMatricula" maxWidth="300.0" prefWidth="300.0" promptText="Matrícula" />
+                  <TextField fx:id="tEspecialidades" layoutX="60.0" layoutY="167.0" maxWidth="300.0" prefWidth="300.0" promptText="Especialidades (separadas por coma)" />
+               </children>
+            </VBox>
+         </center>
+         <top>
+            <VBox fx:id="headerAltaOdontologo" alignment="CENTER" prefHeight="40.0" prefWidth="400.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label text="REGISTRO DE ODONTOLOGO">
+                     <font>
+                        <Font name="Nirmala UI" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+         </top>
+      </BorderPane>
+   </children>
+</StackPane>

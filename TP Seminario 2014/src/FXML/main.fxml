@@ -59,7 +59,7 @@
 								</Menu>
 								<Menu fx:id="menu" mnemonicParsing="false" text="ODONTÓLOGOS">
 									<items>
-										<MenuItem mnemonicParsing="false" text="Alta" />
+										<MenuItem fx:id="altaOdontologo" mnemonicParsing="false" onAction="#seleccionarVistaAltaOdontologo" text="Alta" />
 										<MenuItem mnemonicParsing="false" text="Modificación" />
 										<MenuItem mnemonicParsing="false" text="Baja" />
 										<MenuItem mnemonicParsing="false" text="Buscar" />

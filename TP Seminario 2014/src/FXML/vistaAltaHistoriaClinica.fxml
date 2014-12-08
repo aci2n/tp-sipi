@@ -48,7 +48,7 @@
                         </AnchorPane>
                      </top>
                   </BorderPane>
-                  <BorderPane fx:id="panelFichaPeriodontal" minWidth="-Infinity" prefWidth="1200.0">
+                  <BorderPane minWidth="-Infinity" prefWidth="1200.0">
                      <bottom>
                         <BorderPane BorderPane.alignment="CENTER">
                            <BorderPane.margin>
@@ -108,7 +108,7 @@
                                     </HBox>
                                  </children>
                               </VBox>
-                              <VBox fx:id="fichaPeriodontal" alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="30.0" style="-fx-background-color: white;">
+                              <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="30.0" style="-fx-background-color: white;">
                                  <children>
                                     <HBox alignment="CENTER_LEFT" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" style="-fx-background-color: #3498db;">
                                        <children>
@@ -140,7 +140,7 @@
                                        </VBox.margin>
                                     </HBox>
                                     <Separator prefWidth="200.0" />
-                                    <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0">
+                                    <VBox fx:id="boxFichaPeriodontal" alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0">
                                        <children>
                                           <Label fx:id="inferior" alignment="CENTER" text="INFERIOR" underline="true">
                                              <VBox.margin>

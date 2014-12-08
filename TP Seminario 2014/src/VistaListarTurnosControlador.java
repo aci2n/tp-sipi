@@ -39,8 +39,7 @@ public class VistaListarTurnosControlador implements Initializable {
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		// TODO Auto-generated method stub
 		
-		columnaOdontologo
-		.setCellValueFactory(new PropertyValueFactory<TurnoViewLista, String>(
+		columnaOdontologo.setCellValueFactory(new PropertyValueFactory<TurnoViewLista, String>(
 				"odontologo"));
 		columnaMatricula
 		.setCellValueFactory(new PropertyValueFactory<TurnoViewLista, String>(

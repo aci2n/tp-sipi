@@ -48,7 +48,7 @@ public class VistaAdministracionTurnosControlador implements Initializable {
 							OdontologoView ovAgregar = new OdontologoView();
 							PacienteView pv = new PacienteView();
 							TurnoView tv = new TurnoView();
-							SimpleDateFormat format = new SimpleDateFormat("yyyy-mm-dd HH:mm");
+							SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm");
 							String fechaT = fecha.getValue().toString()+' '+comboHora.getValue();
 							java.util.Date fechaCompleta = null;
 							java.sql.Timestamp timestamp = null;

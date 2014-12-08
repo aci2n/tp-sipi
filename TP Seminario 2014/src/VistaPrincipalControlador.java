@@ -78,6 +78,10 @@ public class VistaPrincipalControlador {
 		VistaNavegador.loadVista(VistaNavegador.VISTA_12);	
 	}
 
+	public void seleccionarVistaListarTurnos(ActionEvent event){
+		VistaNavegador.loadVista(VistaNavegador.VISTA_13);	
+	}
+	
 	public void seleccionarSalir(ActionEvent e) {
 		System.exit(0);
 	}

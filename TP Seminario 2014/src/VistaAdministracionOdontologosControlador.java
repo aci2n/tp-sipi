@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 import java.util.Collection;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;

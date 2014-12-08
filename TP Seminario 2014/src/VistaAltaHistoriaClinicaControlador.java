@@ -177,6 +177,8 @@ public class VistaAltaHistoriaClinicaControlador implements Initializable {
 				Integer.parseInt(d2f3.getText()), "3", "2");
 
 		// DIENTE 3
+		
+		
 
 		SeccionView d3se1 = new SeccionView(d3s1.isSelected(),
 				d3p1.isSelected(), Integer.parseInt(d3t1.getText()),

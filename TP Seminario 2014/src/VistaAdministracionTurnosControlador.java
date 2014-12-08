@@ -45,10 +45,10 @@ public class VistaAdministracionTurnosControlador implements Initializable {
 					if(comboHora.getValue()!=null){
 						if(tDescripcion.getText().compareTo("")!=0 && tDescripcion.getText().compareTo("Descripcion")!=0){
 							Controlador con = Controlador.getInstancia();
-							OdontologoView ov = new OdontologoView();
+							OdontologoView ovAgregar = new OdontologoView();
 							PacienteView pv = new PacienteView();
 							TurnoView tv = new TurnoView();
-							SimpleDateFormat format = new SimpleDateFormat("yyyy-mm-dd HH:mm");
+							SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm");
 							String fechaT = fecha.getValue().toString()+' '+comboHora.getValue();
 							java.util.Date fechaCompleta = null;
 							java.sql.Timestamp timestamp = null;
@@ -59,10 +59,17 @@ public class VistaAdministracionTurnosControlador implements Initializable {
 								// TODO Auto-generated catch block
 								e.printStackTrace();
 							}
+							
+							for (OdontologoView ov2: con.obtenerOdontologosView()){
+								if(concat(ov2.getApellido(), ov2.getNombre()).compareTo(comboOdontologos.getValue())==0){
+									ovAgregar=ov2;
+								}
+							}
+							
 							if ((pv = con.obtenerPacienteView(tDni.getText()))!=null){
-								if ((ov = con.obtenerOdontologoView(comboOdontologos.getValue()))!=null){
+								if (con.obtenerOdontologoView(ovAgregar.getMatricula())!=null){
 									tv.setPaciente(pv);
-									tv.setOdontologo(ov);
+									tv.setOdontologo(ovAgregar);
 									tv.setFecha(timestamp);
 									tv.setDescripcion(tDescripcion.getText());
 			
@@ -81,8 +88,11 @@ public class VistaAdministracionTurnosControlador implements Initializable {
 				}
 			}
 		}
-		
-
+	}
+	
+	private String concat(String apellido, String nombre){
+		String nuevo = apellido+", "+nombre;
+		return nuevo;
 	}
 
 	@Override
@@ -90,7 +100,7 @@ public class VistaAdministracionTurnosControlador implements Initializable {
 		// TODO Auto-generated method stub
 		
 		for (OdontologoView ov : Controlador.getInstancia().obtenerOdontologosView()){
-			comboOdontologos.getItems().add(ov.getMatricula());
+			comboOdontologos.getItems().add(concat(ov.getApellido(), ov.getNombre()));
 		}
 		comboHora.getItems().addAll("8:30", "09:00", "10:00");
 		

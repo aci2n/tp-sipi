@@ -106,6 +106,7 @@ public class HistoriaClinica {
 		Collection<Observacion> observaciones = new ArrayList<Observacion>();
 		observaciones.addAll(this.observaciones);
 		observaciones.addAll(generarObservacionesOdontogramas());
+		observaciones.addAll(ficha.generarObservaciones());
 		for (Observacion o : observaciones)
 			if (o.tenesElSintoma(sintoma))
 				return true;

@@ -321,6 +321,10 @@ public class Controlador {
 		return turnos;
 	}	
 	
+	public Collection<String> obtenerSintomas(){
+		return this.sintomas;
+	}
+	
 	//ANALISIS PREDICTIVO
 	
 	public Collection<Prediccion> analisisPredictivoHistoriaClinica(String dni) {
@@ -329,7 +333,8 @@ public class Controlador {
 		if (historia != null){
 			Collection<String> sintomasDetectados = historia.detectarSintomas(sintomas);
 			Prediccion prediccion;
-			Collection<HistoriaClinica> historiasSinContarLaAnalizada = this.historiasClinicas;
+			Collection<HistoriaClinica> historiasSinContarLaAnalizada = new ArrayList<HistoriaClinica>();
+			historiasSinContarLaAnalizada.addAll(historiasClinicas);
 			historiasSinContarLaAnalizada.remove(historia);
 			for (String sintoma : sintomasDetectados){
 				prediccion = new Prediccion(sintoma);

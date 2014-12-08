@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<StackPane fx:id="vistaAltaOdontologo" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onDragDetected="#seleccionarSalir" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="VistaListarPacientesControlador">
+<StackPane fx:id="vistaAltaOdontologo" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="VistaAdministracionOdontologosControlador">
    <children>
       <BorderPane fx:id="borderPaneAltaOdontologo" prefHeight="340.0" prefWidth="400.0">
          <bottom>

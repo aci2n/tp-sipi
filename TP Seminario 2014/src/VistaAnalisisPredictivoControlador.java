@@ -1,7 +1,7 @@
 
+import implementacion.ItemPrediccion;
 import implementacion.Prediccion;
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -11,15 +11,14 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
+import javafx.scene.chart.BarChart;
+import javafx.scene.chart.CategoryAxis;
+import javafx.scene.chart.XYChart;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.VBox;
 import controlador.Controlador;
 
 public class VistaAnalisisPredictivoControlador implements Initializable {
@@ -33,15 +32,21 @@ public class VistaAnalisisPredictivoControlador implements Initializable {
 	@FXML
 	private Button botonGraficar;
 	@FXML
-	private Label labelCantidadPacientes;
+	private BarChart<String, Integer> grafico;
 	@FXML
-	private VBox vBoxGrafico;
+	private CategoryAxis ejeX;
+	@FXML
+	private Label labelCantidadPacientes;
 	
 	private ObservableList<String> observablePredicciones;
+	private ObservableList<XYChart.Data<String,Integer>> datos;
 	private Collection<Prediccion> predicciones = new ArrayList<Prediccion>();
+	XYChart.Series<String,Integer> series = new XYChart.Series<String,Integer>();
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
+		ejeX.setCategories(FXCollections.<String> observableArrayList(Controlador.getInstancia().obtenerSintomas()));
+		grafico.setAnimated(false);
 	}
 
 	public void realizarAnalisis(ActionEvent event) {
@@ -55,40 +60,28 @@ public class VistaAnalisisPredictivoControlador implements Initializable {
 		
 	public void mostrarPrediccionDeSintoma (){	
 		if (comboPredicciones.getValue()!=null && !comboPredicciones.getValue().equals("Sintomas detectados")){
-			 try {
-		            setVista((Node) FXMLLoader.load(VistaNavegador.class.getResource("vistaGraficoAnalisisPredictivo.fxml")));
-		        } 
-			 catch (IOException e) {
-		            e.printStackTrace();
-		        }			
-		}
-		
-	}
-	
-	public void setVista(Node node) {
-		vBoxGrafico.getChildren().setAll(node);
-	}
-		/*
-		grafico.getData().clear();
-		
-		Prediccion prediccion = null;
-		
-		for (Prediccion p : predicciones)
-			if (p.getSintomaBase().equals(comboPredicciones.getValue())){
-				prediccion = p;
-				break;
+			
+			grafico.getData().clear();
+			
+			Prediccion prediccion = null;
+			
+			for (Prediccion p : predicciones)
+				if (p.getSintomaBase().equals(comboPredicciones.getValue())){
+					prediccion = p;
+					break;
+				}
+			
+			datos = FXCollections.observableArrayList();
+								
+			for (ItemPrediccion i : prediccion.getItemsPrediccion()){
+				datos.add(new XYChart.Data<String, Integer>(i.getSintomaAnalisis(),i.getCantidad()));
 			}
-				
-		XYChart.Series<String,Integer> series = new XYChart.Series<String,Integer>();
-							
-		for (ItemPrediccion i : prediccion.getItemsPrediccion()){
-			series.getData().add(new XYChart.Data<String, Integer>(i.getSintomaAnalisis(),i.getCantidad()));
+			
+			series = new XYChart.Series<String,Integer>(datos);
+			
+			labelCantidadPacientes.setText("Analisis realizado sobre las historias clinicas de "+prediccion.getTotal()+" pacientes que presentaron el mismo sintoma.");
+			
+			grafico.getData().add(series);
 		}
-		
-		labelCantidadPacientes.setText("Cantidad de pacientes analizados: "+prediccion.getTotal());
-		
-		grafico.getData().add(series);
-		
 	}
-	*/
 }

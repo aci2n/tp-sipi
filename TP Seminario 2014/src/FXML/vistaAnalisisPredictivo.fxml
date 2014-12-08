@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<StackPane prefHeight="548.0" prefWidth="659.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="VistaAnalisisPredictivoControlador">
+<StackPane prefHeight="677.0" prefWidth="659.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="VistaAnalisisPredictivoControlador">
    <children>
       <VBox alignment="CENTER" prefHeight="191.0" prefWidth="639.0" spacing="30.0" style="-fx-background-color: white;">
          <children>
@@ -65,7 +65,22 @@
                   <Insets left="10.0" />
                </VBox.margin>
             </HBox>
-            <VBox fx:id="vBoxGrafico" prefHeight="379.0" prefWidth="639.0" />
+            <VBox fx:id="vBoxGrafico" prefHeight="496.0" prefWidth="639.0">
+               <children>
+                  <BarChart fx:id="grafico" animated="false" legendVisible="false" prefHeight="426.0" prefWidth="639.0">
+                    <xAxis>
+                      <CategoryAxis fx:id="ejeX" label="Sintomas" side="BOTTOM" />
+                    </xAxis>
+                    <yAxis>
+                      <NumberAxis animated="false" autoRanging="false" label="Cantidad" side="LEFT" tickUnit="2.0" upperBound="24.0" />
+                    </yAxis>
+                  </BarChart>
+                  <Label fx:id="labelCantidadPacientes" prefHeight="14.0" prefWidth="479.0" text="Análisis realizado sobre las historias clínicas de 0 pacientes que presentaron el mismo sintoma.">
+                     <VBox.margin>
+                        <Insets left="20.0" />
+                     </VBox.margin>
+                  </Label>
+               </children></VBox>
          </children>
          <effect>
             <DropShadow />

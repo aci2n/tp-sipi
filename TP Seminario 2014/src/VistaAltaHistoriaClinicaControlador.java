@@ -113,6 +113,8 @@ public class VistaAltaHistoriaClinicaControlador implements Initializable {
 		panelFichaPeriodontal.getStylesheets().setAll(
 				getClass().getResource("historiaClinica.css").toExternalForm());
 		
+		comboOdontologos.getItems().clear();
+		
 		ObservableList<String> odontologos = FXCollections.observableArrayList();
 		
 		for(OdontologoView o : Controlador.getInstancia().obtenerOdontologosView())

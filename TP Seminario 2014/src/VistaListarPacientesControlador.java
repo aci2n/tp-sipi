@@ -67,7 +67,10 @@ public class VistaListarPacientesControlador implements Initializable {
 		columnaPlan
 				.setCellValueFactory(new PropertyValueFactory<PacienteView, String>(
 						"plan"));
-
+		
+		pacientes.removeAll(pacientes);
+		tablaListarPacientes.getItems().setAll(this.getPacientes());
+		
 	}
 
 	private boolean evaluar(PacienteView p, String s) {
@@ -125,7 +128,7 @@ public class VistaListarPacientesControlador implements Initializable {
 	public void verTodos(ActionEvent event) {
 
 		// setea los pacientes en la tabla
-
+		pacientes.removeAll(pacientes);
 		tablaListarPacientes.getItems().setAll(this.getPacientes());
 
 	}

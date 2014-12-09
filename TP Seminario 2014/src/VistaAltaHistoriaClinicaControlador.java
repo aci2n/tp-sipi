@@ -167,13 +167,13 @@ public class VistaAltaHistoriaClinicaControlador implements Initializable {
 				imagen.getHeight());
 
 		Stage ventanaPrevisualizacion = new Stage();
-		ventanaPrevisualizacion.setTitle("Previsualizaciï¿½n");
+		ventanaPrevisualizacion.setTitle("Previsualización");
 		ventanaPrevisualizacion.setScene(snapScene);
 		ventanaPrevisualizacion.initStyle(StageStyle.UNIFIED);
 
 		// CREA EL DIRECTORIO FICHAS PERIODONTALES
 
-		File fichas = new File("Fichas Peridontales");
+		File fichas = new File("Fichas Periodontales");
 		// if the directory does not exist, create it
 		if (!fichas.exists()) {
 			System.out.println("Creando directorio");

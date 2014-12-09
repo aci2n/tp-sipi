@@ -9,9 +9,9 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="VistaVerFichaOdontogramasControlador">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="430.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="VistaVerFichaOdontogramasControlador">
    <children>
-      <VBox prefHeight="200.0" prefWidth="100.0">
+      <VBox maxHeight="-Infinity" minHeight="-Infinity" prefHeight="420.0" prefWidth="760.0">
          <children>
             <AnchorPane fx:id="boxFiltrarPacientes" prefHeight="80.0">
                <children>
@@ -21,6 +21,14 @@
                         <Button fx:id="botonBuscar" mnemonicParsing="false" onAction="#buscarDatos" text="Buscar Paciente">
                            <font>
                               <Font name="Calibri" size="14.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#mostrarHistoria" prefHeight="11.0" prefWidth="192.0" text="Mostrar Historia Clínica">
+                           <HBox.margin>
+                              <Insets left="20.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font size="13.0" />
                            </font>
                         </Button>
                      </children>
@@ -38,13 +46,22 @@
                   </Label>
                </children>
             </AnchorPane>
-            <HBox prefHeight="100.0" prefWidth="200.0">
-               <children>
-                  <ImageView fx:id="imagen" fitHeight="400.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true" />
-               </children>
-            </HBox>
-            <HBox prefHeight="100.0" prefWidth="200.0" />
+            <TableView fx:id="table" prefHeight="309.0" prefWidth="800.0">
+              <columns>
+                <TableColumn fx:id="columnaOdontologo" prefWidth="306.0" text="Odontólogo" />
+                <TableColumn fx:id="columnaFecha" minWidth="0.0" prefWidth="413.0" text="Fecha" />
+              </columns>
+            </TableView>
          </children>
+         <StackPane.margin>
+            <Insets />
+         </StackPane.margin>
+         <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </padding>
       </VBox>
    </children>
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
 </StackPane>

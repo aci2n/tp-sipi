@@ -9,7 +9,6 @@ import javax.imageio.ImageIO;
 
 import persistencia.AdministradorPersistenciaDiente;
 import persistencia.AdministradorPersistenciaOdontograma;
-
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.embed.swing.SwingFXUtils;
@@ -17,6 +16,8 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.SnapshotParameters;
@@ -30,6 +31,9 @@ import javafx.scene.image.ImageView;
 import javafx.scene.image.WritableImage;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.layout.VBoxBuilder;
+import javafx.scene.text.Text;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import views.CaraView;
@@ -123,7 +127,7 @@ public class VistaAltaOdontogramaControlador implements Initializable {
 	}
 
 	
-	private void guardarImagen(Node node) {
+	private void guardarImagen(Node node, String id) {
 
 		WritableImage imagen = node.snapshot(new SnapshotParameters(), null);
 		ImageView imagenView = new ImageView();
@@ -162,8 +166,6 @@ public class VistaAltaOdontogramaControlador implements Initializable {
 		}
 
 		// CREA LA IMAGEN DE LA FICHA PERIODONTAL
-
-		int id = (Integer.parseInt(Controlador.getInstancia().obtenerIdOdontogramaMasReciente()+1));
 		
 		File file = new File("Odontogramas/"+ tDni.getText() +"_"+id+".png");
 
@@ -617,27 +619,24 @@ public class VistaAltaOdontogramaControlador implements Initializable {
 
 		dientes.add(new DienteView("32", "0", "0", "null", d32caras));
 
-//		// CARGA
-//		
-//		OdontogramaView odontograma = new OdontogramaView();
-//		odontograma.setDientes(dientes);
-//		odontograma
-//				.setOdontologo(Controlador.getInstancia()
-//						.obtenerOdontologoView(
-//								comboOdontologos.getSelectionModel()
-//										.getSelectedItem()));
-//		odontograma.setIdOdontograma(Controlador.getInstancia().obtenerIdOdontogramaMasReciente());
-//		odontograma.setFecha(getFechaActualSQL());
-//
-//		Controlador.getInstancia().altaOdontograma(tDni.getText(), odontograma);
-//		
-//		/*Controlador.getInstancia().actualizarOdontograma(tDni.getText(),
-//				odontograma);*/
+		// CARGA
 		
+		OdontogramaView odontograma = new OdontogramaView();
+		odontograma.setDientes(dientes);
+		odontograma.setOdontologo(Controlador.getInstancia().obtenerOdontologoView(comboOdontologos.getSelectionModel().getSelectedItem()));
+		odontograma.setIdOdontograma(Controlador.getInstancia().obtenerIdOdontogramaMasReciente());
+		odontograma.setFecha(getFechaActualSQL());
+
+		Controlador.getInstancia().altaOdontograma(tDni.getText(), odontograma);
 		
+		Stage dialogStage = new Stage();
+		dialogStage.initModality(Modality.WINDOW_MODAL);
+		dialogStage.setScene(new Scene(VBoxBuilder.create().
+		    children(new Text("Odontograma registrado correctamente")).
+		    alignment(Pos.CENTER).padding(new Insets(5)).build()));
+		dialogStage.show();
 		
-		
-		this.guardarImagen(boxOdontograma);
+		this.guardarImagen(boxOdontograma, odontograma.getIdOdontograma());
 
 	}
 	

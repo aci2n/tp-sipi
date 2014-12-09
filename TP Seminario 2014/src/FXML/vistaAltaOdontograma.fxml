@@ -13,7 +13,7 @@
    <children>
       <ScrollPane fitToHeight="true" fitToWidth="true" prefHeight="1000.0" prefWidth="1500.0">
          <content>
-            <VBox spacing="20.0">
+            <VBox prefHeight="902.0" prefWidth="1480.0" spacing="20.0">
                <children>
                   <BorderPane>
                      <center>
@@ -1065,6 +1065,46 @@
                         <Insets top="10.0" />
                      </VBox.margin>
                   </BorderPane>
+                  <VBox prefHeight="81.0" prefWidth="1480.0" spacing="4.0">
+                     <children>
+                        <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                           <children>
+                              <Label fx:id="referenciaCaries" prefHeight="14.0" prefWidth="20.0" />
+                              <Label text="Carie" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                           <children>
+                              <Label fx:id="referenciaCorona" prefHeight="14.0" prefWidth="20.0" />
+                              <Label text="Corona" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                           <children>
+                              <Label fx:id="referenciaFractura" prefHeight="14.0" prefWidth="20.0" />
+                              <Label text="Fractura" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                           <children>
+                              <Label fx:id="referenciaAusente" prefHeight="14.0" prefWidth="20.0" />
+                              <Label text="Ausente" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                           <children>
+                              <Label fx:id="referenciaInfeccion" prefHeight="14.0" prefWidth="20.0" />
+                              <Label text="Infeccion" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                           <children>
+                              <Label fx:id="referenciaEnfermedadPeriodontal" prefHeight="14.0" prefWidth="20.0" />
+                              <Label text="Enfermedad Periodontal" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
                   <HBox alignment="CENTER" spacing="30.0">
                      <children>
                         <Button fx:id="botonGuardar" mnemonicParsing="false" onAction="#guardarOdontograma" text="Guardar" />

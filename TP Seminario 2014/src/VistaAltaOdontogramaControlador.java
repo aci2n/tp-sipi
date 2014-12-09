@@ -4,8 +4,6 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.ResourceBundle;
 
-import persistencia.AdministradorPersistenciaDiente;
-import persistencia.AdministradorPersistenciaOdontograma;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -15,6 +13,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.ContextMenu;
+import javafx.scene.control.Label;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.StackPane;
@@ -55,6 +54,9 @@ public class VistaAltaOdontogramaControlador implements Initializable {
 			d27b5, d28b1, d28b2, d28b3, d28b4, d28b5, d29b1, d29b2, d29b3,
 			d29b4, d29b5, d30b1, d30b2, d30b3, d30b4, d30b5, d31b1, d31b2,
 			d31b3, d31b4, d31b5, d32b1, d32b2, d32b3, d32b4, d32b5;
+	@FXML
+	private Label referenciaCaries, referenciaCorona, referenciaFractura, referenciaAusente,
+		referenciaEnfermedadPeriodontal, referenciaInfeccion;
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
@@ -74,6 +76,13 @@ public class VistaAltaOdontogramaControlador implements Initializable {
 		comboOdontologos.getItems().addAll(odontologos);
 
 		boxOdontograma.setDisable(true);
+		
+		referenciaCaries.setStyle("-fx-background-color: #16a085"); 
+		referenciaCorona.setStyle("-fx-background-color:#2980b9");
+		referenciaFractura.setStyle("-fx-background-color:#e74c3c");
+		referenciaAusente.setStyle("-fx-background-color:#34495e");
+		referenciaEnfermedadPeriodontal.setStyle("-fx-background-color:#c0392b");
+		referenciaInfeccion.setStyle("-fx-background-color:#f1c40f");
 	}
 
 	/* EVENT HANDLERS */

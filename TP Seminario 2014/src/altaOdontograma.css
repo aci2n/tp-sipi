@@ -1,234 +1,259 @@
-.button{
-
+.button {
 	-fx-background-color: transparent;
 	-fx-background-color: transparent;
 	-fx-background-repeat: no-repeat;
 	-fx-background-position: center;
 	-fx-background-size: 40 90;
-	/*-fx-border-color: #bdc3c7;*/
+	-fx-border-color: #bdc3c7;
 	-fx-cursor: hand;
-
 }
-.button:hover{
 
+.button:hover {
 	-fx-background-color: #ecf0f1;
-	
 }
 
-#botonBuscar{
+#botonBuscar {
 	-fx-background-color: #2ecc71;
 	-fx-background-radius: 2;
 	-fx-font-size: 14;
-	
+	-fx-border-color: transparent;
 }
 
-#botonBuscar:hover{
+#botonBuscar:hover {
 	-fx-background-color: #27ae60;
 	-fx-background-radius: 2;
 	-fx-font-size: 14;
-	
 }
 
-
-#botonGuardar{
-	
+#botonGuardar {
 	-fx-background-color: #e74c3c;
 	-fx-background-radius: 2;
 	-fx-font-size: 14;
+	-fx-border-color: transparent;
 }
 
-#botonGuardar:hover{
-	
+#botonGuardar:hover {
 	-fx-background-color: #c0392b;
-	
 }
 
-#botonCancelar{
+#botonCancelar {
 	-fx-background-color: #bdc3c7;
 	-fx-background-radius: 2;
 	-fx-font-size: 14;
+	-fx-border-color: transparent;
 }
 
-#botonCancelar:hover{
-	
+#botonCancelar:hover {
 	-fx-background-color: #95a5a6;
 }
 
-#botonPre{
-	
+#botonPre {
 	-fx-background-color: #3498db;
 	-fx-background-radius: 2;
 	-fx-font-size: 14;
+	-fx-border-color: transparent;
 }
 
-#botonPre:hover{
-	
+#botonPre:hover {
 	-fx-background-color: #2980b9;
-	
 }
 
-
-#diente1{
+#diente1 {
 	-fx-background-image: url("Dientes/diente1.png");
 	-fx-border-color: white;
 }
-#diente2{
+
+#diente2 {
 	-fx-background-image: url("Dientes/diente2.png");
 	-fx-border-color: white;
 }
-#diente3{
+
+#diente3 {
 	-fx-background-image: url("Dientes/diente3.png");
 	-fx-border-color: white;
 }
-#diente4{
+
+#diente4 {
 	-fx-background-image: url("Dientes/diente4.png");
 	-fx-border-color: white;
 }
-#diente5{
+
+#diente5 {
 	-fx-background-image: url("Dientes/diente5.png");
 	-fx-border-color: white;
 }
-#diente6{
+
+#diente6 {
 	-fx-background-image: url("Dientes/diente6.png");
 	-fx-border-color: white;
 }
-#diente7{
+
+#diente7 {
 	-fx-background-image: url("Dientes/diente7.png");
 	-fx-border-color: white;
 }
-#diente8{
+
+#diente8 {
 	-fx-background-image: url("Dientes/diente8.png");
 	-fx-border-color: white;
 }
-#diente9{
+
+#diente9 {
 	-fx-background-image: url("Dientes/diente9.png");
 	-fx-border-color: white;
 }
-#diente10{
+
+#diente10 {
 	-fx-background-image: url("Dientes/diente10.png");
 	-fx-border-color: white;
 }
-#diente11{
+
+#diente11 {
 	-fx-background-image: url("Dientes/diente11.png");
 	-fx-border-color: white;
 }
-#diente12{
+
+#diente12 {
 	-fx-background-image: url("Dientes/diente12.png");
 	-fx-border-color: white;
 }
-#diente13{
+
+#diente13 {
 	-fx-background-image: url("Dientes/diente13.png");
 	-fx-border-color: white;
 }
-#diente14{
+
+#diente14 {
 	-fx-background-image: url("Dientes/diente14.png");
 	-fx-border-color: white;
 }
-#diente15{
+
+#diente15 {
 	-fx-background-image: url("Dientes/diente15.png");
 	-fx-border-color: white;
 }
-#diente16{
+
+#diente16 {
 	-fx-background-image: url("Dientes/diente16.png");
 	-fx-border-color: white;
 }
 
-#diente9{
+#diente9 {
 	-fx-background-image: url("Dientes/diente9.png");
 	-fx-border-color: white;
 }
-#diente10{
+
+#diente10 {
 	-fx-background-image: url("Dientes/diente10.png");
 	-fx-border-color: white;
 }
-#diente11{
+
+#diente11 {
 	-fx-background-image: url("Dientes/diente11.png");
 	-fx-border-color: white;
 }
-#diente12{
+
+#diente12 {
 	-fx-background-image: url("Dientes/diente12.png");
 	-fx-border-color: white;
 }
-#diente13{
+
+#diente13 {
 	-fx-background-image: url("Dientes/diente13.png");
 	-fx-border-color: white;
 }
-#diente14{
+
+#diente14 {
 	-fx-background-image: url("Dientes/diente14.png");
 	-fx-border-color: white;
 }
-#diente15{
+
+#diente15 {
 	-fx-background-image: url("Dientes/diente15.png");
 	-fx-border-color: white;
 }
-#diente16{
+
+#diente16 {
 	-fx-background-image: url("Dientes/diente16.png");
 	-fx-border-color: white;
 }
 
-
-
-#diente17{
+#diente17 {
 	-fx-background-image: url("Dientes/diente17.png");
 	-fx-border-color: white;
 }
-#diente18{
+
+#diente18 {
 	-fx-background-image: url("Dientes/diente18.png");
 	-fx-border-color: white;
 }
-#diente19{
+
+#diente19 {
 	-fx-background-image: url("Dientes/diente19.png");
 	-fx-border-color: white;
 }
-#diente20{
+
+#diente20 {
 	-fx-background-image: url("Dientes/diente20.png");
 	-fx-border-color: white;
 }
-#diente21{
+
+#diente21 {
 	-fx-background-image: url("Dientes/diente21.png");
 	-fx-border-color: white;
 }
-#diente22{
+
+#diente22 {
 	-fx-background-image: url("Dientes/diente22.png");
 	-fx-border-color: white;
 }
-#diente23{
+
+#diente23 {
 	-fx-background-image: url("Dientes/diente23.png");
 	-fx-border-color: white;
 }
-#diente24{
+
+#diente24 {
 	-fx-background-image: url("Dientes/diente24.png");
 	-fx-border-color: white;
 }
-#diente25{
+
+#diente25 {
 	-fx-background-image: url("Dientes/diente25.png");
 	-fx-border-color: white;
 }
-#diente26{
+
+#diente26 {
 	-fx-background-image: url("Dientes/diente26.png");
 	-fx-border-color: white;
 }
-#diente27{
+
+#diente27 {
 	-fx-background-image: url("Dientes/diente27.png");
 	-fx-border-color: white;
 }
-#diente28{
+
+#diente28 {
 	-fx-background-image: url("Dientes/diente28.png");
 	-fx-border-color: white;
 }
-#diente29{
+
+#diente29 {
 	-fx-background-image: url("Dientes/diente29.png");
 	-fx-border-color: white;
 }
-#diente30{
+
+#diente30 {
 	-fx-background-image: url("Dientes/diente30.png");
 	-fx-border-color: white;
 }
-#diente31{
+
+#diente31 {
 	-fx-background-image: url("Dientes/diente31.png");
 	-fx-border-color: white;
 }
-#diente32{
+
+#diente32 {
 	-fx-background-image: url("Dientes/diente32.png");
 	-fx-border-color: white;
 }

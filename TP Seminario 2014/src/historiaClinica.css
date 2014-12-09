@@ -4,6 +4,7 @@
 	-fx-background-position: center;
 	-fx-background-size: 40 90;
 	-fx-text-fill: white;
+	-fx-background-radius: 2;
 }
 
 .label{

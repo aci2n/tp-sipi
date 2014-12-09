@@ -20,7 +20,7 @@
                         <Insets left="10.0" />
                      </HBox.margin>
                   </ImageView>
-                  <Label text="Listado de Turnos" textFill="#ffffffa8">
+                  <Label text="Listado de Turnos" textFill="WHITE">
                      <font>
                         <Font name="Calibri Bold" size="15.0" />
                      </font>
@@ -40,7 +40,7 @@
          <center>
             <BorderPane prefHeight="550.0" prefWidth="730.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
                <effect>
-                  <DropShadow />
+                  <DropShadow color="#808b8c" />
                </effect>
                <top>
                   <AnchorPane fx:id="boxFiltrarTurnos" prefHeight="80.0" prefWidth="670.0" BorderPane.alignment="CENTER">

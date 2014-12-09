@@ -10,18 +10,18 @@
 
 <StackPane fx:id="vistaAltaTurno" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="VistaAdministracionTurnosControlador">
    <children>
-      <BorderPane fx:id="borderPaneTurno" prefHeight="500.0" prefWidth="400.0">
+      <BorderPane fx:id="borderPaneTurno" style="-fx-border-color: #bdc3c7;">
          <bottom>
             <Button fx:id="altaTurno" mnemonicParsing="false" onAction="#agregarTurno" text="CREAR TURNO" BorderPane.alignment="CENTER">
                <BorderPane.margin>
-                  <Insets bottom="15.0" />
+                  <Insets bottom="15.0" top="20.0" />
                </BorderPane.margin>
                <font>
                   <Font name="Calibri Light" size="14.0" />
                </font></Button>
          </bottom>
          <center>
-            <VBox fx:id="boxAltaTurno" alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="15.0">
+            <VBox fx:id="boxAltaTurno" alignment="CENTER" spacing="20.0">
                <children>
                   <TextField fx:id="tDni" maxWidth="300.0" prefWidth="300.0" promptText="DNI del paciente" />
                   <ComboBox fx:id="comboOdontologos" maxHeight="200.0" maxWidth="300.0" prefWidth="300.0" promptText="Odontologo" />
@@ -29,19 +29,28 @@
                   <ComboBox fx:id="comboHora" prefHeight="25.0" prefWidth="297.0" promptText="Hora" />
                   <TextField fx:id="tDescripcion" maxWidth="300.0" promptText="Comentarios" />
                </children>
+               <BorderPane.margin>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="30.0" />
+               </BorderPane.margin>
             </VBox>
          </center>
          <top>
-            <VBox fx:id="headerAltaTurno" alignment="CENTER" prefHeight="40.0" prefWidth="400.0" BorderPane.alignment="CENTER">
+            <VBox fx:id="headerAltaTurno" alignment="CENTER" prefHeight="40.0" spacing="20.0" style="-fx-background-color: #3498db;" BorderPane.alignment="CENTER">
                <children>
-                  <Label text="REGISTRO DE TURNO" textAlignment="CENTER">
+                  <Label text="REGISTRO DE TURNO" textAlignment="CENTER" textFill="WHITE">
                      <font>
                         <Font name="Nirmala UI" size="14.0" />
                      </font>
                   </Label>
                </children>
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
             </VBox>
          </top>
+         <StackPane.margin>
+            <Insets />
+         </StackPane.margin>
       </BorderPane>
    </children>
 </StackPane>

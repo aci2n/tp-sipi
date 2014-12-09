@@ -33,17 +33,17 @@
             </HBox>
             <AnchorPane fx:id="boxFiltrarAnalisis" prefHeight="80.0">
                <children>
-                  <HBox alignment="CENTER_LEFT" nodeOrientation="LEFT_TO_RIGHT" spacing="10.0">
+                  <HBox alignment="CENTER_LEFT" nodeOrientation="LEFT_TO_RIGHT" spacing="20.0">
                      <padding>
                         <Insets left="10.0" top="30.0" />
                      </padding>
                      <children>
-                        <Button fx:id="botonRealizarAnalisis1" mnemonicParsing="false" onAction="#realizarAnalisis" text="Realizar análisis" />
-                        <TextField fx:id="textFiltrarTabla1" prefWidth="250.0" promptText="Ingrese DNI unicamente" />
                         <Label text="Ingrese el DNI del paciente para realizar el analisis:" />
+                        <TextField fx:id="textFiltrarTabla1" prefWidth="250.0" promptText="Ingrese DNI unicamente" />
+                        <Button fx:id="botonRealizarAnalisis1" mnemonicParsing="false" onAction="#realizarAnalisis" text="Realizar análisis" />
                      </children>
                   </HBox>
-                  <HBox layoutX="14.0" layoutY="68.0" spacing="10.0">
+                  <HBox layoutX="14.0" layoutY="68.0" spacing="20.0">
                      <children>
                         <ComboBox fx:id="comboPredicciones" prefHeight="22.0" prefWidth="378.0" promptText="Sintomas detectados" />
                         <Button fx:id="botonGraficar" mnemonicParsing="false" onAction="#mostrarPrediccionDeSintoma" prefHeight="22.0" prefWidth="101.0" text="Graficar" />

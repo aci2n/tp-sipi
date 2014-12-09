@@ -11,7 +11,7 @@
 
 <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="VistaVerFichaOdontogramasControlador">
    <children>
-      <VBox maxHeight="-Infinity" minHeight="-Infinity" spacing="20.0">
+      <VBox spacing="20.0">
          <children>
             <AnchorPane fx:id="boxFiltrarPacientes" prefHeight="80.0">
                <children>

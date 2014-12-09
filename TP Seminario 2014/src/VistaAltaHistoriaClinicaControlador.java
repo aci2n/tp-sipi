@@ -179,6 +179,8 @@ public class VistaAltaHistoriaClinicaControlador implements Initializable {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		
+		
 
 		return ventanaPrevisualizacion;
 	}

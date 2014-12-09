@@ -19,6 +19,7 @@ import java.util.Collection;
 
 import persistencia.AdministradorPersistenciaHistoriasClinicas;
 import persistencia.AdministradorPersistenciaObservaciones;
+import persistencia.AdministradorPersistenciaOdontograma;
 import persistencia.AdministradorPersistenciaOdontologos;
 import persistencia.AdministradorPersistenciaPaciente;
 import persistencia.AdministradorPersistenciaSintomas;
@@ -419,5 +420,9 @@ public class Controlador {
 			secciones.add(seccion);
 		}
 		return secciones;
+	}
+	
+	public String obtenerIdOdontogramaMasReciente(){
+		return Integer.toString(AdministradorPersistenciaOdontograma.getInstancia().conteoOdontogramas()+1);
 	}
 }

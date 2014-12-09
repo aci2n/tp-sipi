@@ -519,7 +519,7 @@ public class VistaAltaOdontogramaControlador implements Initializable {
 						.obtenerOdontologoView(
 								comboOdontologos.getSelectionModel()
 										.getSelectedItem()));
-		odontograma.setIdOdontograma(Integer.toString(AdministradorPersistenciaOdontograma.getInstancia().conteoOdontogramas()+1));
+		odontograma.setIdOdontograma(Controlador.getInstancia().obtenerIdOdontogramaMasReciente());
 		odontograma.setFecha(getFechaActualSQL());
 
 		Controlador.getInstancia().altaOdontograma(tDni.getText(), odontograma);

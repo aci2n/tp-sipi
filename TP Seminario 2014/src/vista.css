@@ -3,276 +3,253 @@
  *   Place in the same source directory as Main.java
  *   Ensure that your build system copies this file to your build output directory.
  */
- 
- /* CONFIGURACION GENERAL */
- 
- .root{
- 
- 	-fx-font-family: "Roboto-Light";
- }
- 
- .button{
-	
+
+/* CONFIGURACION GENERAL */
+.root {
+	-fx-font-family: "Roboto-Light";
+}
+
+.button {
 	-fx-background-radius: 2;
 	-fx-text-fill: white;
- 	-fx-cursor: hand;
+	-fx-cursor: hand;
+}
 
- }
- 
- /* VISTA PRINCIPAL */
-
-#headerLabel {	
-    -fx-background-color: white;
-    -fx-padding: 5px;
-  	-fx-border-top-color: black;
-  	
+/* VISTA PRINCIPAL */
+#headerLabel {
+	-fx-background-color: white;
+	-fx-padding: 5px;
+	-fx-border-top-color: black;
 }
 
 #vistaHolder {
-    -fx-background-color: #ecf0f1;
+	-fx-background-color: #ecf0f1;
 }
 
 #vista1 {
-    -fx-background-color: #ecf0f1;
+	-fx-background-color: #ecf0f1;
 }
 
 /* LOGO */
-
 #home {
-
 	-fx-background-color: white;
 	-fx-background-image: url("Imagenes/logo2.png");
 	-fx-background-repeat: no-repeat;
 	-fx-background-position: center;
-	
 }
 
-#menu{
+#menu {
 	-fx-font-size: 14;
 }
 
-#menu:hover{
-
+#menu:hover {
 	-fx-background-color: #2980b9;
 	-fx-font-size: 14;
 }
 
-#vistaAltaPaciente{
-
+#vistaAltaPaciente {
 	-fx-background-color: #ecf0f1;
 }
 
-#botonSalir{
-
+#botonSalir {
 	-fx-font-size: 14;
 	-fx-background-color: white;
 	-fx-text-fill: black;
 	-fx-background-radius: 0;
 }
 
-#botonHome{
-
+#botonHome {
 	-fx-background-color: white;
 	-fx-text-fill: black;
 	-fx-font-size: 14;
-	
 }
 
-#botonHome:hover{
-
+#botonHome:hover {
 	-fx-text-fill: white;
 	-fx-background-color: #2980b9;
-	
 }
 
-
-
-#botonSalir:hover{
-
+#botonSalir:hover {
 	-fx-text-fill: white;
-	-fx-background-color: #c0392b;	
+	-fx-background-color: #c0392b;
 }
 
-#paneHora{
-
+#paneHora {
 	-fx-background-color: #2980b9;
 	-fx-text-fill: white;
 }
 
-#paneHora .label{ 
+#paneHora .label {
 	-fx-text-fill: white;
 }
 
-#imagenHora{
+#imagenHora {
 	-fx-image: url("Imagenes/reloj.png");
-
 }
 
-#imagenPacientes{
+#imagenPacientes {
 	-fx-image: url("Imagenes/pacientes.png");
 	-fx-background-repeat: no-repeat;
 	-fx-background-position: center;
 }
 
-#imagenAnalisisPredictivo{
-	
+#imagenAnalisisPredictivo {
 	-fx-image: url("Imagenes/analisis.png");
 	-fx-background-repeat: no-repeat;
 	-fx-background-position: center;
-	
 }
 
-
-#paneFecha{
-
+#paneFecha {
 	-fx-background-color: #16a085;
 	-fx-text-fill: white;
 }
 
-#paneFecha .label{
-
+#paneFecha .label {
 	-fx-text-fill: white;
 }
 
-
-#imagenFecha{
+#imagenFecha {
 	-fx-image: url("Imagenes/calendario.png");
-
 }
 
-
-#paneFecha{
-
+#paneFecha {
 	-fx-background-color: #e74c3c;
 	-fx-text-fill: white;
 }
 
-#botonHora{
-	
-	-fx-background-color: transparent;
-	
-}
-
-#botonHora:hover{
-
-	-fx-background-color: #bdc3c7;
-}
-
-#botonFecha{
-	
+#botonHora {
 	-fx-background-color: transparent;
 }
 
-#botonFecha:hover{
-
+#botonHora:hover {
 	-fx-background-color: #bdc3c7;
 }
 
-#labelTurnos{
+#botonFecha {
+	-fx-background-color: transparent;
+}
+
+#botonFecha:hover {
+	-fx-background-color: #bdc3c7;
+}
+
+#labelTurnos {
 	-fx-background-color: #34495e;
 	-fx-text-fill: white;
 }
 
-#borderPaneAltaPaciente, #borderPaneAltaOdontologo{
-
+#borderPaneAltaPaciente, #borderPaneAltaOdontologo {
 	-fx-background-color: white;
 	-fx-border-color: #bdc3c7;
 	-fx-border-width: 1;
 }
 
-#headerAltaPaciente, #headerAltaOdontologo{
+#headerAltaPaciente, #headerAltaOdontologo {
 	-fx-background-color: #3498db;
 	-fx-text-fill: white;
 }
 
-#headerAltaPaciente .label, #headerAltaOdontologo .label{
+#headerAltaPaciente .label, #headerAltaOdontologo .label {
 	-fx-text-fill: white;
 }
 
-#tNombre{
+#tNombre {
 	-fx-background-radius: 0;
 	-fx-text-fill: #2c3e50;
 }
 
-#tablaListarPacientes{
-
+#tablaListarPacientes {
 	-fx-border-color: #bdc3c7;
 }
 
-
-#tablaListarPacientes .column-header{
-  
+#tablaListarPacientes .column-header {
 	-fx-font-size: 12;
 }
 
-#boxFiltrarPacientes{
-
+#boxFiltrarPacientes {
 	-fx-border-color: #bdc3c7;
 	-fx-border-radius: 2;
 }
 
-#boxFiltrarOdontologos{
-	
+#boxFiltrarOdontologos {
 	-fx-border-color: #bdc3c7;
 	-fx-border-radius: 2;
 }
 
-#boxFiltrarTurnos{
-	
+#boxFiltrarTurnos {
 	-fx-border-color: #bdc3c7;
 	-fx-border-radius: 2;
 }
 
-
-#botonBuscar{
-
+#botonBuscar {
 	-fx-background-color: #27ae60;
 	-fx-background-radius: 2;
 	-fx-font-size: 14;
-	
 }
 
-#botonBuscar:hover{
-	
+#botonBuscar:hover {
 	-fx-background-color: #2ecc71;
 }
 
-#botonNuevoPaciente{
-
+#botonNuevoPaciente {
 	-fx-background-color: #27ae60;
 	-fx-background-radius: 2;
-	-fx-font-size: 14;	
+	-fx-font-size: 14;
 }
 
-#botonNuevoPaciente:hover{
-	
+#botonNuevoPaciente:hover {
 	-fx-background-color: #2ecc71;
 }
 
-#botonNuevoOdontologo{
-	
+#botonNuevoOdontologo {
 	-fx-background-color: #27ae60;
 	-fx-background-radius: 2;
-	-fx-font-size: 14;	
+	-fx-font-size: 14;
 }
 
-#botonNuevoOdontologo:hover{
-	
+#botonNuevoOdontologo:hover {
 	-fx-background-color: #2ecc71;
-		
 }
 
-#botonVerTodos{
-
+#botonVerTodos {
 	-fx-background-color: #e74c3c;
 	-fx-background-radius: 2;
 	-fx-font-size: 14;
 	-fx-text-fill: white;
 }
 
-#botonVerTodos:hover{
-
+#botonVerTodos:hover {
 	-fx-background-color: #c0392b;
+}
+
+#botonAgregarObs {
+	-fx-background-color: #e74c3c;
+	-fx-background-radius: 2;
+	-fx-font-size: 14;
+}
+
+#botonAgregarObs:hover {
+	-fx-background-color: #c0392b;
+}
+
+#botonEliminarFila {
+	-fx-background-color: #1abc9c;
+	-fx-background-radius: 2;
+	-fx-font-size: 14;
+}
+
+#botonEliminarFila:hover {
+	-fx-background-color: #16a085;
+}
+
+#botonLimpiarTabla {
+	-fx-background-color: #1abc9c;
+	-fx-background-radius: 2;
+	-fx-font-size: 14;
+}
+
+#botonLimpiarTabla:hover {
+	-fx-background-color: #16a085;
 }
 
 #imagenRaya {
@@ -281,56 +258,47 @@
 	-fx-background-position: center;
 }
 
-
-.button:hover{
-	
+.button:hover {
 	-fx-background-color: #16a085;
 }
 
-.toggleButton{
+.toggleButton {
 	-fx-background-radius: 0;
 	-fx-background-color: #bdc3c7;
-
 }
 
-.toggleButton:selected{	
+.toggleButton:selected {
 	-fx-background-color: #e74c3c;
 }
 
-.toggleButton2{
+.toggleButton2 {
 	-fx-background-radius: 0;
 	-fx-background-color: #bdc3c7;
-
 }
 
-.toggleButton2:selected{	
+.toggleButton2:selected {
 	-fx-background-color: #3498db;
 }
 
-.box{
+.box {
 	-fx-background-color: white;
 	-fx-border-color: #bdc3c7;
 }
 
-#scrollAltaFicha .scroll-bar:horizontal, .scroll-bar:vertical{
-	
+#scrollAltaFicha .scroll-bar:horizontal, .scroll-bar:vertical {
 	-fx-background-color: transparent;
 }
 
-#scrollAltaFicha .scroll-bar:horizontal .thumb, .scroll-bar:vertical .thumb{
-	
+#scrollAltaFicha .scroll-bar:horizontal .thumb, .scroll-bar:vertical .thumb
+	{
 	-fx-background-color: #95a5a6;
 	-fx-background-radius: 0;
 }
 
-#buttonConfirmar{
-	
+#buttonConfirmar {
 	-fx-background-color: #3498db;
 }
 
-#buttonConfirmar:hover{
-	
+#buttonConfirmar:hover {
 	-fx-background-color: #2980b9;
 }
-
-

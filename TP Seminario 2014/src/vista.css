@@ -193,7 +193,7 @@
 	-fx-font-size: 14;
 }
 
-#botonAlta{
+#botonAlta:hover{
 	-fx-background-color: #2980b9;
 	
 }
@@ -204,7 +204,7 @@
 	-fx-font-size: 14;
 }
 
-#altaTurno{
+#altaTurno:hover{
 	-fx-background-color: #2980b9;
 	
 }

@@ -48,7 +48,7 @@ public class VistaAltaHistoriaClinicaControlador implements Initializable {
 	private TextField filtrarFicha, tDni;
 	@FXML
 	private TextArea tDescripcion;
-	@FXML 
+	@FXML
 	private Button botonBuscar;
 	@FXML
 	private Button botonCancelar, botonEliminarFila, botonLimpiarTabla;
@@ -118,16 +118,18 @@ public class VistaAltaHistoriaClinicaControlador implements Initializable {
 		panelFichaPeriodontal.setDisable(true);
 		panelFichaPeriodontal.getStylesheets().setAll(
 				getClass().getResource("historiaClinica.css").toExternalForm());
-		
+
 		comboOdontologos.getItems().clear();
-		
-		ObservableList<String> odontologos = FXCollections.observableArrayList();
-		
-		for(OdontologoView o : Controlador.getInstancia().obtenerOdontologosView())
+
+		ObservableList<String> odontologos = FXCollections
+				.observableArrayList();
+
+		for (OdontologoView o : Controlador.getInstancia()
+				.obtenerOdontologosView())
 			odontologos.add(concat(o.getApellido(), o.getNombre()));
-		
+
 		comboOdontologos.getItems().addAll(odontologos);
-		
+
 	}
 
 	/* METODOS */
@@ -148,52 +150,55 @@ public class VistaAltaHistoriaClinicaControlador implements Initializable {
 		ventanaPrevisualizacion.setTitle("Previsualizaci�n");
 		ventanaPrevisualizacion.setScene(snapScene);
 		ventanaPrevisualizacion.initStyle(StageStyle.UNIFIED);
-	
-		
-		File theDir = new File("new folder");
 
-		  // if the directory does not exist, create it
-		  if (!theDir.exists()) {
-		    System.out.println("creating directory: " + tDni.getText());
-		    boolean result = false;
+		// CREA EL DIRECTORIO FICHAS PERIODONTALES
 
-		    try{
-		        theDir.mkdir();
-		        result = true;
-		     } catch(SecurityException se){
-		        //handle it
-		     }        
-		     if(result) {    
-		       System.out.println("DIR created");  
-		     }
-		  }
-		
-		 // TODO: probably use a file chooser here
-	    File file = new File("chart.png");
+		File fichas = new File("Fichas Peridontales");
+		// if the directory does not exist, create it
+		if (!fichas.exists()) {
+			System.out.println("Creando directorio");
+			boolean result = false;
 
-	    try {
-	        ImageIO.write(SwingFXUtils.fromFXImage(imagen, null), "png", file);
-	    } catch (IOException e) {
-	        // TODO: handle exception here
-	    }
-		
+			try {
+				fichas.mkdir();
+				result = true;
+			} catch (SecurityException se) {
+				// handle it
+			}
+			if (result) {
+				System.out.println("DIR creado");
+			}
+		}
+
+		// CREA LA IMAGEN DE LA FICHA PERIODONTAL
+
+		File file = new File("Fichas Periodontales/" + tDni.getText() + ".png");
+
+		try {
+			ImageIO.write(SwingFXUtils.fromFXImage(imagen, null), "png", file);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
 		return ventanaPrevisualizacion;
 	}
 
 	/* EVENT HANDLERS */
 
 	public void presionarBuscarPaciente(ActionEvent event) {
-		PacienteView paciente = Controlador.getInstancia().obtenerPacienteView(tDni.getText());
-		if(paciente != null){
+		PacienteView paciente = Controlador.getInstancia().obtenerPacienteView(
+				tDni.getText());
+		if (paciente != null) {
 			panelFichaPeriodontal.setDisable(false);
-			labelDni.setText(paciente.getNombre() + " " + paciente.getApellido());
+			labelDni.setText(paciente.getNombre() + " "
+					+ paciente.getApellido());
 		}
 	}
 
 	public void guardarFicha(ActionEvent event) {
-		
-//		Controlador.getInstancia().altaHistoriaClinica(tDni.getText(),
-//				tDescripcion.getText());
+
+		// Controlador.getInstancia().altaHistoriaClinica(tDni.getText(),
+		// tDescripcion.getText());
 
 		Collection<SeccionView> seccionesView = new ArrayList<SeccionView>();
 		// DIENTE 1
@@ -578,22 +583,23 @@ public class VistaAltaHistoriaClinicaControlador implements Initializable {
 				.isSelected(), Integer.parseInt(d32t2.getText()), Integer
 				.parseInt(d32f2.getText()), "3", "32"));
 
-		
 		// SE CREA LA FICHA PERIODONTAL VIEW
-		
+
 		FichaPeriodontalView ficha = new FichaPeriodontalView();
 		OdontologoView ov = new OdontologoView();
-		for (OdontologoView ov2: Controlador.getInstancia().obtenerOdontologosView()){
-			if(concat(ov2.getApellido(), ov2.getNombre()).compareTo(comboOdontologos.getSelectionModel().getSelectedItem())==0){
-				ov=ov2;
+		for (OdontologoView ov2 : Controlador.getInstancia()
+				.obtenerOdontologosView()) {
+			if (concat(ov2.getApellido(), ov2.getNombre()).compareTo(
+					comboOdontologos.getSelectionModel().getSelectedItem()) == 0) {
+				ov = ov2;
 			}
 		}
 		ficha.setOdontologo(Controlador.getInstancia().obtenerOdontologoView(
 				ov.getMatricula()));
 		ficha.setSecciones(seccionesView);
-		
+
 		// ASIGNA LA FICHA A LA HISTORIA CLINICA
-		
+
 		Controlador.getInstancia().asignarFichaAHistoria(tDni.getText(), ficha);
 
 	}
@@ -607,9 +613,9 @@ public class VistaAltaHistoriaClinicaControlador implements Initializable {
 
 		VistaNavegador.loadVista(VistaNavegador.VISTA_4);
 	}
-	
-	private String concat(String apellido, String nombre){
-		String nuevo = apellido+", "+nombre;
+
+	private String concat(String apellido, String nombre) {
+		String nuevo = apellido + ", " + nombre;
 		return nuevo;
 	}
 

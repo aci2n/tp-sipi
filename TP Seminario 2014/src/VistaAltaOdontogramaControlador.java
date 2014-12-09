@@ -182,7 +182,7 @@ public class VistaAltaOdontogramaControlador implements Initializable {
 	
 	public void previsualizar(ActionEvent event){
 		
-		this.generarPrevisualizacion(boxOdontograma);
+		this.generarPrevisualizacion(boxOdontograma).show();
 	}
 
 	public void buscaHistoriaClinica(ActionEvent event) {

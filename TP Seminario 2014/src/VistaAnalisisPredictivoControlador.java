@@ -8,13 +8,18 @@ import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.chart.PieChart;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Tooltip;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 import controlador.Controlador;
 
 public class VistaAnalisisPredictivoControlador implements Initializable {
@@ -69,7 +74,13 @@ public class VistaAnalisisPredictivoControlador implements Initializable {
 				}
 			}
 			
-			grafico.setData(data);			
+			grafico.setData(data);	
+			grafico.setTitle("Basado en coincidencias con otros " + estadistica.getEstadisticasPaciente().size() + " pacientes");
+			
+			for (final PieChart.Data dato : grafico.getData()) {
+				Tooltip t = new Tooltip((dato.getPieValue() / estadistica.getEstadisticasPaciente().size() * 100) + "%");
+				Tooltip.install(dato.getNode(), t);
+			}
 		}
 		
 	}

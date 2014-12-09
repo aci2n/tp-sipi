@@ -178,7 +178,7 @@ public class VistaListarTurnosControlador implements Initializable {
 	/*UTILITARIOS*/
 	
 	private String concat(String apellido, String nombre){
-		String nuevo = apellido+", "+nombre;
+		String nuevo = nombre+" "+apellido;
 		return nuevo;
 	}
 	

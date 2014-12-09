@@ -142,9 +142,9 @@
                                     <Separator prefWidth="200.0" />
                                     <VBox fx:id="boxFichaPeriodontal" alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0">
                                        <children>
-                                          <Label fx:id="inferior" alignment="CENTER" text="INFERIOR" underline="true">
+                                          <Label fx:id="superior" alignment="CENTER" text="SUPERIOR" underline="true">
                                              <VBox.margin>
-                                                <Insets bottom="20.0" top="10.0" />
+                                                <Insets bottom="10.0" />
                                              </VBox.margin>
                                           </Label>
                                           <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="2.0">
@@ -2551,9 +2551,9 @@
                                                 <Insets />
                                              </VBox.margin>
                                           </HBox>
-                                          <Label fx:id="superior" alignment="CENTER" text="SUPERIOR" underline="true">
+                                          <Label fx:id="inferior" alignment="CENTER" text="INFERIOR" underline="true">
                                              <VBox.margin>
-                                                <Insets bottom="10.0" />
+                                                <Insets bottom="20.0" top="10.0" />
                                              </VBox.margin>
                                           </Label>
                                        </children>

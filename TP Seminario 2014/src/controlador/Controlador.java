@@ -127,11 +127,11 @@ public class Controlador {
 		}
 	}
 	
-	public void altaOdontograma(String dni, String idOdontograma, String matricula){
+	public void altaOdontograma(String dni, OdontogramaView odontograma){
 		HistoriaClinica historia = obtenerHistoriaClinica(dni);
-		Odontologo odontologo = obtenerOdontologo(matricula);
+		Odontologo odontologo = obtenerOdontologo(odontograma.getOdontologo().getMatricula());
 		if (historia != null && odontologo != null){
-			historia.agregarOdontograma(idOdontograma, getFechaActualSQL(), odontologo);
+			historia.agregarOdontograma(odontograma.getIdOdontograma(), odontologo, odontograma.getFecha(), construirDientesDesdeView(odontograma.getDientes()));
 		}
 	}
 	
@@ -381,11 +381,7 @@ public class Controlador {
 	}
 	
 	//UTILITARIAS
-	
-	private java.sql.Timestamp getFechaActualSQL(){
-		return new Timestamp(System.currentTimeMillis());
-	}	
-	
+		
 	private Collection<Diente> construirDientesDesdeView(Collection<DienteView> dientesView){
 		Collection<Diente> dientes = new ArrayList<Diente>();
 		Diente diente;

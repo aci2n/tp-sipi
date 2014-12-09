@@ -1,12 +1,9 @@
 import java.net.URL;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.ResourceBundle;
 
-import views.CaraView;
-import views.DienteView;
-import views.OdontogramaView;
-import views.OdontologoView;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -18,13 +15,12 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.ContextMenu;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextField;
-import javafx.scene.input.MouseButton;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
-import javafx.stage.Stage;
-
-import com.sun.glass.events.MouseEvent;
-
+import views.CaraView;
+import views.DienteView;
+import views.OdontogramaView;
+import views.OdontologoView;
 import controlador.Controlador;
 
 public class VistaAltaOdontogramaControlador implements Initializable {
@@ -99,7 +95,7 @@ public class VistaAltaOdontogramaControlador implements Initializable {
 		MenuItem corona = new MenuItem("Corona");
 		MenuItem fractura = new MenuItem("Fractura");
 		MenuItem ausente = new MenuItem("Ausente");
-		MenuItem infeccion = new MenuItem("Infección");
+		MenuItem infeccion = new MenuItem("Infecciï¿½n");
 		MenuItem enfermedadPeriodontal = new MenuItem("Enfermedad Periodontal");
 
 		contextMenu.getItems().addAll(carie, corona, fractura, ausente,
@@ -141,7 +137,7 @@ public class VistaAltaOdontogramaControlador implements Initializable {
 			@Override
 			public void handle(ActionEvent event) {
 				b.setStyle("-fx-background-color:#f1c40f");
-				b.setText("Infección");
+				b.setText("Infecciï¿½n");
 			}
 		});
 
@@ -522,16 +518,20 @@ public class VistaAltaOdontogramaControlador implements Initializable {
 								comboOdontologos.getSelectionModel()
 										.getSelectedItem()));
 		odontograma.setIdOdontograma("1");
+		odontograma.setFecha(getFechaActualSQL());
 
-		Controlador.getInstancia().altaOdontograma(tDni.getText(), odontograma.getIdOdontograma(), odontograma.getOdontologo().getMatricula());
+		Controlador.getInstancia().altaOdontograma(tDni.getText(), odontograma);
 		
-		Controlador.getInstancia().actualizarOdontograma(tDni.getText(),
-				odontograma);
+		/*Controlador.getInstancia().actualizarOdontograma(tDni.getText(),
+				odontograma);*/
 
 	}
 	
-	public void cancelar(ActionEvent event){
-		
+	public void cancelar(ActionEvent event){		
 		VistaNavegador.loadVista(VistaNavegador.VISTA_7);
 	}
+	
+	private java.sql.Timestamp getFechaActualSQL(){
+		return new Timestamp(System.currentTimeMillis());
+	}	
 }

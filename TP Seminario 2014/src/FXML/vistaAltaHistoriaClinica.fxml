@@ -82,7 +82,7 @@
                                                 <Font name="Calibri Bold" size="14.0" />
                                              </font>
                                           </Label>
-                                          <Label fx:id="datosPaciente" text="-" textFill="WHITE">
+                                          <Label fx:id="datosPaciente" textFill="WHITE">
                                              <font>
                                                 <Font name="Calibri" size="14.0" />
                                              </font>

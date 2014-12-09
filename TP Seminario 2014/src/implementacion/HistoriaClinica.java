@@ -35,8 +35,8 @@ public class HistoriaClinica {
 		this.ficha=ficha;	
 	}
 	
-	public void agregarOdontograma(String idOdontograma, Timestamp fecha, Odontologo odontologo) {
-		Odontograma odontograma = new Odontograma(idOdontograma, fecha, odontologo, this);				
+	public void agregarOdontograma(String idOdontograma, Odontologo odontologo, Timestamp fecha, Collection<Diente> dientes) {
+		Odontograma odontograma = new Odontograma(idOdontograma, fecha, odontologo, dientes, this);				
 		this.odontogramas.add(odontograma);
 	}
 	

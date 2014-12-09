@@ -16,11 +16,14 @@ public class Odontograma {
 	private Timestamp fecha;
 	private Odontologo odontologo;
 	
-	public Odontograma(String idOdontograma, Timestamp fecha, Odontologo odontologo, HistoriaClinica historiaClinica) {
+	public Odontograma(String idOdontograma, Timestamp fecha, Odontologo odontologo, Collection<Diente> dientes, HistoriaClinica historiaClinica) {
 		this.idOdontograma=idOdontograma;
 		this.fecha=fecha;
 		this.odontologo=odontologo;
 		
+		this.dientes=dientes;
+		
+		/*
 		this.dientes= new ArrayList<Diente>();
 		
 		int i;
@@ -45,6 +48,7 @@ public class Odontograma {
 		
 		for (i = 81;i<=85;i++)
 			this.dientes.add(new Diente(Integer.toString(i)));	
+		*/
 		
 		AdministradorPersistenciaOdontograma.getInstancia().insert(this, historiaClinica);
 	}

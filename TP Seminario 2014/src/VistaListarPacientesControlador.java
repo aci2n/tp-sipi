@@ -66,7 +66,7 @@ public class VistaListarPacientesControlador implements Initializable {
 						"obraSocial"));
 		columnaPlan
 				.setCellValueFactory(new PropertyValueFactory<PacienteView, String>(
-						"plan"));
+						"planObraSocial"));
 		
 		pacientes.removeAll(pacientes);
 		tablaListarPacientes.getItems().setAll(this.getPacientes());

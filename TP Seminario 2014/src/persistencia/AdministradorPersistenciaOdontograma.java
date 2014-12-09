@@ -145,4 +145,22 @@ public class AdministradorPersistenciaOdontograma extends AdministradorPersisten
 		return odontogramas;
 	}
 	
+	public int conteoOdontogramas() {
+		int conteo = 0;
+		
+		try {
+			Connection con = Conexion.connect();
+			PreparedStatement ps = con.prepareStatement("SELECT COUNT(*) FROM "+super.getDatabase()+".dbo.Odontogramas");
+
+			ResultSet rs = ps.executeQuery();
+			
+			while (rs.next()){
+				conteo = rs.getInt(1);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return conteo;
+	}
+	
 }

@@ -1,11 +1,11 @@
 import java.util.ArrayList;
 import java.util.Collection;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBoxBuilder;
 import javafx.scene.text.Text;
@@ -16,6 +16,7 @@ import views.OdontologoView;
 import controlador.Controlador;
 
 
+@SuppressWarnings("deprecation")
 public class VistaAdministracionOdontologosControlador {
 
 	@FXML
@@ -55,7 +56,7 @@ public class VistaAdministracionOdontologosControlador {
 			Stage dialogStage = new Stage();
 			dialogStage.initModality(Modality.WINDOW_MODAL);
 			dialogStage.setScene(new Scene(VBoxBuilder.create().
-			    children(new Text("Odontólogo registrado correctamente")).
+			    children(new Text("Odontï¿½logo registrado correctamente")).
 			    alignment(Pos.CENTER).padding(new Insets(5)).build()));
 			dialogStage.show();
 		}

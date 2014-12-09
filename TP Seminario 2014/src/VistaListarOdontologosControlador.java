@@ -2,6 +2,8 @@
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import javafx.beans.property.ReadOnlyObjectWrapper;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -9,9 +11,12 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableColumn.CellDataFeatures;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.util.Callback;
+import views.EspecialidadView;
 import views.OdontologoView;
 import controlador.Controlador;
 
@@ -40,10 +45,16 @@ public class VistaListarOdontologosControlador implements Initializable {
 		columnaApellido
 				.setCellValueFactory(new PropertyValueFactory<OdontologoView, String>(
 						"apellido"));
-		columnaEspecialidad
-				.setCellValueFactory(new PropertyValueFactory<OdontologoView, String>(
-						"especialidad"));
-
+		columnaEspecialidad.setCellValueFactory(new Callback<CellDataFeatures<OdontologoView,String>, ObservableValue<String>>() {
+			public ObservableValue<String> call(CellDataFeatures<OdontologoView, String> data) {
+					StringBuilder stringB = new StringBuilder();
+					for (EspecialidadView e : data.getValue().getEspecialidades())
+						stringB.append(e.getDescripcion()+", ");
+					if (!stringB.toString().equals(""))
+						stringB.setLength(stringB.length()-2);
+					return new ReadOnlyObjectWrapper<String>(stringB.toString());
+			}
+		});
 		odontologos.removeAll(odontologos);
 		tablaListarOdontologos.getItems().setAll(this.getOdontologos());
 	}

@@ -151,6 +151,26 @@ public class VistaAltaHistoriaClinicaControlador implements Initializable {
 		ventanaPrevisualizacion.setScene(snapScene);
 		ventanaPrevisualizacion.initStyle(StageStyle.UNIFIED);
 
+		return ventanaPrevisualizacion;
+	}
+
+	private void guardarImagen(Node node) {
+
+		WritableImage imagen = node.snapshot(new SnapshotParameters(), null);
+		ImageView imagenView = new ImageView();
+		imagenView.setImage(imagen);
+
+		StackPane snapLayout = new StackPane();
+		snapLayout.getChildren().add(imagenView);
+
+		Scene snapScene = new Scene(snapLayout, imagen.getWidth(),
+				imagen.getHeight());
+
+		Stage ventanaPrevisualizacion = new Stage();
+		ventanaPrevisualizacion.setTitle("Previsualizaci�n");
+		ventanaPrevisualizacion.setScene(snapScene);
+		ventanaPrevisualizacion.initStyle(StageStyle.UNIFIED);
+
 		// CREA EL DIRECTORIO FICHAS PERIODONTALES
 
 		File fichas = new File("Fichas Peridontales");
@@ -179,10 +199,7 @@ public class VistaAltaHistoriaClinicaControlador implements Initializable {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
-		
 
-		return ventanaPrevisualizacion;
 	}
 
 	/* EVENT HANDLERS */
@@ -584,25 +601,27 @@ public class VistaAltaHistoriaClinicaControlador implements Initializable {
 		seccionesView.add(new SeccionView(d32s3.isSelected(), d32p3
 				.isSelected(), Integer.parseInt(d32t2.getText()), Integer
 				.parseInt(d32f2.getText()), "3", "32"));
-
-		// SE CREA LA FICHA PERIODONTAL VIEW
-
-		FichaPeriodontalView ficha = new FichaPeriodontalView();
-		OdontologoView ov = new OdontologoView();
-		for (OdontologoView ov2 : Controlador.getInstancia()
-				.obtenerOdontologosView()) {
-			if (concat(ov2.getApellido(), ov2.getNombre()).compareTo(
-					comboOdontologos.getSelectionModel().getSelectedItem()) == 0) {
-				ov = ov2;
-			}
-		}
-		ficha.setOdontologo(Controlador.getInstancia().obtenerOdontologoView(
-				ov.getMatricula()));
-		ficha.setSecciones(seccionesView);
-
-		// ASIGNA LA FICHA A LA HISTORIA CLINICA
-
-		Controlador.getInstancia().asignarFichaAHistoria(tDni.getText(), ficha);
+//
+//		// SE CREA LA FICHA PERIODONTAL VIEW
+//
+//		FichaPeriodontalView ficha = new FichaPeriodontalView();
+//		OdontologoView ov = new OdontologoView();
+//		for (OdontologoView ov2 : Controlador.getInstancia()
+//				.obtenerOdontologosView()) {
+//			if (concat(ov2.getApellido(), ov2.getNombre()).compareTo(
+//					comboOdontologos.getSelectionModel().getSelectedItem()) == 0) {
+//				ov = ov2;
+//			}
+//		}
+//		ficha.setOdontologo(Controlador.getInstancia().obtenerOdontologoView(
+//				ov.getMatricula()));
+//		ficha.setSecciones(seccionesView);
+//
+//		// ASIGNA LA FICHA A LA HISTORIA CLINICA
+//
+//		Controlador.getInstancia().asignarFichaAHistoria(tDni.getText(), ficha);
+		
+		this.guardarImagen(boxFichaPeriodontal);
 
 	}
 

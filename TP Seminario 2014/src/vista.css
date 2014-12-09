@@ -235,17 +235,31 @@
 #botonBuscar:hover{
 	
 	-fx-background-color: #2ecc71;
-	-fx-background-radius: 2;
-	-fx-font-size: 14;
-	
 }
 
 #botonNuevoPaciente{
 
 	-fx-background-color: #27ae60;
 	-fx-background-radius: 2;
-	-fx-font-size: 14;
+	-fx-font-size: 14;	
+}
+
+#botonNuevoPaciente:hover{
 	
+	-fx-background-color: #2ecc71;
+}
+
+#botonNuevoOdontologo{
+	
+	-fx-background-color: #27ae60;
+	-fx-background-radius: 2;
+	-fx-font-size: 14;	
+}
+
+#botonNuevoOdontologo:hover{
+	
+	-fx-background-color: #2ecc71;
+		
 }
 
 #botonVerTodos{

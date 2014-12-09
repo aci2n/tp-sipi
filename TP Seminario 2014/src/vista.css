@@ -12,7 +12,11 @@
  }
  
  .button{
+	
+	-fx-background-radius: 2;
+	-fx-text-fill: white;
  	-fx-cursor: hand;
+
  }
  
  /* VISTA PRINCIPAL */
@@ -236,13 +240,7 @@
 	-fx-background-position: center;
 }
 
-.button{
-	
-	-fx-background-radius: 0;
-	-fx-text-fill: white;
-	-fx-font-size: 15;
-	
-}
+
 .button:hover{
 	
 	-fx-background-color: #16a085;

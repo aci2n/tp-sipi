@@ -9,9 +9,9 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="430.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="VistaVerFichaOdontogramasControlador">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="VistaVerFichaOdontogramasControlador">
    <children>
-      <VBox maxHeight="-Infinity" minHeight="-Infinity" prefHeight="420.0" prefWidth="760.0">
+      <VBox maxHeight="-Infinity" minHeight="-Infinity" spacing="20.0">
          <children>
             <AnchorPane fx:id="boxFiltrarPacientes" prefHeight="80.0">
                <children>
@@ -23,7 +23,7 @@
                               <Font name="Calibri" size="14.0" />
                            </font>
                         </Button>
-                        <Button mnemonicParsing="false" onAction="#mostrarHistoria" prefHeight="11.0" prefWidth="192.0" text="Mostrar Historia Clínica">
+                        <Button fx:id="botonMostrarHistoria" mnemonicParsing="false" onAction="#mostrarHistoria" prefHeight="11.0" prefWidth="192.0" text="Mostrar Historia Clínica">
                            <HBox.margin>
                               <Insets left="20.0" />
                            </HBox.margin>
@@ -54,7 +54,7 @@
             </TableView>
          </children>
          <StackPane.margin>
-            <Insets />
+            <Insets bottom="10.0" left="10.0" right="10.0" top="20.0" />
          </StackPane.margin>
          <padding>
             <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />

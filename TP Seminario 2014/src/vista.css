@@ -260,6 +260,44 @@
 	-fx-background-color: #16a085;
 }
 
+#botonMostrarHistoria{
+	
+	-fx-background-color: #e74c3c;
+	-fx-background-radius: 2;
+	-fx-font-size: 14;
+}
+
+#botonMostrarHistoria:hover{
+	
+	-fx-background-color: #c0392b;
+}
+
+#botonRealizarAnalisis1{
+	
+	-fx-background-color: #2ecc71;
+	-fx-background-radius: 2;
+	-fx-font-size: 14;
+}
+
+#botonRealizarAnalisis1:hover{
+	
+	-fx-background-color: #27ae60;
+}
+
+#botonGraficar{
+	-fx-background-color: #3498db;
+	-fx-background-radius: 2;
+	-fx-font-size: 14;
+	
+}
+
+#botonGraficar:hover{
+	-fx-background-color: #2980b9;
+	-fx-background-radius: 2;
+	-fx-font-size: 14;
+	
+}
+
 #imagenRaya {
 	-fx-image: url("Imagenes/listado.png");
 	-fx-background-repeat: no-repeat;

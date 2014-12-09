@@ -72,7 +72,7 @@
 										<MenuItem mnemonicParsing="false" onAction="#seleccionarVistaAltaOdontograma" text="Alta Odontograma" />
                               <MenuItem mnemonicParsing="false" onAction="#seleccionarVistaAltaObservaciones" text="Alta Observaciones" />
 										<MenuItem mnemonicParsing="false" onAction="#seleccionarVistaAnalisisPredictivo" text="Análisis Predictivo" />
-                              <MenuItem mnemonicParsing="false" text="Ver Ficha Periodontal y Odontogramas" />
+                              <MenuItem fx:id="verFichaOdontograma" mnemonicParsing="false" onAction="#seleccionarVistaVerFichasOdontogramas" text="Ver Ficha Periodontal y Odontogramas" />
 																			
 									</items>
 								</Menu>

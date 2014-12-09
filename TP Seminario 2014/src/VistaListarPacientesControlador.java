@@ -1,16 +1,23 @@
 
 import java.net.URL;
+import java.text.SimpleDateFormat;
 import java.util.ResourceBundle;
 
+import javafx.beans.property.ReadOnlyObjectWrapper;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableColumn.CellDataFeatures;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.util.Callback;
+import views.EspecialidadView;
+import views.OdontologoView;
 import views.PacienteView;
 import controlador.Controlador;
 
@@ -58,9 +65,11 @@ public class VistaListarPacientesControlador implements Initializable {
 		columnaEmail
 				.setCellValueFactory(new PropertyValueFactory<PacienteView, String>(
 						"email"));
-		columnaNacimiento
-				.setCellValueFactory(new PropertyValueFactory<PacienteView, String>(
-						"nacimiento"));
+		columnaNacimiento.setCellValueFactory(new Callback<CellDataFeatures<PacienteView,String>, ObservableValue<String>>() {
+			public ObservableValue<String> call(CellDataFeatures<PacienteView, String> data) {
+				return new ReadOnlyObjectWrapper<String>(new SimpleDateFormat("dd/MM/yyyy").format(data.getValue().getFechaNacimiento()));
+			}
+		});
 		columnaObraSocial
 				.setCellValueFactory(new PropertyValueFactory<PacienteView, String>(
 						"obraSocial"));

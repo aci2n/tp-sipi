@@ -631,8 +631,11 @@ public class VistaAltaHistoriaClinicaControlador implements Initializable {
 //
 //		Controlador.getInstancia().asignarFichaAHistoria(tDni.getText(), ficha);
 		
-		this.guardarImagen(boxFichaPeriodontal);
-
+		if(comboOdontologos.getSelectionModel().getSelectedItem() != null){
+			this.guardarImagen(boxFichaPeriodontal);
+	
+		}
+		
 	}
 
 	public void mostrarPrevisualizacion(ActionEvent event) {

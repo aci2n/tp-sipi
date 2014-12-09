@@ -76,7 +76,7 @@
             <HBox fx:id="box1" alignment="CENTER" spacing="10.0">
                <children>
                   <Button fx:id="botonEliminarFila" mnemonicParsing="false" onAction="#bajaObservacion" text="Eliminar Fila" />
-                  <Button fx:id="botonLimpiarTabla" mnemonicParsing="false" text="Limpiar Tabla" />
+                  <Button fx:id="botonLimpiarTabla" mnemonicParsing="false" onAction="#limpiarDatos" text="Limpiar Datos" />
                </children>
                <VBox.margin>
                   <Insets bottom="20.0" />

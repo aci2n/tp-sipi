@@ -61,6 +61,14 @@ public class VistaVerFichaOdontogramasControlador implements Initializable{
 				table.setItems(odontogramas);
 			}
 		}
+		else
+		{	Stage mensaje = new Stage();
+			Scene scene = new Scene(new Group(new Text(25, 25, "Los datos son incorrectos")));
+			mensaje.setTitle("Mensaje de alerta");
+			mensaje.setScene(scene);
+			mensaje.sizeToScene();
+			mensaje.show();
+		}
 	}
 	
 	public void mostrarHistoria(ActionEvent event) {

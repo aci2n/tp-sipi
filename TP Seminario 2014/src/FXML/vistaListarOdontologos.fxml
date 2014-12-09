@@ -33,7 +33,7 @@
                   <Insets />
                </opaqueInsets>
                <top>
-                  <AnchorPane fx:id="boxFiltrarPacientes" prefHeight="80.0" BorderPane.alignment="CENTER">
+                  <AnchorPane fx:id="boxFiltrarOdontologos" prefHeight="80.0" BorderPane.alignment="CENTER">
                      <children>
                         <HBox alignment="CENTER_LEFT" nodeOrientation="LEFT_TO_RIGHT" spacing="10.0">
                            <children>

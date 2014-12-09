@@ -211,9 +211,30 @@
 	-fx-border-radius: 2;
 }
 
+#boxFiltrarOdontologos{
+	
+	-fx-border-color: #bdc3c7;
+	-fx-border-radius: 2;
+}
+
+#boxFiltrarTurnos{
+	
+	-fx-border-color: #bdc3c7;
+	-fx-border-radius: 2;
+}
+
+
 #botonBuscar{
 
 	-fx-background-color: #27ae60;
+	-fx-background-radius: 2;
+	-fx-font-size: 14;
+	
+}
+
+#botonBuscar:hover{
+	
+	-fx-background-color: #2ecc71;
 	-fx-background-radius: 2;
 	-fx-font-size: 14;
 	
@@ -229,9 +250,15 @@
 
 #botonVerTodos{
 
+	-fx-background-color: #e74c3c;
 	-fx-background-radius: 2;
 	-fx-font-size: 14;
 	-fx-text-fill: white;
+}
+
+#botonVerTodos:hover{
+
+	-fx-background-color: #c0392b;
 }
 
 #imagenRaya {

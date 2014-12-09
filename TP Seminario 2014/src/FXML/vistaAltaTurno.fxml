@@ -10,7 +10,7 @@
 
 <StackPane fx:id="vistaAltaTurno" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="VistaAdministracionTurnosControlador">
    <children>
-      <BorderPane fx:id="borderPaneTurno" style="-fx-border-color: #bdc3c7;">
+      <BorderPane fx:id="borderPaneTurno" style="-fx-border-color: #bdc3c7; -fx-background-color: white;">
          <bottom>
             <Button fx:id="altaTurno" mnemonicParsing="false" onAction="#agregarTurno" text="CREAR TURNO" BorderPane.alignment="CENTER">
                <BorderPane.margin>

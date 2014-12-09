@@ -198,6 +198,17 @@
 	
 }
 
+#altaTurno{
+	-fx-background-color: #3498db;
+	-fx-background-radius: 2;
+	-fx-font-size: 14;
+}
+
+#altaTurno{
+	-fx-background-color: #2980b9;
+	
+}
+
 #buttonAltaOdontologo{
 	-fx-background-color: #3498db;
 	-fx-background-radius: 2;

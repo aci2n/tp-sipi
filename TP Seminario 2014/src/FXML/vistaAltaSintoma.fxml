@@ -8,9 +8,9 @@
 
 <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="235.0" prefWidth="398.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="VistaAltaSintomaControlador">
    <children>
-      <VBox alignment="BASELINE_CENTER" spacing="20.0" style="-fx-border-color: #bdc3c7;">
+      <VBox alignment="BASELINE_CENTER" spacing="20.0" style="-fx-border-color: #bdc3c7; -fx-background-color: white;">
          <children>
-            <HBox prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #2980b9;">
+            <HBox prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #3498db;">
                <children>
                   <Label alignment="BASELINE_CENTER" prefHeight="45.0" prefWidth="600.0" text="ALTA SINTOMA" textAlignment="CENTER" textFill="WHITE">
                      <font>

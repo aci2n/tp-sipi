@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.ResourceBundle;
 
+import persistencia.AdministradorPersistenciaDiente;
+import persistencia.AdministradorPersistenciaOdontograma;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -517,7 +519,7 @@ public class VistaAltaOdontogramaControlador implements Initializable {
 						.obtenerOdontologoView(
 								comboOdontologos.getSelectionModel()
 										.getSelectedItem()));
-		odontograma.setIdOdontograma("1");
+		odontograma.setIdOdontograma(Integer.toString(AdministradorPersistenciaOdontograma.getInstancia().conteoOdontogramas()+1));
 		odontograma.setFecha(getFechaActualSQL());
 
 		Controlador.getInstancia().altaOdontograma(tDni.getText(), odontograma);

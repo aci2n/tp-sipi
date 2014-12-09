@@ -1,6 +1,7 @@
 package views;
 
 import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
 
 
 
@@ -36,6 +37,6 @@ public class TurnoView {
 	}
 	
 	public String getDatos(){
-		return this.fecha.toString()+" - "+this.odontologo.getApellido()+", "+this.odontologo.getNombre()+" - "+this.paciente.getApellido()+", "+this.paciente.getNombre();
+		return new SimpleDateFormat("dd/MM/yyyy HH:mm").format(fecha)+" - "+this.odontologo.getApellido()+", "+this.odontologo.getNombre()+" - "+this.paciente.getApellido()+", "+this.paciente.getNombre();
 	}
 }

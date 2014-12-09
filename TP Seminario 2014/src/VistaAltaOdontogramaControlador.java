@@ -643,8 +643,8 @@ public class VistaAltaOdontogramaControlador implements Initializable {
 			this.guardarImagen(boxOdontograma, odontograma.getIdOdontograma());
 		} else {
 			
-			Scene scene = new Scene(new Group(new Text(25, 25, "No se seleccionó ningún odontólogo")));
 			Stage mensaje = new Stage();
+			Scene scene = new Scene(new Group(new Text(25, 25, "No se seleccionó ningún odontólogo")));
 			mensaje.setTitle("Mensaje de alerta");
 			mensaje.setScene(scene);
 			mensaje.sizeToScene();

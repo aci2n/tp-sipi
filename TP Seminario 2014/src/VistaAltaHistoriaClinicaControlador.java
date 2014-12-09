@@ -13,6 +13,7 @@ import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.SnapshotParameters;
@@ -29,6 +30,7 @@ import javafx.scene.image.WritableImage;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import views.FichaPeriodontalView;
@@ -211,6 +213,14 @@ public class VistaAltaHistoriaClinicaControlador implements Initializable {
 			panelFichaPeriodontal.setDisable(false);
 			labelDni.setText(paciente.getNombre() + " "
 					+ paciente.getApellido());
+		}
+		else{
+			Stage mensaje = new Stage();
+			Scene scene = new Scene(new Group(new Text(25, 25, "No existe el paciente ingresado")));
+			mensaje.setTitle("Mensaje de alerta");
+			mensaje.setScene(scene);
+			mensaje.sizeToScene();
+			mensaje.show();
 		}
 	}
 

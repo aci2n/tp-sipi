@@ -191,6 +191,15 @@ public class VistaAltaOdontogramaControlador implements Initializable {
 				tDni.getText()) != null) {
 			boxOdontograma.setDisable(false);
 		}
+		else{
+			Stage mensaje = new Stage();
+			Scene scene = new Scene(new Group(new Text(25, 25, "No existe el paciente ingresado")));
+			mensaje.setTitle("Mensaje de alerta");
+			mensaje.setScene(scene);
+			mensaje.sizeToScene();
+			mensaje.show();
+		}
+		
 	}
 
 	public void agregarEstado(ActionEvent event) {
@@ -619,7 +628,7 @@ public class VistaAltaOdontogramaControlador implements Initializable {
 
 		// CARGA
 
-		if (!comboOdontologos.getSelectionModel().getSelectedItem().equals("")) {
+		if (comboOdontologos.getSelectionModel().getSelectedItem() != null) {
 			OdontogramaView odontograma = new OdontogramaView();
 			odontograma.setDientes(dientes);
 			odontograma.setOdontologo(Controlador.getInstancia()

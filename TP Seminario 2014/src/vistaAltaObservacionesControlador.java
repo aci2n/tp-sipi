@@ -113,5 +113,12 @@ public class vistaAltaObservacionesControlador implements Initializable {
 
 		return observaciones;
 	}
+	
+	public void limpiarDatos(ActionEvent event){
+		
+		textDNI.setText("");
+		textObservaciones.setText("");
+
+	}
 
 }

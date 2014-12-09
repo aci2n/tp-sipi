@@ -3,6 +3,8 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ResourceBundle;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -29,7 +31,9 @@ public class VistaAdministracionTurnosControlador implements Initializable {
 	@FXML
 	private TextField tDni, tDescripcion;
 	@FXML
-	private ComboBox<String> comboOdontologos, comboHora;
+	private ComboBox<OdontologoView> comboOdontologos;
+	@FXML
+	private ComboBox<String> comboHora;
 	@FXML
 	private DatePicker fecha;
 	@FXML
@@ -42,7 +46,6 @@ public class VistaAdministracionTurnosControlador implements Initializable {
 					if(comboHora.getValue()!=null){
 						if(tDescripcion.getText().compareTo("")!=0 && tDescripcion.getText().compareTo("Descripcion")!=0){
 							Controlador con = Controlador.getInstancia();
-							OdontologoView ovAgregar = new OdontologoView();
 							PacienteView pv = new PacienteView();
 							TurnoView tv = new TurnoView();
 							SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm");
@@ -57,16 +60,12 @@ public class VistaAdministracionTurnosControlador implements Initializable {
 								e.printStackTrace();
 							}
 							
-							for (OdontologoView ov2: con.obtenerOdontologosView()){
-								if(concat(ov2.getApellido(), ov2.getNombre()).compareTo(comboOdontologos.getValue())==0){
-									ovAgregar=ov2;
-								}
-							}
+
 							
 							if ((pv = con.obtenerPacienteView(tDni.getText()))!=null){
-								if (con.obtenerOdontologoView(ovAgregar.getMatricula())!=null){
+								if (comboOdontologos.getValue()!=null){
 									tv.setPaciente(pv);
-									tv.setOdontologo(ovAgregar);
+									tv.setOdontologo(comboOdontologos.getValue());
 									tv.setFecha(timestamp);
 									tv.setDescripcion(tDescripcion.getText());
 			
@@ -87,18 +86,21 @@ public class VistaAdministracionTurnosControlador implements Initializable {
 		}
 	}
 	
-	private String concat(String apellido, String nombre){
-		String nuevo = apellido+", "+nombre;
-		return nuevo;
-	}
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		// TODO Auto-generated method stub
 		
-		for (OdontologoView ov : Controlador.getInstancia().obtenerOdontologosView()){
-			comboOdontologos.getItems().add(concat(ov.getApellido(), ov.getNombre()));
+		comboOdontologos.getItems().clear();
+
+		ObservableList<OdontologoView> odontologos = FXCollections
+				.observableArrayList();
+
+		for (OdontologoView o : Controlador.getInstancia().obtenerOdontologosView()){
+			odontologos.add(o);
 		}
+
+		comboOdontologos.getItems().addAll(odontologos);
 		comboHora.getItems().addAll("8:30", "09:00", "10:00");
 		
 		}

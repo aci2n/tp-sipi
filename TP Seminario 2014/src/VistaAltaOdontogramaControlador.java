@@ -18,6 +18,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.SnapshotParameters;
@@ -73,8 +74,9 @@ public class VistaAltaOdontogramaControlador implements Initializable {
 			d29b4, d29b5, d30b1, d30b2, d30b3, d30b4, d30b5, d31b1, d31b2,
 			d31b3, d31b4, d31b5, d32b1, d32b2, d32b3, d32b4, d32b5;
 	@FXML
-	private Label referenciaCaries, referenciaCorona, referenciaFractura, referenciaAusente,
-		referenciaEnfermedadPeriodontal, referenciaInfeccion;
+	private Label referenciaCaries, referenciaCorona, referenciaFractura,
+			referenciaAusente, referenciaEnfermedadPeriodontal,
+			referenciaInfeccion;
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
@@ -94,17 +96,18 @@ public class VistaAltaOdontogramaControlador implements Initializable {
 		comboOdontologos.getItems().addAll(odontologos);
 
 		boxOdontograma.setDisable(true);
-		
-		referenciaCaries.setStyle("-fx-background-color: #16a085"); 
+
+		referenciaCaries.setStyle("-fx-background-color: #16a085");
 		referenciaCorona.setStyle("-fx-background-color:#2980b9");
 		referenciaFractura.setStyle("-fx-background-color:#e74c3c");
 		referenciaAusente.setStyle("-fx-background-color:#34495e");
-		referenciaEnfermedadPeriodontal.setStyle("-fx-background-color:#c0392b");
+		referenciaEnfermedadPeriodontal
+				.setStyle("-fx-background-color:#c0392b");
 		referenciaInfeccion.setStyle("-fx-background-color:#f1c40f");
 	}
-	
+
 	/* METODOS */
-	
+
 	private Stage generarPrevisualizacion(Node node) {
 
 		WritableImage imagen = node.snapshot(new SnapshotParameters(), null);
@@ -126,7 +129,6 @@ public class VistaAltaOdontogramaControlador implements Initializable {
 
 	}
 
-	
 	private void guardarImagen(Node node, String id) {
 
 		WritableImage imagen = node.snapshot(new SnapshotParameters(), null);
@@ -144,8 +146,6 @@ public class VistaAltaOdontogramaControlador implements Initializable {
 		ventanaPrevisualizacion.setScene(snapScene);
 		ventanaPrevisualizacion.initStyle(StageStyle.UNIFIED);
 
-		
-		
 		// CREA EL DIRECTORIO FICHAS PERIODONTALES
 
 		File odonto = new File("Odontogramas");
@@ -166,8 +166,9 @@ public class VistaAltaOdontogramaControlador implements Initializable {
 		}
 
 		// CREA LA IMAGEN DE LA FICHA PERIODONTAL
-		
-		File file = new File("Odontogramas/"+ tDni.getText() +"_"+id+".png");
+
+		File file = new File("Odontogramas/" + tDni.getText() + "_" + id
+				+ ".png");
 
 		try {
 			ImageIO.write(SwingFXUtils.fromFXImage(imagen, null), "png", file);
@@ -176,12 +177,11 @@ public class VistaAltaOdontogramaControlador implements Initializable {
 		}
 
 	}
-	
 
 	/* EVENT HANDLERS */
-	
-	public void previsualizar(ActionEvent event){
-		
+
+	public void previsualizar(ActionEvent event) {
+
 		this.generarPrevisualizacion(boxOdontograma).show();
 	}
 
@@ -196,8 +196,6 @@ public class VistaAltaOdontogramaControlador implements Initializable {
 	public void agregarEstado(ActionEvent event) {
 		// Button was clicked, change color
 
-		
-		
 		final Button b = ((Button) event.getTarget());
 
 		ContextMenu contextMenu = new ContextMenu();
@@ -620,31 +618,46 @@ public class VistaAltaOdontogramaControlador implements Initializable {
 		dientes.add(new DienteView("32", "0", "0", "null", d32caras));
 
 		// CARGA
-		
-		OdontogramaView odontograma = new OdontogramaView();
-		odontograma.setDientes(dientes);
-		odontograma.setOdontologo(Controlador.getInstancia().obtenerOdontologoView(comboOdontologos.getSelectionModel().getSelectedItem()));
-		odontograma.setIdOdontograma(Controlador.getInstancia().obtenerIdOdontogramaMasReciente());
-		odontograma.setFecha(getFechaActualSQL());
 
-		Controlador.getInstancia().altaOdontograma(tDni.getText(), odontograma);
-		
-		Stage dialogStage = new Stage();
-		dialogStage.initModality(Modality.WINDOW_MODAL);
-		dialogStage.setScene(new Scene(VBoxBuilder.create().
-		    children(new Text("Odontograma registrado correctamente")).
-		    alignment(Pos.CENTER).padding(new Insets(5)).build()));
-		dialogStage.show();
-		
-		this.guardarImagen(boxOdontograma, odontograma.getIdOdontograma());
+		if (!comboOdontologos.getSelectionModel().getSelectedItem().equals("")) {
+			OdontogramaView odontograma = new OdontogramaView();
+			odontograma.setDientes(dientes);
+			odontograma.setOdontologo(Controlador.getInstancia()
+					.obtenerOdontologoView(
+							comboOdontologos.getSelectionModel()
+									.getSelectedItem()));
+			odontograma.setIdOdontograma(Controlador.getInstancia()
+					.obtenerIdOdontogramaMasReciente());
+			odontograma.setFecha(getFechaActualSQL());
+
+			Controlador.getInstancia().altaOdontograma(tDni.getText(),
+					odontograma);
+
+			Stage dialogStage = new Stage();
+			dialogStage.initModality(Modality.WINDOW_MODAL);
+			dialogStage.setScene(new Scene(VBoxBuilder.create()
+					.children(new Text("Odontograma registrado correctamente"))
+					.alignment(Pos.CENTER).padding(new Insets(5)).build()));
+			dialogStage.show();
+
+			this.guardarImagen(boxOdontograma, odontograma.getIdOdontograma());
+		} else {
+			
+			Scene scene = new Scene(new Group(new Text(25, 25, "No se seleccionó ningún odontólogo")));
+			Stage mensaje = new Stage();
+			mensaje.setTitle("Mensaje de alerta");
+			mensaje.setScene(scene);
+			mensaje.sizeToScene();
+			mensaje.show();
+		}
 
 	}
-	
-	public void cancelar(ActionEvent event){		
+
+	public void cancelar(ActionEvent event) {
 		VistaNavegador.loadVista(VistaNavegador.VISTA_7);
 	}
-	
-	private java.sql.Timestamp getFechaActualSQL(){
+
+	private java.sql.Timestamp getFechaActualSQL() {
 		return new Timestamp(System.currentTimeMillis());
-	}	
+	}
 }

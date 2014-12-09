@@ -181,6 +181,12 @@
 	-fx-border-radius: 2;
 }
 
+#boxFiltrarAnalisis{
+	
+	-fx-border-color: #bdc3c7;
+	-fx-border-radius: 2;
+}
+
 #botonBuscar {
 	-fx-background-color: #27ae60;
 	-fx-background-radius: 2;
@@ -221,6 +227,8 @@
 #botonVerTodos:hover {
 	-fx-background-color: #c0392b;
 }
+
+
 
 #botonAgregarObs {
 	-fx-background-color: #e74c3c;

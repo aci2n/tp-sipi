@@ -12,25 +12,59 @@
 .button:hover{
 
 	-fx-background-color: #ecf0f1;
+	
 }
+
+#botonBuscar{
+	-fx-background-color: #2ecc71;
+	-fx-background-radius: 2;
+	-fx-font-size: 14;
+	
+}
+
+#botonBuscar:hover{
+	-fx-background-color: #27ae60;
+	-fx-background-radius: 2;
+	-fx-font-size: 14;
+	
+}
+
 
 #botonGuardar{
 	
 	-fx-background-color: #e74c3c;
+	-fx-background-radius: 2;
+	-fx-font-size: 14;
 }
 
 #botonGuardar:hover{
 	
 	-fx-background-color: #c0392b;
+	
 }
 
 #botonCancelar{
 	-fx-background-color: #bdc3c7;
+	-fx-background-radius: 2;
+	-fx-font-size: 14;
 }
 
 #botonCancelar:hover{
 	
 	-fx-background-color: #95a5a6;
+}
+
+#botonPre{
+	
+	-fx-background-color: #3498db;
+	-fx-background-radius: 2;
+	-fx-font-size: 14;
+}
+
+#botonPre:hover{
+	
+	-fx-background-color: #2980b9;
+	
 }
 
 

@@ -1092,8 +1092,14 @@
                                                 <Label fx:id="referenciaEnfermedadPeriodontal" prefHeight="14.0" prefWidth="20.0" />
                                                 <Label text="Enfermedad Periodontal" />
                                              </children>
+                                             <VBox.margin>
+                                                <Insets />
+                                             </VBox.margin>
                                           </HBox>
                                        </children>
+                                       <VBox.margin>
+                                          <Insets bottom="10.0" left="20.0" />
+                                       </VBox.margin>
                                     </VBox>
                                  </children>
                                  <effect>

@@ -30,6 +30,8 @@ public class VistaNavegador {
     public static final String VISTA_12 = "/fxml/vistaAltaTurno.fxml";
     public static final String VISTA_13 = "/fxml/vistaListarTurnos.fxml";
     public static final String VISTA_14 = "/fxml/vistaAltaSintoma.fxml";
+    public static final String VISTA_15 = "/fxml/vistaVerFichaOdontogramas.fxml";
+    
     
     private static VistaPrincipalControlador mainController;
 

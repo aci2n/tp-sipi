@@ -1,10 +1,15 @@
+import java.io.File;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.ResourceBundle;
 
+import javax.imageio.ImageIO;
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -143,7 +148,35 @@ public class VistaAltaHistoriaClinicaControlador implements Initializable {
 		ventanaPrevisualizacion.setTitle("Previsualizaci�n");
 		ventanaPrevisualizacion.setScene(snapScene);
 		ventanaPrevisualizacion.initStyle(StageStyle.UNIFIED);
+	
+		
+		File theDir = new File("new folder");
 
+		  // if the directory does not exist, create it
+		  if (!theDir.exists()) {
+		    System.out.println("creating directory: " + tDni.getText());
+		    boolean result = false;
+
+		    try{
+		        theDir.mkdir();
+		        result = true;
+		     } catch(SecurityException se){
+		        //handle it
+		     }        
+		     if(result) {    
+		       System.out.println("DIR created");  
+		     }
+		  }
+		
+		 // TODO: probably use a file chooser here
+	    File file = new File("chart.png");
+
+	    try {
+	        ImageIO.write(SwingFXUtils.fromFXImage(imagen, null), "png", file);
+	    } catch (IOException e) {
+	        // TODO: handle exception here
+	    }
+		
 		return ventanaPrevisualizacion;
 	}
 
@@ -159,8 +192,8 @@ public class VistaAltaHistoriaClinicaControlador implements Initializable {
 
 	public void guardarFicha(ActionEvent event) {
 		
-		Controlador.getInstancia().altaHistoriaClinica(tDni.getText(),
-				tDescripcion.getText());
+//		Controlador.getInstancia().altaHistoriaClinica(tDni.getText(),
+//				tDescripcion.getText());
 
 		Collection<SeccionView> seccionesView = new ArrayList<SeccionView>();
 		// DIENTE 1

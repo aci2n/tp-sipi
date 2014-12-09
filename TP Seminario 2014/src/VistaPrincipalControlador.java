@@ -86,6 +86,10 @@ public class VistaPrincipalControlador {
 		VistaNavegador.loadVista(VistaNavegador.VISTA_14);
 	}
 	
+	public void seleccionarVistaVerFichasOdontogramas(ActionEvent event){
+		VistaNavegador.loadVista(VistaNavegador.VISTA_15);
+	}
+	
 	public void seleccionarSalir(ActionEvent e) {
 		System.exit(0);
 	}

@@ -39,7 +39,7 @@
                      </padding>
                      <children>
                         <Label text="Ingrese el DNI del paciente para realizar el analisis:" />
-                        <TextField fx:id="textFiltrarTabla1" prefWidth="250.0" promptText="Ingrese DNI unicamente" />
+                        <TextField fx:id="textFiltrarTabla" prefWidth="250.0" promptText="Ingrese DNI unicamente" />
                         <Button fx:id="botonRealizarAnalisis1" mnemonicParsing="false" onAction="#realizarAnalisis" text="Realizar análisis" />
                      </children>
                   </HBox>

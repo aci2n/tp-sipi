@@ -5,7 +5,7 @@
 	-fx-background-repeat: no-repeat;
 	-fx-background-position: center;
 	-fx-background-size: 40 90;
-	-fx-border-color: #bdc3c7;
+	/*-fx-border-color: #bdc3c7;*/
 	-fx-cursor: hand;
 
 }
